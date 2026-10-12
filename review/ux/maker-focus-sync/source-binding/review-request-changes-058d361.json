@@ -1,0 +1,17 @@
+{
+  "recordedAt": "2026-10-12T17:38:09.810157+00:00",
+  "reviewType": "independent agent code/fixture review; not a GitHub owner approval",
+  "status": "REQUEST_CHANGES",
+  "reviewedRevision": "058d3617e16c0fe434153608b74f5403ffdc5556",
+  "findingId": "LP-UX-SOURCE-BINDING-R1",
+  "severity": "P2",
+  "problem": "Normal UX validation inherited MAKER_FOCUS_TEST_HTML and could report the built candidate hash while executing handler checks from a separate historical source. The same inherited override path was present for SCROLL_TEST_HTML.",
+  "reproduction": "The independent reviewer removed only the native syncBoardState scroll listener from a real built candidate. Default UX validation rejected it; pointing MAKER_FOCUS_TEST_HTML to the unchanged passing page made UX return PASS_DRAFT for the broken candidate.",
+  "cleanPageSha256": "c92ab9f83dff2b15457617797147e7b7e2063cd1a7395a12bbab357d215df01a",
+  "brokenPageSha256": "6637f316e9018fa5758f4a5996428f7e508d849b50aa1fb29a14111ccb032e95",
+  "retainedReproduction": "independent-review-058d361/source-selection-results.json",
+  "requestedCorrection": "Clear dedicated historical source overrides from the routine child environment and add a real-built candidate-binding negative. Direct historical test invocation may retain those controls.",
+  "authorResponseRevision": "34ddae6139fc6628bf7c20568b99d3dd554d818a",
+  "authorResponse": "The dispatcher clears both overrides. Two separate real-built negatives retain the clean override but remove the required board or rail listener from the candidate. Before repair both false passes are reproduced; after repair both candidates are rejected. The runtime page is unchanged.",
+  "rereview": "pending separate independent exact-head review"
+}

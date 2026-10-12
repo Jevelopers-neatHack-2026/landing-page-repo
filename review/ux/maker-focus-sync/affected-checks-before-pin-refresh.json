@@ -1,0 +1,71 @@
+[
+  {
+    "label": "privacy-journey",
+    "mode": "local source/build/VM checks; no browser or external requests",
+    "command": [
+      "/workspace/scratch/41d02a12a55b/task-state/toolchains/node24/node_modules/node/bin/node",
+      "--input-type=module",
+      "-e",
+      "import {readFileSync} from 'node:fs'; import {exerciseJourney} from './scripts/suites/privacy.mjs'; const html=readFileSync('site/index.html','utf8'); for(const failure of ['blocked','failed']) for(const reduced of [false,true]) { const result=exerciseJourney(html,{failure,reduced}); console.log(JSON.stringify({mode:'VM-real-maker-and-board-handlers-with-forbidden-collection-surfaces',failure,reduced,anchors:result.anchors,previews:result.previews,externalHandoff:result.externalHandoff,forbiddenAttempts:result.attempts.length})); }"
+    ],
+    "cwd": "/workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a",
+    "startedAt": "2026-10-12T17:26:04.871945+00:00",
+    "completedAt": "2026-10-12T17:26:04.939237+00:00",
+    "exitCode": 0,
+    "baseRevision": "ee16f8a49e5039ee8d41d3fb0a0be9aeb4b98ec5",
+    "pageSha256": "c92ab9f83dff2b15457617797147e7b7e2063cd1a7395a12bbab357d215df01a",
+    "workingTree": "uncommitted scoped repair; existing author pins intentionally still bind preceding source",
+    "logs": {
+      "privacy-journey.stdout.log": "59c5374bda2ff083d1b924659b8267935d7140f913c8b28c2de9716cc8856813",
+      "privacy-journey.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "label": "build",
+    "mode": "local source/build/VM checks; no browser or external requests",
+    "command": [
+      "/workspace/scratch/41d02a12a55b/task-state/toolchains/node24/node_modules/node/bin/node",
+      "scripts/build.mjs"
+    ],
+    "cwd": "/workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a",
+    "startedAt": "2026-10-12T17:26:04.939612+00:00",
+    "completedAt": "2026-10-12T17:26:05.012031+00:00",
+    "exitCode": 0,
+    "baseRevision": "ee16f8a49e5039ee8d41d3fb0a0be9aeb4b98ec5",
+    "pageSha256": "c92ab9f83dff2b15457617797147e7b7e2063cd1a7395a12bbab357d215df01a",
+    "workingTree": "uncommitted scoped repair; existing author pins intentionally still bind preceding source",
+    "logs": {
+      "build.stdout.log": "c005ef06372299c25d7799129dbf09098a9aebb7deb7c2f3c034e0d67b0869b4",
+      "build.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "label": "full-tests-before-pin-refresh",
+    "mode": "local source/build/VM checks; no browser or external requests",
+    "command": [
+      "/workspace/scratch/41d02a12a55b/task-state/toolchains/node24/node_modules/node/bin/node",
+      "--test",
+      "tests/brand.test.mjs",
+      "tests/content-proof.test.mjs",
+      "tests/cta.test.mjs",
+      "tests/foundation.test.mjs",
+      "tests/governance.test.mjs",
+      "tests/maker-focus.test.mjs",
+      "tests/metadata.test.mjs",
+      "tests/privacy.test.mjs",
+      "tests/scroll.test.mjs",
+      "tests/ux.test.mjs"
+    ],
+    "cwd": "/workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a",
+    "startedAt": "2026-10-12T17:26:05.012333+00:00",
+    "completedAt": "2026-10-12T17:26:08.292689+00:00",
+    "exitCode": 1,
+    "baseRevision": "ee16f8a49e5039ee8d41d3fb0a0be9aeb4b98ec5",
+    "pageSha256": "c92ab9f83dff2b15457617797147e7b7e2063cd1a7395a12bbab357d215df01a",
+    "workingTree": "uncommitted scoped repair; existing author pins intentionally still bind preceding source",
+    "logs": {
+      "full-tests-before-pin-refresh.stdout.log": "b5153f8eef9044c931c0309e03d5509113643a516a4166dc44f2ff8dbd736210",
+      "full-tests-before-pin-refresh.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+]

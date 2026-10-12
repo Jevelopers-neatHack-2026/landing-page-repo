@@ -1488,7 +1488,8 @@ function boardState(br, Hh){
   if (boardUI.hidden === show) boardUI.hidden = !show;
   const P = Math.max(0, Math.min(1, -br.top / (br.height - Hh)));
   const on = show && P > WALL.finaleAt;
-  if (finale.classList.contains('on') !== on){ finale.classList.toggle('on', on); finale.inert = !on; }
+  if (finale.classList.contains('on') !== on) finale.classList.toggle('on', on);
+  if (finale.inert !== !on) finale.inert = !on;
   boardUI.classList.toggle('fin', P > WALL.finaleAt - .04);
   if (!root.classList.contains('no3d')){
     boardUI.classList.toggle('swarm', P > WALL.heroesEnd);
@@ -1497,6 +1498,12 @@ function boardState(br, Hh){
   }
   return P;
 }
+// Native navigation must keep the maker's accessibility state current even when
+// the decorative 3D/static animation frames are delayed or stopped.
+function syncBoardState(){ boardState(boardEl.getBoundingClientRect(), innerHeight); }
+addEventListener('scroll', syncBoardState, { passive: true });
+addEventListener('resize', syncBoardState, { passive: true });
+syncBoardState();
 // nav colour follows whatever section sits under it (read and write are split so the frame loop can batch them)
 let navCol = '';
 function navColour(){ for (const s of navSections){ const r = s.getBoundingClientRect(); if (r.top <= 40 && r.bottom > 40) return s.dataset.nav; } return '#17140f'; }
@@ -1504,14 +1511,41 @@ function paintNav(nav, col){ if (col === navCol) return; navCol = col; nav.style
 
 /* ---------- in-page links: a short glide, and "Make yours" lands focus in the form ---------- */
 const ev = document.getElementById('ev');
-function focusMaker(){   // wait until the finale is actually showing, then put the cursor in the field
-  const t0 = performance.now(); let stopped = false; const stop = () => { stopped = true; };
-  addEventListener('wheel', stop, { once: true, passive: true }); addEventListener('touchstart', stop, { once: true, passive: true });
-  const tryFocus = () => { if (stopped) return; if (!finale.inert){ ev.focus(); return; } if (performance.now() - t0 < 2500) requestAnimationFrame(tryFocus); };
-  requestAnimationFrame(tryFocus);
+let cancelMakerFocus = () => {};
+function focusMaker(){
+  cancelMakerFocus();
+  let timer = null, stopped = false;
+  const cancelEvents = ['wheel', 'touchstart', 'pointerdown', 'keydown'];
+  const stop = () => {
+    if (stopped) return;
+    stopped = true; clearTimeout(timer);
+    removeEventListener('scroll', wait); removeEventListener('resize', wait);
+    cancelEvents.forEach(type => removeEventListener(type, stop));
+    if (cancelMakerFocus === stop) cancelMakerFocus = () => {};
+  };
+  const tryFocus = () => {
+    if (stopped) return false;
+    syncBoardState();
+    if (boardUI.hidden || finale.inert) return false;
+    stop(); ev.focus();   // allow native scrolling to expose the input itself
+    return true;
+  };
+  const wait = () => {
+    if (stopped || tryFocus()) return;
+    clearTimeout(timer);
+    // Expire after native navigation goes idle, not while it is still moving.
+    // Recheck actual geometry at expiry if the DOM scroll receipt was delayed.
+    timer = setTimeout(() => { tryFocus(); stop(); }, 2500);
+  };
+  cancelMakerFocus = stop;
+  addEventListener('scroll', wait, { passive: true });
+  addEventListener('resize', wait, { passive: true });
+  cancelEvents.forEach(type => addEventListener(type, stop, { passive: true }));
+  wait();
 }
 document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
   const id = a.getAttribute('href'); const t = document.querySelector(id); if (!t) return; e.preventDefault();
+  cancelMakerFocus();
   const make = id === '#make';
   const y = make ? boardEl.offsetTop + boardEl.offsetHeight - innerHeight * 1.02 : t.getBoundingClientRect().top + scrollY;
   try { history.pushState(null, '', id); } catch (err) {}

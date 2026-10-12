@@ -1,0 +1,117 @@
+{
+  "reviewedLocalCommit": "058d3617e16c0fe434153608b74f5403ffdc5556",
+  "base": "ee16f8a49e5039ee8d41d3fb0a0be9aeb4b98ec5",
+  "mode": "independent isolated exact six-file Git blob copy; source audit pins intentionally remain previous published page and must be refreshed by root",
+  "inputs": {
+    "sourceLocalCommit": "058d3617e16c0fe434153608b74f5403ffdc5556",
+    "sourceBase": "ee16f8a49e5039ee8d41d3fb0a0be9aeb4b98ec5",
+    "reviewMode": "immutable Git blob copy of six repair files into independent detached base; no author edits",
+    "files": [
+      {
+        "path": "site/index.html",
+        "sha256": "c92ab9f83dff2b15457617797147e7b7e2063cd1a7395a12bbab357d215df01a",
+        "bytes": 199301
+      },
+      {
+        "path": "tests/maker-focus.test.mjs",
+        "sha256": "71ada0dd9b0023da825cbb080fcbbf9ef770690f9882dded0dc96c0486402906",
+        "bytes": 8753
+      },
+      {
+        "path": "tests/scroll.test.mjs",
+        "sha256": "792605221bd469811899d4bb81ba3cb3019b68364b2e96c9b822b4c9cb437548",
+        "bytes": 11113
+      },
+      {
+        "path": "scripts/suites/privacy.mjs",
+        "sha256": "9020b8003cd9260a74f72a2005f8a414adfda378c1bfd091397bd0da187654a5",
+        "bytes": 20171
+      },
+      {
+        "path": "scripts/suites/ux.mjs",
+        "sha256": "6cd8ffe11b154ffeb8ceacccf193393416be4d4199ef7ff64a6699716aa27bca",
+        "bytes": 7066
+      },
+      {
+        "path": "tests/ux.test.mjs",
+        "sha256": "816dafddf3663a146d412d3268c1abf8dd3a9beb159aaf82f60efad3298e94f0",
+        "bytes": 5578
+      }
+    ]
+  },
+  "runtime": "v24.15.0",
+  "commands": [
+    {
+      "name": "maker-scroll-ux",
+      "command": [
+        "/workspace/scratch/41d02a12a55b/task-state/toolchains/node24/node_modules/node/bin/node",
+        "--test",
+        "tests/maker-focus.test.mjs",
+        "tests/scroll.test.mjs",
+        "tests/ux.test.mjs"
+      ],
+      "cwd": "/workspace/scratch/f79c57b98c5b/maker-focus-independent-review",
+      "startedAt": "2026-10-12T17:31:29.223681+00:00",
+      "completedAt": "2026-10-12T17:31:29.770331+00:00",
+      "exitCode": 0,
+      "stdout": "maker-scroll-ux.stdout.log",
+      "stdoutSha256": "e4f45a487d4a51af444ac1be8a58bf003515b801afeb3b72634c59acf1abf281",
+      "stderr": "maker-scroll-ux.stderr.log",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "ux-draft",
+      "command": [
+        "/workspace/scratch/41d02a12a55b/task-state/toolchains/node24/node_modules/node/bin/node",
+        "scripts/validate-landing",
+        "--suite",
+        "ux",
+        "--mode",
+        "draft"
+      ],
+      "cwd": "/workspace/scratch/f79c57b98c5b/maker-focus-independent-review",
+      "startedAt": "2026-10-12T17:31:29.770941+00:00",
+      "completedAt": "2026-10-12T17:31:30.121028+00:00",
+      "exitCode": 0,
+      "stdout": "ux-draft.stdout.log",
+      "stdoutSha256": "703d2c3dcd4e2da4605afca1cb77e9dc186f2f73f686d335852452363e84db76",
+      "stderr": "ux-draft.stderr.log",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "ux-release",
+      "command": [
+        "/workspace/scratch/41d02a12a55b/task-state/toolchains/node24/node_modules/node/bin/node",
+        "scripts/validate-landing",
+        "--suite",
+        "ux",
+        "--mode",
+        "release"
+      ],
+      "cwd": "/workspace/scratch/f79c57b98c5b/maker-focus-independent-review",
+      "startedAt": "2026-10-12T17:31:30.121311+00:00",
+      "completedAt": "2026-10-12T17:31:30.450959+00:00",
+      "exitCode": 1,
+      "stdout": "ux-release.stdout.log",
+      "stdoutSha256": "f8e0abb416cbd162fbf1334340200e5383d298dea381b1b098fd59645490a8c7",
+      "stderr": "ux-release.stderr.log",
+      "stderrSha256": "bd32000112c17e5ac88d22ed22c968b5bfcedcb3f532c63dfd958ff64f83ee53"
+    },
+    {
+      "name": "patch-diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/workspace/scratch/f79c57b98c5b/maker-focus-independent-review",
+      "startedAt": "2026-10-12T17:31:30.451246+00:00",
+      "completedAt": "2026-10-12T17:31:30.510569+00:00",
+      "exitCode": 0,
+      "stdout": "patch-diff-check.stdout.log",
+      "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "patch-diff-check.stderr.log",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

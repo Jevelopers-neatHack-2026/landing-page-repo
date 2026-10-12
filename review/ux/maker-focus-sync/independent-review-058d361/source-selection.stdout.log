@@ -1,0 +1,83 @@
+✔ maker navigation synchronizes an in-range inert board without animation frames (3.840572ms)
+✔ native smooth-scroll arrival activates and focuses the maker while rendering frames are paused (1.053213ms)
+✔ continuing native scroll can reach the maker after the former absolute focus timeout (1.027254ms)
+✔ the idle deadline samples reached geometry before expiring a pending focus request (1.29723ms)
+✔ an off-wall idle request expires without exposing or focusing the maker (0.990589ms)
+✔ wheel cancels pending maker focus without preventing native input (0.839802ms)
+✔ touchstart cancels pending maker focus without preventing native input (0.639151ms)
+✔ pointerdown cancels pending maker focus without preventing native input (0.815836ms)
+✔ keydown cancels pending maker focus without preventing native input (0.801034ms)
+✔ a newer maker activation owns one pending focus and cleans up after success (0.907174ms)
+✔ a different native anchor cancels the old maker focus request (0.75816ms)
+✖ native board synchronization keeps manual scrolling accessible without requesting focus (10.991851ms)
+✔ wheel keeps moving forward/backward after the 3D loop exits on context loss (3.610367ms)
+✔ an animation exception cannot strand wheel input and starts readable static art (0.870288ms)
+✔ display-only rail tracks native scrolling/resizing without rendering frames (0.833783ms)
+✔ rail is decorative and passes pointer input through (0.386962ms)
+✔ switching to static art restores scene copy hidden by an interrupted 3D frame (0.766292ms)
+✔ native navigation reaches scenes and maker, with reduced motion false (8.960823ms)
+✔ native navigation reaches scenes and maker, with reduced motion true (1.083138ms)
+✔ user wheel input cancels pending maker focus (1.215818ms)
+✔ seamless hero wrap uses an immediate native jump (5.989191ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 20
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 251.376008
+
+✖ failing tests:
+
+test at tests/maker-focus.test.mjs:179:1
+✖ native board synchronization keeps manual scrolling accessible without requesting focus (10.991851ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  true !== false
+  
+      at TestContext.<anonymous> (file:///tmp/lp-independent-source-selection-gTlz5J/tests/maker-focus.test.mjs:182:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+✔ maker navigation synchronizes an in-range inert board without animation frames (2.632687ms)
+✔ native smooth-scroll arrival activates and focuses the maker while rendering frames are paused (0.940664ms)
+✔ continuing native scroll can reach the maker after the former absolute focus timeout (0.923929ms)
+✔ the idle deadline samples reached geometry before expiring a pending focus request (0.788095ms)
+✔ an off-wall idle request expires without exposing or focusing the maker (1.413965ms)
+✔ wheel cancels pending maker focus without preventing native input (0.882146ms)
+✔ touchstart cancels pending maker focus without preventing native input (1.757152ms)
+✔ pointerdown cancels pending maker focus without preventing native input (1.842049ms)
+✔ keydown cancels pending maker focus without preventing native input (2.699648ms)
+✔ a newer maker activation owns one pending focus and cleans up after success (2.733338ms)
+✔ a different native anchor cancels the old maker focus request (3.351557ms)
+✔ native board synchronization keeps manual scrolling accessible without requesting focus (2.345726ms)
+✔ wheel keeps moving forward/backward after the 3D loop exits on context loss (2.410954ms)
+✔ an animation exception cannot strand wheel input and starts readable static art (0.837248ms)
+✔ display-only rail tracks native scrolling/resizing without rendering frames (0.708004ms)
+✔ rail is decorative and passes pointer input through (0.396526ms)
+✔ switching to static art restores scene copy hidden by an interrupted 3D frame (0.738731ms)
+✔ native navigation reaches scenes and maker, with reduced motion false (1.399904ms)
+✔ native navigation reaches scenes and maker, with reduced motion true (0.727043ms)
+✔ user wheel input cancels pending maker focus (0.85819ms)
+✔ seamless hero wrap uses an immediate native jump (0.649807ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 21
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 115.491947
+ux: source checks and actual-handler VM scroll tests passed; 5 source-review/evidence-boundary items; browser receipts not evaluated by this adapter; WCAG/lab performance not certified
+INDEPENDENT_SOURCE_SELECTION_RESULT {"runtime":"v24.15.0","mode":"synthetic changed-source artifact and actual UX dispatcher, with/without explicit old-control HTML override","rows":[{"override":false,"overrideSource":null,"returned":null,"error":"Actual-source scroll/fallback regressions failed"},{"override":true,"overrideSource":"/workspace/scratch/f79c57b98c5b/maker-focus-independent-review/site/index.html","returned":{"status":"PASS_DRAFT","anchors":16,"headings":10,"buttons":5,"inputs":1,"findings":["document-heading-before-h1","footer-heading-level-review","maker-outside-main-landmark","browser-manual-accessibility-performance-evidence-not-evaluated-by-source-vm-adapter","no-js-visibility-evidence-not-evaluated-by-source-vm-adapter"],"pageSha256":"6637f316e9018fa5758f4a5996428f7e508d849b50aa1fb29a14111ccb032e95"},"error":null}],"cleanSourceSha256":"c92ab9f83dff2b15457617797147e7b7e2063cd1a7395a12bbab357d215df01a","brokenSourceSha256":"6637f316e9018fa5758f4a5996428f7e508d849b50aa1fb29a14111ccb032e95"}

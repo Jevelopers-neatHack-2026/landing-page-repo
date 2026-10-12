@@ -1,0 +1,88 @@
+[
+  {
+    "label": "final-focused-ux",
+    "mode": "local source/build/VM checks; no browser or external requests",
+    "command": [
+      "/workspace/scratch/41d02a12a55b/task-state/toolchains/node24/node_modules/node/bin/node",
+      "--test",
+      "tests/maker-focus.test.mjs",
+      "tests/scroll.test.mjs",
+      "tests/ux.test.mjs"
+    ],
+    "cwd": "/workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a",
+    "startedAt": "2026-10-12T17:29:25.536093+00:00",
+    "completedAt": "2026-10-12T17:29:26.050329+00:00",
+    "exitCode": 0,
+    "sourceRevision": "058d3617e16c0fe434153608b74f5403ffdc5556",
+    "pageSha256": "c92ab9f83dff2b15457617797147e7b7e2063cd1a7395a12bbab357d215df01a",
+    "logs": {
+      "final-focused-ux.stdout.log": "792ea10530b190b54c588a6a356278a2d861dc53d83069d25a20e64012b15820",
+      "final-focused-ux.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "label": "ux-draft",
+    "mode": "local source/build/VM checks; no browser or external requests",
+    "command": [
+      "/workspace/scratch/41d02a12a55b/task-state/toolchains/node24/node_modules/node/bin/node",
+      "scripts/validate-landing",
+      "--suite",
+      "ux",
+      "--mode",
+      "draft"
+    ],
+    "cwd": "/workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a",
+    "startedAt": "2026-10-12T17:29:26.050886+00:00",
+    "completedAt": "2026-10-12T17:29:26.347543+00:00",
+    "exitCode": 0,
+    "sourceRevision": "058d3617e16c0fe434153608b74f5403ffdc5556",
+    "pageSha256": "c92ab9f83dff2b15457617797147e7b7e2063cd1a7395a12bbab357d215df01a",
+    "logs": {
+      "ux-draft.stdout.log": "5df7c6fac1963e13a8a0a5bb38316a35fc7c48f2a942478319f6a38a9ac58462",
+      "ux-draft.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "label": "ux-release",
+    "mode": "local source/build/VM checks; no browser or external requests",
+    "command": [
+      "/workspace/scratch/41d02a12a55b/task-state/toolchains/node24/node_modules/node/bin/node",
+      "scripts/validate-landing",
+      "--suite",
+      "ux",
+      "--mode",
+      "release"
+    ],
+    "cwd": "/workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a",
+    "startedAt": "2026-10-12T17:29:26.347902+00:00",
+    "completedAt": "2026-10-12T17:29:26.626821+00:00",
+    "exitCode": 1,
+    "sourceRevision": "058d3617e16c0fe434153608b74f5403ffdc5556",
+    "pageSha256": "c92ab9f83dff2b15457617797147e7b7e2063cd1a7395a12bbab357d215df01a",
+    "logs": {
+      "ux-release.stdout.log": "b263936848d2ed68248a7bc928c26d9aa117438cde08e176c9ea2e3d47a11d3c",
+      "ux-release.stderr.log": "bd32000112c17e5ac88d22ed22c968b5bfcedcb3f532c63dfd958ff64f83ee53"
+    }
+  },
+  {
+    "label": "final-diff-check",
+    "mode": "local source/build/VM checks; no browser or external requests",
+    "command": [
+      "git",
+      "diff",
+      "--check",
+      "ee16f8a49e5039ee8d41d3fb0a0be9aeb4b98ec5",
+      "--"
+    ],
+    "cwd": "/workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a",
+    "startedAt": "2026-10-12T17:29:26.627120+00:00",
+    "completedAt": "2026-10-12T17:29:26.633006+00:00",
+    "exitCode": 0,
+    "sourceRevision": "058d3617e16c0fe434153608b74f5403ffdc5556",
+    "pageSha256": "c92ab9f83dff2b15457617797147e7b7e2063cd1a7395a12bbab357d215df01a",
+    "logs": {
+      "final-diff-check.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "final-diff-check.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+]

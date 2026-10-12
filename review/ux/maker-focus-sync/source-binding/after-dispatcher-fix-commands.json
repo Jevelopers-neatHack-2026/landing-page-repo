@@ -1,0 +1,139 @@
+{
+  "mode": "source and actual-handler VM checks; required browser/owner acceptance remains separate",
+  "runtime": "v24.15.0",
+  "cwd": "/workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a",
+  "baseRevision": "058d3617e16c0fe434153608b74f5403ffdc5556",
+  "workingTreeChanges": [
+    "scripts/suites/ux.mjs: scrub dedicated baseline controls",
+    "tests/ux.test.mjs: two actual built-source binding negatives"
+  ],
+  "files": {
+    "site/index.html": "c92ab9f83dff2b15457617797147e7b7e2063cd1a7395a12bbab357d215df01a",
+    "scripts/suites/ux.mjs": "6476391d08cb0318425c18ff95154bb2a890e3f1758d2360b5f5f117618412aa",
+    "tests/ux.test.mjs": "6c50e083660b830e5a8983a0e12d186c0b4dd5e7cb347ed9fe30263a91714311"
+  },
+  "runs": [
+    {
+      "name": "after-dispatcher-fix-focused",
+      "argv": [
+        "/workspace/scratch/41d02a12a55b/task-state/toolchains/node24/node_modules/node/bin/node",
+        "--test",
+        "tests/maker-focus.test.mjs",
+        "tests/scroll.test.mjs",
+        "tests/ux.test.mjs"
+      ],
+      "startedAt": "2026-10-12T17:36:45.413574+00:00",
+      "finishedAt": "2026-10-12T17:36:46.588262+00:00",
+      "exitCode": 0,
+      "logs": {
+        "stdout": {
+          "path": "/workspace/scratch/f79c57b98c5b/maker-focus-source-binding-20261012/after-dispatcher-fix-focused.stdout.log",
+          "bytes": 11499,
+          "sha256": "1c6ecb34ff72de756bf3a8d8c11badce977fc9845765344cf081aa3d0151034a"
+        },
+        "stderr": {
+          "path": "/workspace/scratch/f79c57b98c5b/maker-focus-source-binding-20261012/after-dispatcher-fix-focused.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "name": "after-dispatcher-fix-build",
+      "argv": [
+        "/workspace/scratch/41d02a12a55b/task-state/toolchains/node24/node_modules/node/bin/node",
+        "scripts/build.mjs"
+      ],
+      "startedAt": "2026-10-12T17:36:46.588426+00:00",
+      "finishedAt": "2026-10-12T17:36:46.688533+00:00",
+      "exitCode": 0,
+      "logs": {
+        "stdout": {
+          "path": "/workspace/scratch/f79c57b98c5b/maker-focus-source-binding-20261012/after-dispatcher-fix-build.stdout.log",
+          "bytes": 35,
+          "sha256": "c005ef06372299c25d7799129dbf09098a9aebb7deb7c2f3c034e0d67b0869b4"
+        },
+        "stderr": {
+          "path": "/workspace/scratch/f79c57b98c5b/maker-focus-source-binding-20261012/after-dispatcher-fix-build.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "name": "after-dispatcher-fix-ux-draft",
+      "argv": [
+        "/workspace/scratch/41d02a12a55b/task-state/toolchains/node24/node_modules/node/bin/node",
+        "scripts/check.mjs",
+        "--suite",
+        "ux",
+        "--mode",
+        "draft"
+      ],
+      "startedAt": "2026-10-12T17:36:46.688585+00:00",
+      "finishedAt": "2026-10-12T17:36:46.758873+00:00",
+      "exitCode": 1,
+      "logs": {
+        "stdout": {
+          "path": "/workspace/scratch/f79c57b98c5b/maker-focus-source-binding-20261012/after-dispatcher-fix-ux-draft.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": "/workspace/scratch/f79c57b98c5b/maker-focus-source-binding-20261012/after-dispatcher-fix-ux-draft.stderr.log",
+          "bytes": 785,
+          "sha256": "d53abf516ae3955084a5d66e65bcb020e8af06a0913c3479bf485b8035101db9"
+        }
+      }
+    },
+    {
+      "name": "after-dispatcher-fix-ux-release",
+      "argv": [
+        "/workspace/scratch/41d02a12a55b/task-state/toolchains/node24/node_modules/node/bin/node",
+        "scripts/check.mjs",
+        "--suite",
+        "ux",
+        "--mode",
+        "release"
+      ],
+      "startedAt": "2026-10-12T17:36:46.758937+00:00",
+      "finishedAt": "2026-10-12T17:36:46.812231+00:00",
+      "exitCode": 1,
+      "logs": {
+        "stdout": {
+          "path": "/workspace/scratch/f79c57b98c5b/maker-focus-source-binding-20261012/after-dispatcher-fix-ux-release.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": "/workspace/scratch/f79c57b98c5b/maker-focus-source-binding-20261012/after-dispatcher-fix-ux-release.stderr.log",
+          "bytes": 785,
+          "sha256": "d53abf516ae3955084a5d66e65bcb020e8af06a0913c3479bf485b8035101db9"
+        }
+      }
+    },
+    {
+      "name": "after-dispatcher-fix-diff",
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "startedAt": "2026-10-12T17:36:46.812284+00:00",
+      "finishedAt": "2026-10-12T17:36:46.815994+00:00",
+      "exitCode": 0,
+      "logs": {
+        "stdout": {
+          "path": "/workspace/scratch/f79c57b98c5b/maker-focus-source-binding-20261012/after-dispatcher-fix-diff.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": "/workspace/scratch/f79c57b98c5b/maker-focus-source-binding-20261012/after-dispatcher-fix-diff.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    }
+  ]
+}

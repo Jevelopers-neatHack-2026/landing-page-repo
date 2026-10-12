@@ -1,0 +1,1 @@
+FAIL ux: UX release blocked: source/VM adapter does not evaluate browser viewport, keyboard, reduced-motion/failure or no-JavaScript receipts; manual accessibility and three-run performance evidence still require validation; see review/ux/README.md

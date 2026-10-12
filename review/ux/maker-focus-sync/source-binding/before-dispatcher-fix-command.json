@@ -1,0 +1,35 @@
+{
+  "phase": "New negative tests before dispatcher fix",
+  "mode": "actual UX draft dispatcher over synthetic real-built candidates; static/VM tests only",
+  "argv": [
+    "/workspace/scratch/41d02a12a55b/task-state/toolchains/node24/node_modules/node/bin/node",
+    "--test",
+    "tests/ux.test.mjs"
+  ],
+  "runtime": "v24.15.0",
+  "cwd": "/workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a",
+  "baseRevision": "058d3617e16c0fe434153608b74f5403ffdc5556",
+  "workingTreeChanges": [
+    "tests/ux.test.mjs new negative regressions; dispatcher unchanged from 058d3617"
+  ],
+  "startedAt": "2026-10-12T17:36:29.165441+00:00",
+  "finishedAt": "2026-10-12T17:36:30.470798+00:00",
+  "exitCode": 1,
+  "files": {
+    "site/index.html": "c92ab9f83dff2b15457617797147e7b7e2063cd1a7395a12bbab357d215df01a",
+    "scripts/suites/ux.mjs": "6cd8ffe11b154ffeb8ceacccf193393416be4d4199ef7ff64a6699716aa27bca",
+    "tests/ux.test.mjs": "6c50e083660b830e5a8983a0e12d186c0b4dd5e7cb347ed9fe30263a91714311"
+  },
+  "logs": {
+    "stdout": {
+      "path": "/workspace/scratch/f79c57b98c5b/maker-focus-source-binding-20261012/before-dispatcher-fix.stdout.log",
+      "bytes": 9537,
+      "sha256": "6869c04dbc35f6f5e5575b141622103435f5378d2ec00a83c595d97a0b44770d"
+    },
+    "stderr": {
+      "path": "/workspace/scratch/f79c57b98c5b/maker-focus-source-binding-20261012/before-dispatcher-fix.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

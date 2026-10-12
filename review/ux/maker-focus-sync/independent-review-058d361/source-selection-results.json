@@ -1,0 +1,34 @@
+{
+  "runtime": "v24.15.0",
+  "mode": "synthetic changed-source artifact and actual UX dispatcher, with/without explicit old-control HTML override",
+  "rows": [
+    {
+      "override": false,
+      "overrideSource": null,
+      "returned": null,
+      "error": "Actual-source scroll/fallback regressions failed"
+    },
+    {
+      "override": true,
+      "overrideSource": "/workspace/scratch/f79c57b98c5b/maker-focus-independent-review/site/index.html",
+      "returned": {
+        "status": "PASS_DRAFT",
+        "anchors": 16,
+        "headings": 10,
+        "buttons": 5,
+        "inputs": 1,
+        "findings": [
+          "document-heading-before-h1",
+          "footer-heading-level-review",
+          "maker-outside-main-landmark",
+          "browser-manual-accessibility-performance-evidence-not-evaluated-by-source-vm-adapter",
+          "no-js-visibility-evidence-not-evaluated-by-source-vm-adapter"
+        ],
+        "pageSha256": "6637f316e9018fa5758f4a5996428f7e508d849b50aa1fb29a14111ccb032e95"
+      },
+      "error": null
+    }
+  ],
+  "cleanSourceSha256": "c92ab9f83dff2b15457617797147e7b7e2063cd1a7395a12bbab357d215df01a",
+  "brokenSourceSha256": "6637f316e9018fa5758f4a5996428f7e508d849b50aa1fb29a14111ccb032e95"
+}

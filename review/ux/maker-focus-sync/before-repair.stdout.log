@@ -1,0 +1,353 @@
+✖ maker navigation synchronizes an in-range inert board without animation frames (4.968346ms)
+✖ native smooth-scroll arrival activates and focuses the maker while rendering frames are paused (1.458461ms)
+✖ continuing native scroll can reach the maker after the former absolute focus timeout (1.238692ms)
+✖ the idle deadline samples reached geometry before expiring a pending focus request (1.213413ms)
+✖ an off-wall idle request expires without exposing or focusing the maker (1.248285ms)
+✖ wheel cancels pending maker focus without preventing native input (1.069267ms)
+✖ touchstart cancels pending maker focus without preventing native input (0.995836ms)
+✖ pointerdown cancels pending maker focus without preventing native input (0.891519ms)
+✖ keydown cancels pending maker focus without preventing native input (0.993874ms)
+✖ a newer maker activation owns one pending focus and cleans up after success (1.366723ms)
+✖ a different native anchor cancels the old maker focus request (1.097018ms)
+✖ native board synchronization keeps manual scrolling accessible without requesting focus (0.992331ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 0
+ℹ fail 12
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 156.868964
+
+✖ failing tests:
+
+test at tests/maker-focus.test.mjs:100:1
+✖ maker navigation synchronizes an in-range inert board without animation frames (4.968346ms)
+  AssertionError [ERR_ASSERTION]: Native field focus follows actual board geometry
+  + actual - expected
+  
+    {
+  +   addEventListener: [Function: addEventListener],
+  +   getAttribute: [Function: getAttribute],
+  +   tagName: 'A'
+  -   classList: {
+  -     add: [Function: add],
+  -     contains: [Function: contains],
+  -     remove: [Function: remove],
+  -     toggle: [Function: toggle]
+  -   },
+  -   focus: [Function (anonymous)],
+  -   hidden: true,
+  -   inert: false,
+  -   textContent: ''
+    }
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/maker-focus.test.mjs:104:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.start (node:internal/test_runner/test:1096:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: [Object],
+    expected: [Object],
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/maker-focus.test.mjs:112:1
+✖ native smooth-scroll arrival activates and focuses the maker while rendering frames are paused (1.458461ms)
+  AssertionError [ERR_ASSERTION]: Expected "actual" to be reference-equal to "expected":
+  + actual - expected
+  
+    {
+  +   addEventListener: [Function: addEventListener],
+  +   getAttribute: [Function: getAttribute],
+  +   tagName: 'A'
+  -   classList: {
+  -     add: [Function: add],
+  -     contains: [Function: contains],
+  -     remove: [Function: remove],
+  -     toggle: [Function: toggle]
+  -   },
+  -   focus: [Function (anonymous)],
+  -   hidden: true,
+  -   inert: false,
+  -   textContent: ''
+    }
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/maker-focus.test.mjs:118:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [Object],
+    expected: [Object],
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/maker-focus.test.mjs:122:1
+✖ continuing native scroll can reach the maker after the former absolute focus timeout (1.238692ms)
+  AssertionError [ERR_ASSERTION]: An active native navigation is not expired by delayed renderer frames
+  + actual - expected
+  
+    {
+  +   addEventListener: [Function: addEventListener],
+  +   getAttribute: [Function: getAttribute],
+  +   tagName: 'A'
+  -   classList: {
+  -     add: [Function: add],
+  -     contains: [Function: contains],
+  -     remove: [Function: remove],
+  -     toggle: [Function: toggle]
+  -   },
+  -   focus: [Function (anonymous)],
+  -   hidden: true,
+  -   inert: false,
+  -   textContent: ''
+    }
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/maker-focus.test.mjs:127:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: [Object],
+    expected: [Object],
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/maker-focus.test.mjs:131:1
+✖ the idle deadline samples reached geometry before expiring a pending focus request (1.213413ms)
+  AssertionError [ERR_ASSERTION]: Expected "actual" to be reference-equal to "expected":
+  + actual - expected
+  
+    {
+  +   addEventListener: [Function: addEventListener],
+  +   getAttribute: [Function: getAttribute],
+  +   tagName: 'A'
+  -   classList: {
+  -     add: [Function: add],
+  -     contains: [Function: contains],
+  -     remove: [Function: remove],
+  -     toggle: [Function: toggle]
+  -   },
+  -   focus: [Function (anonymous)],
+  -   hidden: true,
+  -   inert: false,
+  -   textContent: ''
+    }
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/maker-focus.test.mjs:136:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [Object],
+    expected: [Object],
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/maker-focus.test.mjs:140:1
+✖ an off-wall idle request expires without exposing or focusing the maker (1.248285ms)
+  AssertionError [ERR_ASSERTION]: No abandoned wheel focus listener remains
+  
+  1 !== 0
+  
+      at Object.assertClean (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/maker-focus.test.mjs:95:55)
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/maker-focus.test.mjs:146:5)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/maker-focus.test.mjs:152:3
+✖ wheel cancels pending maker focus without preventing native input (1.069267ms)
+  AssertionError [ERR_ASSERTION]: No abandoned touchstart focus listener remains
+  
+  1 !== 0
+  
+      at Object.assertClean (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/maker-focus.test.mjs:95:55)
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/maker-focus.test.mjs:159:7)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/maker-focus.test.mjs:152:3
+✖ touchstart cancels pending maker focus without preventing native input (0.995836ms)
+  AssertionError [ERR_ASSERTION]: No abandoned wheel focus listener remains
+  
+  1 !== 0
+  
+      at Object.assertClean (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/maker-focus.test.mjs:95:55)
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/maker-focus.test.mjs:159:7)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/maker-focus.test.mjs:152:3
+✖ pointerdown cancels pending maker focus without preventing native input (0.891519ms)
+  AssertionError [ERR_ASSERTION]: No abandoned wheel focus listener remains
+  
+  1 !== 0
+  
+      at Object.assertClean (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/maker-focus.test.mjs:95:55)
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/maker-focus.test.mjs:159:7)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/maker-focus.test.mjs:152:3
+✖ keydown cancels pending maker focus without preventing native input (0.993874ms)
+  AssertionError [ERR_ASSERTION]: No abandoned wheel focus listener remains
+  
+  1 !== 0
+  
+      at Object.assertClean (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/maker-focus.test.mjs:95:55)
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/maker-focus.test.mjs:159:7)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/maker-focus.test.mjs:163:1
+✖ a newer maker activation owns one pending focus and cleans up after success (1.366723ms)
+  AssertionError [ERR_ASSERTION]: Expected "actual" to be reference-equal to "expected":
+  + actual - expected
+  
+    {
+  +   addEventListener: [Function: addEventListener],
+  +   getAttribute: [Function: getAttribute],
+  +   tagName: 'A'
+  -   classList: {
+  -     add: [Function: add],
+  -     contains: [Function: contains],
+  -     remove: [Function: remove],
+  -     toggle: [Function: toggle]
+  -   },
+  -   focus: [Function (anonymous)],
+  -   hidden: true,
+  -   inert: false,
+  -   textContent: ''
+    }
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/maker-focus.test.mjs:166:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [Object],
+    expected: [Object],
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/maker-focus.test.mjs:171:1
+✖ a different native anchor cancels the old maker focus request (1.097018ms)
+  AssertionError [ERR_ASSERTION]: No abandoned wheel focus listener remains
+  
+  1 !== 0
+  
+      at Object.assertClean (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/maker-focus.test.mjs:95:55)
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/maker-focus.test.mjs:176:5)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/maker-focus.test.mjs:179:1
+✖ native board synchronization keeps manual scrolling accessible without requesting focus (0.992331ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  true !== false
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/maker-focus.test.mjs:182:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

@@ -1,0 +1,76 @@
+✔ maker navigation synchronizes an in-range inert board without animation frames (2.672289ms)
+✔ native smooth-scroll arrival activates and focuses the maker while rendering frames are paused (0.962328ms)
+✔ continuing native scroll can reach the maker after the former absolute focus timeout (0.907825ms)
+✔ the idle deadline samples reached geometry before expiring a pending focus request (0.736818ms)
+✔ an off-wall idle request expires without exposing or focusing the maker (0.721555ms)
+✔ wheel cancels pending maker focus without preventing native input (0.802927ms)
+✔ touchstart cancels pending maker focus without preventing native input (0.628335ms)
+✔ pointerdown cancels pending maker focus without preventing native input (0.566382ms)
+✔ keydown cancels pending maker focus without preventing native input (0.694144ms)
+✔ a newer maker activation owns one pending focus and cleans up after success (0.902166ms)
+✔ a different native anchor cancels the old maker focus request (1.081807ms)
+✔ native board synchronization keeps manual scrolling accessible without requesting focus (1.74178ms)
+✔ wheel keeps moving forward/backward after the 3D loop exits on context loss (3.135156ms)
+✔ an animation exception cannot strand wheel input and starts readable static art (0.982347ms)
+✔ display-only rail tracks native scrolling/resizing without rendering frames (0.910389ms)
+✔ rail is decorative and passes pointer input through (0.439571ms)
+✔ switching to static art restores scene copy hidden by an interrupted 3D frame (0.991932ms)
+✔ native navigation reaches scenes and maker, with reduced motion false (2.151015ms)
+✔ native navigation reaches scenes and maker, with reduced motion true (0.944671ms)
+✔ user wheel input cancels pending maker focus (1.374117ms)
+✔ seamless hero wrap uses an immediate native jump (1.055327ms)
+✔ actual MVP source has valid static anchors, named controls and a coherent main heading sequence (7.850877ms)
+✔ missing anchor targets reject the actual source fixture (3.115916ms)
+✔ duplicate static IDs fail, including the CTA target (1.193134ms)
+✔ empty link names fail even when its target exists (0.927395ms)
+✔ a visible link without destination fails (1.048787ms)
+✔ duplicate h1 cannot pass a heading count check (1.209749ms)
+✔ main heading jumps fail while existing whole-document review remains pending (2.418528ms)
+✔ empty heading names fail (1.141737ms)
+✔ missing named navigation or main landmark fails (2.073859ms)
+✔ preview input needs a real label, not only a placeholder (1.430872ms)
+✔ missing description target fails (1.339855ms)
+✔ empty example button name fails (1.136389ms)
+✔ missing focus or reduced-motion source hook fails without asserting browser behavior (2.678077ms)
+✔ static explanation survives removing media and executable code as text evidence only (3.658793ms)
+✔ image alternatives and media-independent explanation cannot be silently removed (2.600261ms)
+✔ local group and non-submitting button remain compatible with a deferred external destination (2.369894ms)
+✔ maker navigation synchronizes an in-range inert board without animation frames (3.450509ms)
+✔ native smooth-scroll arrival activates and focuses the maker while rendering frames are paused (0.940194ms)
+✔ continuing native scroll can reach the maker after the former absolute focus timeout (1.128728ms)
+✔ the idle deadline samples reached geometry before expiring a pending focus request (0.750108ms)
+✔ an off-wall idle request expires without exposing or focusing the maker (0.72498ms)
+✔ wheel cancels pending maker focus without preventing native input (0.79109ms)
+✔ touchstart cancels pending maker focus without preventing native input (0.627423ms)
+✔ pointerdown cancels pending maker focus without preventing native input (0.839262ms)
+✔ keydown cancels pending maker focus without preventing native input (0.756548ms)
+✔ a newer maker activation owns one pending focus and cleans up after success (0.821475ms)
+✔ a different native anchor cancels the old maker focus request (0.704249ms)
+✔ native board synchronization keeps manual scrolling accessible without requesting focus (1.770373ms)
+✔ wheel keeps moving forward/backward after the 3D loop exits on context loss (2.563436ms)
+✔ an animation exception cannot strand wheel input and starts readable static art (0.865261ms)
+✔ display-only rail tracks native scrolling/resizing without rendering frames (0.726913ms)
+✔ rail is decorative and passes pointer input through (0.371659ms)
+✔ switching to static art restores scene copy hidden by an interrupted 3D frame (0.770108ms)
+✔ native navigation reaches scenes and maker, with reduced motion false (2.67271ms)
+✔ native navigation reaches scenes and maker, with reduced motion true (0.710549ms)
+✔ user wheel input cancels pending maker focus (0.745502ms)
+✔ seamless hero wrap uses an immediate native jump (0.734765ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 21
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 117.347872
+ux: source checks and actual-handler VM scroll tests passed; 5 source-review/evidence-boundary items; browser receipts not evaluated by this adapter; WCAG/lab performance not certified
+✔ real built artifact cannot claim UX release from local source checks alone (286.387329ms)
+ℹ tests 38
+ℹ suites 0
+ℹ pass 38
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 439.605398
