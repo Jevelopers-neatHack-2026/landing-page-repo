@@ -809,7 +809,10 @@ window.TS = (() => {
   }
   function paint(st, d){
     st.style.setProperty('--c1', d.c1); st.style.setProperty('--c2', d.c2);
-    st.setAttribute('aria-label', `${d.a}${d.b ? ' vs ' + d.b : ''} stub. Press to flip it over.`);
+    // Keep the button's accessible name in sync with its visible ticket face.
+    // A shortened aria-label omitted visible words and broke label-in-name.
+    st.removeAttribute('aria-label');
+    st.setAttribute('title', 'Press to flip it over.');
     st.innerHTML = inner(d);
   }
   function card(d){
