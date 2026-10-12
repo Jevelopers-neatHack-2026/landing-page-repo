@@ -1,0 +1,28 @@
+{
+  "schema": "ticketstub.browser-runtime/1",
+  "playwrightVersion": "1.62.1",
+  "artifacts": {
+    "playwrightPackage": {
+      "path": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/package.json",
+      "bytes": 1416,
+      "sha256": "ca170ec143a88ed3043ac953eb3b2377b2b97304104f4e1e23316684ce2c35af"
+    },
+    "chromiumExecutable": {
+      "path": "/workspace/scratch/f79c57b98c5b/browser-runtime/chromium",
+      "bytes": 209022176,
+      "sha256": "53a15d6c3a3d27dfb54c4ba60278b1683136f70cf1e67e989da7dfbd3d451ef0"
+    },
+    "nodeExecutable": {
+      "path": "/workspace/scratch/41d02a12a55b/task-state/toolchains/node24/node_modules/node/bin/node",
+      "bytes": 122889056,
+      "sha256": "d1de76d8edf2fededf6f8b30d244e2c0529ac607923a018283b77e9c74bd932c"
+    },
+    "commandRecorder": {
+      "path": "/workspace/scratch/f79c57b98c5b/run-browser-command.py",
+      "bytes": 2619,
+      "sha256": "c832dcfa18b643328d7c6bc6094d02a41e08ec4668ac9c44696244a7f5dc7573"
+    }
+  },
+  "mode": "local-browser-emulated-input",
+  "nodeVersion": "v24.15.0"
+}

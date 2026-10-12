@@ -1,0 +1,41 @@
+{
+  "schema": "ticketstub.browser-command/1",
+  "revision": "9fec9e5747a2974c4152cd22a6c57fb8be7ba5f2",
+  "command": [
+    "/workspace/scratch/41d02a12a55b/task-state/toolchains/node24/node_modules/node/bin/node",
+    "/workspace/scratch/f79c57b98c5b/final-browser-11d370a/scripts/check-scroll-browser.mjs",
+    "--repository",
+    "/workspace/scratch/f79c57b98c5b/scroll-baseline",
+    "--output",
+    "/workspace/scratch/f79c57b98c5b/browser-original-9fec-final-negative-01/observations",
+    "--capture",
+    "none",
+    "--scenario",
+    "context-loss"
+  ],
+  "cwd": "/workspace/scratch/f79c57b98c5b/final-browser-11d370a",
+  "node": "v24.15.0",
+  "mode": "local-browser-emulated-input",
+  "startedAt": "2026-10-12T18:19:04.672318+00:00",
+  "result": "FAIL",
+  "environment": {
+    "playwrightModule": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.mjs",
+    "chromiumExecutable": "/workspace/scratch/f79c57b98c5b/browser-runtime/chromium",
+    "transport": "existing-environment-proxy",
+    "additionalCATrust": "present-public-key-pins-only",
+    "fontconfigFileOverride": "absent",
+    "libraryPathOverride": "absent"
+  },
+  "completedAt": "2026-10-12T18:19:46.911970+00:00",
+  "exitCode": 1,
+  "streams": {
+    "stdout.log": {
+      "sha256": "43f16b4399bb4244eeeff0232f1e0961eec6e1286f2cac784a63308934528c6a",
+      "bytes": 112
+    },
+    "stderr.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  }
+}

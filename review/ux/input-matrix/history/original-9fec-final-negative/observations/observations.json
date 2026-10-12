@@ -1,0 +1,885 @@
+{
+  "schema": "ticketstub.browser-scroll-observation/1",
+  "startedAt": "2026-10-12T18:19:05.045Z",
+  "sourceRevision": "9fec9e5747a2974c4152cd22a6c57fb8be7ba5f2",
+  "harnessRevision": "11d370af6bced7b2b4bad48e54e10e97bf2b79f6",
+  "harnessSha256": "16f88f3ef82e29f7c4fc698c4a66b0de735a00b05f44d83023c566b51c0e7ea4",
+  "artifactManifestSha256": "6a851fd35fb30eae42a33be2ee4d27980f0a34f15bfc17a6d0e2789316cfc5ba",
+  "pageSha256": "8882d7587ed0cd2305a92016643da082275429da16be0912a918d1c0cb4edd20",
+  "mode": "local-browser-emulated-input",
+  "screenshotCapture": "none",
+  "platform": {
+    "os": "linux",
+    "release": "6.18.44",
+    "arch": "x64",
+    "node": "v24.15.0"
+  },
+  "limitations": [
+    "Headless Chromium; no physical wheel, trackpad, scrollbar or touch device attestation.",
+    "Software WebGL where available; not GPU/device performance evidence.",
+    "No screen-reader, native text-zoom, WCAG or public deployment acceptance.",
+    "Only the local page and its existing static CDN/font resources are loaded; studio navigation is not executed."
+  ],
+  "scenarios": [
+    {
+      "name": "context-loss",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "results": [
+        {
+          "label": "wheel-before-context-loss",
+          "input": "wheel-before-context-loss",
+          "before": {
+            "scrollY": 2087,
+            "innerWidth": 1440,
+            "innerHeight": 900,
+            "clientWidth": 1425,
+            "scrollHeight": 28997,
+            "rootClasses": "ready lenis",
+            "activeId": "",
+            "activeTag": "A",
+            "railPointerEvents": "auto",
+            "railProgress": "0.0743",
+            "makerScroll": 0,
+            "progress": 100,
+            "readyState": "complete",
+            "visible": "visible",
+            "hasFocus": true
+          },
+          "after": {
+            "scrollY": 2347,
+            "innerWidth": 1440,
+            "innerHeight": 900,
+            "clientWidth": 1425,
+            "scrollHeight": 28997,
+            "rootClasses": "ready lenis lenis-scrolling lenis-smooth",
+            "activeId": "",
+            "activeTag": "A",
+            "railPointerEvents": "auto",
+            "railProgress": "0.0835",
+            "makerScroll": 0,
+            "progress": 100,
+            "readyState": "complete",
+            "visible": "visible",
+            "hasFocus": true
+          },
+          "dispatch": {
+            "startedAtNodeMs": 13297.281604,
+            "resolvedAtNodeMs": 14069.664187
+          },
+          "observationWindowMs": 10000,
+          "receiptWithinFiveSeconds": true,
+          "receiptWithinWindow": true,
+          "movementWithinWindow": true,
+          "receiptObservedAtNodeMs": 14175.229175,
+          "movementObservedAtNodeMs": 14172.686581,
+          "cancellationRequired": false,
+          "wheelUncancelled": false,
+          "wheelReceipt": {
+            "phase": "wheel-before-context-loss",
+            "type": "wheel",
+            "atPageMs": 14056.89999999851,
+            "eventTimeStamp": 13286.5,
+            "trusted": true,
+            "cancelable": true,
+            "targetTag": "SECTION",
+            "targetId": "scenes",
+            "deltaX": 0,
+            "deltaY": 900,
+            "deltaMode": 0,
+            "defaultPreventedAfterDispatch": true
+          },
+          "result": "pass"
+        },
+        {
+          "label": "wheel-content-forward",
+          "input": "wheel-content-forward",
+          "before": {
+            "scrollY": 2987,
+            "innerWidth": 1440,
+            "innerHeight": 900,
+            "clientWidth": 1425,
+            "scrollHeight": 28997,
+            "rootClasses": "ready lenis no3d",
+            "activeId": "",
+            "activeTag": "A",
+            "railPointerEvents": "auto",
+            "railProgress": "0.1063",
+            "makerScroll": 0,
+            "progress": 100,
+            "readyState": "complete",
+            "visible": "visible",
+            "hasFocus": true
+          },
+          "after": {
+            "scrollY": 2987,
+            "innerWidth": 1440,
+            "innerHeight": 900,
+            "clientWidth": 1425,
+            "scrollHeight": 28997,
+            "rootClasses": "ready  no3d lenis lenis-scrolling lenis-smooth",
+            "activeId": "",
+            "activeTag": "A",
+            "railPointerEvents": "auto",
+            "railProgress": "0.1063",
+            "makerScroll": 0,
+            "progress": 100,
+            "readyState": "complete",
+            "visible": "visible",
+            "hasFocus": true
+          },
+          "dispatch": {
+            "startedAtNodeMs": 28658.095853000003,
+            "resolvedAtNodeMs": 28711.706714
+          },
+          "observationWindowMs": 10000,
+          "receiptWithinFiveSeconds": true,
+          "receiptWithinWindow": true,
+          "movementWithinWindow": false,
+          "receiptObservedAtNodeMs": 28826.088068,
+          "movementObservedAtNodeMs": null,
+          "cancellationRequired": true,
+          "wheelUncancelled": false,
+          "wheelReceipt": {
+            "phase": "wheel-content-forward",
+            "type": "wheel",
+            "atPageMs": 28690.099999999627,
+            "eventTimeStamp": 28647.89999999851,
+            "trusted": true,
+            "cancelable": true,
+            "targetTag": "svg",
+            "targetId": "",
+            "deltaX": 0,
+            "deltaY": 540,
+            "deltaMode": 0,
+            "defaultPreventedAfterDispatch": true
+          },
+          "result": "fail",
+          "error": "Directional native movement missing from the ten-second envelope or not maintained after settling"
+        }
+      ],
+      "console": [],
+      "requests": [
+        {
+          "url": "LOCAL_ORIGIN/",
+          "method": "GET",
+          "hasRequestBody": false,
+          "containsFictionalInput": false,
+          "resourceType": "document",
+          "disposition": "allowed"
+        },
+        {
+          "url": "https://fonts.googleapis.com/css2?[query-values-omitted]",
+          "method": "GET",
+          "hasRequestBody": false,
+          "containsFictionalInput": false,
+          "resourceType": "stylesheet",
+          "disposition": "allowed"
+        },
+        {
+          "url": "https://cdn.jsdelivr.net/npm/motion@11.11.17/dist/motion.js",
+          "method": "GET",
+          "hasRequestBody": false,
+          "containsFictionalInput": false,
+          "resourceType": "script",
+          "disposition": "allowed"
+        },
+        {
+          "url": "https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js",
+          "method": "GET",
+          "hasRequestBody": false,
+          "containsFictionalInput": false,
+          "resourceType": "script",
+          "disposition": "allowed"
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/intertight/v9/NGSwv5HMAFg6IuGlBNMjxLsH8ag.woff2",
+          "method": "GET",
+          "hasRequestBody": false,
+          "containsFictionalInput": false,
+          "resourceType": "font",
+          "disposition": "allowed"
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/fraunces/v38/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxC9TeA.woff2",
+          "method": "GET",
+          "hasRequestBody": false,
+          "containsFictionalInput": false,
+          "resourceType": "font",
+          "disposition": "allowed"
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/archivo/v25/k3kQo8UDI-1M0wlSfdnoLg.woff2",
+          "method": "GET",
+          "hasRequestBody": false,
+          "containsFictionalInput": false,
+          "resourceType": "font",
+          "disposition": "allowed"
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexmono/v20/-F6qfjptAgt5VM-kVkqdyU8n3twJwlBFgg.woff2",
+          "method": "GET",
+          "hasRequestBody": false,
+          "containsFictionalInput": false,
+          "resourceType": "font",
+          "disposition": "allowed"
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexmono/v20/-F6qfjptAgt5VM-kVkqdyU8n3vAOwlBFgg.woff2",
+          "method": "GET",
+          "hasRequestBody": false,
+          "containsFictionalInput": false,
+          "resourceType": "font",
+          "disposition": "allowed"
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexmono/v20/-F63fjptAgt5VM-kVkqdyU8n1i8q1w.woff2",
+          "method": "GET",
+          "hasRequestBody": false,
+          "containsFictionalInput": false,
+          "resourceType": "font",
+          "disposition": "allowed"
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/fraunces/v38/6NU58FyLNQOQZAnv9ZwNjucMHVn85Ni7emAe9lKqZTnbB-gzTK0K1ChjeveQ.woff2",
+          "method": "GET",
+          "hasRequestBody": false,
+          "containsFictionalInput": false,
+          "resourceType": "font",
+          "disposition": "allowed"
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/bigshouldersdisplay/v24/fC1_PZJEZG-e9gHhdI4-NBbfd2ys3SjJCx1czNDu.woff2",
+          "method": "GET",
+          "hasRequestBody": false,
+          "containsFictionalInput": false,
+          "resourceType": "font",
+          "disposition": "allowed"
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/archivo/v25/k3kSo8UDI-1M0wlSfdzYLGHE.woff2",
+          "method": "GET",
+          "hasRequestBody": false,
+          "containsFictionalInput": false,
+          "resourceType": "font",
+          "disposition": "allowed"
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/abrilfatface/v25/zOL64pLDlL1D99S8g8PtiKchq-dmjQ.woff2",
+          "method": "GET",
+          "hasRequestBody": false,
+          "containsFictionalInput": false,
+          "resourceType": "font",
+          "disposition": "allowed"
+        },
+        {
+          "url": "LOCAL_ORIGIN/assets/qb-clean.webp",
+          "method": "GET",
+          "hasRequestBody": false,
+          "containsFictionalInput": false,
+          "resourceType": "image",
+          "disposition": "allowed"
+        },
+        {
+          "url": "LOCAL_ORIGIN/assets/pitcher-clean.webp",
+          "method": "GET",
+          "hasRequestBody": false,
+          "containsFictionalInput": false,
+          "resourceType": "image",
+          "disposition": "allowed"
+        },
+        {
+          "url": "LOCAL_ORIGIN/assets/singer-clean.webp",
+          "method": "GET",
+          "hasRequestBody": false,
+          "containsFictionalInput": false,
+          "resourceType": "image",
+          "disposition": "allowed"
+        },
+        {
+          "url": "LOCAL_ORIGIN/assets/hoops-clean.webp",
+          "method": "GET",
+          "hasRequestBody": false,
+          "containsFictionalInput": false,
+          "resourceType": "image",
+          "disposition": "allowed"
+        },
+        {
+          "url": "LOCAL_ORIGIN/assets/keeper-clean.webp",
+          "method": "GET",
+          "hasRequestBody": false,
+          "containsFictionalInput": false,
+          "resourceType": "image",
+          "disposition": "allowed"
+        },
+        {
+          "url": "LOCAL_ORIGIN/assets/fan-clean.webp",
+          "method": "GET",
+          "hasRequestBody": false,
+          "containsFictionalInput": false,
+          "resourceType": "image",
+          "disposition": "allowed"
+        },
+        {
+          "url": "LOCAL_ORIGIN/assets/ballet-clean.webp",
+          "method": "GET",
+          "hasRequestBody": false,
+          "containsFictionalInput": false,
+          "resourceType": "image",
+          "disposition": "allowed"
+        },
+        {
+          "url": "LOCAL_ORIGIN/assets/hockey-clean.webp",
+          "method": "GET",
+          "hasRequestBody": false,
+          "containsFictionalInput": false,
+          "resourceType": "image",
+          "disposition": "allowed"
+        },
+        {
+          "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js",
+          "method": "GET",
+          "hasRequestBody": false,
+          "containsFictionalInput": false,
+          "resourceType": "script",
+          "disposition": "allowed"
+        },
+        {
+          "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/loaders/GLTFLoader.js",
+          "method": "GET",
+          "hasRequestBody": false,
+          "containsFictionalInput": false,
+          "resourceType": "script",
+          "disposition": "allowed"
+        },
+        {
+          "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/utils/BufferGeometryUtils.js",
+          "method": "GET",
+          "hasRequestBody": false,
+          "containsFictionalInput": false,
+          "resourceType": "script",
+          "disposition": "allowed"
+        },
+        {
+          "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/environments/RoomEnvironment.js",
+          "method": "GET",
+          "hasRequestBody": false,
+          "containsFictionalInput": false,
+          "resourceType": "script",
+          "disposition": "allowed"
+        },
+        {
+          "url": "LOCAL_ORIGIN/assets/ticketstub.gltf.json",
+          "method": "GET",
+          "hasRequestBody": false,
+          "containsFictionalInput": false,
+          "resourceType": "fetch",
+          "disposition": "allowed"
+        },
+        {
+          "url": "LOCAL_ORIGIN/assets/flight.json",
+          "method": "GET",
+          "hasRequestBody": false,
+          "containsFictionalInput": false,
+          "resourceType": "fetch",
+          "disposition": "allowed"
+        }
+      ],
+      "failedRequests": [],
+      "screenshots": [],
+      "resourceLifecycle": [
+        {
+          "state": "started",
+          "atNodeMs": 14.353327999999976,
+          "url": "LOCAL_ORIGIN/"
+        },
+        {
+          "state": "started",
+          "atNodeMs": 33.65901399999996,
+          "url": "https://fonts.googleapis.com/css2?[query-values-omitted]"
+        },
+        {
+          "state": "started",
+          "atNodeMs": 34.38599799999997,
+          "url": "https://cdn.jsdelivr.net/npm/motion@11.11.17/dist/motion.js"
+        },
+        {
+          "state": "started",
+          "atNodeMs": 35.419983,
+          "url": "https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"
+        },
+        {
+          "state": "finished",
+          "atNodeMs": 36.69750399999998,
+          "url": "LOCAL_ORIGIN/"
+        },
+        {
+          "state": "finished",
+          "atNodeMs": 2534.545085,
+          "url": "https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"
+        },
+        {
+          "state": "finished",
+          "atNodeMs": 2538.9799550000002,
+          "url": "https://cdn.jsdelivr.net/npm/motion@11.11.17/dist/motion.js"
+        },
+        {
+          "state": "finished",
+          "atNodeMs": 3146.25463,
+          "url": "https://fonts.googleapis.com/css2?[query-values-omitted]"
+        },
+        {
+          "state": "started",
+          "atNodeMs": 3254.6256590000003,
+          "url": "https://fonts.gstatic.com/s/intertight/v9/NGSwv5HMAFg6IuGlBNMjxLsH8ag.woff2"
+        },
+        {
+          "state": "started",
+          "atNodeMs": 3255.308206,
+          "url": "https://fonts.gstatic.com/s/fraunces/v38/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxC9TeA.woff2"
+        },
+        {
+          "state": "started",
+          "atNodeMs": 3255.639084,
+          "url": "https://fonts.gstatic.com/s/archivo/v25/k3kQo8UDI-1M0wlSfdnoLg.woff2"
+        },
+        {
+          "state": "started",
+          "atNodeMs": 3255.850131,
+          "url": "https://fonts.gstatic.com/s/ibmplexmono/v20/-F6qfjptAgt5VM-kVkqdyU8n3twJwlBFgg.woff2"
+        },
+        {
+          "state": "started",
+          "atNodeMs": 3256.045485,
+          "url": "https://fonts.gstatic.com/s/ibmplexmono/v20/-F6qfjptAgt5VM-kVkqdyU8n3vAOwlBFgg.woff2"
+        },
+        {
+          "state": "started",
+          "atNodeMs": 3256.352287,
+          "url": "https://fonts.gstatic.com/s/ibmplexmono/v20/-F63fjptAgt5VM-kVkqdyU8n1i8q1w.woff2"
+        },
+        {
+          "state": "started",
+          "atNodeMs": 3256.618797,
+          "url": "https://fonts.gstatic.com/s/fraunces/v38/6NU58FyLNQOQZAnv9ZwNjucMHVn85Ni7emAe9lKqZTnbB-gzTK0K1ChjeveQ.woff2"
+        },
+        {
+          "state": "started",
+          "atNodeMs": 3256.915303,
+          "url": "https://fonts.gstatic.com/s/bigshouldersdisplay/v24/fC1_PZJEZG-e9gHhdI4-NBbfd2ys3SjJCx1czNDu.woff2"
+        },
+        {
+          "state": "started",
+          "atNodeMs": 3259.703693,
+          "url": "https://fonts.gstatic.com/s/archivo/v25/k3kSo8UDI-1M0wlSfdzYLGHE.woff2"
+        },
+        {
+          "state": "started",
+          "atNodeMs": 3261.713505,
+          "url": "https://fonts.gstatic.com/s/abrilfatface/v25/zOL64pLDlL1D99S8g8PtiKchq-dmjQ.woff2"
+        },
+        {
+          "state": "started",
+          "atNodeMs": 3262.241509,
+          "url": "LOCAL_ORIGIN/assets/qb-clean.webp"
+        },
+        {
+          "state": "started",
+          "atNodeMs": 3262.7896140000003,
+          "url": "LOCAL_ORIGIN/assets/pitcher-clean.webp"
+        },
+        {
+          "state": "started",
+          "atNodeMs": 3263.2555350000002,
+          "url": "LOCAL_ORIGIN/assets/singer-clean.webp"
+        },
+        {
+          "state": "started",
+          "atNodeMs": 3263.5982,
+          "url": "LOCAL_ORIGIN/assets/hoops-clean.webp"
+        },
+        {
+          "state": "started",
+          "atNodeMs": 3263.930319,
+          "url": "LOCAL_ORIGIN/assets/keeper-clean.webp"
+        },
+        {
+          "state": "started",
+          "atNodeMs": 3264.338043,
+          "url": "LOCAL_ORIGIN/assets/fan-clean.webp"
+        },
+        {
+          "state": "started",
+          "atNodeMs": 3264.696041,
+          "url": "LOCAL_ORIGIN/assets/ballet-clean.webp"
+        },
+        {
+          "state": "started",
+          "atNodeMs": 3265.00126,
+          "url": "LOCAL_ORIGIN/assets/hockey-clean.webp"
+        },
+        {
+          "state": "finished",
+          "atNodeMs": 3320.653182,
+          "url": "LOCAL_ORIGIN/assets/hoops-clean.webp"
+        },
+        {
+          "state": "finished",
+          "atNodeMs": 3320.8841700000003,
+          "url": "LOCAL_ORIGIN/assets/qb-clean.webp"
+        },
+        {
+          "state": "finished",
+          "atNodeMs": 3320.933554,
+          "url": "LOCAL_ORIGIN/assets/fan-clean.webp"
+        },
+        {
+          "state": "finished",
+          "atNodeMs": 3322.0723470000003,
+          "url": "LOCAL_ORIGIN/assets/pitcher-clean.webp"
+        },
+        {
+          "state": "finished",
+          "atNodeMs": 3322.198807,
+          "url": "LOCAL_ORIGIN/assets/singer-clean.webp"
+        },
+        {
+          "state": "finished",
+          "atNodeMs": 3322.263855,
+          "url": "LOCAL_ORIGIN/assets/keeper-clean.webp"
+        },
+        {
+          "state": "finished",
+          "atNodeMs": 3322.298797,
+          "url": "LOCAL_ORIGIN/assets/ballet-clean.webp"
+        },
+        {
+          "state": "finished",
+          "atNodeMs": 3325.705291,
+          "url": "LOCAL_ORIGIN/assets/hockey-clean.webp"
+        },
+        {
+          "state": "finished",
+          "atNodeMs": 5579.34275,
+          "url": "https://fonts.gstatic.com/s/intertight/v9/NGSwv5HMAFg6IuGlBNMjxLsH8ag.woff2"
+        },
+        {
+          "state": "finished",
+          "atNodeMs": 5584.134177,
+          "url": "https://fonts.gstatic.com/s/archivo/v25/k3kSo8UDI-1M0wlSfdzYLGHE.woff2"
+        },
+        {
+          "state": "finished",
+          "atNodeMs": 5601.26383,
+          "url": "https://fonts.gstatic.com/s/bigshouldersdisplay/v24/fC1_PZJEZG-e9gHhdI4-NBbfd2ys3SjJCx1czNDu.woff2"
+        },
+        {
+          "state": "finished",
+          "atNodeMs": 5601.805455,
+          "url": "https://fonts.gstatic.com/s/archivo/v25/k3kQo8UDI-1M0wlSfdnoLg.woff2"
+        },
+        {
+          "state": "finished",
+          "atNodeMs": 5601.880687999999,
+          "url": "https://fonts.gstatic.com/s/fraunces/v38/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxC9TeA.woff2"
+        },
+        {
+          "state": "finished",
+          "atNodeMs": 5601.924684,
+          "url": "https://fonts.gstatic.com/s/abrilfatface/v25/zOL64pLDlL1D99S8g8PtiKchq-dmjQ.woff2"
+        },
+        {
+          "state": "finished",
+          "atNodeMs": 5649.33443,
+          "url": "https://fonts.gstatic.com/s/ibmplexmono/v20/-F63fjptAgt5VM-kVkqdyU8n1i8q1w.woff2"
+        },
+        {
+          "state": "finished",
+          "atNodeMs": 5649.4540799999995,
+          "url": "https://fonts.gstatic.com/s/ibmplexmono/v20/-F6qfjptAgt5VM-kVkqdyU8n3twJwlBFgg.woff2"
+        },
+        {
+          "state": "finished",
+          "atNodeMs": 5649.516454,
+          "url": "https://fonts.gstatic.com/s/ibmplexmono/v20/-F6qfjptAgt5VM-kVkqdyU8n3vAOwlBFgg.woff2"
+        },
+        {
+          "state": "started",
+          "atNodeMs": 6008.042165999999,
+          "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js"
+        },
+        {
+          "state": "finished",
+          "atNodeMs": 6010.565100999999,
+          "url": "https://fonts.gstatic.com/s/fraunces/v38/6NU58FyLNQOQZAnv9ZwNjucMHVn85Ni7emAe9lKqZTnbB-gzTK0K1ChjeveQ.woff2"
+        },
+        {
+          "state": "finished",
+          "atNodeMs": 8446.389903,
+          "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js"
+        },
+        {
+          "state": "started",
+          "atNodeMs": 8458.392263,
+          "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/loaders/GLTFLoader.js"
+        },
+        {
+          "state": "finished",
+          "atNodeMs": 8532.204158,
+          "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/loaders/GLTFLoader.js"
+        },
+        {
+          "state": "started",
+          "atNodeMs": 8532.580414,
+          "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/utils/BufferGeometryUtils.js"
+        },
+        {
+          "state": "finished",
+          "atNodeMs": 8604.828126,
+          "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/utils/BufferGeometryUtils.js"
+        },
+        {
+          "state": "started",
+          "atNodeMs": 8605.298584,
+          "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/environments/RoomEnvironment.js"
+        },
+        {
+          "state": "finished",
+          "atNodeMs": 8672.030882,
+          "url": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/environments/RoomEnvironment.js"
+        },
+        {
+          "state": "started",
+          "atNodeMs": 8825.344117999999,
+          "url": "LOCAL_ORIGIN/assets/ticketstub.gltf.json"
+        },
+        {
+          "state": "started",
+          "atNodeMs": 8825.905762,
+          "url": "LOCAL_ORIGIN/assets/flight.json"
+        },
+        {
+          "state": "finished",
+          "atNodeMs": 8838.454564,
+          "url": "LOCAL_ORIGIN/assets/flight.json"
+        },
+        {
+          "state": "finished",
+          "atNodeMs": 8845.644427,
+          "url": "LOCAL_ORIGIN/assets/ticketstub.gltf.json"
+        }
+      ],
+      "loaded": {
+        "scrollY": 0,
+        "innerWidth": 1440,
+        "innerHeight": 900,
+        "clientWidth": 1425,
+        "scrollHeight": 28997,
+        "rootClasses": "lenis ready",
+        "activeId": "",
+        "activeTag": "BODY",
+        "railPointerEvents": "auto",
+        "railProgress": "0.0000",
+        "makerScroll": 0,
+        "progress": 100,
+        "readyState": "complete",
+        "visible": "visible",
+        "hasFocus": true
+      },
+      "rendererReady": {
+        "scrollY": 0,
+        "innerWidth": 1440,
+        "innerHeight": 900,
+        "clientWidth": 1425,
+        "scrollHeight": 28997,
+        "rootClasses": "lenis ready",
+        "activeId": "",
+        "activeTag": "BODY",
+        "railPointerEvents": "auto",
+        "railProgress": "0.0000",
+        "makerScroll": 0,
+        "progress": 100,
+        "readyState": "complete",
+        "visible": "visible",
+        "hasFocus": true
+      },
+      "sceneEntry": {
+        "scrollY": 2087,
+        "innerWidth": 1440,
+        "innerHeight": 900,
+        "clientWidth": 1425,
+        "scrollHeight": 28997,
+        "rootClasses": "ready lenis",
+        "activeId": "",
+        "activeTag": "A",
+        "railPointerEvents": "auto",
+        "railProgress": "0.0743",
+        "makerScroll": 0,
+        "progress": 100,
+        "readyState": "complete",
+        "visible": "visible",
+        "hasFocus": true
+      },
+      "sceneAnchor": {
+        "target": 2087.453125,
+        "actual": 2087,
+        "reached": true
+      },
+      "contextLoss": "WEBGL_lose_context.loseContext",
+      "afterContextLoss": {
+        "scrollY": 2987,
+        "innerWidth": 1440,
+        "innerHeight": 900,
+        "clientWidth": 1425,
+        "scrollHeight": 28997,
+        "rootClasses": "ready lenis no3d",
+        "activeId": "",
+        "activeTag": "A",
+        "railPointerEvents": "auto",
+        "railProgress": "0.1063",
+        "makerScroll": 0,
+        "progress": 100,
+        "readyState": "complete",
+        "visible": "visible",
+        "hasFocus": true
+      },
+      "result": "fail",
+      "error": "wheel-content-forward",
+      "failureSample": {
+        "scrollY": 2987,
+        "innerWidth": 1440,
+        "innerHeight": 900,
+        "clientWidth": 1425,
+        "scrollHeight": 28997,
+        "rootClasses": "ready  no3d lenis lenis-scrolling lenis-smooth",
+        "activeId": "",
+        "activeTag": "A",
+        "railPointerEvents": "auto",
+        "railProgress": "0.1063",
+        "makerScroll": 0,
+        "progress": 100,
+        "readyState": "complete",
+        "visible": "visible",
+        "hasFocus": true
+      },
+      "failureGeometry": {
+        "board": {
+          "left": 0,
+          "right": 1425,
+          "top": 19577.671875,
+          "bottom": 24617.671875,
+          "width": 1425,
+          "height": 5040,
+          "clientWidth": 1425,
+          "scrollWidth": 1425,
+          "inert": false,
+          "hidden": false,
+          "className": "board"
+        },
+        "boardUI": {
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "clientWidth": 0,
+          "scrollWidth": 0,
+          "inert": false,
+          "hidden": true,
+          "className": ""
+        },
+        "finale": {
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "clientWidth": 0,
+          "scrollWidth": 0,
+          "inert": true,
+          "hidden": false,
+          "className": "finale"
+        },
+        "input": {
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "clientWidth": 0,
+          "scrollWidth": 0,
+          "inert": false,
+          "hidden": false,
+          "className": ""
+        }
+      },
+      "inputAudit": {
+        "phase": "wheel-content-forward",
+        "events": [
+          {
+            "phase": "",
+            "type": "pointerdown",
+            "atPageMs": 10838.5,
+            "eventTimeStamp": 10834.299999998882,
+            "trusted": true,
+            "cancelable": true,
+            "targetTag": "A",
+            "targetId": "",
+            "defaultPreventedAfterDispatch": false
+          },
+          {
+            "phase": "",
+            "type": "pointerup",
+            "atPageMs": 10840,
+            "eventTimeStamp": 10834.39999999851,
+            "trusted": true,
+            "cancelable": true,
+            "targetTag": "A",
+            "targetId": "",
+            "defaultPreventedAfterDispatch": false
+          },
+          {
+            "phase": "wheel-before-context-loss",
+            "type": "wheel",
+            "atPageMs": 14056.89999999851,
+            "eventTimeStamp": 13286.5,
+            "trusted": true,
+            "cancelable": true,
+            "targetTag": "SECTION",
+            "targetId": "scenes",
+            "deltaX": 0,
+            "deltaY": 900,
+            "deltaMode": 0,
+            "defaultPreventedAfterDispatch": true
+          },
+          {
+            "phase": "wheel-content-forward",
+            "type": "wheel",
+            "atPageMs": 28690.099999999627,
+            "eventTimeStamp": 28647.89999999851,
+            "trusted": true,
+            "cancelable": true,
+            "targetTag": "svg",
+            "targetId": "",
+            "deltaX": 0,
+            "deltaY": 540,
+            "deltaMode": 0,
+            "defaultPreventedAfterDispatch": true
+          }
+        ]
+      },
+      "teardownStartedAtNodeMs": 39218.741963,
+      "teardownCompletedAtNodeMs": 41763.044236999995
+    }
+  ],
+  "networkTransport": "existing-environment-proxy",
+  "tlsTrust": "platform-additional-ca-public-key-pins",
+  "browserVersion": "153.0.8010.0",
+  "completedAt": "2026-10-12T18:19:46.897Z",
+  "result": "fail"
+}
