@@ -1,6 +1,6 @@
 # Static artifact handoff proposal (LP-01.C)
 
-Contract identifier: `ticketstub.landing-artifact/1`. This is a local proposal, not an owner-approved application integration. Source inspected: landing `1d8379d1c5b0cb89ef869ea2cc7358886c9cf274`; host `388005240aa62374d49f709afc300adb5e98cd98`, [route inventory](https://github.com/Jevelopers-neatHack-2026/getticketstub.com/blob/388005240aa62374d49f709afc300adb5e98cd98/docs/architecture/routes.md). App implementation owner recorded in GT-01 is @lmvdz; affected reviewer roles are application technical lead and Product and frontend. No new approval receipt is recorded by this document.
+Contract identifier: `ticketstub.landing-artifact/1`. This is a local proposal, not an owner-approved application integration. Its original comparison snapshot is landing `1d8379d1c5b0cb89ef869ea2cc7358886c9cf274` and host `388005240aa62374d49f709afc300adb5e98cd98`; this repository's current main is `dda1b5d48e71ed9c111b82111676b7ef033fe5ef`. The host snapshot reviewed for this update is `getticketstub.com` main `138e4b9019c0f5a55ad5e3f586d129216b680e4d`; its [current route inventory](https://github.com/Jevelopers-neatHack-2026/getticketstub.com/blob/138e4b9019c0f5a55ad5e3f586d129216b680e4d/docs/architecture/routes.md) describes the app-owned root. App implementation owner recorded in GT-01 is @lmvdz; affected reviewer roles are application technical lead and Product and frontend. No new approval receipt is recorded by this document.
 
 ## Artifact and URL rules
 
@@ -8,7 +8,9 @@ Contract identifier: `ticketstub.landing-artifact/1`. This is a local proposal, 
 
 The local artifact mounts at `/`, and existing relative `assets/...` references resolve to `/assets/...`. It is not a subpath export: nested base paths would change URL resolution. There is no HTML rewrite or source replacement in this build. `manifest.json` is handoff metadata and is not served by the preview.
 
-**Unresolved host compatibility:** the host proposes assets under `public/landing/` (URLs `/landing/...`) and prefers a hero React component above `StudioStart`. This standalone artifact currently uses `/assets/...` and contains its own intake. Do not copy it over the host's root page or public directory as-is. The owners must choose source-component integration or a static-only adapter; agree asset URL rewrite/mount, intake ownership, script/style isolation, CSP/CDN allowances and rebuild/rollback; then pin both revisions and perform real host tests. No app files are changed here.
+**Current host distinction:** at host main `138e4b...`, `/` renders a host-owned React/component and script port of the page source, with the app's `StudioStart` section inserted after the hero. The host does not import this repository as a package or serve `dist/site/`; the porting comment does not prove byte identity or owner acceptance. The earlier `public/landing/` and root-static-mount ideas in this proposal are historical candidates, not the host's current behavior. This proposal continues to describe only the separately built standalone artifact.
+
+**Unresolved artifact handoff:** this artifact uses `/assets/...` URLs and includes its own local intake. Do not copy it over the host root or public directory as-is. If the standalone artifact itself is to be integrated, the owners must choose a compatible route and artifact adapter; agree asset URL rewrite/mount, intake ownership, script/style isolation, CSP/CDN allowances and rebuild/rollback; then pin both revisions and perform real host tests. No app files are changed here.
 
 ## Route isolation and error behavior
 
