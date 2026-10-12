@@ -2,6 +2,8 @@
 
 Current one-page surface map, updated on 2026-10-12 with stable anchors for the existing problem, benefits, gallery and footer attribution. The preceding main inventory at `034785cb30aca697af13b5e47cbeea6cb7a9c158` and original foundation observation at `1d8379d1c5b0cb89ef869ea2cc7358886c9cf274` are historical. Product and frontend owns content; exact-copy/product page-map approval remains pending. The current implementation is one public page at `/`; no separate public pages are generated. This map records existing content and explicit decisions, not approved capability/commerce claims.
 
+The current source audit resolves published `b9836c9e2a8555eac96738a17c5fccb00b0eb35d`, page SHA-256 `718175dd695404d66be52eb9e1ccf3cc35410f05a65cb743e9ee6b01ea34dd9a`. Existing section IDs, navigation labels, non-script page bytes, styles and assets are unchanged from the db2e7c4 section-anchor audit. Native scroll/resize now synchronizes maker visibility and focus independently of decorative frames; generated ticket controls derive their accessible names from the visible face and retain the flip instruction in `title`. These source changes and the map grant no rendered, assistive-technology, product or publication acceptance.
+
 | Surface | Existing anchor / location | Purpose and audience | v1 disposition | Content owner / remaining evidence |
 |---|---|---|---|---|
 | Hero | `#top`, `#hero` | Personalized commemorative stubs for concert/festival/sport memories and gifts | Included; primary CTA slot points to `#make` | Product and frontend; evidence-backed messaging under LP-02 |

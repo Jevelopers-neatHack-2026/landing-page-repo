@@ -358,7 +358,8 @@ try {
           observation.privacy = { ...observation.privacy, after, forms, observationWindowMs: 1200, localStatus, studioDisclosure, studioHref: safeUrl(href), canaryRequestAttempts: observation.requests.filter(request => request.containsFictionalInput).length, nonGetRequestAttempts: observation.requests.filter(request => request.method !== 'GET').length };
           assert.equal(forms, 0, 'Local preview has no submitting form');
           assert.equal(href, 'https://getticketstub.com/make');
-          assert.match(localStatus, /Nothing was sent to the studio/);
+          // innerText reflects the existing CSS uppercase presentation.
+          assert.match(localStatus, /Nothing was sent to the studio/i);
           assert.equal(observation.privacy.canaryRequestAttempts, 0, 'Fictional input is absent from all observed request URLs and bodies');
           assert.equal(observation.privacy.nonGetRequestAttempts, 0, 'No non-GET request attempt occurs in this local preview observation');
           for (const state of [observation.privacy.before, after]) {

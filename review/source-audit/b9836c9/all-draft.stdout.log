@@ -1,0 +1,146 @@
+✔ included page sections have unique anchors on the documented existing surfaces (6.293914ms)
+✔ missing included #problem target fails even when no current navigation link refers to it (4.277291ms)
+✔ missing included #benefits target fails even when no current navigation link refers to it (2.333158ms)
+✔ missing included #gallery target fails even when no current navigation link refers to it (1.05084ms)
+✔ missing included #about target fails even when no current navigation link refers to it (0.945082ms)
+✔ comments, scripts and templates cannot replace a missing section anchor (2.995404ms)
+✔ misplaced, duplicate and hidden anchors fail instead of satisfying the page map (10.247709ms)
+✔ page-map validation rejects a dangling public fragment without inventing navigation (1.634869ms)
+✔ built artifact rejects nested template contents from independent FND review (94.350416ms)
+✔ built artifact rejects textarea literal text from independent FND review (73.532391ms)
+✔ built artifact rejects encoded duplicate ID from independent FND review (69.357383ms)
+✔ built artifact rejects slash in an unquoted ID from independent FND review (75.347236ms)
+✔ ambiguous encoded or whitespace-prefixed public fragments fail closed (5.540521ms)
+✔ actual illustrated source builds reproducibly with every asset and no repository documents (145.151756ms)
+✔ validator detects missing referenced assets, tampering, stale manifests and unexpected files (27.606101ms)
+✔ build refuses symlinks, unreviewed asset types and unsafe output destinations (19.938712ms)
+✔ preview serves homepage and every actual asset; unknown and app routes cannot fall back to landing (124.351129ms)
+✔ dispatcher rejects invalid arguments and no-argument validation fails for unavailable required suites (570.611644ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 18
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1326.355578
+PASS_LOCAL foundation
+content: PASS_DRAFT; 65 entries; product/marketing approvals PENDING
+PASS_DRAFT content
+✔ actual source config, no-JS markup and local editor boundary are explicit (10.644637ms)
+✔ no-JS escape is explicit, query-free and uses the same approved native destination (4.44917ms)
+✔ a mismatched or hidden duplicate static fallback link cannot escape the approved config (28.046304ms)
+✔ duplicate mixed-case href attributes are rejected instead of choosing one (7.879739ms)
+✔ withdrawn config requires static no-JS navigation to be withdrawn too (5.381222ms)
+✔ missing/invalid config cannot expose any external navigation (22.137529ms)
+✔ approved-shaped link fixtures carry only exact owner-allowlisted URL in each environment (12.61519ms)
+✔ unavailable service, pending owner or absent/nonimmutable/mismatched approval receipts disable the link (32.626957ms)
+✔ invalid scheme/origin/path, queries, fragments, credentials and private destinations fail closed (57.080427ms)
+✔ real pointer/Enter/preview/example/navigation handlers keep synthetic input local with reduced motion and blocked surfaces (6.85616ms)
+✔ tampered source config, named input and sending confirmation are rejected (3.351349ms)
+✔ limited thread receipt rejects malformed observation/approval scope and cannot migrate to another environment (37.185902ms)
+✔ actual live navigation target stays byte-identical after editing, chips, button clicks and Enter (1.980668ms)
+✔ invalid config must remove the real pre-existing native href; deletion mutant fails the safety assertion (5.487852ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 349.823844
+cta: local input stays local; no form/query handoff; owner-approved Open studio navigation only; deployment/release/browser evidence PENDING
+PASS_DRAFT cta
+proof: PASS_DRAFT; 10 assets; publication/visual review PENDING
+PASS_DRAFT proof
+✔ maker navigation synchronizes an in-range inert board without animation frames (2.715393ms)
+✔ native smooth-scroll arrival activates and focuses the maker while rendering frames are paused (1.072943ms)
+✔ continuing native scroll can reach the maker after the former absolute focus timeout (0.79145ms)
+✔ the idle deadline samples reached geometry before expiring a pending focus request (0.724099ms)
+✔ an off-wall idle request expires without exposing or focusing the maker (0.740944ms)
+✔ wheel cancels pending maker focus without preventing native input (0.892512ms)
+✔ touchstart cancels pending maker focus without preventing native input (0.745351ms)
+✔ pointerdown cancels pending maker focus without preventing native input (0.69873ms)
+✔ keydown cancels pending maker focus without preventing native input (1.228918ms)
+✔ a newer maker activation owns one pending focus and cleans up after success (1.076569ms)
+✔ a different native anchor cancels the old maker focus request (0.71172ms)
+✔ native board synchronization keeps manual scrolling accessible without requesting focus (1.421377ms)
+✔ wheel keeps moving forward/backward after the 3D loop exits on context loss (3.651101ms)
+✔ an animation exception cannot strand wheel input and starts readable static art (1.549319ms)
+✔ display-only rail tracks native scrolling/resizing without rendering frames (1.016398ms)
+✔ rail is decorative and passes pointer input through (0.509656ms)
+✔ switching to static art restores scene copy hidden by an interrupted 3D frame (1.315378ms)
+✔ native navigation reaches scenes and maker, with reduced motion false (2.136132ms)
+✔ native navigation reaches scenes and maker, with reduced motion true (1.012983ms)
+✔ user wheel input cancels pending maker focus (1.36341ms)
+✔ seamless hero wrap uses an immediate native jump (1.083419ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 21
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 171.876587
+ux: source checks and actual-handler VM scroll tests passed; 5 source-review/evidence-boundary items; browser receipts not evaluated by this adapter; WCAG/lab performance not certified
+PASS_DRAFT ux
+brand: 10 retained local assets; zero approved imports; source/URL/token inventory checked; publication and visual review PENDING
+PASS_DRAFT brand
+privacy: 2 audited scripts; real local editor/link handlers exercised; CDN/browser certification and owner approvals PENDING
+PASS_DRAFT privacy
+✔ actual static HTML has one valid head and consistent inventoried preview/social copy (3.250848ms)
+✔ preview, demo and staging never inherit production canonical, indexing or sitemap (0.417578ms)
+✔ synthetic approved production index/noindex fixtures enforce exact origin and real homepage inventory (0.923408ms)
+✔ production rejects missing origin, undecided indexing and every pending/missing owner receipt (1.166824ms)
+✔ production origin rejects preview hosts, private addresses and malformed/credential/query/path URLs (0.35254ms)
+✔ private app routes, aliases and section anchors cannot become indexable pages (1.778534ms)
+✔ head placement, duplicate and missing metadata regression fixtures fail (3.288314ms)
+✔ canonical/image/structured data leakage and missing ledger entries fail (7.264521ms)
+✔ invalid environments and unsupported image/structured decisions fail (1.25067ms)
+✔ loopback served artifact contains static metadata without JS and exposes no sitemap/robots/private route (86.686162ms)
+✔ approval receipts cannot silently authorize a changed origin or indexing decision (0.581084ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 237.581238
+metadata: static preview head verified; canonical/image/structured data omitted; production origin/indexing/copy/social approvals PENDING
+PASS_DRAFT metadata
+✔ LP-09 supported update: replay the retained physical-to-illustrative correction as a pending draft (183.206795ms)
+✔ LP-09 unsupported/stale update: rehashing or changing an approval label cannot publish a claim (20.590903ms)
+✔ LP-09 withdrawal: real built claim/asset disappear, a safe local replacement is present, rollback restores exact bytes (282.894148ms)
+✔ withdrawal rejects stale active inventories and hiding content in comments (202.226634ms)
+✔ withdrawal rejects original asset bytes under a renamed file and a stale scene reference (214.887735ms)
+▶ GOV-R1: character references cannot retain withdrawn rendered text or attributes
+  ✔ decimal (111.667495ms)
+  ✔ hexadecimal (88.481601ms)
+  ✔ omitted numeric semicolon (113.413215ms)
+  ✔ encoded whitespace (134.501425ms)
+  ✔ named whitespace (111.382496ms)
+  ✔ legacy whitespace without semicolon (120.263964ms)
+  ✔ unsupported named reference (115.444333ms)
+  ✔ unsupported legacy prefix (75.422848ms)
+  ✔ inline element split (101.640386ms)
+  ✔ accessible attribute (91.47789ms)
+✔ GOV-R1: character references cannot retain withdrawn rendered text or attributes (1066.195681ms)
+✔ a once-escaped character reference remains literal text instead of being recursively decoded (90.717168ms)
+▶ GOV-R2: renamed and padded public payloads cannot retain the complete original asset bytes
+  ✔ original followed by newline (148.46327ms)
+  ✔ original embedded between padding (138.058312ms)
+✔ GOV-R2: renamed and padded public payloads cannot retain the complete original asset bytes (287.911011ms)
+✔ withdrawal requires an immutable known nonempty selection and rejects still-packaged media (265.267933ms)
+✔ changed destination dry run withdraws both native and no-JavaScript links (13.209419ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 22
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2741.714437
+governance: supported historical update replayed as draft; unsupported/stale evidence rejected; synthetic local withdrawal/replacement/rollback exercised; release acceptance PENDING
+PASS_DRAFT governance
+PASS_DRAFT selected suites: release approvals remain pending

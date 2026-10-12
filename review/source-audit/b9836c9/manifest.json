@@ -1,0 +1,74 @@
+{
+  "recordedAt": "2026-10-12T17:49:36.683860+00:00",
+  "sourceRevision": "b9836c9e2a8555eac96738a17c5fccb00b0eb35d",
+  "testedAuditRevision": "2f2ef712be26c2274f5986610392d36c99a5f108",
+  "pageSha256": "718175dd695404d66be52eb9e1ccf3cc35410f05a65cb743e9ee6b01ea34dd9a",
+  "artifactManifestSha256": "76095b4e5a0805f6172da7d7d240f4b68e6a7709a1e1d393fc5b72f19067ff3f",
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "63c8d580a8bdac7e6f120bbf77bdd6f7ceeaeb5b1bec2693e8ab4d4e3fce5c28",
+      "bytes": 2836
+    },
+    {
+      "path": "all-draft.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "all-draft.stdout.log",
+      "sha256": "feb8b2f377570acf2ffd65839a742b1adcaeb4cca6507bbbe20cb0c1b97c4402",
+      "bytes": 9946
+    },
+    {
+      "path": "all-release.stderr.log",
+      "sha256": "e6347c3334cc1ef812d1b0016c2d50f37afa3b081afb837eae3289a5dd8fe067",
+      "bytes": 1196
+    },
+    {
+      "path": "all-release.stdout.log",
+      "sha256": "a8c8715b9fd3a16b46da782fb0ba5995925e442a5dd585cf02e7435de298930b",
+      "bytes": 8899
+    },
+    {
+      "path": "audit.json",
+      "sha256": "a07e94a4d61c90029d81c95d04ad7e9c4e459556d6e11bfbcc1b821aa4cd4931",
+      "bytes": 3285
+    },
+    {
+      "path": "build.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "build.stdout.log",
+      "sha256": "c005ef06372299c25d7799129dbf09098a9aebb7deb7c2f3c034e0d67b0869b4",
+      "bytes": 35
+    },
+    {
+      "path": "commands.json",
+      "sha256": "76ddece3bab2baa63fdab7131ba96a058b7fe10ffadfe54f4b24adfe3726281f",
+      "bytes": 4691
+    },
+    {
+      "path": "diff-check.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "diff-check.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "full-tests.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "full-tests.stdout.log",
+      "sha256": "e39e1fbb21deb8b3482d77e10a0907d504af28a26270732ab05daa1fcb94c15b",
+      "bytes": 25676
+    }
+  ]
+}

@@ -1,0 +1,362 @@
+✔ current source inventory is draft only, with zero imported brand files (188.799902ms)
+✔ release stays blocked by the empty upstream subset and actual missing acceptance (210.712548ms)
+✔ brand audit rejects invented owner approval (2.697955ms)
+✔ brand audit rejects invented distribution (22.37468ms)
+✔ brand audit rejects invented consumer agreement (21.215989ms)
+✔ brand audit rejects unapproved imported file (0.896438ms)
+✔ brand audit rejects moving upstream pin (20.92449ms)
+✔ brand audit rejects wrong upstream URL (31.996152ms)
+✔ brand audit rejects moving landing pin (2.672287ms)
+✔ brand audit rejects stale audit (0.968145ms)
+✔ brand audit rejects future audit (1.875519ms)
+✔ brand audit rejects missing freshness trigger (1.263268ms)
+✔ brand audit rejects missing token mapping (35.2485ms)
+✔ brand audit rejects false matching-token claim (24.257339ms)
+✔ brand audit rejects invented inline logo permission (40.860289ms)
+✔ brand audit rejects invented logo provenance (24.025621ms)
+✔ unreviewed palette override changes source-bound brand inventory (116.206828ms)
+✔ unreviewed removed type fallback changes source-bound brand inventory (77.489084ms)
+✔ unreviewed inline mark replacement changes source-bound brand inventory (223.92438ms)
+✔ unreviewed CDN version change changes source-bound brand inventory (109.269461ms)
+✔ unreviewed new stylesheet changes source-bound brand inventory (81.713948ms)
+✔ duplicate URL attributes and inline font/import loaders require review (8.868039ms)
+✔ unrelated focus code changes do not relabel or invalidate unchanged brand bytes (220.127448ms)
+✔ new files and self-hosted fonts cannot enter the reviewed public subset (92.988224ms)
+✔ a rehashed changed asset must still match immutable source bytes (158.828605ms)
+✔ captured empty policy bytes retain the observed Git blob and SHA-256 (43.555295ms)
+✔ withdrawal requires removal from source, not just a new inventory status (261.401424ms)
+✔ built artifact drift cannot be hidden behind a passing source inventory (384.373301ms)
+✔ synthetic font withdrawal and rollback rebuild exact source-bound artifacts (788.384567ms)
+fatal: git cat-file: could not get object info
+fatal: git cat-file: could not get object info
+✔ audited provisional copy passes as draft with approvals pending (54.825829ms)
+✔ copy rejects missing current audit pin (2.958217ms)
+✔ examples reject missing current audit pin (1.832003ms)
+✔ copy rejects moving current audit pin (1.486084ms)
+✔ examples reject moving current audit pin (0.963618ms)
+✔ copy rejects stale historical page current audit pin (9.341276ms)
+✔ examples reject stale historical page current audit pin (11.961338ms)
+✔ copy rejects stale pre-header worker page current audit pin (13.271487ms)
+✔ examples reject stale pre-header worker page current audit pin (14.660796ms)
+✔ copy rejects unavailable commit current audit pin (13.182704ms)
+✔ examples reject unavailable commit current audit pin (7.369005ms)
+✔ copy rejects blob rather than commit current audit pin (7.659452ms)
+✔ examples reject blob rather than commit current audit pin (5.154577ms)
+✔ copy rejects mismatched URL current audit pin (1.43646ms)
+✔ examples reject mismatched URL current audit pin (0.896948ms)
+✔ historical origins remain separate from a correct current immutable audit (267.954219ms)
+✔ unreviewed copy change is rejected, including a new unsupported price (0.907443ms)
+✔ unreviewed claim fixture is rejected (21.053599ms)
+✔ expired claim fixture is rejected (21.841248ms)
+✔ future audit date and moving source references are rejected (52.369128ms)
+✔ draft cannot fabricate owner approval; release correctly remains blocked (29.710295ms)
+✔ all retained assets and illustrative examples are hash-covered (286.829589ms)
+✔ proof release correctly blocks unconfirmed publication permission (21.261497ms)
+✔ missing metadata and forbidden synthetic marker fixtures are rejected (139.927325ms)
+✔ missing media and changed bytes fail without damaging real assets (110.837182ms)
+✔ locally rehashed asset bytes cannot disagree with the immutable current audit (142.381374ms)
+✔ EXIF/XMP chunk scanner identifies embedded metadata (0.972662ms)
+✔ static illustrative description remains independent of images (0.127261ms)
+✔ actual source config, no-JS markup and local editor boundary are explicit (34.608408ms)
+✔ no-JS escape is explicit, query-free and uses the same approved native destination (25.838416ms)
+✔ a mismatched or hidden duplicate static fallback link cannot escape the approved config (42.048315ms)
+✔ duplicate mixed-case href attributes are rejected instead of choosing one (13.681744ms)
+✔ withdrawn config requires static no-JS navigation to be withdrawn too (9.827371ms)
+✔ missing/invalid config cannot expose any external navigation (25.474569ms)
+✔ approved-shaped link fixtures carry only exact owner-allowlisted URL in each environment (22.833309ms)
+✔ unavailable service, pending owner or absent/nonimmutable/mismatched approval receipts disable the link (66.954249ms)
+✔ invalid scheme/origin/path, queries, fragments, credentials and private destinations fail closed (122.265464ms)
+✔ real pointer/Enter/preview/example/navigation handlers keep synthetic input local with reduced motion and blocked surfaces (8.597892ms)
+✔ tampered source config, named input and sending confirmation are rejected (12.210843ms)
+✔ limited thread receipt rejects malformed observation/approval scope and cannot migrate to another environment (67.781217ms)
+✔ actual live navigation target stays byte-identical after editing, chips, button clicks and Enter (4.623069ms)
+✔ invalid config must remove the real pre-existing native href; deletion mutant fails the safety assertion (16.112148ms)
+✔ included page sections have unique anchors on the documented existing surfaces (7.680604ms)
+✔ missing included #problem target fails even when no current navigation link refers to it (9.237615ms)
+✔ missing included #benefits target fails even when no current navigation link refers to it (7.123737ms)
+✔ missing included #gallery target fails even when no current navigation link refers to it (1.608899ms)
+✔ missing included #about target fails even when no current navigation link refers to it (1.49006ms)
+✔ comments, scripts and templates cannot replace a missing section anchor (3.157366ms)
+✔ misplaced, duplicate and hidden anchors fail instead of satisfying the page map (18.939195ms)
+✔ page-map validation rejects a dangling public fragment without inventing navigation (2.709222ms)
+✔ built artifact rejects nested template contents from independent FND review (216.949452ms)
+✔ built artifact rejects textarea literal text from independent FND review (217.18743ms)
+✔ built artifact rejects encoded duplicate ID from independent FND review (171.788452ms)
+✔ built artifact rejects slash in an unquoted ID from independent FND review (162.522577ms)
+✔ ambiguous encoded or whitespace-prefixed public fragments fail closed (12.163021ms)
+✔ actual illustrated source builds reproducibly with every asset and no repository documents (233.596404ms)
+✔ validator detects missing referenced assets, tampering, stale manifests and unexpected files (43.512875ms)
+✔ build refuses symlinks, unreviewed asset types and unsafe output destinations (9.555823ms)
+✔ preview serves homepage and every actual asset; unknown and app routes cannot fall back to landing (260.868318ms)
+✔ dispatcher rejects invalid arguments and no-argument validation fails for unavailable required suites (871.666678ms)
+✔ LP-09 supported update: replay the retained physical-to-illustrative correction as a pending draft (320.965342ms)
+✔ LP-09 unsupported/stale update: rehashing or changing an approval label cannot publish a claim (45.265285ms)
+✔ LP-09 withdrawal: real built claim/asset disappear, a safe local replacement is present, rollback restores exact bytes (974.055286ms)
+✔ withdrawal rejects stale active inventories and hiding content in comments (304.780505ms)
+✔ withdrawal rejects original asset bytes under a renamed file and a stale scene reference (327.852932ms)
+▶ GOV-R1: character references cannot retain withdrawn rendered text or attributes
+  ✔ decimal (119.190513ms)
+  ✔ hexadecimal (137.957819ms)
+  ✔ omitted numeric semicolon (107.745413ms)
+  ✔ encoded whitespace (123.128274ms)
+  ✔ named whitespace (114.837923ms)
+  ✔ legacy whitespace without semicolon (150.771566ms)
+  ✔ unsupported named reference (117.780368ms)
+  ✔ unsupported legacy prefix (112.344929ms)
+  ✔ inline element split (123.899925ms)
+  ✔ accessible attribute (124.389385ms)
+✔ GOV-R1: character references cannot retain withdrawn rendered text or attributes (1234.678963ms)
+✔ a once-escaped character reference remains literal text instead of being recursively decoded (130.107503ms)
+▶ GOV-R2: renamed and padded public payloads cannot retain the complete original asset bytes
+  ✔ original followed by newline (121.493421ms)
+  ✔ original embedded between padding (171.25659ms)
+✔ GOV-R2: renamed and padded public payloads cannot retain the complete original asset bytes (294.284959ms)
+✔ withdrawal requires an immutable known nonempty selection and rejects still-packaged media (340.556123ms)
+✔ changed destination dry run withdraws both native and no-JavaScript links (13.783676ms)
+✔ maker navigation synchronizes an in-range inert board without animation frames (5.614389ms)
+✔ native smooth-scroll arrival activates and focuses the maker while rendering frames are paused (1.751813ms)
+✔ continuing native scroll can reach the maker after the former absolute focus timeout (1.798583ms)
+✔ the idle deadline samples reached geometry before expiring a pending focus request (1.439353ms)
+✔ an off-wall idle request expires without exposing or focusing the maker (2.001098ms)
+✔ wheel cancels pending maker focus without preventing native input (1.939455ms)
+✔ touchstart cancels pending maker focus without preventing native input (2.311384ms)
+✔ pointerdown cancels pending maker focus without preventing native input (1.412103ms)
+✔ keydown cancels pending maker focus without preventing native input (1.432923ms)
+✔ a newer maker activation owns one pending focus and cleans up after success (1.632934ms)
+✔ a different native anchor cancels the old maker focus request (1.591632ms)
+✔ native board synchronization keeps manual scrolling accessible without requesting focus (1.305392ms)
+✔ actual static HTML has one valid head and consistent inventoried preview/social copy (5.393286ms)
+✔ preview, demo and staging never inherit production canonical, indexing or sitemap (0.488164ms)
+✔ synthetic approved production index/noindex fixtures enforce exact origin and real homepage inventory (0.97809ms)
+✔ production rejects missing origin, undecided indexing and every pending/missing owner receipt (1.066734ms)
+✔ production origin rejects preview hosts, private addresses and malformed/credential/query/path URLs (11.958014ms)
+✔ private app routes, aliases and section anchors cannot become indexable pages (2.256472ms)
+✔ head placement, duplicate and missing metadata regression fixtures fail (3.938719ms)
+✔ canonical/image/structured data leakage and missing ledger entries fail (11.101936ms)
+✔ invalid environments and unsupported image/structured decisions fail (8.273721ms)
+✔ loopback served artifact contains static metadata without JS and exposes no sitemap/robots/private route (206.772812ms)
+✔ approval receipts cannot silently authorize a changed origin or indexing decision (2.2087ms)
+fatal: git cat-file: could not get object info
+fatal: git cat-file: could not get object info
+✔ audited page has deferred analytics and two pinned executable scripts (64.269159ms)
+✔ correct immutable privacy audit resolves actual current source with approvals pending (18.667258ms)
+✔ preserved PR #29 header audit cannot authorize the CSS-edited maker page (18.60246ms)
+✔ privacy rejects missing revision audit pin (7.473994ms)
+✔ privacy rejects moving revision audit pin (4.691892ms)
+✔ privacy rejects stale earlier executable revision audit pin (36.173951ms)
+✔ privacy rejects stale pre-header worker revision audit pin (32.63053ms)
+✔ privacy rejects unavailable revision audit pin (14.297625ms)
+✔ privacy rejects missing page digest audit pin (10.606802ms)
+✔ privacy rejects mismatched page digest audit pin (34.59654ms)
+✔ privacy rejects mismatched executable audit audit pin (30.471274ms)
+✔ metadata-only drift still requires a fresh complete-page audit pin (51.440176ms)
+✔ reject seeded SDK script (6.109743ms)
+✔ reject seeded inline event (4.308657ms)
+✔ reject seeded relative pixel (8.521998ms)
+✔ reject seeded external srcset (11.845204ms)
+✔ reject seeded iframe (6.424557ms)
+✔ reject seeded CSS import (7.69826ms)
+✔ reject seeded CSS pixel (8.195518ms)
+✔ reject seeded same-origin CSS pixel (6.742304ms)
+✔ reject seeded inline CSS pixel (1.967757ms)
+✔ reject seeded SVG image pixel (7.165069ms)
+✔ reject seeded meta refresh (3.896306ms)
+✔ reject seeded form override (6.631528ms)
+✔ reject seeded executable link (3.20652ms)
+✔ reject seeded data HTML (2.429281ms)
+✔ reject seeded link tracking ping (1.659424ms)
+✔ reject seeded named control (15.669382ms)
+✔ reject seeded unquoted pixel (1.947548ms)
+✔ reject seeded unquoted script (7.512682ms)
+✔ reject seeded unquoted href (1.807096ms)
+✔ reject seeded style event (6.905199ms)
+✔ reject forbidden source operation: localStorage.setItem (2.436352ms)
+✔ reject forbidden source operation: navigator.sendBeacon (3.171136ms)
+✔ reject forbidden source operation: console.log (3.314031ms)
+✔ reject forbidden source operation: fetch (2.246036ms)
+✔ computed API addition fails exact executable hash boundary (5.284192ms)
+✔ external script handler cannot bypass pinned executable text (20.270012ms)
+✔ metadata URL declarations do not count as browser requests (6.76574ms)
+✔ real maker/navigation handlers with blocked collection surfaces, reduced motion true (17.658261ms)
+✔ real maker/navigation handlers with failed collection surfaces, reduced motion true (3.275043ms)
+✔ real maker/navigation handlers with blocked collection surfaces, reduced motion false (3.793141ms)
+✔ real maker/navigation handlers with failed collection surfaces, reduced motion false (7.224228ms)
+✔ journey traps a swallowed forbidden attempt: navigator.sendBeacon (4.5841ms)
+✔ journey traps a swallowed forbidden attempt: localStorage.setItem (13.011327ms)
+✔ journey traps a swallowed forbidden attempt: console.log (11.322659ms)
+✔ journey traps a swallowed forbidden attempt: fetch (13.853142ms)
+✔ native external capture or query navigation cannot return (14.767927ms)
+privacy: 2 audited scripts; real local editor/link handlers exercised; CDN/browser certification and owner approvals PENDING
+✔ built artifact passes draft and cannot pass release without approval receipt (553.392451ms)
+✔ receipt validator requires exact pins, both roles and browser scenarios (6.338117ms)
+✔ invented source receipt cannot pass real release evidence verification (7.146922ms)
+✔ wheel keeps moving forward/backward after the 3D loop exits on context loss (3.133309ms)
+✔ an animation exception cannot strand wheel input and starts readable static art (0.99814ms)
+✔ display-only rail tracks native scrolling/resizing without rendering frames (2.98755ms)
+✔ rail is decorative and passes pointer input through (0.389085ms)
+✔ switching to static art restores scene copy hidden by an interrupted 3D frame (0.919352ms)
+✔ native navigation reaches scenes and maker, with reduced motion false (1.61715ms)
+✔ native navigation reaches scenes and maker, with reduced motion true (4.700234ms)
+✔ user wheel input cancels pending maker focus (0.893723ms)
+✔ seamless hero wrap uses an immediate native jump (1.677952ms)
+✔ actual MVP source has valid static anchors, named controls and a coherent main heading sequence (7.756878ms)
+✔ missing anchor targets reject the actual source fixture (2.893349ms)
+✔ duplicate static IDs fail, including the CTA target (1.279112ms)
+✔ empty link names fail even when its target exists (1.08499ms)
+✔ a visible link without destination fails (1.049658ms)
+✔ duplicate h1 cannot pass a heading count check (1.272883ms)
+✔ main heading jumps fail while existing whole-document review remains pending (3.627952ms)
+✔ empty heading names fail (1.177359ms)
+✔ missing named navigation or main landmark fails (2.194218ms)
+✔ preview input needs a real label, not only a placeholder (1.411491ms)
+✔ missing description target fails (4.931232ms)
+✔ empty example button name fails (1.25098ms)
+✔ missing focus or reduced-motion source hook fails without asserting browser behavior (1.929631ms)
+✔ static explanation survives removing media and executable code as text evidence only (6.663496ms)
+✔ image alternatives and media-independent explanation cannot be silently removed (2.238845ms)
+✔ local group and non-submitting button remain compatible with a deferred external destination (1.8966ms)
+✔ maker navigation synchronizes an in-range inert board without animation frames (3.213159ms)
+✔ native smooth-scroll arrival activates and focuses the maker while rendering frames are paused (1.230259ms)
+✔ continuing native scroll can reach the maker after the former absolute focus timeout (1.159172ms)
+✔ the idle deadline samples reached geometry before expiring a pending focus request (1.081325ms)
+✔ an off-wall idle request expires without exposing or focusing the maker (1.059993ms)
+✔ wheel cancels pending maker focus without preventing native input (1.012082ms)
+✔ touchstart cancels pending maker focus without preventing native input (0.836938ms)
+✔ pointerdown cancels pending maker focus without preventing native input (0.832171ms)
+✔ keydown cancels pending maker focus without preventing native input (0.957359ms)
+✔ a newer maker activation owns one pending focus and cleans up after success (1.154195ms)
+✔ a different native anchor cancels the old maker focus request (0.944439ms)
+✔ native board synchronization keeps manual scrolling accessible without requesting focus (2.08961ms)
+✔ wheel keeps moving forward/backward after the 3D loop exits on context loss (4.281956ms)
+✔ an animation exception cannot strand wheel input and starts readable static art (1.73673ms)
+✔ display-only rail tracks native scrolling/resizing without rendering frames (2.605456ms)
+✔ rail is decorative and passes pointer input through (1.276299ms)
+✔ switching to static art restores scene copy hidden by an interrupted 3D frame (11.32683ms)
+✔ native navigation reaches scenes and maker, with reduced motion false (3.023375ms)
+✔ native navigation reaches scenes and maker, with reduced motion true (1.389759ms)
+✔ user wheel input cancels pending maker focus (1.444411ms)
+✔ seamless hero wrap uses an immediate native jump (1.434817ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 21
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 241.060602
+ux: source checks and actual-handler VM scroll tests passed; 5 source-review/evidence-boundary items; browser receipts not evaluated by this adapter; WCAG/lab performance not certified
+✔ real built artifact cannot claim UX release from local source checks alone (561.895832ms)
+✔ maker navigation synchronizes an in-range inert board without animation frames (3.748173ms)
+✔ native smooth-scroll arrival activates and focuses the maker while rendering frames are paused (1.692484ms)
+✔ continuing native scroll can reach the maker after the former absolute focus timeout (1.066012ms)
+✔ the idle deadline samples reached geometry before expiring a pending focus request (0.823788ms)
+✔ an off-wall idle request expires without exposing or focusing the maker (1.158261ms)
+✔ wheel cancels pending maker focus without preventing native input (1.053884ms)
+✔ touchstart cancels pending maker focus without preventing native input (0.961105ms)
+✔ pointerdown cancels pending maker focus without preventing native input (1.004239ms)
+✔ keydown cancels pending maker focus without preventing native input (2.324693ms)
+✔ a newer maker activation owns one pending focus and cleans up after success (1.247244ms)
+✔ a different native anchor cancels the old maker focus request (1.030789ms)
+✖ native board synchronization keeps manual scrolling accessible without requesting focus (4.731972ms)
+✔ wheel keeps moving forward/backward after the 3D loop exits on context loss (3.912581ms)
+✔ an animation exception cannot strand wheel input and starts readable static art (1.161206ms)
+✔ display-only rail tracks native scrolling/resizing without rendering frames (0.842086ms)
+✔ rail is decorative and passes pointer input through (0.360381ms)
+✔ switching to static art restores scene copy hidden by an interrupted 3D frame (0.77829ms)
+✔ native navigation reaches scenes and maker, with reduced motion false (1.499163ms)
+✔ native navigation reaches scenes and maker, with reduced motion true (0.83215ms)
+✔ user wheel input cancels pending maker focus (0.777228ms)
+✔ seamless hero wrap uses an immediate native jump (0.841574ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 20
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 142.815247
+
+✖ failing tests:
+
+test at tests/maker-focus.test.mjs:179:1
+✖ native board synchronization keeps manual scrolling accessible without requesting focus (4.731972ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  true !== false
+  
+      at TestContext.<anonymous> (file:///tmp/lp-ux-source-binding-vrlyAT/tests/maker-focus.test.mjs:182:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+✔ UX rejects a broken built candidate despite the MAKER_FOCUS_TEST_HTML historical source override (379.330265ms)
+✔ maker navigation synchronizes an in-range inert board without animation frames (3.342384ms)
+✔ native smooth-scroll arrival activates and focuses the maker while rendering frames are paused (1.16494ms)
+✔ continuing native scroll can reach the maker after the former absolute focus timeout (1.038811ms)
+✔ the idle deadline samples reached geometry before expiring a pending focus request (1.447436ms)
+✔ an off-wall idle request expires without exposing or focusing the maker (1.118281ms)
+✔ wheel cancels pending maker focus without preventing native input (0.932933ms)
+✔ touchstart cancels pending maker focus without preventing native input (0.816067ms)
+✔ pointerdown cancels pending maker focus without preventing native input (1.046082ms)
+✔ keydown cancels pending maker focus without preventing native input (1.502759ms)
+✔ a newer maker activation owns one pending focus and cleans up after success (1.221817ms)
+✔ a different native anchor cancels the old maker focus request (1.208507ms)
+✔ native board synchronization keeps manual scrolling accessible without requesting focus (1.883851ms)
+✔ wheel keeps moving forward/backward after the 3D loop exits on context loss (3.498258ms)
+✔ an animation exception cannot strand wheel input and starts readable static art (1.109568ms)
+✖ display-only rail tracks native scrolling/resizing without rendering frames (1.941879ms)
+✔ rail is decorative and passes pointer input through (0.441174ms)
+✔ switching to static art restores scene copy hidden by an interrupted 3D frame (1.239092ms)
+✔ native navigation reaches scenes and maker, with reduced motion false (1.994979ms)
+✔ native navigation reaches scenes and maker, with reduced motion true (1.039242ms)
+✔ user wheel input cancels pending maker focus (0.916268ms)
+✔ seamless hero wrap uses an immediate native jump (0.68521ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 20
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 141.24424
+
+✖ failing tests:
+
+test at tests/scroll.test.mjs:120:1
+✖ display-only rail tracks native scrolling/resizing without rendering frames (1.941879ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  '0.2000' !== '0.5000'
+  
+      at TestContext.<anonymous> (file:///tmp/lp-ux-source-binding-GwfOzc/tests/scroll.test.mjs:123:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '0.2000',
+    expected: '0.5000',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+✔ UX rejects a broken built candidate despite the SCROLL_TEST_HTML historical source override (322.534321ms)
+ℹ tests 213
+ℹ suites 0
+ℹ pass 213
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4207.721859

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "scope": "Safe provisional copy draft; not approved public release",
-  "pageSha256": "91e9a369378376a45fe3a6a725a655229040ba4f3afb69d1d031116d97c33969",
+  "pageSha256": "718175dd695404d66be52eb9e1ccf3cc35410f05a65cb743e9ee6b01ea34dd9a",
   "visibleTextSha256": "ed3b6f30f775c6184b3fccc77c0ba12606bcf6e2ab5e029493a4a54da38c4f29",
   "source": {
     "repository": "Jevelopers-neatHack-2026/landing-page-repo",
@@ -1271,10 +1271,10 @@
   ],
   "auditedSource": {
     "repository": "Jevelopers-neatHack-2026/landing-page-repo",
-    "revision": "db2e7c4bf8920f17b0ab132719edf910a284b5e6",
-    "url": "https://github.com/Jevelopers-neatHack-2026/landing-page-repo/blob/db2e7c4bf8920f17b0ab132719edf910a284b5e6/site/index.html"
+    "revision": "b9836c9e2a8555eac96738a17c5fccb00b0eb35d",
+    "url": "https://github.com/Jevelopers-neatHack-2026/landing-page-repo/blob/b9836c9e2a8555eac96738a17c5fccb00b0eb35d/site/index.html"
   },
-  "sourceNote": "source fields retain historical origins/proposals; auditedSource binds the current page bytes only. Local author audit is not owner approval. Author re-audit at db2e7c4bf8920f17b0ab132719edf910a284b5e6 confirms that only problem, benefits, gallery and about IDs were added to existing elements; copy, scripts, styles, resources and asset bytes are unchanged. Earlier current audit remains in historicalSourceReferences; owner/publication approvals remain pending.",
+  "sourceNote": "source fields retain historical origins/proposals; auditedSource binds the current page bytes only. Local author audit is not owner approval. Author re-audit at b9836c9e2a8555eac96738a17c5fccb00b0eb35d covers native board visibility/inert synchronization, cancelable maker focus independent of animation frames, and accessible ticket names derived from the visible face with the existing flip instruction retained in title. Both executable blocks changed; all non-script page bytes, styles, assets, resource URLs and the separate studio/input boundary are unchanged. Earlier current audits remain in historicalSourceReferences; owner/publication approvals remain pending.",
   "historicalSourceReferences": [
     {
       "repository": "Jevelopers-neatHack-2026/landing-page-repo",
@@ -1300,6 +1300,13 @@
       "url": "https://github.com/Jevelopers-neatHack-2026/landing-page-repo/blob/36c0a841d5b5c5f6e7c3870e65c541825026d214/site/index.html",
       "pageSha256": "2bc1c248336d17ee0beb402882cc697925721a42f94b6e8f2fa187da36227a92",
       "relationship": "Previous immutable author audit after native maker focus correction and before four static section-anchor IDs; retained as historical evidence, not current approval."
+    },
+    {
+      "repository": "Jevelopers-neatHack-2026/landing-page-repo",
+      "revision": "db2e7c4bf8920f17b0ab132719edf910a284b5e6",
+      "url": "https://github.com/Jevelopers-neatHack-2026/landing-page-repo/blob/db2e7c4bf8920f17b0ab132719edf910a284b5e6/site/index.html",
+      "pageSha256": "91e9a369378376a45fe3a6a725a655229040ba4f3afb69d1d031116d97c33969",
+      "relationship": "Previous published author audit after four static section-anchor IDs and before native maker-state/focus synchronization and visible-face accessible names; retained as historical evidence, not current approval."
     }
   ]
 }

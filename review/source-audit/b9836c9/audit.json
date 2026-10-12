@@ -1,0 +1,89 @@
+{
+  "recordedAt": "2026-10-12T17:47:08.783966+00:00",
+  "type": "local author source re-audit; not owner/publication acceptance",
+  "previousRevision": "db2e7c4bf8920f17b0ab132719edf910a284b5e6",
+  "previousPageSha256": "91e9a369378376a45fe3a6a725a655229040ba4f3afb69d1d031116d97c33969",
+  "sourceRevision": "b9836c9e2a8555eac96738a17c5fccb00b0eb35d",
+  "sourceUrl": "https://github.com/Jevelopers-neatHack-2026/landing-page-repo/blob/b9836c9e2a8555eac96738a17c5fccb00b0eb35d/site/index.html",
+  "pageSha256": "718175dd695404d66be52eb9e1ccf3cc35410f05a65cb743e9ee6b01ea34dd9a",
+  "sourceTree": "157b8122ace87023207241d27e9dbb975055eceb",
+  "nonScriptPageBytesIdentical": true,
+  "assetTreeUnchanged": true,
+  "executableBlocks": {
+    "previousSha256": [
+      "2b01e1d0f5ba18ee57a1420149ce8f8b94e776195f29bfc76db93c245ead4320",
+      "da6be95218d84373bb6e51070a73ec2c5f4b6b26b9a67653b09b89d9f1133e20"
+    ],
+    "currentSha256": [
+      "c3bd47e9d7371a7003f33804dba2ab532af3061bd2cd9423160e01d6139e3ac7",
+      "8678d664d26b49d8ff35310d27e8146e499c21f374ee408fdd9b6c775008cc22"
+    ]
+  },
+  "changes": {
+    "src/content/copy.json": {
+      "changedFields": [
+        "auditedSource",
+        "historicalSourceReferences",
+        "pageSha256",
+        "sourceNote"
+      ],
+      "sha256": "081d81fbed3d3f50e11ed71eff81066df03940fe2ddcc05d557f6d652bff49eb"
+    },
+    "review/examples.json": {
+      "changedFields": [
+        "auditedSource",
+        "historicalSourceReferences",
+        "pageSha256",
+        "sourceNote"
+      ],
+      "sha256": "578c8c42b2d66211ea83b5ccf2794c9199d0cf4c8fa02ecde4482b466cb7f30a"
+    },
+    "review/privacy-inventory.json": {
+      "changedFields": [
+        "auditNote",
+        "auditedSourceRevision",
+        "executableScriptSha256",
+        "historicalSourceReferences",
+        "pageSha256"
+      ],
+      "sha256": "7a898351fe6dd971bd650a1d815e776f14d83d4db6da5e63eb4f62bff044b6d8"
+    }
+  },
+  "approvalChanges": [],
+  "limitations": [
+    "Author source consistency audit only; actual browser/axe results are recorded separately.",
+    "All Product/marketing/privacy/asset permission and publication approval states remain unchanged.",
+    "The original 161-pass/50-fail pre-pin full run is retained in review/ux/maker-focus-sync; it is historical and not attributed to this b983 source."
+  ],
+  "previousInventoryReferences": [
+    {
+      "revision": "b9836c9e2a8555eac96738a17c5fccb00b0eb35d",
+      "path": "src/content/copy.json",
+      "sha256": "b77b805a569c78f8a8701e1b04e3e0addc79d2a3532b77a6a9221cbd6b13fe20"
+    },
+    {
+      "revision": "b9836c9e2a8555eac96738a17c5fccb00b0eb35d",
+      "path": "review/examples.json",
+      "sha256": "960984b3b055676501d4a43d3412dd5f7c92e01c8800f961acf902f428d88448"
+    },
+    {
+      "revision": "b9836c9e2a8555eac96738a17c5fccb00b0eb35d",
+      "path": "review/privacy-inventory.json",
+      "sha256": "89d95451b0f918dd76e509ef3cfecad2c4076371d371bc0905731545ceacfef7"
+    }
+  ],
+  "unchangedApprovalStates": {
+    "copyEntries": 65,
+    "copyApprovalStates": [
+      "PENDING"
+    ],
+    "assetCount": 10,
+    "assetPublicationStates": [
+      "UNCONFIRMED"
+    ],
+    "assetSanitizationStates": [
+      "PENDING_VISUAL_OWNER_REVIEW"
+    ],
+    "privacyReviewStatus": "PENDING"
+  }
+}
