@@ -26,7 +26,7 @@ function element() {
   };
 }
 
-function harness({ reduced = false, immediate = false } = {}) {
+function harness({ reduced = false, immediate = false, nativeScroll = false, smoothStartMs = 0 } = {}) {
   let now = 0, nextTimer = 0;
   const listeners = new Map(), timers = new Map(), frames = [], calls = [];
   const elements = Object.fromEntries(['wall', 'boardUI', 'finale', 'bh1', 'ev'].map(id => [id, element()]));
@@ -53,7 +53,16 @@ function harness({ reduced = false, immediate = false } = {}) {
       entries.set(handler, options); listeners.set(type, entries);
     },
     removeEventListener: (type, handler) => listeners.get(type)?.delete(handler),
-    scrollTo(options) { calls.push({ scroll: options }); if (immediate) context.scrollY = options.top; },
+    scrollTo(options) {
+      calls.push({ scroll: options });
+      if (immediate || (nativeScroll && options.behavior !== 'smooth')) context.scrollY = options.top;
+      else if (nativeScroll) {
+        const id = ++nextTimer;
+        timers.set(id, { due: now + smoothStartMs, callback: () => {
+          context.scrollY = options.top; dispatch('scroll');
+        } });
+      }
+    },
   });
   context.window = context;
   Object.assign(elements.wall, {
@@ -104,19 +113,41 @@ test('maker navigation synchronizes an in-range inert board without animation fr
   assert.equal(h.document.activeElement, h.elements.ev, 'Native field focus follows actual board geometry');
   assert.equal(h.elements.finale.inert, false);
   assert.equal(h.elements.boardUI.hidden, false);
-  assert.equal(h.calls.find(call => call.scroll).scroll.behavior, 'auto');
+  assert.equal(h.calls.find(call => call.scroll).scroll.behavior, 'instant');
   assert.ok(h.calls.some(call => Object.hasOwn(call, 'focus') && call.focus === undefined), 'Native focus may scroll the field into view');
   h.assertClean();
 });
 
-test('native smooth-scroll arrival activates and focuses the maker while rendering frames are paused', () => {
+test('a delayed native position receipt activates the maker while rendering frames are paused', () => {
   const h = harness();
   h.click();
   assert.notEqual(h.document.activeElement, h.elements.ev);
-  assert.equal(h.calls.find(call => call.scroll).scroll.behavior, 'smooth');
+  assert.equal(h.calls.find(call => call.scroll).scroll.behavior, 'instant');
   h.arrive(h.target());
   assert.equal(h.document.activeElement, h.elements.ev);
   h.assertClean();
+});
+
+test('direct maker entry focuses without waiting for delayed smooth-scroll startup', () => {
+  // A retained actual desktop trace had no first scroll receipt for 3601.2ms.
+  // Model that startup delay only for smooth navigation; frames never execute.
+  const h = harness({ nativeScroll: true, smoothStartMs: 3601.2 });
+  h.click();
+  assert.equal(h.document.activeElement, h.elements.ev, 'The maker action must reach and focus its real geometry immediately');
+  h.advance(4000);
+  assert.equal(h.document.activeElement, h.elements.ev);
+  assert.equal(h.calls.filter(call => Object.hasOwn(call, 'focus')).length, 1);
+  h.assertClean();
+});
+
+test('other anchors keep smooth navigation and honor reduced motion', () => {
+  for (const reduced of [false, true]) {
+    const h = harness({ reduced });
+    h.click('#scenes');
+    assert.equal(h.calls.find(call => call.scroll).scroll.behavior, reduced ? 'auto' : 'smooth');
+    assert.equal(h.calls.filter(call => Object.hasOwn(call, 'focus')).length, 0);
+    h.assertClean();
+  }
 });
 
 test('continuing native scroll can reach the maker after the former absolute focus timeout', () => {

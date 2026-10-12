@@ -118,7 +118,7 @@ try {
     const sample = () => page.evaluate(() => ({ scrollY, innerWidth, innerHeight, clientWidth: document.documentElement.clientWidth, scrollHeight: document.documentElement.scrollHeight, rootClasses: document.documentElement.className, activeId: document.activeElement?.id || '', activeTag: document.activeElement?.tagName || '', railPointerEvents: getComputedStyle(document.querySelector('.rail')).pointerEvents, railProgress: document.querySelector('.rail').style.getPropertyValue('--rp'), makerScroll: document.querySelector('#finale').scrollTop, progress: Number(document.querySelector('#lbar')?.getAttribute('aria-valuenow') ?? document.querySelector('#lpct')?.textContent ?? 0), readyState: document.readyState, visible: document.visibilityState, hasFocus: document.hasFocus() }));
     const inputAudit = () => page.evaluate(() => window.__ticketStubInputAudit || null);
     const makerGeometry = () => page.evaluate(() => {
-      const geometry = element => { if (!element) return null; const rect = element.getBoundingClientRect(); return { top: rect.top, bottom: rect.bottom, height: rect.height, inert: element.inert, hidden: element.hidden, className: element.className }; };
+      const geometry = element => { if (!element) return null; const rect = element.getBoundingClientRect(); return { left: rect.left, right: rect.right, top: rect.top, bottom: rect.bottom, width: rect.width, height: rect.height, clientWidth: element.clientWidth, scrollWidth: element.scrollWidth, inert: element.inert, hidden: element.hidden, className: element.className }; };
       return { board: geometry(document.querySelector('#wall')), boardUI: geometry(document.querySelector('#boardUI')), finale: geometry(document.querySelector('#finale')), input: geometry(document.querySelector('#ev')) };
     });
     const storage = async () => {
@@ -225,7 +225,22 @@ try {
       if (['normal', 'context-loss'].includes(name)) {
         observation.rendererReady = await waitState('Completed renderer startup', state => !state.rootClasses.split(/\s+/).includes('no3d') && state.progress === 100, 30000);
       }
-      if (name === 'normal') observation.privacy = { mode: 'fresh-context-local-preview-only', before: await storage(), input: 'fictional test canary only; no user data', studioNavigation: 'not-executed' };
+      if (name === 'normal') {
+        // The direct hero-to-maker action previously lost focus before a long
+        // smooth scroll even started. Exercise that path before scene inputs.
+        await phase('direct-maker-anchor');
+        observation.directMaker = { before: await sample(), beforeGeometry: await makerGeometry(), result: 'pending' };
+        await page.locator('.navcta[href="#make"]').click();
+        observation.directMaker.after = await waitState('Direct maker input focus', state => state.activeId === 'ev');
+        observation.directMaker.afterGeometry = await makerGeometry();
+        const bounds = await page.locator('#ev').boundingBox();
+        assert.ok(bounds && bounds.width > 0 && bounds.height > 0 && bounds.x >= 0 && bounds.x + bounds.width <= observation.directMaker.after.clientWidth && bounds.y >= 0 && bounds.y + bounds.height <= viewport.height, 'Direct maker action focuses a fully visible input');
+        observation.directMaker.result = 'pass';
+        await page.locator('.nav .logo[href="#top"]').click();
+        await waitState('Native return to top', state => Math.abs(state.scrollY) <= 3, 10000);
+        await settled();
+        observation.privacy = { mode: 'fresh-context-local-preview-only', before: await storage(), input: 'fictional test canary only; no user data', studioNavigation: 'not-executed' };
+      }
       if (name === 'missing-media') {
         assert.ok(observation.requests.some(request => request.url.startsWith('LOCAL_ORIGIN/assets/') && request.disposition === 'blocked-by-test'), 'Missing-media scenario must actually block local assets');
         await waitState('Missing-media static fallback', state => state.rootClasses.split(/\s+/).includes('no3d'));
@@ -339,9 +354,10 @@ try {
         await page.locator('.navcta[href="#make"]').click();
         await waitState('Maker input focus', state => state.activeId === 'ev');
         const input = await page.locator('#ev').boundingBox();
-        assert.ok(input && input.y >= 0 && input.y + input.height <= observation.viewport.height, 'Maker anchor focuses a visible input');
         observation.makerEntry = await sample();
+        assert.ok(input && input.width > 0 && input.height > 0 && input.x >= 0 && input.x + input.width <= observation.makerEntry.clientWidth && input.y >= 0 && input.y + input.height <= viewport.height, 'Maker anchor focuses a fully visible input');
         observation.makerGeometry = await makerGeometry();
+        assert.ok(observation.makerGeometry.finale.scrollWidth <= observation.makerGeometry.finale.clientWidth + 1, 'Maker content fits without horizontal scrolling');
         await shot('maker');
         if (name === 'normal') {
           const forms = await page.locator('form').count();

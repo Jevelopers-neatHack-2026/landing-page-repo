@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/workspace/scratch/41d02a12a55b/task-state/toolchains/node24/node_modules/node/bin/node",
+    "--test",
+    "--test-name-pattern",
+    "direct maker entry",
+    "tests/maker-focus.test.mjs"
+  ],
+  "cwd": "/workspace/scratch/f79c57b98c5b/final-integration",
+  "sourceRevision": "59249a7d1f0dec268c77c4222a03cd2851a14f1d",
+  "sourcePageSha256": "718175dd695404d66be52eb9e1ccf3cc35410f05a65cb743e9ee6b01ea34dd9a",
+  "testSha256": "4eff2121fc63f6fb3c3b1b83630452a0138f2e92ec36847a165f466c9624ca6b",
+  "mode": "synthetic-source-regression-delayed-smooth-startup",
+  "startedAt": "2026-10-12T18:03:31.028492+00:00",
+  "exitCode": 1,
+  "completedAt": "2026-10-12T18:03:31.270554+00:00"
+}

@@ -1,0 +1,22 @@
+✔ maker navigation synchronizes an in-range inert board without animation frames (4.127055ms)
+✔ a delayed native position receipt activates the maker while rendering frames are paused (1.445994ms)
+✔ direct maker entry focuses without waiting for delayed smooth-scroll startup (1.15064ms)
+✔ other anchors keep smooth navigation and honor reduced motion (3.369396ms)
+✔ continuing native scroll can reach the maker after the former absolute focus timeout (1.303099ms)
+✔ the idle deadline samples reached geometry before expiring a pending focus request (1.028947ms)
+✔ an off-wall idle request expires without exposing or focusing the maker (1.101025ms)
+✔ wheel cancels pending maker focus without preventing native input (1.279113ms)
+✔ touchstart cancels pending maker focus without preventing native input (1.053263ms)
+✔ pointerdown cancels pending maker focus without preventing native input (4.490421ms)
+✔ keydown cancels pending maker focus without preventing native input (0.99799ms)
+✔ a newer maker activation owns one pending focus and cleans up after success (6.882988ms)
+✔ a different native anchor cancels the old maker focus request (1.055948ms)
+✔ native board synchronization keeps manual scrolling accessible without requesting focus (1.092863ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 167.811687
