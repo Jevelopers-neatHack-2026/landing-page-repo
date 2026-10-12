@@ -1,0 +1,136 @@
+{
+  "checkedAt": "2026-10-12T16:57:03.872308+00:00",
+  "authorRole": "local implementation author; independent acceptance not supplied",
+  "mode": "offline local Git/source byte comparison; no provider/browser execution",
+  "sourceRevision": "db2e7c4bf8920f17b0ab132719edf910a284b5e6",
+  "sourceUrl": "https://github.com/Jevelopers-neatHack-2026/landing-page-repo/blob/db2e7c4bf8920f17b0ab132719edf910a284b5e6/site/index.html",
+  "previousAuditedRevision": "36c0a841d5b5c5f6e7c3870e65c541825026d214",
+  "previousPageSha256": "2bc1c248336d17ee0beb402882cc697925721a42f94b6e8f2fa187da36227a92",
+  "pageSha256": "91e9a369378376a45fe3a6a725a655229040ba4f3afb69d1d031116d97c33969",
+  "comparison": "Only the four listed opening-tag ID additions differ in the complete page bytes",
+  "replacements": [
+    [
+      "<section class=\"statement grain\" data-nav=",
+      "<section class=\"statement grain\" id=\"problem\" data-nav="
+    ],
+    [
+      "<section class=\"interlude\" data-nav=",
+      "<section class=\"interlude\" id=\"benefits\" data-nav="
+    ],
+    [
+      "<section class=\"gallery grain\" data-nav=",
+      "<section class=\"gallery grain\" id=\"gallery\" data-nav="
+    ],
+    [
+      "<footer data-nav=",
+      "<footer id=\"about\" data-nav="
+    ]
+  ],
+  "visibleTextSha256": "ed3b6f30f775c6184b3fccc77c0ba12606bcf6e2ab5e029493a4a54da38c4f29",
+  "visibleTextUnchanged": true,
+  "assetComparison": [
+    {
+      "path": "site/assets/ballet-clean.webp",
+      "sha256": "2195943b492e4cd54d082bb09804e20e2317e5b8866d346a1440a1417f1e22d4",
+      "bytes": 53684,
+      "comparison": "byte-identical"
+    },
+    {
+      "path": "site/assets/fan-clean.webp",
+      "sha256": "a28d2a81943ea441c259faa4d23027c05dc094c4be279e5cf2437a67b2166a48",
+      "bytes": 41546,
+      "comparison": "byte-identical"
+    },
+    {
+      "path": "site/assets/flight.json",
+      "sha256": "8a69e3e289014de675a6249b004c28e1ffe4e603f550678ab5a95c1a161d9e15",
+      "bytes": 556743,
+      "comparison": "byte-identical"
+    },
+    {
+      "path": "site/assets/hockey-clean.webp",
+      "sha256": "314e749eda387b3b0426238965ecd8350135fc9257f9c083e8f85d9bb92107cc",
+      "bytes": 51778,
+      "comparison": "byte-identical"
+    },
+    {
+      "path": "site/assets/hoops-clean.webp",
+      "sha256": "dc58c6f5f79a3625bad5e7337f865593073b55af780d1dfd01c242f70cfc230c",
+      "bytes": 64550,
+      "comparison": "byte-identical"
+    },
+    {
+      "path": "site/assets/keeper-clean.webp",
+      "sha256": "a14ee8df327cffae8ff3de4ff70f18f7b1beedf799ac84026f1992b7ee541cab",
+      "bytes": 96974,
+      "comparison": "byte-identical"
+    },
+    {
+      "path": "site/assets/pitcher-clean.webp",
+      "sha256": "d870f2afa43831cc1ad1eb7c7175d8f699c8b0244dc16e47042f91c81e310b07",
+      "bytes": 85802,
+      "comparison": "byte-identical"
+    },
+    {
+      "path": "site/assets/qb-clean.webp",
+      "sha256": "cb361142ff8821cf1df6610e9a2e958edfcd6683fb15eb493c1d1dbdaaf328cd",
+      "bytes": 67992,
+      "comparison": "byte-identical"
+    },
+    {
+      "path": "site/assets/singer-clean.webp",
+      "sha256": "e87628c1117385dff1463e03663f26f6b82ea56a2a6b5bebabd56ec1cd5e398e",
+      "bytes": 100472,
+      "comparison": "byte-identical"
+    },
+    {
+      "path": "site/assets/ticketstub.gltf.json",
+      "sha256": "c36b5d0af494390fd2fdd18d581033e60dc156b45604c00060b0dd6bd8153936",
+      "bytes": 1594648,
+      "comparison": "byte-identical"
+    }
+  ],
+  "localInputs": {
+    "scripts/suites/foundation.mjs": {
+      "sha256": "3b49b6488110ca44747e550e1bf87ddc742401e4dfe3d33e90ca0939882e79dd",
+      "bytes": 5841,
+      "publication": "local patch atop published db2e7c4"
+    },
+    "tests/foundation.test.mjs": {
+      "sha256": "2a2ef3cf25756837b0097983043046e962c0d22d05b8ec158a56bec121f9f9eb",
+      "bytes": 11469,
+      "publication": "local patch atop published db2e7c4"
+    },
+    "integration/site-map.md": {
+      "sha256": "f3f5538d497b7bd6c4b6dfa547571ec176fdd48a85a62607734ce59608c35e57",
+      "bytes": 6022,
+      "publication": "local patch atop published db2e7c4"
+    },
+    "src/content/copy.json": {
+      "sha256": "b77b805a569c78f8a8701e1b04e3e0addc79d2a3532b77a6a9221cbd6b13fe20",
+      "bytes": 72590,
+      "publication": "local patch atop published db2e7c4"
+    },
+    "review/examples.json": {
+      "sha256": "960984b3b055676501d4a43d3412dd5f7c92e01c8800f961acf902f428d88448",
+      "bytes": 32566,
+      "publication": "local patch atop published db2e7c4"
+    },
+    "review/privacy-inventory.json": {
+      "sha256": "89d95451b0f918dd76e509ef3cfecad2c4076371d371bc0905731545ceacfef7",
+      "bytes": 5900,
+      "publication": "local patch atop published db2e7c4"
+    },
+    "review/claims.md": {
+      "sha256": "24758e799692b8397ce1e5f6512e1b1730ee9ad69e8c12f5caf8444468244807",
+      "bytes": 16954,
+      "publication": "local patch atop published db2e7c4"
+    }
+  },
+  "approvals": "PENDING",
+  "limitations": [
+    "Checker/test and audit changes named in localInputs are uncommitted at capture; root must publish and verify the exact candidate.",
+    "The static scanner is bounded, uses literal ASCII IDs/fragments, and supplies no browser or product approval."
+  ],
+  "previousComparisonRecord": "source-comparison-first-repair.json"
+}

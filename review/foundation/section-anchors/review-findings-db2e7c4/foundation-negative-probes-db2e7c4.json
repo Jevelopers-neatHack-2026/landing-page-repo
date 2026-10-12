@@ -1,0 +1,78 @@
+{
+  "testedRevision": "db2e7c4bf8920f17b0ab132719edf910a284b5e6",
+  "sourceSlice": "d22c75f4b97898e576a421c43c05bc8449a0202c",
+  "runtime": "v24.15.0",
+  "mode": "local synthetic structural negative fixtures; no browser or provider",
+  "checkedAt": "2026-10-12T16:45:40.258Z",
+  "rows": [
+    {
+      "name": "nested-template",
+      "repository": "/workspace/scratch/f79c57b98c5b/foundation-negative-P2YYkk",
+      "htmlSha256": "698f5541b4edecc6b5ca9f616a95758f5670a14ceaf796d269791a1a707d2d7a",
+      "manifestSha256": "45582ded4390052d8f4e947c4d0cf16d6764e13c9eaf6d757287ec79290a949b",
+      "result": "accepted",
+      "coverage": {
+        "anchors": [
+          "top",
+          "hero",
+          "problem",
+          "benefits",
+          "scenes",
+          "how",
+          "studio",
+          "gallery",
+          "wall",
+          "make",
+          "about"
+        ],
+        "coverage": "static-section-targets"
+      }
+    },
+    {
+      "name": "textarea-text",
+      "repository": "/workspace/scratch/f79c57b98c5b/foundation-negative-L7NmPC",
+      "htmlSha256": "d1d51f23a12374fa1dabf8c8837697b7e33d87e722098f26872a4cb1681240db",
+      "manifestSha256": "b57953d4e287b2fdf95c39ec008a68d753ae502a9f84728555301839d45eab3d",
+      "result": "accepted",
+      "coverage": {
+        "anchors": [
+          "top",
+          "hero",
+          "problem",
+          "benefits",
+          "scenes",
+          "how",
+          "studio",
+          "gallery",
+          "wall",
+          "make",
+          "about"
+        ],
+        "coverage": "static-section-targets"
+      }
+    },
+    {
+      "name": "encoded-duplicate-id",
+      "repository": "/workspace/scratch/f79c57b98c5b/foundation-negative-CXOVvp",
+      "htmlSha256": "261e3e66c0cb2faddb72ac7c4f774f2960cf62776e7e76c09aecc25df626436b",
+      "manifestSha256": "3f1a6f0253501fa9e2bb61d5877df3c8ff005cb4151167bda29183851e7bf03c",
+      "result": "accepted",
+      "coverage": {
+        "anchors": [
+          "top",
+          "hero",
+          "problem",
+          "benefits",
+          "scenes",
+          "how",
+          "studio",
+          "gallery",
+          "wall",
+          "make",
+          "about"
+        ],
+        "coverage": "static-section-targets"
+      }
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+✔ included page sections have unique anchors on the documented existing surfaces (12.794144ms)
+✔ missing included #problem target fails even when no current navigation link refers to it (3.67976ms)
+✔ missing included #benefits target fails even when no current navigation link refers to it (2.861831ms)
+✔ missing included #gallery target fails even when no current navigation link refers to it (1.079592ms)
+✔ missing included #about target fails even when no current navigation link refers to it (1.308797ms)
+✔ comments, scripts and templates cannot replace a missing section anchor (4.566721ms)
+✔ misplaced, duplicate and hidden anchors fail instead of satisfying the page map (9.610931ms)
+✔ page-map validation rejects a dangling public fragment without inventing navigation (1.668848ms)
+✖ built artifact rejects nested template contents from independent FND review (106.355938ms)
+✖ built artifact rejects textarea literal text from independent FND review (59.47101ms)
+✖ built artifact rejects encoded duplicate ID from independent FND review (67.306583ms)
+✖ ambiguous encoded or whitespace-prefixed public fragments fail closed (1.291ms)
+✔ actual illustrated source builds reproducibly with every asset and no repository documents (103.530052ms)
+✔ validator detects missing referenced assets, tampering, stale manifests and unexpected files (21.631363ms)
+✔ build refuses symlinks, unreviewed asset types and unsafe output destinations (3.722012ms)
+✔ preview serves homepage and every actual asset; unknown and app routes cannot fall back to landing (119.984205ms)
+✔ dispatcher rejects invalid arguments and no-argument validation fails for unavailable required suites (705.14869ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 13
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1359.137644
+
+✖ failing tests:
+
+test at tests/foundation.test.mjs:53:3
+✖ built artifact rejects nested template contents from independent FND review (106.355938ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/pins-published/tests/foundation.test.mjs:59:12)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /Included section anchor missing: #problem/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/foundation.test.mjs:53:3
+✖ built artifact rejects textarea literal text from independent FND review (59.47101ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/pins-published/tests/foundation.test.mjs:59:12)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /Included section anchor missing: #problem/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/foundation.test.mjs:53:3
+✖ built artifact rejects encoded duplicate ID from independent FND review (67.306583ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/pins-published/tests/foundation.test.mjs:59:12)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /literal ASCII/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/foundation.test.mjs:63:1
+✖ ambiguous encoded or whitespace-prefixed public fragments fail closed (1.291ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /literal ASCII fragment/. Input:
+  
+  'AssertionError [ERR_ASSERTION]: Missing public fragment target: #pro&#98;lem'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/pins-published/tests/foundation.test.mjs:65:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: AssertionError [ERR_ASSERTION]: Missing public fragment target: #pro&#98;lem
+        at inspectSectionAnchors (file:///workspace/scratch/f79c57b98c5b/pins-published/scripts/suites/foundation.mjs:33:12)
+        at file:///workspace/scratch/f79c57b98c5b/pins-published/tests/foundation.test.mjs:65:25
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/pins-published/tests/foundation.test.mjs:65:12)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+        at Test.postRun (node:internal/test_runner/test:1330:19)
+        at Test.run (node:internal/test_runner/test:1258:12),
+    expected: /literal ASCII fragment/,
+    operator: 'throws',
+    diff: 'simple'
+  }

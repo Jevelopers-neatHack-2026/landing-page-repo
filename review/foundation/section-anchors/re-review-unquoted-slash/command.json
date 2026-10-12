@@ -1,0 +1,30 @@
+{
+  "sourceRevision": "db2e7c4bf8920f17b0ab132719edf910a284b5e6",
+  "checkerState": "local first repair atop published source; not published",
+  "mode": "local/offline synthetic source mutation with real build/artifact validation",
+  "findingOrigin": "independent governance_implementation reviewer re-review",
+  "reproduction": "Remove the real id=\"problem\", append <section class=\"statement\" id=problem/></section> before </body>. Browser/HTML ID value is problem/, not problem.",
+  "retainedOriginalFixture": "/workspace/scratch/f79c57b98c5b/foundation-unquoted-slash-probe.html",
+  "fixtureSha256": "6798043a0333381300847c93a7b12d0bec7d11808b991688b1b26d6a990cb4c3",
+  "command": [
+    "/workspace/scratch/41d02a12a55b/task-state/toolchains/node24/node_modules/node/bin/node",
+    "--test",
+    "tests/foundation.test.mjs"
+  ],
+  "startedAt": "2026-10-12T16:55:43.445610+00:00",
+  "completedAt": "2026-10-12T16:55:44.624881+00:00",
+  "exitCode": 1,
+  "expected": "failure before follow-up checker repair",
+  "checkerSha256": "7486481043d3d7239dcd1f3b6580df96ac0689b6e8548371ca6ffa5d606a451e",
+  "testSha256": "2a2ef3cf25756837b0097983043046e962c0d22d05b8ec158a56bec121f9f9eb",
+  "files": {
+    "before-repair.stdout.log": {
+      "sha256": "852da19f976431590c915942716f954b18f3bf31e5b9f86a618f63b56464288f",
+      "bytes": 2573
+    },
+    "before-repair.stderr.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  }
+}

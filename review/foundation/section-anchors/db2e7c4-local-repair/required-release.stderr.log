@@ -1,0 +1,8 @@
+FAIL content: LP-COPY-01: product/marketing approval pending
+FAIL cta: Release CTA deployed revision/artifact identity, broader owner acceptance and browser evidence pending; navigation-only approval cannot pass release
+FAIL proof: site/assets/ballet-clean.webp: release permission/sanitization pending
+FAIL ux: UX release blocked: actual viewport, keyboard/screen-reader, zoom/reflow, reduced-motion/failure and three-run performance evidence unavailable; see review/ux/README.md
+FAIL brand: required validator unavailable. Implement scripts/suites/brand.mjs under its LP issue; this check is not a pass.
+FAIL privacy: Privacy release approval receipt missing: owner review, LP-03 handoff and clean-browser evidence pending
+FAIL metadata: Production origin pending: app/hosting owner must supply it
+FAIL governance: required validator unavailable. Implement scripts/suites/governance.mjs under its LP issue; this check is not a pass.

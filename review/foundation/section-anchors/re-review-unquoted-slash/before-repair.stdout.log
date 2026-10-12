@@ -1,0 +1,42 @@
+✔ included page sections have unique anchors on the documented existing surfaces (5.448399ms)
+✔ missing included #problem target fails even when no current navigation link refers to it (3.531308ms)
+✔ missing included #benefits target fails even when no current navigation link refers to it (2.545771ms)
+✔ missing included #gallery target fails even when no current navigation link refers to it (0.992832ms)
+✔ missing included #about target fails even when no current navigation link refers to it (0.965812ms)
+✔ comments, scripts and templates cannot replace a missing section anchor (3.853191ms)
+✔ misplaced, duplicate and hidden anchors fail instead of satisfying the page map (10.73935ms)
+✔ page-map validation rejects a dangling public fragment without inventing navigation (1.765554ms)
+✔ built artifact rejects nested template contents from independent FND review (72.124902ms)
+✔ built artifact rejects textarea literal text from independent FND review (42.302423ms)
+✔ built artifact rejects encoded duplicate ID from independent FND review (42.351436ms)
+✖ built artifact rejects slash in an unquoted ID from independent FND review (38.584593ms)
+✔ ambiguous encoded or whitespace-prefixed public fragments fail closed (4.404743ms)
+✔ actual illustrated source builds reproducibly with every asset and no repository documents (77.166031ms)
+✔ validator detects missing referenced assets, tampering, stale manifests and unexpected files (11.928315ms)
+✔ build refuses symlinks, unreviewed asset types and unsafe output destinations (5.591156ms)
+✔ preview serves homepage and every actual asset; unknown and app routes cannot fall back to landing (80.672753ms)
+✔ dispatcher rejects invalid arguments and no-argument validation fails for unavailable required suites (602.113141ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 17
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1103.269143
+
+✖ failing tests:
+
+test at tests/foundation.test.mjs:54:3
+✖ built artifact rejects slash in an unquoted ID from independent FND review (38.584593ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/pins-published/tests/foundation.test.mjs:60:12)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /literal ASCII/,
+    operator: 'throws',
+    diff: 'simple'
+  }

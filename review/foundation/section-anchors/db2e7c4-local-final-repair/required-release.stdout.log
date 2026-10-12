@@ -1,0 +1,86 @@
+✔ included page sections have unique anchors on the documented existing surfaces (6.654232ms)
+✔ missing included #problem target fails even when no current navigation link refers to it (3.787584ms)
+✔ missing included #benefits target fails even when no current navigation link refers to it (7.56095ms)
+✔ missing included #gallery target fails even when no current navigation link refers to it (1.091271ms)
+✔ missing included #about target fails even when no current navigation link refers to it (1.071511ms)
+✔ comments, scripts and templates cannot replace a missing section anchor (3.791529ms)
+✔ misplaced, duplicate and hidden anchors fail instead of satisfying the page map (10.735086ms)
+✔ page-map validation rejects a dangling public fragment without inventing navigation (5.537894ms)
+✔ built artifact rejects nested template contents from independent FND review (76.422862ms)
+✔ built artifact rejects textarea literal text from independent FND review (49.82346ms)
+✔ built artifact rejects encoded duplicate ID from independent FND review (54.742534ms)
+✔ built artifact rejects slash in an unquoted ID from independent FND review (45.450181ms)
+✔ ambiguous encoded or whitespace-prefixed public fragments fail closed (5.40191ms)
+✔ actual illustrated source builds reproducibly with every asset and no repository documents (68.45494ms)
+✔ validator detects missing referenced assets, tampering, stale manifests and unexpected files (17.294621ms)
+✔ build refuses symlinks, unreviewed asset types and unsafe output destinations (4.037419ms)
+✔ preview serves homepage and every actual asset; unknown and app routes cannot fall back to landing (92.292125ms)
+✔ dispatcher rejects invalid arguments and no-argument validation fails for unavailable required suites (515.391558ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 18
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1063.640049
+PASS_LOCAL foundation
+✔ actual source config, no-JS markup and local editor boundary are explicit (9.468072ms)
+✔ no-JS escape is explicit, query-free and uses the same approved native destination (2.987211ms)
+✔ a mismatched or hidden duplicate static fallback link cannot escape the approved config (19.176615ms)
+✔ duplicate mixed-case href attributes are rejected instead of choosing one (4.690029ms)
+✔ withdrawn config requires static no-JS navigation to be withdrawn too (4.102687ms)
+✔ missing/invalid config cannot expose any external navigation (13.669687ms)
+✔ approved-shaped link fixtures carry only exact owner-allowlisted URL in each environment (11.492323ms)
+✔ unavailable service, pending owner or absent/nonimmutable/mismatched approval receipts disable the link (29.758721ms)
+✔ invalid scheme/origin/path, queries, fragments, credentials and private destinations fail closed (46.334416ms)
+✔ real pointer/Enter/preview/example/navigation handlers keep synthetic input local with reduced motion and blocked surfaces (5.307688ms)
+✔ tampered source config, named input and sending confirmation are rejected (3.37298ms)
+✔ limited thread receipt rejects malformed observation/approval scope and cannot migrate to another environment (25.444156ms)
+✔ actual live navigation target stays byte-identical after editing, chips, button clicks and Enter (1.615979ms)
+✔ invalid config must remove the real pre-existing native href; deletion mutant fails the safety assertion (4.722839ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 295.389061
+✔ wheel keeps moving forward/backward after the 3D loop exits on context loss (3.594993ms)
+✔ an animation exception cannot strand wheel input and starts readable static art (1.093524ms)
+✔ display-only rail tracks native scrolling/resizing without rendering frames (1.045432ms)
+✔ rail is decorative and passes pointer input through (0.497518ms)
+✔ switching to static art restores scene copy hidden by an interrupted 3D frame (1.092843ms)
+✔ native navigation reaches scenes and maker, with reduced motion false (1.498653ms)
+✔ native navigation reaches scenes and maker, with reduced motion true (0.928767ms)
+✔ user wheel input cancels pending maker focus (0.966363ms)
+✔ seamless hero wrap uses an immediate native jump (1.08445ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 99.76377
+ux: source checks and real-handler scroll tests passed; 5 unresolved review/evidence items; browser/WCAG/lab performance not certified
+✔ actual static HTML has one valid head and consistent inventoried preview/social copy (2.567209ms)
+✔ preview, demo and staging never inherit production canonical, indexing or sitemap (0.491449ms)
+✔ synthetic approved production index/noindex fixtures enforce exact origin and real homepage inventory (0.880103ms)
+✔ production rejects missing origin, undecided indexing and every pending/missing owner receipt (1.483109ms)
+✔ production origin rejects preview hosts, private addresses and malformed/credential/query/path URLs (0.395665ms)
+✔ private app routes, aliases and section anchors cannot become indexable pages (1.235016ms)
+✔ head placement, duplicate and missing metadata regression fixtures fail (3.096054ms)
+✔ canonical/image/structured data leakage and missing ledger entries fail (4.975679ms)
+✔ invalid environments and unsupported image/structured decisions fail (0.31302ms)
+✔ loopback served artifact contains static metadata without JS and exposes no sitemap/robots/private route (68.826814ms)
+✔ approval receipts cannot silently authorize a changed origin or indexing decision (0.542325ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 195.786438

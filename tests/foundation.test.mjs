@@ -45,6 +45,28 @@ test('page-map validation rejects a dangling public fragment without inventing n
   assert.throws(() => inspectSectionAnchors(page + '<a href="#absent-surface">Fixture</a>'), /Missing public fragment target/);
 });
 
+for (const [name, insertion, removeProblem, expected] of [
+  ['nested template contents', '<template><template></template><section class="statement" id="problem"></section></template>', true, /Included section anchor missing: #problem/],
+  ['textarea literal text', '<textarea><section class="statement" id="problem"></section></textarea>', true, /Included section anchor missing: #problem/],
+  ['encoded duplicate ID', '<span id="pro&#98;lem"></span>', false, /literal ASCII/],
+  ['slash in an unquoted ID', '<section class="statement" id=problem/></section>', true, /literal ASCII/],
+]) {
+  test(`built artifact rejects ${name} from independent FND review`, async t => {
+    const repository = await sandbox(t, true);
+    const source = (removeProblem ? page.replace(' id="problem"', '') : page).replace('</body>', insertion + '</body>');
+    await writeFile(resolve(repository, 'site/index.html'), source);
+    const { output } = await buildSite({ repository });
+    await validateArtifact(repository, output);
+    assert.throws(() => inspectSectionAnchors(source), expected);
+  });
+}
+
+test('ambiguous encoded or whitespace-prefixed public fragments fail closed', () => {
+  for (const href of ['#pro&#98;lem', '#pro%62lem', '&#35;problem', '&num;problem', ' #problem']) {
+    assert.throws(() => inspectSectionAnchors(page + `<a href="${href}">Fixture</a>`), /literal ASCII fragment/);
+  }
+});
+
 async function sandbox(t, actual = false) {
   const repository = await mkdtemp(resolve(tmpdir(), 'lp-foundation-test-'));
   t.after(() => rm(repository, { recursive: true, force: true }));

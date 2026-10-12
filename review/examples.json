@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "scope": "Existing illustrative assets retained for local review; release blocked",
-  "pageSha256": "2bc1c248336d17ee0beb402882cc697925721a42f94b6e8f2fa187da36227a92",
+  "pageSha256": "91e9a369378376a45fe3a6a725a655229040ba4f3afb69d1d031116d97c33969",
   "source": {
     "repository": "Jevelopers-neatHack-2026/landing-page-repo",
     "revision": "1d8379d1c5b0cb89ef869ea2cc7358886c9cf274",
@@ -659,10 +659,10 @@
   "recheckBy": "2026-11-12",
   "auditedSource": {
     "repository": "Jevelopers-neatHack-2026/landing-page-repo",
-    "revision": "36c0a841d5b5c5f6e7c3870e65c541825026d214",
-    "url": "https://github.com/Jevelopers-neatHack-2026/landing-page-repo/blob/36c0a841d5b5c5f6e7c3870e65c541825026d214/site/index.html"
+    "revision": "db2e7c4bf8920f17b0ab132719edf910a284b5e6",
+    "url": "https://github.com/Jevelopers-neatHack-2026/landing-page-repo/blob/db2e7c4bf8920f17b0ab132719edf910a284b5e6/site/index.html"
   },
-  "sourceNote": "source fields retain historical origins/proposals; auditedSource binds the current page bytes only. Local author audit is not owner approval.",
+  "sourceNote": "source fields retain historical origins/proposals; auditedSource binds the current page bytes only. Local author audit is not owner approval. Author re-audit at db2e7c4bf8920f17b0ab132719edf910a284b5e6 confirms that only problem, benefits, gallery and about IDs were added to existing elements; copy, scripts, styles, resources and asset bytes are unchanged. Earlier current audit remains in historicalSourceReferences; owner/publication approvals remain pending.",
   "historicalSourceReferences": [
     {
       "repository": "Jevelopers-neatHack-2026/landing-page-repo",
@@ -681,6 +681,13 @@
       "revision": "3c510591150e3bb44eb1fa44e9993ae32677ad3d",
       "url": "https://github.com/Jevelopers-neatHack-2026/landing-page-repo/blob/3c510591150e3bb44eb1fa44e9993ae32677ad3d/site/index.html",
       "relationship": "Earlier maker surface/motion audit before native overflow and no-JavaScript escape; historical only, not current approval."
+    },
+    {
+      "repository": "Jevelopers-neatHack-2026/landing-page-repo",
+      "revision": "36c0a841d5b5c5f6e7c3870e65c541825026d214",
+      "url": "https://github.com/Jevelopers-neatHack-2026/landing-page-repo/blob/36c0a841d5b5c5f6e7c3870e65c541825026d214/site/index.html",
+      "pageSha256": "2bc1c248336d17ee0beb402882cc697925721a42f94b6e8f2fa187da36227a92",
+      "relationship": "Previous immutable author audit after native maker focus correction and before four static section-anchor IDs; retained as historical evidence, not current approval."
     }
   ]
 }
