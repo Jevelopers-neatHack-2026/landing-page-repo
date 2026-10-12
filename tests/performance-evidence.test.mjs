@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { EventEmitter } from 'node:events';
-import { PROFILE, inspectMetrics, inspectProfile, summarizeRuns, sanitizeReport, safeUrl, closeOwnedChrome } from '../scripts/check-performance-browser.mjs';
+import { PROFILE, inspectMetrics, inspectProfile, inspectServedDocuments, summarizeRuns, sanitizeReport, safeUrl, closeOwnedChrome } from '../scripts/check-performance-browser.mjs';
 
 const fixtureReport = () => ({ audits: { 'largest-contentful-paint': { numericValue: 2200 }, 'cumulative-layout-shift': { numericValue: .04 }, 'total-blocking-time': { numericValue: 100 } } });
 const run = (metrics = { lcpMs: 2200, cls: .04, tbtMs: 100 }) => ({ status: 'measured', metricsValid: true, metrics, failures: [], browserClosed: true });
@@ -75,4 +75,23 @@ test('synthetic owned child close event is awaited and recorded', async () => {
   const child = new EventEmitter(); child.exitCode = null; child.signalCode = null;
   const result = await closeOwnedChrome({ chromeProcess: child, kill() { setImmediate(() => child.emit('close', null, 'SIGKILL')); } }, 1000);
   assert.equal(result.closed, true); assert.equal(result.evidence, 'owned-child-close-event'); assert.equal(result.signalCode, 'SIGKILL');
+});
+
+const served = requestId => ({ url: 'LOCAL_ORIGIN/', requestId, method: 'GET', status: 200, bytes: 20, sha256: 'a'.repeat(64) });
+const page = { pageSha256: 'a'.repeat(64), pageBytes: 20 };
+test('synthetic multiple distinct Lighthouse return navigations retain and verify every page response', () => {
+  assert.deepEqual(inspectServedDocuments([served('synthetic-1')], page), []);
+  const documents = [served('synthetic-1'), served('synthetic-2')];
+  assert.deepEqual(inspectServedDocuments(documents, page), []); assert.equal(documents.length, 2);
+});
+test('synthetic absent, duplicated or mixed-identity main-document receipts cannot qualify', () => {
+  assert.ok(inspectServedDocuments([], page).length);
+  assert.ok(inspectServedDocuments([served('synthetic-1'), served('synthetic-1')], page).length);
+  for (const mutation of [{ sha256: 'b'.repeat(64) }, { bytes: 21 }, { status: 304 }, { url: 'LOCAL_ORIGIN/other' }, { method: 'POST' }, { requestId: undefined }]) {
+    assert.ok(inspectServedDocuments([served('synthetic-1'), { ...served('synthetic-2'), ...mutation }], page).length);
+  }
+});
+test('a newly accepted receipt policy does not change a retained failed trial into a passing median', () => {
+  const originallyFailed = { ...run(), status: 'failed', failures: ['Exactly one matching actual main-document receipt is required'] };
+  assert.equal(summarizeRuns([originallyFailed, originallyFailed, originallyFailed]).meetsBudgets, false);
 });

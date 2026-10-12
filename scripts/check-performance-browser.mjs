@@ -60,6 +60,18 @@ export function inspectProfile(settings) {
   return problems;
 }
 
+// Lighthouse's navigation gatherers can revisit the measured URL after the
+// timed navigation (for example BFCacheFailures returns from chrome://terms).
+// Preserve every actual response; none may differ from the bound page bytes.
+export function inspectServedDocuments(documents, { pageSha256, pageBytes }) {
+  const problems = [];
+  if (!Array.isArray(documents) || documents.length === 0) return ['At least one actual measured-page main-document receipt is required'];
+  const ids = documents.map(document => document.requestId);
+  if (ids.some(id => typeof id !== 'string' || !id) || new Set(ids).size !== ids.length) problems.push('Distinct measured-page navigation request identities are required');
+  if (documents.some(document => document.url !== 'LOCAL_ORIGIN/' || document.method !== 'GET' || document.status !== 200 || document.sha256 !== pageSha256 || document.bytes !== pageBytes)) problems.push('Every measured-page main-document response must match the exact artifact');
+  return problems;
+}
+
 export function summarizeRuns(runs) {
   if (runs.length !== 3 || runs.some(run => run.status !== 'measured' || !run.metricsValid || run.failures?.length || !run.browserClosed)) return { status: 'INCOMPLETE_OR_FAILED_RUNS', budgets: BUDGETS, medians: null, meetsBudgets: false };
   const medians = {};
@@ -177,7 +189,8 @@ export async function collect({ repository = root, output }) {
         page.on('response', response => {
           const request = response.request();
           if (!request.isNavigationRequest() || request.frame() !== page.mainFrame() || response.url() !== url) return;
-          const promise = (async () => { const bytes = await response.buffer(); run.servedDocuments.push({ url: 'LOCAL_ORIGIN/', status: response.status(), bytes: bytes.length, sha256: sha256(bytes), fromCache: response.fromCache() }); })().catch(error => run.failures.push(`Main-document receipt failed: ${safeError(error)}`));
+          const observedAt = new Date().toISOString();
+          const promise = (async () => { const bytes = await response.buffer(); run.servedDocuments.push({ url: 'LOCAL_ORIGIN/', requestId: request.id, method: request.method(), observedAt, status: response.status(), bytes: bytes.length, sha256: sha256(bytes), fromCache: response.fromCache() }); })().catch(error => run.failures.push(`Main-document receipt failed: ${safeError(error)}`));
           pendingResponses.add(promise); promise.finally(() => pendingResponses.delete(promise));
         });
         const settings = { port: chrome.port, hostname: '127.0.0.1', logLevel: 'silent', output: 'json', onlyCategories: ['performance'], ...PROFILE, throttling: { ...constants.throttling.mobileSlow4G, ...PROFILE.throttling }, emulatedUserAgent: constants.userAgents.mobile, disableFullPageScreenshot: true, disableStorageReset: false, enableErrorReporting: false, maxWaitForFcp: 30000, maxWaitForLoad: 45000 };
@@ -203,7 +216,7 @@ export async function collect({ repository = root, output }) {
         run.runWarnings = sanitizeReport(lhr.runWarnings || [], origin).value;
         run.runtimeError = sanitizeReport(lhr.runtimeError || null, origin).value;
         if (lhr.requestedUrl !== url || (lhr.finalDisplayedUrl || lhr.finalUrl) !== url) run.failures.push('Lighthouse measured or ended at an unexpected URL');
-        if (run.servedDocuments.length !== 1 || run.servedDocuments.some(doc => doc.status !== 200 || doc.sha256 !== report.pageSha256 || doc.bytes !== sourceBytes.length)) run.failures.push('Exactly one matching actual main-document receipt is required');
+        run.failures.push(...inspectServedDocuments(run.servedDocuments, { pageSha256: report.pageSha256, pageBytes: sourceBytes.length }));
         if (run.pageErrors.length || run.failedRequests.length) run.failures.push('Observed page or resource failures during normal-profile run; retain metrics diagnostically only');
         run.finalPage = await deadline('Final page state', page.evaluate(() => ({ rootClasses: document.documentElement.className, readyState: document.readyState, innerWidth, innerHeight, clientWidth: document.documentElement.clientWidth, scrollWidth: document.documentElement.scrollWidth })), 10000);
         run.status = run.failures.length ? 'failed' : 'measured';
