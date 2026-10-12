@@ -173,13 +173,14 @@ try {
       // window are separate. Never turn an undelivered event into a scroll pass.
       const wheelReceiptRequired = name !== 'no-javascript' && label.includes('wheel');
       const receiptDeadline = Date.now() + 5000;
-      let receipt = null;
+      let receipt = null, receiptWithinWindow = false;
       if (wheelReceiptRequired) {
         do {
           receipt = (await inputAudit()).events.find(event => event.phase === label && event.type === 'wheel' && event.trusted && event.deltaY * direction > 0);
           if (receipt) break;
           await page.waitForTimeout(100);
         } while (Date.now() < receiptDeadline);
+        receiptWithinWindow = Boolean(receipt) && Date.now() <= receiptDeadline;
       }
       const deadline = Date.now() + 5000;
       let observed, movementWithinWindow = false;
@@ -187,9 +188,9 @@ try {
       while (observed[position] * direction <= before[position] * direction + 2 && Date.now() < deadline);
       movementWithinWindow = Date.now() <= deadline && observed[position] * direction > before[position] * direction + 2;
       const after = await settled(position);
-      const passed = (!wheelReceiptRequired || receipt) && movementWithinWindow && after[position] * direction > before[position] * direction + 2;
-      const error = passed ? null : wheelReceiptRequired && !receipt ? 'Trusted wheel receipt was not observed within five seconds' : 'Expected native movement did not occur';
-      observation.results.push({ label, input: label, before, after, dispatch, movementWithinWindow, wheelReceipt: wheelReceiptRequired ? receipt : 'not-required', result: passed ? 'pass' : 'fail', ...(error ? { error } : {}) });
+      const passed = (!wheelReceiptRequired || receiptWithinWindow) && movementWithinWindow && after[position] * direction > before[position] * direction + 2;
+      const error = passed ? null : wheelReceiptRequired && !receiptWithinWindow ? 'Trusted wheel receipt was not observed within five seconds' : 'Expected native movement was not observed within five seconds and maintained after settling';
+      observation.results.push({ label, input: label, before, after, dispatch, receiptWithinWindow: wheelReceiptRequired ? receiptWithinWindow : 'not-required', movementWithinWindow, wheelReceipt: wheelReceiptRequired ? receipt : 'not-required', result: passed ? 'pass' : 'fail', ...(error ? { error } : {}) });
       assert.ok(passed, label);
     };
     try {
