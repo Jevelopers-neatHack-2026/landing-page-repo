@@ -13,21 +13,23 @@ It explains what TicketStub makes (personalized commemorative ticket stubs), who
 | `assets/flight.json` | Baked paper-physics flights and shape-key weights |
 | `assets/*.webp` | Performer cut-outs for the event scenes |
 
-Libraries load from jsDelivr (three.js r160 and Motion 11.11.17) and fonts from Google Fonts. The page can be served directly; the repository's optional static artifact build copies the public files without a package install. Page input uses native scrolling independently of animation rendering; the orange rail is a display-only progress marker.
+Libraries load from jsDelivr (three.js r160 and Motion 11.11.17) and fonts from Google Fonts. The source page needs no bundler, while the repository's artifact builder copies the allowed file types and records their hashes. Page input uses native scrolling independently of animation rendering; the orange rail is a display-only progress marker. See the [repository quickstart](../README.md#quickstart) for the maintained artifact workflow.
 
 ## Run it locally
 
-The page loads its 3D model and flight data with `fetch`, so serve the folder rather than opening the file directly:
+The page loads its 3D model and flight data with `fetch`, so serve it over HTTP. For an artifact preview, run from the repository root:
 
 ```sh
-cd site
-python3 -m http.server 8080
-# then open http://localhost:8080
+node scripts/build.mjs
+node scripts/preview.mjs --port 8080
+# then open http://127.0.0.1:8080/
 ```
+
+For a source-only preview, `python3 -m http.server 8080 --directory site --bind 127.0.0.1` also works from the repository root. Neither preview proves the deployed host serves this revision.
 
 ## Scroll regression checks
 
-Run the focused checks locally with Node.js 20 or newer. They need no npm dependencies, network, provider calls or charges:
+Run the focused checks **from the repository root**, with the pinned Node.js **24.15.0** toolchain. They need no npm dependencies or external provider calls:
 
 ```sh
 node --test tests/scroll.test.mjs
@@ -39,8 +41,10 @@ For browser verification, scroll forward/backward over content and the right-edg
 
 ## Page order
 
-Hero ("Keep the night.") → the problem → eight illustrative event scenes where a performer throws a 3D stub → how it works → the illustrative studio → sample gallery → a corkboard that fills with stubs → the "Make yours!" local editor → footer, then a seamless loop back to the hero.
+Hero ("Keep the night.") → the problem → eight illustrative event scenes → how it works → the studio → sample gallery → a corkboard that fills with stubs → the "Make yours!" surface → footer, then a loop back to the hero. The [page inventory](../integration/site-map.md) records exact anchors and pending content decisions.
 
-The editor changes a local fictional preview. Nothing entered in it is sent to the studio. A separate approved native link opens exactly `https://getticketstub.com/make` without query text or a fragment. If JavaScript is disabled, a static notice and the same studio link remain available. Physical printing, prices and delivery are pending; the old $9.99/72-hour wording is historical and no longer on this page.
+The maker updates a local illustrative preview. It does not submit an event or ticket link. A separate **Open studio** link, including its no-JavaScript fallback, navigates to `https://getticketstub.com/make` without copying input, a query or a fragment. The [CTA contract](../integration/cta-contract.md) records the limited public-navigation decision and the matching `src/content/cta.json` configuration. Deployed destination identity and full CTA/release acceptance remain separate checks. Physical printing, prices and delivery are pending. The former $9.99-per-stub and 72-hour shipping promises were withdrawn and are absent from the current page; they remain historical wording, not an approved offer.
 
 Event names on the page are illustrative. The stubs are commemorative keepsakes, not admission tickets.
+
+Brand, example rights, responsive/manual review and release acceptance remain tracked in the [repository status](../README.md#status). Preserve the historical browser receipts under `review/ux/`; a passing source test is not a fresh browser or publication review.
