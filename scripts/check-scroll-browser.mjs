@@ -21,7 +21,7 @@ const repository = resolve(options.get('--repository') || root);
 const output = resolve(options.get('--output') || resolve(repository, 'dist/browser-scroll'));
 const capture = options.get('--capture') || 'none';
 assert.ok(['none', 'view'].includes(capture), 'Unknown screenshot capture mode');
-const scenarioNames = ['normal', 'context-loss', 'blocked-cdn', 'webgl-failure', 'reduced-motion', 'touch', 'narrow-keyboard', 'tablet', 'short-desktop', 'no-javascript'];
+const scenarioNames = ['normal', 'context-loss', 'blocked-cdn', 'missing-media', 'webgl-failure', 'reduced-motion', 'touch', 'narrow-keyboard', 'tablet', 'short-desktop', 'no-javascript'];
 const selected = options.has('--scenario') ? [options.get('--scenario')] : scenarioNames;
 assert.ok(selected.every(name => scenarioNames.includes(name)), 'Unknown browser scenario');
 assert.ok(process.env.LANDING_PLAYWRIGHT_MODULE, 'Set LANDING_PLAYWRIGHT_MODULE to the installed Playwright index.mjs');
@@ -65,19 +65,46 @@ try {
     const mobile = name === 'touch';
     const viewport = mobile ? { width: 375, height: 812 } : name === 'narrow-keyboard' ? { width: 320, height: 568 } : name === 'tablet' ? { width: 768, height: 1024 } : name === 'short-desktop' ? { width: 1440, height: 568 } : { width: 1440, height: 900 };
     const observation = { name, viewport, results: [], console: [], requests: [], failedRequests: [], screenshots: [] };
+    const fictionalInput = 'TicketStub-Fictional-Privacy-Canary-20261012';
+    const redactFixture = value => value.replaceAll(fictionalInput, '[FICTIONAL_INPUT]').replaceAll(encodeURIComponent(fictionalInput), '[FICTIONAL_INPUT]');
+    const safeUrl = value => {
+      try {
+        const url = new URL(value);
+        return `${url.origin === origin ? 'LOCAL_ORIGIN' : url.origin}${redactFixture(url.pathname)}${url.search ? '?[query-values-omitted]' : ''}`;
+      } catch { return '[unparseable-url]'; }
+    };
+    const safeMessage = value => redactFixture(value.replace(/https?:\/\/[^\s"'<>]+/g, safeUrl).replaceAll(origin, 'LOCAL_ORIGIN'));
     report.scenarios.push(observation);
     const context = await browser.newContext({ viewport: observation.viewport, hasTouch: mobile, isMobile: mobile, reducedMotion: name === 'reduced-motion' ? 'reduce' : 'no-preference', javaScriptEnabled: name !== 'no-javascript' });
     const page = await context.newPage();
+    const started = performance.now();
+    observation.resourceLifecycle = [];
+    for (const [event, state] of [['request', 'started'], ['requestfinished', 'finished'], ['requestfailed', 'failed']]) page.on(event, request => {
+      if (observation.resourceLifecycle.length >= 160) return;
+      observation.resourceLifecycle.push({ state, atNodeMs: performance.now() - started, url: safeUrl(request.url()), ...(state === 'failed' ? { error: safeMessage(request.failure()?.errorText || '') } : {}) });
+    });
+    if (name !== 'no-javascript') await page.addInitScript(() => {
+      // Observe receipt without canceling input or changing application handlers,
+      // focus, styles or scrolling. A protocol response alone is not receipt.
+      const audit = window.__ticketStubInputAudit = { phase: '', events: [] };
+      for (const type of ['wheel', 'keydown', 'touchstart', 'touchend', 'pointerdown', 'pointerup']) addEventListener(type, event => {
+        if (audit.events.length >= 300) return;
+        const row = { phase: audit.phase, type, atPageMs: performance.now(), eventTimeStamp: event.timeStamp, trusted: event.isTrusted, cancelable: event.cancelable, targetTag: event.target?.tagName || '', targetId: event.target?.id || '', ...(type === 'wheel' ? { deltaX: event.deltaX, deltaY: event.deltaY, deltaMode: event.deltaMode } : {}), ...(type === 'keydown' && ['PageDown', 'PageUp', ' ', 'ArrowDown', 'ArrowUp', 'Enter', 'Tab'].includes(event.key) ? { key: event.key, shiftKey: event.shiftKey } : {}) };
+        audit.events.push(row);
+        setTimeout(() => { row.defaultPreventedAfterDispatch = event.defaultPrevented; }, 0);
+      }, { capture: true, passive: true });
+    });
     page.setDefaultTimeout(15000);
-    page.on('pageerror', error => observation.console.push({ type: 'pageerror', message: error.message }));
-    page.on('console', message => { if (['warning', 'error'].includes(message.type())) observation.console.push({ type: message.type(), message: message.text().replaceAll(origin, 'LOCAL_ORIGIN') }); });
-    page.on('requestfailed', request => observation.failedRequests.push({ url: request.url().replaceAll(origin, 'LOCAL_ORIGIN'), error: request.failure()?.errorText }));
+    page.on('pageerror', error => observation.console.push({ type: 'pageerror', message: safeMessage(error.message) }));
+    page.on('console', message => { if (['warning', 'error'].includes(message.type())) observation.console.push({ type: message.type(), message: safeMessage(message.text()) }); });
+    page.on('requestfailed', request => observation.failedRequests.push({ url: safeUrl(request.url()), error: safeMessage(request.failure()?.errorText || '') }));
     await context.route('**/*', route => {
       const url = new URL(route.request().url());
       const local = url.origin === origin;
       const expected = ['https://cdn.jsdelivr.net', 'https://fonts.googleapis.com', 'https://fonts.gstatic.com'].includes(url.origin);
-      const blocked = !local && (name === 'blocked-cdn' || !expected);
-      observation.requests.push({ url: url.href.replaceAll(origin, 'LOCAL_ORIGIN'), resourceType: route.request().resourceType(), disposition: blocked ? 'blocked-by-test' : 'allowed' });
+      const blocked = (local && name === 'missing-media' && url.pathname.startsWith('/assets/')) || (!local && (name === 'blocked-cdn' || !expected));
+      const body = route.request().postData() || '';
+      observation.requests.push({ url: safeUrl(url.href), method: route.request().method(), hasRequestBody: Boolean(body), containsFictionalInput: [url.href, body].some(value => value.includes(fictionalInput) || value.includes(encodeURIComponent(fictionalInput))), resourceType: route.request().resourceType(), disposition: blocked ? 'blocked-by-test' : 'allowed' });
       return blocked ? route.abort('blockedbyclient') : route.continue();
     });
     if (name === 'webgl-failure') await page.addInitScript(() => {
@@ -88,7 +115,28 @@ try {
         return original.call(this, type, ...args);
       };
     });
-    const sample = () => page.evaluate(() => ({ scrollY, innerWidth, innerHeight, clientWidth: document.documentElement.clientWidth, scrollHeight: document.documentElement.scrollHeight, rootClasses: document.documentElement.className, activeId: document.activeElement?.id || '', activeTag: document.activeElement?.tagName || '', railPointerEvents: getComputedStyle(document.querySelector('.rail')).pointerEvents, railProgress: document.querySelector('.rail').style.getPropertyValue('--rp'), makerScroll: document.querySelector('#finale').scrollTop }));
+    const sample = () => page.evaluate(() => ({ scrollY, innerWidth, innerHeight, clientWidth: document.documentElement.clientWidth, scrollHeight: document.documentElement.scrollHeight, rootClasses: document.documentElement.className, activeId: document.activeElement?.id || '', activeTag: document.activeElement?.tagName || '', railPointerEvents: getComputedStyle(document.querySelector('.rail')).pointerEvents, railProgress: document.querySelector('.rail').style.getPropertyValue('--rp'), makerScroll: document.querySelector('#finale').scrollTop, progress: Number(document.querySelector('#lbar')?.getAttribute('aria-valuenow') ?? document.querySelector('#lpct')?.textContent ?? 0), readyState: document.readyState, visible: document.visibilityState, hasFocus: document.hasFocus() }));
+    const inputAudit = () => page.evaluate(() => window.__ticketStubInputAudit || null);
+    const storage = async () => {
+      const names = await page.evaluate(async () => ({ localStorageKeys: Object.keys(localStorage).sort(), sessionStorageKeys: Object.keys(sessionStorage).sort(), indexedDBNames: (await indexedDB.databases()).map(database => database.name).sort(), cacheNames: await caches.keys(), serviceWorkers: (await navigator.serviceWorker.getRegistrations()).map(registration => new URL(registration.scope).pathname) }));
+      return {
+        cookies: (await context.cookies()).map(({ name, domain, httpOnly, secure, sameSite }) => ({ name: safeMessage(name), domain: safeMessage(domain), httpOnly, secure, sameSite })),
+        page: Object.fromEntries(Object.entries(names).map(([kind, values]) => [kind, values.map(value => safeMessage(String(value)))])),
+      };
+    };
+    const phase = label => page.evaluate(label => { if (window.__ticketStubInputAudit) window.__ticketStubInputAudit.phase = label; }, label);
+    const waitState = async (label, predicate, timeout = 5000) => {
+      // Node-side polling remains observable when document animation frames are
+      // delayed. Keep the last state in any failure instead of losing the cause.
+      const deadline = Date.now() + timeout;
+      let current;
+      do {
+        current = await sample();
+        if (predicate(current)) return current;
+        await page.waitForTimeout(100);
+      } while (Date.now() < deadline);
+      throw new Error(`${label} timed out; last state: ${JSON.stringify(current)}`);
+    };
     const shot = async label => {
       if (capture === 'none') return;
       const file = `${name}-${label}.png`;
@@ -117,15 +165,31 @@ try {
     };
     const move = async (label, action, direction, position = 'scrollY') => {
       const before = await settled(position);
+      await phase(label);
+      const dispatch = { startedAtNodeMs: performance.now() - started };
       await action();
+      dispatch.resolvedAtNodeMs = performance.now() - started;
+      // The five-second receipt window and subsequent five-second movement
+      // window are separate. Never turn an undelivered event into a scroll pass.
+      const wheelReceiptRequired = name !== 'no-javascript' && label.includes('wheel');
+      const receiptDeadline = Date.now() + 5000;
+      let receipt = null;
+      if (wheelReceiptRequired) {
+        do {
+          receipt = (await inputAudit()).events.find(event => event.phase === label && event.type === 'wheel' && event.trusted && event.deltaY * direction > 0);
+          if (receipt) break;
+          await page.waitForTimeout(100);
+        } while (Date.now() < receiptDeadline);
+      }
       const deadline = Date.now() + 5000;
-      let observed;
+      let observed, movementWithinWindow = false;
       do { await page.waitForTimeout(100); observed = await sample(); }
       while (observed[position] * direction <= before[position] * direction + 2 && Date.now() < deadline);
+      movementWithinWindow = Date.now() <= deadline && observed[position] * direction > before[position] * direction + 2;
       const after = await settled(position);
-      const passed = after[position] * direction > before[position] * direction + 2;
-      const error = passed ? null : 'Expected native movement did not occur';
-      observation.results.push({ label, input: label, before, after, result: passed ? 'pass' : 'fail', ...(error ? { error } : {}) });
+      const passed = (!wheelReceiptRequired || receipt) && movementWithinWindow && after[position] * direction > before[position] * direction + 2;
+      const error = passed ? null : wheelReceiptRequired && !receipt ? 'Trusted wheel receipt was not observed within five seconds' : 'Expected native movement did not occur';
+      observation.results.push({ label, input: label, before, after, dispatch, movementWithinWindow, wheelReceipt: wheelReceiptRequired ? receipt : 'not-required', result: passed ? 'pass' : 'fail', ...(error ? { error } : {}) });
       assert.ok(passed, label);
     };
     try {
@@ -138,18 +202,19 @@ try {
       console.log(`${name}: loaded ${observation.loaded.rootClasses || 'no-script'} at ${observation.viewport.width}x${observation.viewport.height}`);
       await writeFile(resolve(output, 'observations.json'), JSON.stringify(report, null, 2) + '\n');
       await shot('loaded');
-      if (name === 'normal') {
-        await page.waitForFunction(() => !document.documentElement.classList.contains('no3d'), null, { timeout: 30000 });
-        observation.rendererReady = await sample();
+      if (['normal', 'context-loss'].includes(name)) {
+        observation.rendererReady = await waitState('Completed renderer startup', state => !state.rootClasses.split(/\s+/).includes('no3d') && state.progress === 100, 30000);
+      }
+      if (name === 'normal') observation.privacy = { mode: 'fresh-context-local-preview-only', before: await storage(), input: 'fictional test canary only; no user data', studioNavigation: 'not-executed' };
+      if (name === 'missing-media') {
+        assert.ok(observation.requests.some(request => request.url.startsWith('LOCAL_ORIGIN/assets/') && request.disposition === 'blocked-by-test'), 'Missing-media scenario must actually block local assets');
+        await waitState('Missing-media static fallback', state => state.rootClasses.split(/\s+/).includes('no3d'));
       }
       if (name === 'webgl-failure') {
         const attempts = await page.evaluate(() => window.__testWebglAttempts);
         assert.ok(attempts > 0, 'WebGL failure scenario must reach the renderer; CDN failures are not WebGL evidence');
         observation.webglAttempts = attempts;
         assert.match(observation.loaded.rootClasses, /no3d/);
-      }
-      if (name === 'context-loss') {
-        await page.waitForFunction(() => !document.documentElement.classList.contains('no3d'), null, { timeout: 30000 });
       }
       // An actual anchor click establishes the scene position; subsequent checks
       // use input events rather than window.scrollTo or element.scrollTop writes.
@@ -174,7 +239,7 @@ try {
           extension.loseContext(); return true;
         });
         assert.equal(lost, true, 'Software renderer must support an actual context loss');
-        await page.waitForFunction(() => document.documentElement.classList.contains('no3d'));
+        await waitState('Actual context-loss fallback', state => state.rootClasses.split(/\s+/).includes('no3d'), 15000);
         observation.contextLoss = 'WEBGL_lose_context.loseContext';
         observation.afterContextLoss = await sample();
         await shot('after-context-loss');
@@ -246,14 +311,39 @@ try {
       if (name !== 'no-javascript') {
         const scenes = await page.locator('.scene .info').evaluateAll(items => items.map(element => ({ text: element.innerText.slice(0, 100), opacity: getComputedStyle(element).opacity })));
         assert.ok(scenes.length >= 5);
-        if (['blocked-cdn', 'webgl-failure', 'context-loss'].includes(name)) assert.ok(scenes.every(scene => Number(scene.opacity) > 0), 'Fallback scene copy stays readable');
+        if (['blocked-cdn', 'missing-media', 'webgl-failure', 'context-loss'].includes(name)) assert.ok(scenes.every(scene => Number(scene.opacity) > 0), 'Fallback scene copy stays readable');
         observation.scenes = scenes;
+        await phase('maker-anchor');
+        observation.beforeMakerAnchor = await sample();
         await page.locator('.navcta[href="#make"]').click();
-        await page.waitForFunction(() => document.activeElement?.id === 'ev', null, { timeout: 5000 });
+        await waitState('Maker input focus', state => state.activeId === 'ev');
         const input = await page.locator('#ev').boundingBox();
         assert.ok(input && input.y >= 0 && input.y + input.height <= observation.viewport.height, 'Maker anchor focuses a visible input');
         observation.makerEntry = await sample();
         await shot('maker');
+        if (name === 'normal') {
+          const forms = await page.locator('form').count();
+          await page.locator('#ev').fill('');
+          await page.keyboard.press('Enter');
+          assert.equal(await page.locator('#ev').getAttribute('aria-invalid'), 'true', 'Empty input produces the existing local error');
+          await page.locator('#ev').fill(fictionalInput);
+          await page.keyboard.press('Enter');
+          await page.waitForTimeout(1200); // Covers the 60ms edit debounce and 900ms preview animation in this bounded observation.
+          const after = await storage();
+          const localStatus = safeMessage(await page.locator('#finNote').innerText());
+          const studioDisclosure = safeMessage(await page.locator('#demoUnavailable').innerText());
+          const href = await page.locator('#demoLink').getAttribute('href');
+          observation.privacy = { ...observation.privacy, after, forms, observationWindowMs: 1200, localStatus, studioDisclosure, studioHref: safeUrl(href), canaryRequestAttempts: observation.requests.filter(request => request.containsFictionalInput).length, nonGetRequestAttempts: observation.requests.filter(request => request.method !== 'GET').length };
+          assert.equal(forms, 0, 'Local preview has no submitting form');
+          assert.equal(href, 'https://getticketstub.com/make');
+          assert.match(localStatus, /Nothing was sent to the studio/);
+          assert.equal(observation.privacy.canaryRequestAttempts, 0, 'Fictional input is absent from all observed request URLs and bodies');
+          assert.equal(observation.privacy.nonGetRequestAttempts, 0, 'No non-GET request attempt occurs in this local preview observation');
+          for (const state of [observation.privacy.before, after]) {
+            assert.equal(state.cookies.length, 0, 'Fresh context has no observed cookies');
+            for (const names of Object.values(state.page)) assert.equal(names.length, 0, 'Local preview leaves observed storage and service-worker registrations empty');
+          }
+        }
         for (let chip = 0; chip < 3; chip++) {
           await page.keyboard.press('Tab'); // Update preview button.
           for (let tab = 0; tab <= chip; tab++) await page.keyboard.press('Tab');
@@ -278,10 +368,16 @@ try {
       }
       observation.result = 'pass';
     } catch (error) {
-      observation.result = 'fail'; observation.error = error.message;
+      observation.result = 'fail'; observation.error = safeMessage(error.message);
+      observation.failureSample = await sample().catch(failure => ({ unavailable: failure.message }));
       await shot('failure').catch(() => {});
       process.exitCode = 1;
-    } finally { await context.close(); await browser.close(); browser = null; }
+    } finally {
+      observation.inputAudit = await inputAudit().catch(error => ({ unavailable: error.message }));
+      observation.teardownStartedAtNodeMs = performance.now() - started;
+      await context.close(); await browser.close(); browser = null;
+      observation.teardownCompletedAtNodeMs = performance.now() - started;
+    }
     console.log(`${name}: ${observation.result}; ${observation.results.filter(item => item.result === 'pass').length}/${observation.results.length} input checks passed${observation.error ? '; ' + observation.error : ''}`);
     await writeFile(resolve(output, 'observations.json'), JSON.stringify(report, null, 2) + '\n');
   }

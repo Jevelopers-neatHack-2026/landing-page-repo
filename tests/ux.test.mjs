@@ -11,7 +11,7 @@ test('actual MVP source has valid static anchors, named controls and a coherent 
   const result = inspectUX(html);
   assert.equal(result.status, 'PASS_DRAFT'); assert.ok(result.anchors >= 10); assert.ok(result.headings >= 6);
   assert.ok(result.inputs >= 1); assert.ok(result.buttons >= 4);
-  assert.ok(result.findings.includes('browser-screenreader-reflow-performance-not-measured'));
+  assert.ok(result.findings.includes('browser-manual-accessibility-performance-evidence-not-evaluated-by-source-vm-adapter'));
   assert.ok(result.findings.includes('document-heading-before-h1'));
 });
 test('missing anchor targets reject the actual source fixture', () => assert.throws(() => inspectUX(html.replace('href="#scenes"', 'href="#not-a-real-section"')), /Missing anchor/));
@@ -54,6 +54,6 @@ test('real built artifact cannot claim UX release from local source checks alone
     await mkdir(resolve(repository, 'tests'));
     await cp(resolve(root, 'tests/scroll.test.mjs'), resolve(repository, 'tests/scroll.test.mjs'));
     const { output } = await buildSite({ repository });
-    await assert.rejects(run({ root: repository, artifactDir: output, mode: 'release' }), /actual viewport.*performance evidence unavailable/);
+    await assert.rejects(run({ root: repository, artifactDir: output, mode: 'release' }), /source\/VM adapter does not evaluate browser.*three-run performance evidence still require validation/);
   } finally { await rm(repository, { recursive: true, force: true }); }
 });
