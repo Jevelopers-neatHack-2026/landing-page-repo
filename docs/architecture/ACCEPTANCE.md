@@ -4,4 +4,3 @@ The [master integration-evals checklist](https://github.com/Jevelopers-neatHack-
 
 - [EVAL-03 — Evidence classification](https://github.com/Jevelopers-neatHack-2026/integration-evals/blob/56018576a9450a2bb46aa55ed3b2f9d9ae97e50d/planning/acceptance-checklist.md#eval-03-evidence-classification): P0; owner role: Product and frontend.
 - [EVAL-04 — Secrets and customer data](https://github.com/Jevelopers-neatHack-2026/integration-evals/blob/56018576a9450a2bb46aa55ed3b2f9d9ae97e50d/planning/acceptance-checklist.md#eval-04-secrets-and-customer-data): P0; owner role: Finance and reliability.
-
