@@ -7,6 +7,43 @@ import { spawnSync } from 'node:child_process';
 import { buildSite, root } from '../scripts/build.mjs';
 import { validateArtifact } from '../scripts/artifact.mjs';
 import { createPreview } from '../scripts/preview.mjs';
+import { inspectSectionAnchors } from '../scripts/suites/foundation.mjs';
+
+const page = await readFile(resolve(root, 'site/index.html'), 'utf8');
+test('included page sections have unique anchors on the documented existing surfaces', () => {
+  assert.deepEqual(inspectSectionAnchors(page), {
+    anchors: ['top', 'hero', 'problem', 'benefits', 'scenes', 'how', 'studio', 'gallery', 'wall', 'make', 'about'],
+    coverage: 'static-section-targets',
+  });
+});
+
+for (const id of ['problem', 'benefits', 'gallery', 'about']) {
+  test(`missing included #${id} target fails even when no current navigation link refers to it`, () => {
+    assert.throws(() => inspectSectionAnchors(page.replace(` id="${id}"`, '')), new RegExp(`Included section anchor missing: #${id}`));
+  });
+}
+
+test('comments, scripts and templates cannot replace a missing section anchor', () => {
+  const missing = page.replace(' id="problem"', '');
+  const fake = '<section class="statement" id="problem"></section>';
+  for (const inert of [`<!-- ${fake} -->`, `<script>const fixture = '${fake}';</script>`, `<template>${fake}</template>`]) {
+    assert.throws(() => inspectSectionAnchors(missing + inert), /Included section anchor missing: #problem/);
+  }
+});
+
+test('misplaced, duplicate and hidden anchors fail instead of satisfying the page map', () => {
+  assert.throws(() => inspectSectionAnchors(page.replace(' id="problem"', '') + '<span id="problem"></span>'), /wrong element/);
+  assert.throws(() => inspectSectionAnchors(page.replace('class="statement grain"', 'class="unrelated"')), /wrong surface/);
+  assert.throws(() => inspectSectionAnchors(page + '<span id="problem"></span>'), /Duplicate static element IDs/);
+  assert.throws(() => inspectSectionAnchors(page.replace('id="problem"', 'id="problem" id="different"')), /Repeated id attribute/);
+  for (const hidden of ['hidden', 'inert', 'aria-hidden="true"']) {
+    assert.throws(() => inspectSectionAnchors(page.replace('id="problem"', `id="problem" ${hidden}`)), /#problem is hidden/);
+  }
+});
+
+test('page-map validation rejects a dangling public fragment without inventing navigation', () => {
+  assert.throws(() => inspectSectionAnchors(page + '<a href="#absent-surface">Fixture</a>'), /Missing public fragment target/);
+});
 
 async function sandbox(t, actual = false) {
   const repository = await mkdtemp(resolve(tmpdir(), 'lp-foundation-test-'));

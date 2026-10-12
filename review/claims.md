@@ -4,11 +4,11 @@ Refs LP-02 (#4) and LP-04 (#6). Audited draft on 2026-10-12; product and marketi
 
 `src/content/copy.json` is the machine-readable exact copy/location ledger. The entire page SHA256 also pins metadata, canvas labels, generated event records, controls, alt text and all retained public wording; any source edit requires refreshing this inventory and review. `review/copy-changes.json` preserves every changed source phrase, its replacement and rationale. `review/examples.json` covers the existing media and local specimens.
 
-The current author audit in both inventories is `auditedSource`, pinned to commit `329fc4f27e7b9792e60eabcf4f2401f4541254a5` and page SHA256 `a078774df18e59b884bdff968f2bec3e4a5b2a009458d30c8320242f595858f6`. Validators resolve that commit's page from local Git objects and require its bytes to match the current page and recorded digest; proof also checks that commit's asset bytes. Missing history, moving refs, non-commit objects and mismatched pins fail in draft and release. The existing `source` fields remain historical origins or proposal bases, including asset references and per-entry notes; they do not attest the current page bytes. This repairs LP-PIN-1 without changing origin history, public assets or owner approval status.
+The current author audit in both inventories is `auditedSource`, pinned to commit `36c0a841d5b5c5f6e7c3870e65c541825026d214` and page SHA256 `2bc1c248336d17ee0beb402882cc697925721a42f94b6e8f2fa187da36227a92`. Validators resolve that commit's page from local Git objects and require its bytes to match the current page and recorded digest; proof also checks that commit's asset bytes. Missing history, moving refs, non-commit objects and mismatched pins fail in draft and release. The existing `source` fields remain historical origins or proposal bases, including asset references and per-entry notes; they do not attest the current page bytes. The earlier 329fc4f/a078774 audit remains historical in the maker evidence pack. The current register follows the later native keyboard-focus correction without changing origin history, public assets or owner approval status.
 
 ## Source boundaries
 
-- Historical landing baseline: [`site/index.html`](https://github.com/Jevelopers-neatHack-2026/landing-page-repo/blob/1d8379d1c5b0cb89ef869ea2cc7358886c9cf274/site/index.html). Existing illustrated layout, art and scroll repair are retained. No asset bytes changed. Current audited page: [`site/index.html` at 329fc4f](https://github.com/Jevelopers-neatHack-2026/landing-page-repo/blob/329fc4f27e7b9792e60eabcf4f2401f4541254a5/site/index.html).
+- Historical landing baseline: [`site/index.html`](https://github.com/Jevelopers-neatHack-2026/landing-page-repo/blob/1d8379d1c5b0cb89ef869ea2cc7358886c9cf274/site/index.html). Existing illustrated layout, art and scroll repair are retained. No asset bytes changed. Current audited page: [`site/index.html` at 36c0a84](https://github.com/Jevelopers-neatHack-2026/landing-page-repo/blob/36c0a841d5b5c5f6e7c3870e65c541825026d214/site/index.html).
 - Brand vocabulary and original frictionless slogan: [`SPEC.md`](https://github.com/Jevelopers-neatHack-2026/brand-kit/blob/74bc86fe5b520cae792066fbe0d7dd129664bbd3/SPEC.md), [`voice.md`](https://github.com/Jevelopers-neatHack-2026/brand-kit/blob/74bc86fe5b520cae792066fbe0d7dd129664bbd3/docs/voice.md), [`imagery.md`](https://github.com/Jevelopers-neatHack-2026/brand-kit/blob/74bc86fe5b520cae792066fbe0d7dd129664bbd3/docs/imagery.md). Guidance and sample prices do not prove supported input, automation, materials or delivery. The slogan “No forms: drop your ticket and it's done” and Digital $9 / Card $29 / Print $49 / Framed $89 were not adopted. Review/edit, design approval and purchase authorization cannot be inferred away. Existing images may need a brand exception: imagery guidance discourages faces/stages, and no exception is recorded here.
 - Marketing source: [`messaging/claims.json`](https://github.com/Jevelopers-neatHack-2026/marketing-material/blob/b7ff115568966227c5baa36814924ca50952444d/messaging/claims.json). Its product status is limited source inspection/consumer demo observation, not approved whole-product release wording. MM-02 #5 remains open.
 - Product evidence inspected read-only: [`README.md`](https://github.com/Jevelopers-neatHack-2026/getticketstub.com/blob/eb8decceeffd29c3c1f1ebf4f6a653ef3a98e073/README.md) and [GT-10B #19](https://github.com/Jevelopers-neatHack-2026/getticketstub.com/issues/19). Default demo fixtures, simulated art/replies and sandbox checkout are distinct from live providers, deployed persistence, real email/payment and fulfillment. Consumer observations were cancelled before completed QA; no unapproved media imported. Source availability is not a producer-approved capability/destination manifest.
@@ -63,7 +63,6 @@ Each row has local draft audit only. All rows have owner approval PENDING, produ
 | LP-COPY-32 | site/index.html:715 | illustrative | Photography |
 | LP-COPY-33 | site/index.html:716 | illustrative | 3D |
 | LP-COPY-34 | site/index.html:716 | illustrative | Illustrative 3D tickets, pins and corkboard with baked flight animation. The simulated motion does not verify materials, printing or a shipped product. |
-
 | LP-SCENE-FOOTBALL-TITLE | site/index.html SCENES[0].title → .scene .ttl h3 | illustrative | Harbor City Gulls vs. Ironhill Miners |
 | LP-SCENE-FOOTBALL-LINE | site/index.html SCENES[0].line → .scene .ttl p | illustrative | The fourth-quarter comeback you still tell people about. |
 | LP-SCENE-BASEBALL-TITLE | site/index.html SCENES[1].title → .scene .ttl h3 | illustrative | Riverside Owls vs. Canyon Rattlers |
@@ -80,6 +79,21 @@ Each row has local draft audit only. All rows have owner approval PENDING, produ
 | LP-SCENE-THEATER-LINE | site/index.html SCENES[6].line → .scene .ttl p | illustrative | Opening night. The whole room stood up. |
 | LP-SCENE-HOCKEY-TITLE | site/index.html SCENES[7].title → .scene .ttl h3 | illustrative | Ice Harbor Wolves vs. Summit Storm |
 | LP-SCENE-HOCKEY-LINE | site/index.html SCENES[7].line → .scene .ttl p | illustrative | Sudden death. The stub came off the stick with the winner. |
+| LP-META-01 | site/index.html:head title | pending | getticketstub.com |
+| LP-META-02 | site/index.html:head robots | pending | noindex,nofollow |
+| LP-META-03 | site/index.html:head og:type | pending | website |
+| LP-META-04 | site/index.html:head og:title | pending | getticketstub.com |
+| LP-META-05 | site/index.html:head og:description | pending | Explore illustrative digital ticket stub keepsakes for concerts, festivals, games and gifts. Physical printing, prices and delivery are pending. |
+| LP-META-06 | site/index.html:head twitter:card | pending | summary |
+| LP-META-07 | site/index.html:head twitter:title | pending | getticketstub.com |
+| LP-META-08 | site/index.html:head twitter:description | pending | Explore illustrative digital ticket stub keepsakes for concerts, festivals, games and gifts. Physical printing, prices and delivery are pending. |
+| LP-CTA-01 | site/index.html local maker/demo boundary | pending | Update preview |
+| LP-CTA-02 | site/index.html local maker/demo boundary | pending | Studio link unavailable. Keep editing the preview here; nothing is sent. |
+| LP-CTA-03 | site/index.html local maker/demo boundary | pending | Open studio |
+| LP-CTA-04 | site/index.html local maker/demo boundary | pending | Preview updated on this page. Nothing was sent to the studio. |
+| LP-CTA-05 | site/index.html local maker/demo boundary | pending | The studio opens separately. Your preview text is not included; availability can change. |
+| LP-CTA-06 | site/index.html local maker/demo boundary | pending | Add a fictional event name or public event link to edit the local preview. |
+| LP-NOJS-NOTICE | site/index.html noscript .nojs-studio | pending | The interactive preview requires JavaScript. You can open the studio separately; this page sends no preview text. |
 
 Generated scene titles/stories above are actual data values rendered by the page, not template placeholders. Their dates, venues, seats and additional wall specimen text are mapped in `review/examples.json` as fictional illustrations. Full capability/asset approvals remain pending; whole-page hash coverage alone is not complete LP-02.B acceptance.
 

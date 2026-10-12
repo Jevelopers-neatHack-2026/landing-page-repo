@@ -13,7 +13,7 @@ It explains what TicketStub makes (personalized commemorative ticket stubs), who
 | `assets/flight.json` | Baked paper-physics flights and shape-key weights |
 | `assets/*.webp` | Performer cut-outs for the event scenes |
 
-Libraries load from jsDelivr (three.js r160 and Motion 11.11.17) and fonts from Google Fonts. There is no build step. Page input uses native scrolling independently of animation rendering; the orange rail is a display-only progress marker.
+Libraries load from jsDelivr (three.js r160 and Motion 11.11.17) and fonts from Google Fonts. The page can be served directly; the repository's optional static artifact build copies the public files without a package install. Page input uses native scrolling independently of animation rendering; the orange rail is a display-only progress marker.
 
 ## Run it locally
 
@@ -39,8 +39,8 @@ For browser verification, scroll forward/backward over content and the right-edg
 
 ## Page order
 
-Hero ("Keep the night.") → the problem → five event scenes where a performer throws a 3D stub → how it works → the studio → sample gallery → a corkboard that fills with stubs → the "Make yours!" form → footer, then a seamless loop back to the hero.
+Hero ("Keep the night.") → the problem → eight illustrative event scenes where a performer throws a 3D stub → how it works → the illustrative studio → sample gallery → a corkboard that fills with stubs → the "Make yours!" local editor → footer, then a seamless loop back to the hero.
 
-The form sends the ticket link or typed event to the TicketStub studio app (`STUDIO_URL` in `index.html`). Price and shipping shown on the page: $9.99 a stub, ships within 72 hours.
+The editor changes a local fictional preview. Nothing entered in it is sent to the studio. A separate approved native link opens exactly `https://getticketstub.com/make` without query text or a fragment. If JavaScript is disabled, a static notice and the same studio link remain available. Physical printing, prices and delivery are pending; the old $9.99/72-hour wording is historical and no longer on this page.
 
 Event names on the page are illustrative. The stubs are commemorative keepsakes, not admission tickets.
