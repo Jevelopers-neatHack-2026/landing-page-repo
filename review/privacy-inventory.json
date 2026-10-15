@@ -5,10 +5,10 @@
     "Product and frontend",
     "Finance and reliability"
   ],
-  "auditedSourceRevision": "b9836c9e2a8555eac96738a17c5fccb00b0eb35d",
+  "auditedSourceRevision": "11d370af6bced7b2b4bad48e54e10e97bf2b79f6",
   "executableScriptSha256": [
     "c3bd47e9d7371a7003f33804dba2ab532af3061bd2cd9423160e01d6139e3ac7",
-    "8678d664d26b49d8ff35310d27e8146e499c21f374ee408fdd9b6c775008cc22"
+    "eb9c3f4bb3a627f2254d49ccbfe91dc31a65b9652868fe1d88ee9fb7704b1c1e"
   ],
   "resourceLinks": [
     "https://fonts.googleapis.com",
@@ -26,7 +26,7 @@
   "reviewStatus": "PENDING",
   "styleSha256": [
     "a4a477526673b7cbb466775e39698516d7867f308f9c94fd1f243e5ffe190c75",
-    "c371b66ba86be9430a9d01464e67012686caed85d63d13be3acaa154c71ef073",
+    "cf5d41c0b3f7aac660dbd1280abcf310adc2369816a2fb7a7ecb72cf0ac23419",
     "d794bf312858c123506cfca13294e201a9eb23dcfe9aba60d1b5e7dc66f47852"
   ],
   "markupTagsSha256": "07859721a3a2f23ffd9766639454f37b83b1d6646dfa1032c941a2c2cc39d256",
@@ -41,8 +41,8 @@
     "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   ],
-  "auditNote": "Author re-audit of link-only activation against immutable base. Product navigation-only decision exists in review/cta-navigation-decision.json; privacy/full-copy/clean-browser/publication approvals remain PENDING. No form, query or input handoff. CSS-only narrow header wrapping and hero/maker clearance re-audited against e5bc742 baseline; scripts, text and external data boundary unchanged. R1 current author audit resolves the complete page at auditedSourceRevision from local Git objects; historicalSourceReferences preserves both the valid PR #29 header audit revision and the earlier mismatched base reference without upgrading owner approval. CSS-only opaque maker copy surface audited against immutable source b5205f0c749ec81e1d75e3da75cc236dd79f692e; external resource and data boundaries unchanged. Specific maker reduced-motion overrides audited against 3c510591150e3bb44eb1fa44e9993ae32677ad3d with source/data boundaries unchanged. Native maker overflow and explicit noscript fallback audited against 4cc7cea5f879545f3758b05eaab9bc9f1d0b1324. Approved native fallback is exact/no-query; source build validation must withdraw it alongside config, and JS runtime cannot change JS-disabled markup. Native maker focus now permits browser focus-scroll once active; cancellation/wait behavior retained. Author audit at 36c0a841d5b5c5f6e7c3870e65c541825026d214 grants no runtime/owner approval. Four static section IDs (problem, benefits, gallery and about) re-audited against published source db2e7c4bf8920f17b0ab132719edf910a284b5e6. Exact comparison to the preceding audited page found only those four attributes; executable scripts, styles, assets and external resource/data boundaries are unchanged. Updated full-page/markup digests and source pin do not grant privacy, copy, clean-browser or publication approval. Author re-audit at published b9836c9e2a8555eac96738a17c5fccb00b0eb35d covers both changed executable blocks: native scroll/resize board accessibility-state updates with one cancelable maker-focus request, and TS.paint removing its shortened aria-label so the visible ticket face supplies the button name while title retains the flip instruction. Exact non-script page bytes, all styles/assets, external resources/imports and the separate query-free studio/input boundary are unchanged. Historical audit pins and both former executable hashes are retained. This author source audit supplies no privacy, accessibility, clean-browser, copy or publication approval.",
-  "pageSha256": "718175dd695404d66be52eb9e1ccf3cc35410f05a65cb743e9ee6b01ea34dd9a",
+  "auditNote": "Author re-audit of link-only activation against immutable base. Product navigation-only decision exists in review/cta-navigation-decision.json; privacy/full-copy/clean-browser/publication approvals remain PENDING. No form, query or input handoff. CSS-only narrow header wrapping and hero/maker clearance re-audited against e5bc742 baseline; scripts, text and external data boundary unchanged. R1 current author audit resolves the complete page at auditedSourceRevision from local Git objects; historicalSourceReferences preserves both the valid PR #29 header audit revision and the earlier mismatched base reference without upgrading owner approval. CSS-only opaque maker copy surface audited against immutable source b5205f0c749ec81e1d75e3da75cc236dd79f692e; external resource and data boundaries unchanged. Specific maker reduced-motion overrides audited against 3c510591150e3bb44eb1fa44e9993ae32677ad3d with source/data boundaries unchanged. Native maker overflow and explicit noscript fallback audited against 4cc7cea5f879545f3758b05eaab9bc9f1d0b1324. Approved native fallback is exact/no-query; source build validation must withdraw it alongside config, and JS runtime cannot change JS-disabled markup. Native maker focus now permits browser focus-scroll once active; cancellation/wait behavior retained. Author audit at 36c0a841d5b5c5f6e7c3870e65c541825026d214 grants no runtime/owner approval. Four static section IDs (problem, benefits, gallery and about) re-audited against published source db2e7c4bf8920f17b0ab132719edf910a284b5e6. Exact comparison to the preceding audited page found only those four attributes; executable scripts, styles, assets and external resource/data boundaries are unchanged. Updated full-page/markup digests and source pin do not grant privacy, copy, clean-browser or publication approval. Author re-audit at published b9836c9e2a8555eac96738a17c5fccb00b0eb35d covers both changed executable blocks: native scroll/resize board accessibility-state updates with one cancelable maker-focus request, and TS.paint removing its shortened aria-label so the visible ticket face supplies the button name while title retains the flip instruction. Exact non-script page bytes, all styles/assets, external resources/imports and the separate query-free studio/input boundary are unchanged. Historical audit pins and both former executable hashes are retained. This author source audit supplies no privacy, accessibility, clean-browser, copy or publication approval. Integration author re-audit pins the existing published 11d370a page: minmax(0,1fr) constrains the maker copy grid and maker links use immediate native scrolling; non-maker links retain their prior motion behavior. Visible copy, markup, assets, resource destinations, analytics-off and input-free studio navigation are unchanged. Historical hashes are retained; all existing PENDING owner/browser/publication gates remain PENDING.",
+  "pageSha256": "9375d5fa77d413757f5adcca80aea6222512227e1a999e710276dca0566dbfa6",
   "historicalSourceReferences": [
     {
       "revision": "096fe76f8f559ac504693168e3cd6068337d0bb3",
@@ -83,6 +83,20 @@
       ],
       "markupTagsSha256": "07859721a3a2f23ffd9766639454f37b83b1d6646dfa1032c941a2c2cc39d256",
       "relationship": "Previous published privacy author audit before native maker-state/focus synchronization and visible-face accessible names. Both executable blocks changed; non-script markup, styles, resource URLs and asset bytes are unchanged. Historical source evidence grants no current privacy approval."
+    },
+    {
+      "revision": "b9836c9e2a8555eac96738a17c5fccb00b0eb35d",
+      "pageSha256": "718175dd695404d66be52eb9e1ccf3cc35410f05a65cb743e9ee6b01ea34dd9a",
+      "executableScriptSha256": [
+        "c3bd47e9d7371a7003f33804dba2ab532af3061bd2cd9423160e01d6139e3ac7",
+        "8678d664d26b49d8ff35310d27e8146e499c21f374ee408fdd9b6c775008cc22"
+      ],
+      "styleSha256": [
+        "a4a477526673b7cbb466775e39698516d7867f308f9c94fd1f243e5ffe190c75",
+        "c371b66ba86be9430a9d01464e67012686caed85d63d13be3acaa154c71ef073",
+        "d794bf312858c123506cfca13294e201a9eb23dcfe9aba60d1b5e7dc66f47852"
+      ],
+      "relationship": "Historical b983 audit before immediate maker action and narrow-grid correction; no current approval."
     }
   ]
 }
