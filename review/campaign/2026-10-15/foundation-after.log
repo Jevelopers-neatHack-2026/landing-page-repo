@@ -1,0 +1,16 @@
+✔ actual illustrated source builds reproducibly with every asset and no repository documents (618.129666ms)
+✔ validator detects missing referenced assets, tampering, stale manifests and unexpected files (186.344708ms)
+✔ build refuses symlinks, unreviewed asset types and unsafe output destinations (40.893042ms)
+✔ preview serves homepage and every actual asset; unknown and app routes cannot fall back to landing (307.21275ms)
+✔ dispatcher rejects invalid arguments and no-argument validation fails for unavailable required suites (1745.522917ms)
+✔ nested output symlink cannot redirect cleanup into unrelated files (15.5795ms)
+✔ build rejects source-containing output before removing any existing bytes (20.1245ms)
+✔ build permits a new nested artifact but refuses file and symlink output components (20.36175ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3277.113625

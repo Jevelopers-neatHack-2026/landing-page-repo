@@ -39,10 +39,16 @@ Run from the repository root with Node **24.15.0** (pinned in [`.nvmrc`](.nvmrc)
 ```sh
 node scripts/build.mjs
 ./scripts/validate-landing --suite foundation
-node --test tests/*.test.mjs
+node --test --test-concurrency=1 tests/*.test.mjs
 node scripts/preview.mjs --port 8080
 # Open http://127.0.0.1:8080/.
 ```
+
+Build in an exclusively controlled checkout and serialize commands that share
+`dist/`. Each build rejects overlapping cooperative writers through a repository
+lock; unrelated concurrent filesystem mutation is unsupported. See the
+[local build writer contract](integration/static-output.md#local-build-writer-contract),
+including stale-lock recovery and the limits of path checks.
 
 ## Checks and configuration
 
