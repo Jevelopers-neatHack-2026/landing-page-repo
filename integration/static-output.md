@@ -12,6 +12,41 @@ The local artifact mounts at `/`, and existing relative `assets/...` references 
 
 **Unresolved artifact handoff:** this artifact uses `/assets/...` URLs and includes its own local intake. Do not copy it over the host root or public directory as-is. If the standalone artifact itself is to be integrated, the owners must choose a compatible route and artifact adapter; agree asset URL rewrite/mount, intake ownership, script/style isolation, CSP/CDN allowances and rebuild/rollback; then pin both revisions and perform real host tests. No app files are changed here.
 
+## Local build writer contract
+
+Builds require a trusted checkout with exclusive control of the source tree,
+`dist/`, and their ancestry. Concurrent mutation by unrelated or hostile processes
+is unsupported. Do not build in a shared writable tree or let a watcher, editor,
+cleanup job or other process rename these paths during a build. Use separate
+checkouts for independent writers. Directory preflight rejects existing symlinks
+and files; it is not atomic with later removal/writes and is **not a filesystem
+security boundary** against a process that ignores the contract.
+
+Every `buildSite` call acquires the same repository-wide `.landing-build.lock/`
+using atomic directory creation, before inspecting or mutating source/output.
+Checkout aliases resolve to the same lock. A second cooperating builder fails
+immediately, even for a different output directory. Local code that deliberately
+mutates source/output paths must use `withBuildLock(repository, async () => { ... })`
+from `scripts/build.mjs` and await all its work before returning. Do not call
+`buildSite` inside that callback: the lock is deliberately non-reentrant.
+The CLI, validator and withdrawal builder all use `buildSite`.
+
+The lock covers only the build operation. Serialize complete validation, preview
+capture and withdrawal commands as well: a later build can invalidate a reader's
+artifact after its build lock is released. Run the full Node suite with
+`node --test --test-concurrency=1 tests/*.test.mjs`, without another build or
+validation process using the same checkout.
+
+Normal completion and exceptions release the lock. A killed process may leave
+it behind; there is no automatic stale-lock recovery or timeout takeover. Stop
+all writers and confirm exclusive checkout ownership before manually removing
+a stale empty lock directory. Never delete an active lock. The lock does not
+restrict OS permissions, block noncooperating writers, prevent ancestor swaps
+by such writers, or make path-based filesystem operations race-free. Such
+writers can still reproduce LP-REVIEW-001; they require isolation outside this
+build tool. Tests establish cooperative exclusion and static-path rejection,
+not containment against hostile concurrent mutation.
+
 ## Route isolation and error behavior
 
 The preview binds to `127.0.0.1`, serving `/`, `/index.html`, and files below `/assets/` only. It serves correct local content types with `Cache-Control: no-store`, supports GET/HEAD, rejects malformed/traversal paths, returns 405 for other methods and 404 for unknown/public/app paths. There is no SPA fallback and no directory listing. It is a development preview, not a production hosting implementation.

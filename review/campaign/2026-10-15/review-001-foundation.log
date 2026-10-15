@@ -1,0 +1,18 @@
+✔ actual illustrated source builds reproducibly with every asset and no repository documents (200.294125ms)
+✔ validator detects missing referenced assets, tampering, stale manifests and unexpected files (100.887833ms)
+✔ build refuses symlinks, unreviewed asset types and unsafe output destinations (22.5875ms)
+✔ preview serves homepage and every actual asset; unknown and app routes cannot fall back to landing (93.130208ms)
+✔ dispatcher rejects invalid arguments and no-argument validation fails for unavailable required suites (718.809667ms)
+✔ pre-existing nested output symlink is rejected under exclusive ownership (8.440209ms)
+✔ build rejects source-containing output before removing any existing bytes (7.776542ms)
+✔ build permits a new nested artifact but refuses file and symlink output components (10.829917ms)
+✔ cooperative writer lock excludes overlapping builds and releases after failure (12.968167ms)
+✔ cross-process cooperative ancestor replacement excludes builds until it finishes (74.662042ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1362.017542

@@ -1,0 +1,92 @@
+{
+  "finding": "LP-REVIEW-001",
+  "recordedAt": "2026-10-15T05:55:23.186692+00:00",
+  "reviewedCandidate": "26662ee2775ddb610fca57d88dbaecb3cd2c45bb",
+  "reviewBaseline": "dda1b5d48e71ed9c111b82111676b7ef033fe5ef",
+  "correctionParent": "26662ee2775ddb610fca57d88dbaecb3cd2c45bb",
+  "status": "response implemented; independent exact-candidate re-review pending",
+  "findingPreserved": "review-001-original.json",
+  "supportedContract": "Trusted exclusively controlled checkout and ancestry; all cooperating source/output mutations hold the same canonical-checkout lock. Complete build/validation/reader commands are serialized. Independent writers use isolated checkouts.",
+  "enforcement": "All public buildSite callers acquire a repository-wide atomic mkdir lock before source/output preflight and mutation; a competing cooperative operation fails immediately. withBuildLock is exported for cooperating mutators. Lock remains on killed process; no stale takeover.",
+  "guaranteeLimit": "Path operations remain subject to TOCTOU against unrelated writers that ignore/remove the lock or change ancestry. The original hostile-writer reproduction is NOT eliminated and is explicitly unsupported. This is not OS-level containment or a security boundary.",
+  "regressions": [
+    "Existing-symlink preflight and unrelated-file preservation.",
+    "Overlapping builds for both same and different outputs rejected while cooperative lock held.",
+    "Lock released after callback errors and failed build preflight.",
+    "Separate child process holds lock before ancestor replacement; overlapping build rejected before mutation; after child finishes the static symlink is rejected and outside sentinel preserved with no outside artifact write."
+  ],
+  "testedFileDigests": {
+    ".gitignore": "7ad8b0a9e3057789a2d5159ab5a611687da1a771949da552fe746c29868e28a1",
+    "README.md": "c44e95ba0f304c08e9566175e6f2f59f17567ce180cff376f1a93a901c85aeb5",
+    "integration/static-output.md": "35cc9bb044f6675af4292118b0d7e5228d92b1ede8e6bd591d35e7aa61faf808",
+    "scripts/build.mjs": "a7002d20234a3715f215005632d80864e36c63cf6a0c91e4ee369fa7b4c072c8",
+    "tests/foundation.test.mjs": "9b3cfc9b20ebad964ca4146e0d3304cbd106ff53f7c31c15549a978034aad502"
+  },
+  "runtime": {
+    "node": "v24.15.0",
+    "providerMode": "local filesystem / synthetic fixture tests only"
+  },
+  "checks": [
+    {
+      "command": "node --test tests/foundation.test.mjs",
+      "exit": 0,
+      "tests": 10,
+      "failures": 0,
+      "log": "review-001-foundation.log"
+    },
+    {
+      "command": "node --test --test-concurrency=1 tests/*.test.mjs",
+      "exit": 0,
+      "tests": 191,
+      "failures": 0,
+      "skips": 0,
+      "log": "review-001-all-tests.log"
+    },
+    {
+      "command": "./scripts/validate-landing --mode draft",
+      "exit": 0,
+      "result": "all nine suites pass locally; no product/publication acceptance",
+      "log": "review-001-draft.log"
+    },
+    {
+      "command": "./scripts/validate-landing",
+      "exit": 1,
+      "result": "foundation PASS_LOCAL; eight release areas blocked by actual outstanding requirements",
+      "log": "review-001-release.log"
+    },
+    {
+      "command": "git diff --check",
+      "exit": 0
+    }
+  ],
+  "logs": {
+    "review-001-foundation.log": {
+      "sha256": "67178674a6da483b18a732d29f2714f088eadb28298d2fdbf33adaf1670c7ab4",
+      "originalSha256": "67178674a6da483b18a732d29f2714f088eadb28298d2fdbf33adaf1670c7ab4",
+      "normalization": "trailing whitespace only"
+    },
+    "review-001-all-tests.log": {
+      "sha256": "6e1484ff7383cc794ebb527a2668d5311e69abb919fe6fc0da233bccb53ce4ac",
+      "originalSha256": "6e1484ff7383cc794ebb527a2668d5311e69abb919fe6fc0da233bccb53ce4ac",
+      "normalization": "trailing whitespace only"
+    },
+    "review-001-draft.log": {
+      "sha256": "f673c004c16a313a1682c1cc90942798db26b552b7f992a056a9f141a8f63d6b",
+      "originalSha256": "f673c004c16a313a1682c1cc90942798db26b552b7f992a056a9f141a8f63d6b",
+      "normalization": "trailing whitespace only"
+    },
+    "review-001-release.log": {
+      "sha256": "d82ed8b4e27a6170786357541acdf77c3abebbf18fa6497dbe61105dc9f2b62e",
+      "originalSha256": "d82ed8b4e27a6170786357541acdf77c3abebbf18fa6497dbe61105dc9f2b62e",
+      "normalization": "trailing whitespace only"
+    }
+  },
+  "archive": "Unchanged; local commit only, no push/PR/settings/deployment action.",
+  "queueDisposition": "No later queue entry implemented. #3 still partial for external approvals/host contract; other frozen entries retain explicit handoff requirements; no closure candidates.",
+  "reviewRequest": "Review entire original baseline-to-new-head diff and correction parent-to-new-head diff. Confirm cooperative boundary is acceptable; if hostile concurrent mutation is required, this implementation does not meet that requirement and requires a different isolated/OS-native architecture.",
+  "contractBasis": [
+    "Assignment requires one implementation writer and preservation of other work.",
+    "Existing build is a local static artifact emitter; CLI, validator and withdrawal all call buildSite. No existing concurrent mutation API/service contract is present.",
+    "Historical all-tests-overlapping.log already demonstrates that simultaneous build/read commands invalidate shared dist/site; serial command execution is required even with the new build-only lock."
+  ]
+}
