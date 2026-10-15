@@ -10,7 +10,9 @@ The current page source is site/index.html, with local media and model data unde
 
 ## Current boundary
 
-The built artifact is a local handoff product and preview target; it is not currently mounted into getticketstub.com. The host now serves an app-owned landing experience at `/` and its source comment identifies the landing repository's `site/index.html` as the porting source. The host keeps its own component, script, markup and media; the comment does not establish byte identity, package use, artifact serving or owner acceptance. The separately built artifact still uses root-relative `/assets/...` references and its own local intake, so it cannot be copied under `/landing/` without an agreed URL and isolation adapter. See the current application [architecture companion](https://github.com/Jevelopers-neatHack-2026/getticketstub.com/blob/main/docs/architecture/CURRENT-STATE.md) (available after the companion documentation PR merges), and the maintained static-output proposal and runtime decision for the distinct artifact handoff.
+Host documentation PR #117 merged at `aec83af65ee75be80246d88782c8f8ce00a10c31`; the linked `CURRENT-STATE.md` is available on the host main branch.
+
+The built artifact is a local handoff product and preview target; it is not currently mounted into getticketstub.com. The host now serves an app-owned landing experience at `/` and its source comment identifies the landing repository's `site/index.html` as the porting source. The host keeps its own component, script, markup and media; the comment does not establish byte identity, package use, artifact serving or owner acceptance. The separately built artifact still uses root-relative `/assets/...` references and its own local intake, so it cannot be copied under `/landing/` without an agreed URL and isolation adapter. See the current application [architecture companion](https://github.com/Jevelopers-neatHack-2026/getticketstub.com/blob/main/docs/architecture/CURRENT-STATE.md), and the maintained static-output proposal and runtime decision for the distinct artifact handoff.
 
 The page's current local interactions do not make a real order, verify event facts, submit typed text to the studio, or demonstrate physical printing or shipping. The studio link is navigation only. Claim, image-rights, privacy, destination and full release checks remain separate gates; successful local artifact validation does not satisfy them.
 
@@ -31,7 +33,7 @@ Before changing public copy, links, assets, analytics, form behavior, or artifac
 
 ## Architecture and acceptance sources
 
-- [Current application architecture and integration state](https://github.com/Jevelopers-neatHack-2026/getticketstub.com/blob/main/docs/architecture/CURRENT-STATE.md) (available after the companion documentation PR merges): current source-backed host behavior and cross-repository integration modes.
+- [Current application architecture and integration state](https://github.com/Jevelopers-neatHack-2026/getticketstub.com/blob/main/docs/architecture/CURRENT-STATE.md): current source-backed host behavior and cross-repository integration modes.
 - [Architecture kit v1.0](https://github.com/Jevelopers-neatHack-2026/getticketstub.com/blob/main/docs/architecture-kit/v1.0/docs/architecture.md): immutable dated design intent, not the current implementation.
 - [Local acceptance view](ACCEPTANCE.md) and the [master integration-evals checklist](https://github.com/Jevelopers-neatHack-2026/integration-evals/blob/56018576a9450a2bb46aa55ed3b2f9d9ae97e50d/planning/acceptance-checklist.md): the latter owns acceptance state and evidence.
 - [Organization contributor guidance](https://github.com/Jevelopers-neatHack-2026/.github/blob/main/CONTRIBUTING.md): read with local agent and security instructions.
