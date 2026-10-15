@@ -1,0 +1,139 @@
+[
+  {
+    "name": "build",
+    "command": [
+      "/workspace/scratch/41d02a12a55b/task-state/toolchains/node24/node_modules/node/bin/node",
+      "scripts/build.mjs"
+    ],
+    "cwd": "/workspace/scratch/f79c57b98c5b/pins-b9836c9",
+    "sourceRevision": "2f2ef712be26c2274f5986610392d36c99a5f108",
+    "runtime": "v24.15.0",
+    "mode": "local source/build/VM/synthetic regressions; no browser/provider calls",
+    "startedAt": "2026-10-12T17:48:28.221907+00:00",
+    "completedAt": "2026-10-12T17:48:28.305045+00:00",
+    "exitCode": 0,
+    "streams": {
+      "build.stdout.log": {
+        "sha256": "c005ef06372299c25d7799129dbf09098a9aebb7deb7c2f3c034e0d67b0869b4",
+        "bytes": 35
+      },
+      "build.stderr.log": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      }
+    }
+  },
+  {
+    "name": "full-tests",
+    "command": [
+      "/workspace/scratch/41d02a12a55b/task-state/toolchains/node24/node_modules/node/bin/node",
+      "--test",
+      "tests/brand.test.mjs",
+      "tests/content-proof.test.mjs",
+      "tests/cta.test.mjs",
+      "tests/foundation.test.mjs",
+      "tests/governance.test.mjs",
+      "tests/maker-focus.test.mjs",
+      "tests/metadata.test.mjs",
+      "tests/privacy.test.mjs",
+      "tests/scroll.test.mjs",
+      "tests/ux.test.mjs"
+    ],
+    "cwd": "/workspace/scratch/f79c57b98c5b/pins-b9836c9",
+    "sourceRevision": "2f2ef712be26c2274f5986610392d36c99a5f108",
+    "runtime": "v24.15.0",
+    "mode": "local source/build/VM/synthetic regressions; no browser/provider calls",
+    "startedAt": "2026-10-12T17:48:28.305356+00:00",
+    "completedAt": "2026-10-12T17:48:32.598868+00:00",
+    "exitCode": 0,
+    "streams": {
+      "full-tests.stdout.log": {
+        "sha256": "e39e1fbb21deb8b3482d77e10a0907d504af28a26270732ab05daa1fcb94c15b",
+        "bytes": 25676
+      },
+      "full-tests.stderr.log": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      }
+    }
+  },
+  {
+    "name": "all-draft",
+    "command": [
+      "/workspace/scratch/41d02a12a55b/task-state/toolchains/node24/node_modules/node/bin/node",
+      "scripts/validate-landing",
+      "--mode",
+      "draft"
+    ],
+    "cwd": "/workspace/scratch/f79c57b98c5b/pins-b9836c9",
+    "sourceRevision": "2f2ef712be26c2274f5986610392d36c99a5f108",
+    "runtime": "v24.15.0",
+    "mode": "local source/build/VM/synthetic regressions; no browser/provider calls",
+    "startedAt": "2026-10-12T17:48:32.599271+00:00",
+    "completedAt": "2026-10-12T17:48:38.668924+00:00",
+    "exitCode": 0,
+    "streams": {
+      "all-draft.stdout.log": {
+        "sha256": "feb8b2f377570acf2ffd65839a742b1adcaeb4cca6507bbbe20cb0c1b97c4402",
+        "bytes": 9946
+      },
+      "all-draft.stderr.log": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      }
+    }
+  },
+  {
+    "name": "all-release",
+    "command": [
+      "/workspace/scratch/41d02a12a55b/task-state/toolchains/node24/node_modules/node/bin/node",
+      "scripts/validate-landing",
+      "--mode",
+      "release"
+    ],
+    "cwd": "/workspace/scratch/f79c57b98c5b/pins-b9836c9",
+    "sourceRevision": "2f2ef712be26c2274f5986610392d36c99a5f108",
+    "runtime": "v24.15.0",
+    "mode": "local source/build/VM/synthetic regressions; no browser/provider calls",
+    "startedAt": "2026-10-12T17:48:38.669234+00:00",
+    "completedAt": "2026-10-12T17:48:45.075293+00:00",
+    "exitCode": 1,
+    "streams": {
+      "all-release.stdout.log": {
+        "sha256": "a8c8715b9fd3a16b46da782fb0ba5995925e442a5dd585cf02e7435de298930b",
+        "bytes": 8899
+      },
+      "all-release.stderr.log": {
+        "sha256": "e6347c3334cc1ef812d1b0016c2d50f37afa3b081afb837eae3289a5dd8fe067",
+        "bytes": 1196
+      }
+    }
+  },
+  {
+    "name": "diff-check",
+    "command": [
+      "git",
+      "diff",
+      "--check",
+      "b9836c9e2a8555eac96738a17c5fccb00b0eb35d",
+      "--"
+    ],
+    "cwd": "/workspace/scratch/f79c57b98c5b/pins-b9836c9",
+    "sourceRevision": "2f2ef712be26c2274f5986610392d36c99a5f108",
+    "runtime": "v24.15.0",
+    "mode": "local source/build/VM/synthetic regressions; no browser/provider calls",
+    "startedAt": "2026-10-12T17:48:45.075684+00:00",
+    "completedAt": "2026-10-12T17:48:45.082101+00:00",
+    "exitCode": 0,
+    "streams": {
+      "diff-check.stdout.log": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "diff-check.stderr.log": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      }
+    }
+  }
+]

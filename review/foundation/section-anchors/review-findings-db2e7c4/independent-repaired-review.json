@@ -1,0 +1,115 @@
+{
+  "reviewDecision": "APPROVE_SCOPED_BYTES",
+  "reviewedAt": "2026-10-12T16:57:50.651977+00:00",
+  "reviewerRole": "independent foundation source reviewer (governance_implementation agent)",
+  "baseRevision": "db2e7c4bf8920f17b0ab132719edf910a284b5e6",
+  "candidateCommit": "not yet assigned; approve only the listed actual file bytes, then confirm matching published commit",
+  "files": {
+    "scripts/suites/foundation.mjs": "3b49b6488110ca44747e550e1bf87ddc742401e4dfe3d33e90ca0939882e79dd",
+    "tests/foundation.test.mjs": "2a2ef3cf25756837b0097983043046e962c0d22d05b8ec158a56bec121f9f9eb",
+    "integration/site-map.md": "f3f5538d497b7bd6c4b6dfa547571ec176fdd48a85a62607734ce59608c35e57",
+    "site/index.html": "91e9a369378376a45fe3a6a725a655229040ba4f3afb69d1d031116d97c33969"
+  },
+  "resolvedFindings": [
+    "FND-R1 nested templates/raw text cannot supply an anchor",
+    "FND-R2 encoded IDs and fragments fail closed",
+    "FND-R3 slash in an unquoted ID remains part of the value and fails the literal-ID boundary"
+  ],
+  "remainingActionableFindings": [],
+  "verification": {
+    "baseRevision": "db2e7c4bf8920f17b0ab132719edf910a284b5e6",
+    "mode": "independent isolated local review of specified uncommitted foundation bytes",
+    "files": {
+      "scripts/suites/foundation.mjs": "3b49b6488110ca44747e550e1bf87ddc742401e4dfe3d33e90ca0939882e79dd",
+      "tests/foundation.test.mjs": "2a2ef3cf25756837b0097983043046e962c0d22d05b8ec158a56bec121f9f9eb",
+      "integration/site-map.md": "f3f5538d497b7bd6c4b6dfa547571ec176fdd48a85a62607734ce59608c35e57"
+    },
+    "pageSha256": "91e9a369378376a45fe3a6a725a655229040ba4f3afb69d1d031116d97c33969",
+    "command": [
+      "/workspace/scratch/41d02a12a55b/task-state/toolchains/node24/node_modules/node/bin/node",
+      "--test",
+      "tests/foundation.test.mjs"
+    ],
+    "startedAt": "2026-10-12T16:57:09.426620+00:00",
+    "completedAt": "2026-10-12T16:57:10.700469+00:00",
+    "exitCode": 0,
+    "stdoutSha256": "76f2aabbd056119b90a4381e9f6dbaed778e1cce81ff79f5242a922e3b600530",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "independentNegativeReplay": {
+    "checkedAt": "2026-10-12T16:57:29.378Z",
+    "runtime": "v24.15.0",
+    "baseRevision": "db2e7c4bf8920f17b0ab132719edf910a284b5e6",
+    "checkerSha256": "3b49b6488110ca44747e550e1bf87ddc742401e4dfe3d33e90ca0939882e79dd",
+    "mode": "independent offline replay of preserved synthetic built-artifact negative fixtures",
+    "rows": [
+      {
+        "name": "nested-template",
+        "htmlSha256": "698f5541b4edecc6b5ca9f616a95758f5670a14ceaf796d269791a1a707d2d7a",
+        "manifestSha256": "45582ded4390052d8f4e947c4d0cf16d6764e13c9eaf6d757287ec79290a949b",
+        "actual": "rejected",
+        "error": "Included section anchor missing: #problem"
+      },
+      {
+        "name": "textarea-text",
+        "htmlSha256": "d1d51f23a12374fa1dabf8c8837697b7e33d87e722098f26872a4cb1681240db",
+        "manifestSha256": "b57953d4e287b2fdf95c39ec008a68d753ae502a9f84728555301839d45eab3d",
+        "actual": "rejected",
+        "error": "Included section anchor missing: #problem"
+      },
+      {
+        "name": "encoded-duplicate-id",
+        "htmlSha256": "261e3e66c0cb2faddb72ac7c4f774f2960cf62776e7e76c09aecc25df626436b",
+        "manifestSha256": "3f1a6f0253501fa9e2bb61d5877df3c8ff005cb4151167bda29183851e7bf03c",
+        "actual": "rejected",
+        "error": "Static IDs require literal ASCII spellings; encoded/ambiguous IDs need review"
+      },
+      {
+        "name": "unquoted-slash",
+        "htmlSha256": "6798043a0333381300847c93a7b12d0bec7d11808b991688b1b26d6a990cb4c3",
+        "manifestSha256": "2be6cc41aec72645225108e5f359a712b661de7afb9effa916fa4d475f283c7d",
+        "actual": "rejected",
+        "error": "Static IDs require literal ASCII spellings; encoded/ambiguous IDs need review"
+      }
+    ]
+  },
+  "preservedPriorRequestChanges": {
+    "path": "review/foundation/section-anchors/review-findings-db2e7c4/foundation-review-db2e7c4.json",
+    "sha256": "a3abd4848d169b1ca400ab6fbb6f0ac4af2af35228117dde2eea13ae0ece7241",
+    "verifiedByteIdentical": true,
+    "firstFailingRegressionCounts": {
+      "tests": 17,
+      "pass": 13,
+      "fail": 4,
+      "skipped": 0
+    }
+  },
+  "preservedSlashRegressionEvidence": [
+    {
+      "path": "review/foundation/section-anchors/re-review-unquoted-slash/before-repair.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "countLines": []
+    },
+    {
+      "path": "review/foundation/section-anchors/re-review-unquoted-slash/before-repair.stdout.log",
+      "sha256": "852da19f976431590c915942716f954b18f3bf31e5b9f86a618f63b56464288f",
+      "countLines": [
+        "\u2139 tests 18",
+        "\u2139 pass 17",
+        "\u2139 fail 1",
+        "\u2139 skipped 0"
+      ]
+    },
+    {
+      "path": "review/foundation/section-anchors/re-review-unquoted-slash/command.json",
+      "sha256": "ea40e8bfe63bdfdd50615be3e220cf197acf1a8a925e570ed8d4966cd0bbffc3"
+    }
+  ],
+  "assessment": "The bounded scanner now enforces the documented literal-ASCII convention and excludes the reproduced inert/text fixtures. The map still describes static structure only. Four application IDs and application bytes remain unchanged.",
+  "limitations": [
+    "No rendered anchor positioning, browser behavior, physical input, accessibility or performance acceptance supplied by this review",
+    "Product owner approval, app-owner route agreement/actual-host smoke and master acceptance remain pending",
+    "Not an actual GitHub PR review; root must attach this scope and verify exact final candidate/repository-required approvals",
+    "No source or evidence files changed in the author worktree"
+  ]
+}

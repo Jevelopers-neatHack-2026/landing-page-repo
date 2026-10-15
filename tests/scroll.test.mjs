@@ -18,7 +18,8 @@ function section(from, to){
 }
 
 function browserDouble(){
-  const listeners = new Map(), frames = [], calls = [], progress = new Map();
+  const listeners = new Map(), frames = [], calls = [], progress = new Map(), timers = new Map();
+  let nextTimer = 0;
   const rail = { style: { setProperty: (name, value) => progress.set(name, value) } };
   const field = { focus: options => calls.push({ focus: options }) };
   const context = vm.createContext({
@@ -37,6 +38,9 @@ function browserDouble(){
       const entries = listeners.get(type) || [];
       entries.push({ handler, options }); listeners.set(type, entries);
     },
+    removeEventListener(type, handler){ listeners.set(type, (listeners.get(type) || []).filter(entry => entry.handler !== handler)); },
+    setTimeout(callback){ const id = ++nextTimer; timers.set(id, callback); return id; },
+    clearTimeout: id => timers.delete(id),
     requestAnimationFrame: callback => frames.push(callback),
     scrollTo: options => { calls.push({ scroll: options }); context.scrollY = options.top; },
     // A failure at the first render measurement stops the original RAF chain.
@@ -167,8 +171,20 @@ function loadAnchors(h){
   }));
   h.context.document.querySelectorAll = () => anchors;
   h.context.document.querySelector = selector => selector === '.rail' ? h.rail : targets[selector];
-  h.context.boardEl = { offsetTop: 12000, offsetHeight: 6000 };
-  h.context.finale = { inert: false };
+  const classes = () => {
+    const values = new Set();
+    return { contains: value => values.has(value), toggle(value, on){ on ? values.add(value) : values.delete(value); } };
+  };
+  const elements = {
+    ev: h.context.document.getElementById('ev'),
+    wall: { offsetTop: 12000, offsetHeight: 6000, getBoundingClientRect(){ const top = this.offsetTop - h.context.scrollY; return { top, bottom: top + this.offsetHeight, height: this.offsetHeight }; } },
+    boardUI: { hidden: true, classList: classes() },
+    finale: { inert: true, classList: classes() },
+    bh1: { textContent: '', classList: classes() },
+  };
+  h.context.document.documentElement.classList = classes();
+  h.context.document.getElementById = id => elements[id];
+  vm.runInContext(section('/* =============================== board state (shared', '// nav colour follows'), h.context);
   const source = section('/* ---------- in-page links:', '/* =============================== 3D,');
   vm.runInContext(source, h.context);
   return id => {
@@ -188,7 +204,6 @@ for (const reduced of [false, true]){
     assert.equal(click('#make'), true);
     assert.equal(h.context.scrollY, 17388);
     assert.ok(h.calls.some(call => call.hash === '#make'));
-    h.frames.shift()(16);
     assert.ok(h.calls.some(call => Object.hasOwn(call, 'focus') && call.focus === undefined), 'active maker focus permits native scrolling of the input into view');
     assert.equal(click('#top'), true);
     assert.equal(h.context.scrollY, 0);
@@ -197,14 +212,13 @@ for (const reduced of [false, true]){
 }
 
 test('user wheel input cancels pending maker focus', () => {
-  const h = browserDouble(); h.context.finale = { inert: true };
+  const h = browserDouble();
+  h.context.scrollTo = options => h.calls.push({ scroll: options }); // Native smooth arrival is still pending.
   const click = loadAnchors(h);
-  h.context.finale.inert = true;
   click('#make');
   h.wheel(-100);
-  h.context.finale.inert = false;
-  h.frames.shift()(16);
-  assert.equal(h.calls.some(call => call.focus), false);
+  h.context.scrollY = 17388; h.dispatch('scroll');
+  assert.equal(h.calls.some(call => Object.hasOwn(call, 'focus')), false);
 });
 
 test('seamless hero wrap uses an immediate native jump', () => {

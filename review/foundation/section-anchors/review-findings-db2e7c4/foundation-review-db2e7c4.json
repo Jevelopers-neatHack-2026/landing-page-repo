@@ -1,0 +1,150 @@
+{
+  "reviewDecision": "REQUEST_CHANGES",
+  "reviewedAt": "2026-10-12T16:47:04.133488+00:00",
+  "reviewerRole": "independent foundation source reviewer (governance_implementation agent)",
+  "testedRevision": "db2e7c4bf8920f17b0ab132719edf910a284b5e6",
+  "sourceSlice": "d22c75f4b97898e576a421c43c05bc8449a0202c",
+  "sourceParent": "6f0cbb1649413c24133e3fa97264f80692230013",
+  "scope": [
+    "site/index.html",
+    "scripts/suites/foundation.mjs",
+    "tests/foundation.test.mjs",
+    "integration/site-map.md"
+  ],
+  "sourceSliceMatchesPublished": true,
+  "trackedWorktreeChanges": "",
+  "currentIssue": {
+    "url": "https://github.com/Jevelopers-neatHack-2026/landing-page-repo/issues/3",
+    "updatedAt": "2026-10-11T02:00:13Z",
+    "comments": 0,
+    "readOn": "2026-10-12",
+    "scopeDecision": "Page-map, source, static-build and local foundation work can proceed while app route-contract acceptance is pending."
+  },
+  "findings": [
+    {
+      "id": "FND-R1",
+      "severity": "P2",
+      "file": "scripts/suites/foundation.mjs",
+      "location": "inspectSectionAnchors markup stripping/tokenization",
+      "summary": "Nested template content and textarea text can satisfy a missing required anchor.",
+      "reproduction": "Remove the real id=\"problem\" from the page. Before </body>, append either <template><template></template><section class=\"statement\" id=\"problem\"></section></template> or <textarea><section class=\"statement\" id=\"problem\"></section></textarea>. Both built/validated fixtures are accepted by inspectSectionAnchors.",
+      "expected": "Reject: no #problem static document element exists outside inert template/text content.",
+      "actual": "accepted with coverage static-section-targets",
+      "requiredRepair": "Tokenize the supported markup sufficiently to skip nested template contents and raw-text/RCDATA bodies, or fail closed on unsupported structures; add meaningful regressions."
+    },
+    {
+      "id": "FND-R2",
+      "severity": "P2",
+      "file": "scripts/suites/foundation.mjs",
+      "location": "inspectSectionAnchors attribute parsing and duplicate-ID check",
+      "summary": "Character-reference-encoded duplicate IDs escape the uniqueness check.",
+      "reproduction": "Keep existing #problem and append <span id=\"pro&#98;lem\"></span> before </body>. The real build and artifact validator pass; inspectSectionAnchors accepts despite two decoded IDs equal to problem.",
+      "expected": "Reject duplicate static element IDs after supported HTML attribute decoding, or reject ambiguous encoded input.",
+      "actual": "accepted with coverage static-section-targets",
+      "requiredRepair": "Compare decoded supported attribute values (at least IDs/fragment references), or fail closed on ambiguous encodings; add a regression."
+    }
+  ],
+  "positiveAssessment": "The four existing-section ID additions and source-only/partial-acceptance wording in the map have no separate actionable findings. Product approval, dedicated hackathon content decision, host route agreement/smoke and rendered anchor positioning remain pending.",
+  "verification": {
+    "testedRevision": "db2e7c4bf8920f17b0ab132719edf910a284b5e6",
+    "sourceSlice": "d22c75f4b97898e576a421c43c05bc8449a0202c",
+    "mode": "local structural/artifact checks; synthetic preview fixtures; no browser or provider calls",
+    "commands": [
+      {
+        "name": "runtime",
+        "argv": [
+          "/workspace/scratch/41d02a12a55b/task-state/toolchains/node24/node_modules/node/bin/node",
+          "--version"
+        ],
+        "startedAt": "2026-10-12T16:46:25.850502+00:00",
+        "completedAt": "2026-10-12T16:46:25.857883+00:00",
+        "exitCode": 0,
+        "stdoutSha256": "c642a0de246dcdc6c51318fe449646fc5067b981a8d09e9ccdb8141a5756339a",
+        "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "name": "build",
+        "argv": [
+          "/workspace/scratch/41d02a12a55b/task-state/toolchains/node24/node_modules/node/bin/node",
+          "scripts/build.mjs"
+        ],
+        "startedAt": "2026-10-12T16:46:25.857961+00:00",
+        "completedAt": "2026-10-12T16:46:25.960544+00:00",
+        "exitCode": 0,
+        "stdoutSha256": "c005ef06372299c25d7799129dbf09098a9aebb7deb7c2f3c034e0d67b0869b4",
+        "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "name": "foundation",
+        "argv": [
+          "./scripts/validate-landing",
+          "--suite",
+          "foundation"
+        ],
+        "startedAt": "2026-10-12T16:46:25.960595+00:00",
+        "completedAt": "2026-10-12T16:46:27.723264+00:00",
+        "exitCode": 0,
+        "stdoutSha256": "0409974df6672f1f21e18e892da98b62ae38818bafb4a14517235969eaf8a44b",
+        "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ],
+    "artifactManifestSha256": "496c31d265f54fbac0b936a912b20194427de1450aefe4c691d4a3ec29300bac"
+  },
+  "negativeProbeReport": {
+    "path": "/workspace/scratch/f79c57b98c5b/foundation-negative-probes-db2e7c4.json",
+    "sha256": "b6f13cf7600c7795e11dd3866e6312d5f61645d7cc612c7b5958853778ec9b81"
+  },
+  "independentParse": {
+    "tool": "lxml HTML parser",
+    "version": "6.1.1.0",
+    "mode": "offline structural comparison; not browser/rendered acceptance",
+    "results": [
+      {
+        "case": "nested-template",
+        "targets": [
+          {
+            "tag": "section",
+            "ancestorTags": [
+              "template",
+              "body",
+              "html"
+            ]
+          }
+        ],
+        "textareaLiteralContainsProblem": false
+      },
+      {
+        "case": "textarea-text",
+        "targets": [],
+        "textareaLiteralContainsProblem": true
+      },
+      {
+        "case": "encoded-duplicate-id",
+        "targets": [
+          {
+            "tag": "section",
+            "ancestorTags": [
+              "main",
+              "body",
+              "html"
+            ]
+          },
+          {
+            "tag": "span",
+            "ancestorTags": [
+              "body",
+              "html"
+            ]
+          }
+        ],
+        "textareaLiteralContainsProblem": false
+      }
+    ]
+  },
+  "limitations": [
+    "No physical/browser/rendered anchor verification",
+    "No publication or provider calls",
+    "No owner, consumer, issue-closure or master acceptance supplied",
+    "No repository source, pin, review or GitHub state changed by this review"
+  ]
+}

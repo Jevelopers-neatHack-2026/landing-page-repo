@@ -1,0 +1,195 @@
+✖ included page sections have unique anchors on the documented existing surfaces (3.887612ms)
+✔ missing included #problem target fails even when no current navigation link refers to it (1.448867ms)
+✖ missing included #benefits target fails even when no current navigation link refers to it (2.080937ms)
+✖ missing included #gallery target fails even when no current navigation link refers to it (4.482236ms)
+✖ missing included #about target fails even when no current navigation link refers to it (0.775615ms)
+✔ comments, scripts and templates cannot replace a missing section anchor (2.74868ms)
+✖ misplaced, duplicate and hidden anchors fail instead of satisfying the page map (5.488297ms)
+✖ page-map validation rejects a dangling public fragment without inventing navigation (0.915576ms)
+✔ actual illustrated source builds reproducibly with every asset and no repository documents (153.166427ms)
+✔ validator detects missing referenced assets, tampering, stale manifests and unexpected files (18.156113ms)
+✔ build refuses symlinks, unreviewed asset types and unsafe output destinations (3.770085ms)
+✔ preview serves homepage and every actual asset; unknown and app routes cannot fall back to landing (117.110551ms)
+✔ dispatcher rejects invalid arguments and no-argument validation fails for unavailable required suites (540.480285ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 7
+ℹ fail 6
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 965.25733
+
+✖ failing tests:
+
+test at tests/foundation.test.mjs:13:1
+✖ included page sections have unique anchors on the documented existing surfaces (3.887612ms)
+  AssertionError [ERR_ASSERTION]: Included section anchor missing: #problem
+      at inspectSectionAnchors (file:///workspace/scratch/f79c57b98c5b/foundation-worktree/scripts/suites/foundation.mjs:27:12)
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/foundation-worktree/tests/foundation.test.mjs:14:20)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.start (node:internal/test_runner/test:1096:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/foundation.test.mjs:21:3
+✖ missing included #benefits target fails even when no current navigation link refers to it (2.080937ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /Included section anchor missing: #benefits/. Input:
+  
+  'AssertionError [ERR_ASSERTION]: Included section anchor missing: #problem'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/foundation-worktree/tests/foundation.test.mjs:22:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: AssertionError [ERR_ASSERTION]: Included section anchor missing: #problem
+        at inspectSectionAnchors (file:///workspace/scratch/f79c57b98c5b/foundation-worktree/scripts/suites/foundation.mjs:27:12)
+        at file:///workspace/scratch/f79c57b98c5b/foundation-worktree/tests/foundation.test.mjs:22:25
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/foundation-worktree/tests/foundation.test.mjs:22:12)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+        at Test.postRun (node:internal/test_runner/test:1330:19)
+        at Test.run (node:internal/test_runner/test:1258:12),
+    expected: /Included section anchor missing: #benefits/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/foundation.test.mjs:21:3
+✖ missing included #gallery target fails even when no current navigation link refers to it (4.482236ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /Included section anchor missing: #gallery/. Input:
+  
+  'AssertionError [ERR_ASSERTION]: Included section anchor missing: #problem'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/foundation-worktree/tests/foundation.test.mjs:22:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: AssertionError [ERR_ASSERTION]: Included section anchor missing: #problem
+        at inspectSectionAnchors (file:///workspace/scratch/f79c57b98c5b/foundation-worktree/scripts/suites/foundation.mjs:27:12)
+        at file:///workspace/scratch/f79c57b98c5b/foundation-worktree/tests/foundation.test.mjs:22:25
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/foundation-worktree/tests/foundation.test.mjs:22:12)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+        at Test.postRun (node:internal/test_runner/test:1330:19)
+        at Test.run (node:internal/test_runner/test:1258:12),
+    expected: /Included section anchor missing: #gallery/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/foundation.test.mjs:21:3
+✖ missing included #about target fails even when no current navigation link refers to it (0.775615ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /Included section anchor missing: #about/. Input:
+  
+  'AssertionError [ERR_ASSERTION]: Included section anchor missing: #problem'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/foundation-worktree/tests/foundation.test.mjs:22:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: AssertionError [ERR_ASSERTION]: Included section anchor missing: #problem
+        at inspectSectionAnchors (file:///workspace/scratch/f79c57b98c5b/foundation-worktree/scripts/suites/foundation.mjs:27:12)
+        at file:///workspace/scratch/f79c57b98c5b/foundation-worktree/tests/foundation.test.mjs:22:25
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/foundation-worktree/tests/foundation.test.mjs:22:12)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+        at Test.postRun (node:internal/test_runner/test:1330:19)
+        at Test.run (node:internal/test_runner/test:1258:12),
+    expected: /Included section anchor missing: #about/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/foundation.test.mjs:34:1
+✖ misplaced, duplicate and hidden anchors fail instead of satisfying the page map (5.488297ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /wrong surface/. Input:
+  
+  'AssertionError [ERR_ASSERTION]: Included section anchor missing: #problem'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/foundation-worktree/tests/foundation.test.mjs:36:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: AssertionError [ERR_ASSERTION]: Included section anchor missing: #problem
+        at inspectSectionAnchors (file:///workspace/scratch/f79c57b98c5b/foundation-worktree/scripts/suites/foundation.mjs:27:12)
+        at file:///workspace/scratch/f79c57b98c5b/foundation-worktree/tests/foundation.test.mjs:36:23
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/foundation-worktree/tests/foundation.test.mjs:36:10)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+        at Test.postRun (node:internal/test_runner/test:1330:19)
+        at Test.run (node:internal/test_runner/test:1258:12),
+    expected: /wrong surface/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/foundation.test.mjs:44:1
+✖ page-map validation rejects a dangling public fragment without inventing navigation (0.915576ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /Missing public fragment target/. Input:
+  
+  'AssertionError [ERR_ASSERTION]: Included section anchor missing: #problem'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/foundation-worktree/tests/foundation.test.mjs:45:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: AssertionError [ERR_ASSERTION]: Included section anchor missing: #problem
+        at inspectSectionAnchors (file:///workspace/scratch/f79c57b98c5b/foundation-worktree/scripts/suites/foundation.mjs:27:12)
+        at file:///workspace/scratch/f79c57b98c5b/foundation-worktree/tests/foundation.test.mjs:45:23
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/foundation-worktree/tests/foundation.test.mjs:45:10)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+        at Test.postRun (node:internal/test_runner/test:1330:19)
+        at Test.run (node:internal/test_runner/test:1258:12),
+    expected: /Missing public fragment target/,
+    operator: 'throws',
+    diff: 'simple'
+  }

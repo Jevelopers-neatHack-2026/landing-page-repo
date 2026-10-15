@@ -1,0 +1,45 @@
+{
+  "schema": "ticketstub-preserved-browser-evidence/1",
+  "preservedAt": "2026-10-12T18:25:00Z",
+  "sourceRevision": "11d370af6bced7b2b4bad48e54e10e97bf2b79f6",
+  "harnessRevision": "11d370af6bced7b2b4bad48e54e10e97bf2b79f6",
+  "harnessSha256": "16f88f3ef82e29f7c4fc698c4a66b0de735a00b05f44d83023c566b51c0e7ea4",
+  "pageSha256": "9375d5fa77d413757f5adcca80aea6222512227e1a999e710276dca0566dbfa6",
+  "artifactManifestSha256": "94d85831855fdf7b734adb9e374b6250488a51e358e273fe670b82466be9dea9",
+  "mode": "local-browser-emulated-input",
+  "originalExitCode": 0,
+  "originalResult": "pass",
+  "files": [
+    {
+      "path": "command.json",
+      "bytes": 1474,
+      "sha256": "8909c6360007c7809d1ef3b7d5d88220e538f0b954ecee06de5058deecf05280"
+    },
+    {
+      "path": "stdout.log",
+      "bytes": 928,
+      "sha256": "a5fa778416097c04ca24eeafd1b643db5efb025510d19df819ecbfdf351b8823"
+    },
+    {
+      "path": "stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "observations/observations.json",
+      "bytes": 786661,
+      "sha256": "3785b3c4b6dca72f41d813c25c8f3f7632758604a1d553c8e2df81bddb5c786e"
+    },
+    {
+      "path": "runtime-metadata.json",
+      "bytes": 1095,
+      "sha256": "e3257b50787c26bf626164cd0aeaf68bbe3b9536cb457b46d1d8e1fd07133f5a"
+    },
+    {
+      "path": "run-browser-command.py",
+      "bytes": 2619,
+      "sha256": "c832dcfa18b643328d7c6bc6094d02a41e08ec4668ac9c44696244a7f5dc7573"
+    }
+  ],
+  "qualification": "Actual fixed-revision input matrix."
+}

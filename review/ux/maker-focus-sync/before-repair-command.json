@@ -1,0 +1,19 @@
+{
+  "mode": "deterministic-real-source-handlers-with-geometry-event-timer-doubles-no-rendering-frames-no-browser",
+  "startedAt": "2026-10-12T17:22:16.107733+00:00",
+  "completedAt": "2026-10-12T17:22:16.351709+00:00",
+  "command": [
+    "/workspace/scratch/41d02a12a55b/task-state/toolchains/node24/node_modules/node/bin/node",
+    "--test",
+    "tests/maker-focus.test.mjs"
+  ],
+  "cwd": "/workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a",
+  "sourceRevision": "ee16f8a49e5039ee8d41d3fb0a0be9aeb4b98ec5",
+  "pageSha256": "91e9a369378376a45fe3a6a725a655229040ba4f3afb69d1d031116d97c33969",
+  "testSha256": "71ada0dd9b0023da825cbb080fcbbf9ef770690f9882dded0dc96c0486402906",
+  "exitCode": 1,
+  "logs": {
+    "before-repair.stdout.log": "db12afe11cc87d49af2e31e8ab94ecb7744597d97ad6ee4b3a1e823f802ec1e1",
+    "before-repair.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

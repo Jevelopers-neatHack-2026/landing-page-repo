@@ -1,0 +1,30 @@
+✔ maker navigation synchronizes an in-range inert board without animation frames (18.89798ms)
+✔ native smooth-scroll arrival activates and focuses the maker while rendering frames are paused (1.958554ms)
+✔ continuing native scroll can reach the maker after the former absolute focus timeout (1.431862ms)
+✔ the idle deadline samples reached geometry before expiring a pending focus request (11.028163ms)
+✔ an off-wall idle request expires without exposing or focusing the maker (1.769078ms)
+✔ wheel cancels pending maker focus without preventing native input (10.26107ms)
+✔ touchstart cancels pending maker focus without preventing native input (1.233824ms)
+✔ pointerdown cancels pending maker focus without preventing native input (1.045371ms)
+✔ keydown cancels pending maker focus without preventing native input (1.430079ms)
+✔ a newer maker activation owns one pending focus and cleans up after success (1.333114ms)
+✔ a different native anchor cancels the old maker focus request (2.958136ms)
+✔ native board synchronization keeps manual scrolling accessible without requesting focus (0.955366ms)
+✔ wheel keeps moving forward/backward after the 3D loop exits on context loss (7.086109ms)
+✔ an animation exception cannot strand wheel input and starts readable static art (1.099682ms)
+✔ display-only rail tracks native scrolling/resizing without rendering frames (2.003951ms)
+✔ rail is decorative and passes pointer input through (0.438379ms)
+✔ switching to static art restores scene copy hidden by an interrupted 3D frame (0.879822ms)
+✔ native navigation reaches scenes and maker, with reduced motion false (1.515437ms)
+✔ native navigation reaches scenes and maker, with reduced motion true (0.744659ms)
+✔ user wheel input cancels pending maker focus (0.881375ms)
+✔ seamless hero wrap uses an immediate native jump (1.043007ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 21
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 374.334186
+ux: source checks and actual-handler VM scroll tests passed; 5 source-review/evidence-boundary items; browser receipts not evaluated by this adapter; WCAG/lab performance not certified

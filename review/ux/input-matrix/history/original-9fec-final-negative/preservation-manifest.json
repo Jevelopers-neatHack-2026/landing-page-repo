@@ -1,0 +1,45 @@
+{
+  "schema": "ticketstub-preserved-browser-evidence/1",
+  "preservedAt": "2026-10-12T18:25:00Z",
+  "sourceRevision": "9fec9e5747a2974c4152cd22a6c57fb8be7ba5f2",
+  "harnessRevision": "11d370af6bced7b2b4bad48e54e10e97bf2b79f6",
+  "harnessSha256": "16f88f3ef82e29f7c4fc698c4a66b0de735a00b05f44d83023c566b51c0e7ea4",
+  "pageSha256": "8882d7587ed0cd2305a92016643da082275429da16be0912a918d1c0cb4edd20",
+  "artifactManifestSha256": "6a851fd35fb30eae42a33be2ee4d27980f0a34f15bfc17a6d0e2789316cfc5ba",
+  "mode": "local-browser-emulated-input",
+  "originalExitCode": 1,
+  "originalResult": "fail",
+  "files": [
+    {
+      "path": "command.json",
+      "bytes": 1522,
+      "sha256": "25a10caf19fca24ab97eafd0fc7fcf06b08c7ea8a3786f964ac5ac19c1c66a4e"
+    },
+    {
+      "path": "stdout.log",
+      "bytes": 112,
+      "sha256": "43f16b4399bb4244eeeff0232f1e0961eec6e1286f2cac784a63308934528c6a"
+    },
+    {
+      "path": "stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "observations/observations.json",
+      "bytes": 28996,
+      "sha256": "d5b44adbc887defb58a6dda9aa8c3f59c8c049dee357bc3f4e5da45e133b3548"
+    },
+    {
+      "path": "runtime-metadata.json",
+      "bytes": 1095,
+      "sha256": "e3257b50787c26bf626164cd0aeaf68bbe3b9536cb457b46d1d8e1fd07133f5a"
+    },
+    {
+      "path": "run-browser-command.py",
+      "bytes": 2619,
+      "sha256": "c832dcfa18b643328d7c6bc6094d02a41e08ec4668ac9c44696244a7f5dc7573"
+    }
+  ],
+  "qualification": "Expected failing negative control; original exit1 and trusted cancelled native wheel stall are preserved. This is not a passing source revision."
+}

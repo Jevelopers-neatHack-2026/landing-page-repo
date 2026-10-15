@@ -1,0 +1,22 @@
+normal: loaded ready at 1440x900
+normal: pass; 17/17 input checks passed
+context-loss: loaded ready at 1440x900
+context-loss: pass; 18/18 input checks passed
+blocked-cdn: loaded no3d ready at 1440x900
+blocked-cdn: pass; 17/17 input checks passed
+missing-media: loaded no3d ready at 1440x900
+missing-media: pass; 17/17 input checks passed
+webgl-failure: loaded no3d ready at 1440x900
+webgl-failure: pass; 17/17 input checks passed
+reduced-motion: loaded ready at 1440x900
+reduced-motion: pass; 17/17 input checks passed
+touch: loaded ready at 375x812
+touch: pass; 5/5 input checks passed
+narrow-keyboard: loaded ready at 320x568
+narrow-keyboard: pass; 17/17 input checks passed
+tablet: loaded ready at 768x1024
+tablet: pass; 17/17 input checks passed
+short-desktop: loaded ready at 1440x568
+short-desktop: pass; 17/17 input checks passed
+no-javascript: loaded no-script at 1440x900
+no-javascript: pass; 14/14 input checks passed

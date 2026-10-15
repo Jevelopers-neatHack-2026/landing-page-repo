@@ -1,0 +1,95 @@
+{
+  "sourceRevision": "ee16f8a49e5039ee8d41d3fb0a0be9aeb4b98ec5",
+  "harnessSha256": "37db6a4a6cef6752b431546476e491b8c72219cf1b2b7b9b7492844981d87c48",
+  "pageSha256": "91e9a369378376a45fe3a6a725a655229040ba4f3afb69d1d031116d97c33969",
+  "originalReportPath": "review/ux/input-matrix/published-ee16f8a/observations/observations.json",
+  "originalReportSha256": "2fbb5d530ee8b62315650c136b709586bc2de54bd6a1df8f6e44c20def24477a",
+  "startedAt": "2026-10-12T17:13:54.823Z",
+  "completedAt": "2026-10-12T17:23:18.175Z",
+  "result": "fail",
+  "mode": "local-browser-emulated-input",
+  "scenarios": [
+    {
+      "name": "normal",
+      "result": "fail",
+      "nativeInputResults": 14,
+      "passedInputResults": 14,
+      "error": "Maker input focus timed out; last state: {\"scrollY\":26709,\"innerWidth\":1440,\"innerHeight\":900,\"clientWidth\":1425,\"scrollHeight\":30023,\"rootClasses\":\"ready\",\"activeId\":\"\",\"activeTag\":\"A\",\"railPointerEvents\":\"none\",\"railProgress\":\"0.9499\",\"makerScroll\":0,\"progress\":100,\"readyState\":\"complete\",\"visible\":\"visible\",\"hasFocus\":true}"
+    },
+    {
+      "name": "context-loss",
+      "result": "pass",
+      "nativeInputResults": 18,
+      "passedInputResults": 18,
+      "error": null
+    },
+    {
+      "name": "blocked-cdn",
+      "result": "pass",
+      "nativeInputResults": 17,
+      "passedInputResults": 17,
+      "error": null
+    },
+    {
+      "name": "missing-media",
+      "result": "pass",
+      "nativeInputResults": 17,
+      "passedInputResults": 17,
+      "error": null
+    },
+    {
+      "name": "webgl-failure",
+      "result": "pass",
+      "nativeInputResults": 17,
+      "passedInputResults": 17,
+      "error": null
+    },
+    {
+      "name": "reduced-motion",
+      "result": "pass",
+      "nativeInputResults": 17,
+      "passedInputResults": 17,
+      "error": null
+    },
+    {
+      "name": "touch",
+      "result": "pass",
+      "nativeInputResults": 5,
+      "passedInputResults": 5,
+      "error": null
+    },
+    {
+      "name": "narrow-keyboard",
+      "result": "fail",
+      "nativeInputResults": 2,
+      "passedInputResults": 1,
+      "error": "wheel-content-backward"
+    },
+    {
+      "name": "tablet",
+      "result": "pass",
+      "nativeInputResults": 17,
+      "passedInputResults": 17,
+      "error": null
+    },
+    {
+      "name": "short-desktop",
+      "result": "fail",
+      "nativeInputResults": 14,
+      "passedInputResults": 14,
+      "error": "Maker input focus timed out; last state: {\"scrollY\":18968,\"innerWidth\":1440,\"innerHeight\":568,\"clientWidth\":1425,\"scrollHeight\":20673,\"rootClasses\":\"ready\",\"activeId\":\"\",\"activeTag\":\"A\",\"railPointerEvents\":\"none\",\"railProgress\":\"0.9434\",\"makerScroll\":0,\"progress\":100,\"readyState\":\"complete\",\"visible\":\"visible\",\"hasFocus\":true}"
+    },
+    {
+      "name": "no-javascript",
+      "result": "pass",
+      "nativeInputResults": 14,
+      "passedInputResults": 14,
+      "error": null
+    }
+  ],
+  "limitations": [
+    "This summary is extracted from the retained completed original report; it does not change its result.",
+    "Original failure snapshots do not include board geometry, finale inert state or ancestor visibility.",
+    "No fresh browser was launched by the repair author."
+  ]
+}

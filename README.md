@@ -26,11 +26,11 @@
 - [PR #34](https://github.com/Jevelopers-neatHack-2026/landing-page-repo/pull/34) adds local content-governance and withdrawal checks. Named accountable reviewers, maintainer/backup and content/publication acceptance remain unconfirmed in the [content policy](review/content-policy.md).
 - Relevant acceptance criteria (EVAL-03, EVAL-04) stay planned in the [acceptance view](docs/architecture/ACCEPTANCE.md).
 
-The [CTA contract](integration/cta-contract.md) records a limited owner decision for a separate, input-free **Open studio** link to `https://getticketstub.com/make`; the maker itself updates a local preview. Full CTA/content acceptance, example rights, final brand acceptance, browser/manual/performance evidence, privacy/indexing decisions and the actual host adapter remain release prerequisites. The [LP-10 gate](https://github.com/Jevelopers-neatHack-2026/landing-page-repo/issues/12) records their current disposition. Existing on-page price and delivery copy is an unapproved commercial claim, not a fulfillment promise.
+The [CTA contract](integration/cta-contract.md) records a limited owner decision for a separate, input-free **Open studio** link to `https://getticketstub.com/make`; the maker itself updates a local preview. Full CTA/content acceptance, example rights, final brand acceptance, browser/manual/performance evidence, privacy/indexing decisions and the actual host adapter remain release prerequisites. The [LP-10 gate](https://github.com/Jevelopers-neatHack-2026/landing-page-repo/issues/12) records their current disposition. The page marks physical printing, pricing and shipping as pending; earlier price and delivery promises were withdrawn and are not a current offer.
 
 ## Crystal landing page
 
-The landing page for personalized ticket stub keepsakes is in [`site/`](site/README.md): [`site/index.html`](site/index.html) plus its 3D model, flight data and scene images in [`site/assets/`](site/assets/). The original source remains intact; the build copies public payloads and records their SHA-256 hashes in `dist/site/manifest.json`.
+The landing page for personalized ticket stub keepsakes is in [`site/`](site/README.md): [`site/index.html`](site/index.html) plus its 3D model, flight data and scene images in [`site/assets/`](site/assets/). The build copies the maintained public payloads and records their SHA-256 hashes in `dist/site/manifest.json`.
 
 ### Quickstart
 

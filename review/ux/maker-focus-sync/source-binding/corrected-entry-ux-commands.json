@@ -1,0 +1,68 @@
+{
+  "mode": "correct repository UX entry point; prior missing-module command errors are retained separately",
+  "runtime": "v24.15.0",
+  "cwd": "/workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a",
+  "baseRevision": "058d3617e16c0fe434153608b74f5403ffdc5556",
+  "workingTreeChanges": [
+    "scripts/suites/ux.mjs and tests/ux.test.mjs"
+  ],
+  "files": {
+    "site/index.html": "c92ab9f83dff2b15457617797147e7b7e2063cd1a7395a12bbab357d215df01a",
+    "scripts/suites/ux.mjs": "6476391d08cb0318425c18ff95154bb2a890e3f1758d2360b5f5f117618412aa",
+    "tests/ux.test.mjs": "6c50e083660b830e5a8983a0e12d186c0b4dd5e7cb347ed9fe30263a91714311"
+  },
+  "runs": [
+    {
+      "name": "corrected-entry-ux-draft",
+      "argv": [
+        "/workspace/scratch/41d02a12a55b/task-state/toolchains/node24/node_modules/node/bin/node",
+        "scripts/validate-landing",
+        "--suite",
+        "ux",
+        "--mode",
+        "draft"
+      ],
+      "startedAt": "2026-10-12T17:37:03.266941+00:00",
+      "finishedAt": "2026-10-12T17:37:04.391812+00:00",
+      "exitCode": 0,
+      "logs": {
+        "stdout": {
+          "path": "/workspace/scratch/f79c57b98c5b/maker-focus-source-binding-20261012/corrected-entry-ux-draft.stdout.log",
+          "bytes": 2246,
+          "sha256": "a54da9c9790451f78e1a08807cef733b08dd262a582d20a9007999a4017bf42c"
+        },
+        "stderr": {
+          "path": "/workspace/scratch/f79c57b98c5b/maker-focus-source-binding-20261012/corrected-entry-ux-draft.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "name": "corrected-entry-ux-release",
+      "argv": [
+        "/workspace/scratch/41d02a12a55b/task-state/toolchains/node24/node_modules/node/bin/node",
+        "scripts/validate-landing",
+        "--suite",
+        "ux",
+        "--mode",
+        "release"
+      ],
+      "startedAt": "2026-10-12T17:37:04.391905+00:00",
+      "finishedAt": "2026-10-12T17:37:05.444164+00:00",
+      "exitCode": 1,
+      "logs": {
+        "stdout": {
+          "path": "/workspace/scratch/f79c57b98c5b/maker-focus-source-binding-20261012/corrected-entry-ux-release.stdout.log",
+          "bytes": 2172,
+          "sha256": "75429dc7a45a52acd610048afbb2dd286f80ace8ea751a995d4ba8d09c8c649d"
+        },
+        "stderr": {
+          "path": "/workspace/scratch/f79c57b98c5b/maker-focus-source-binding-20261012/corrected-entry-ux-release.stderr.log",
+          "bytes": 249,
+          "sha256": "bd32000112c17e5ac88d22ed22c968b5bfcedcb3f532c63dfd958ff64f83ee53"
+        }
+      }
+    }
+  ]
+}

@@ -65,7 +65,7 @@ export function inspectUX(html) {
   if (/<h4\b/i.test(footer) && !/<h[23]\b/i.test(footer)) findings.push('footer-heading-level-review');
   if (!main.includes('id="maker"')) findings.push('maker-outside-main-landmark');
   if (/\.fin-note\s*\{\s*display:none/.test(html)) findings.push('mobile-status-visibility-review');
-  findings.push('browser-screenreader-reflow-performance-not-measured', 'no-js-loader-and-maker-visibility-not-verified');
+  findings.push('browser-manual-accessibility-performance-evidence-not-evaluated-by-source-vm-adapter', 'no-js-visibility-evidence-not-evaluated-by-source-vm-adapter');
   return { status: 'PASS_DRAFT', anchors, headings: headings.length, buttons: controls.length, inputs: inputs.length, findings, pageSha256: digest(html) };
 }
 
@@ -74,11 +74,17 @@ export default async function run({ root, artifactDir, mode = 'draft' }) {
   await validateArtifact(root, artifactDir);
   const html = await readFile(resolve(artifactDir, 'index.html'), 'utf8');
   const result = inspectUX(html);
-  const childEnv = { ...process.env }; delete childEnv.NODE_TEST_CONTEXT;
-  const scroll = spawnSync(process.execPath, ['--test', 'tests/scroll.test.mjs'], { cwd: root, env: childEnv, stdio: 'inherit' });
+  const childEnv = { ...process.env };
+  delete childEnv.NODE_TEST_CONTEXT;
+  // Historical comparison overrides belong only to direct test invocations.
+  // Routine validation must execute the candidate already bound to the artifact.
+  delete childEnv.SCROLL_TEST_HTML;
+  delete childEnv.MAKER_FOCUS_TEST_HTML;
+  const scroll = spawnSync(process.execPath, ['--test', 'tests/scroll.test.mjs', 'tests/maker-focus.test.mjs'], { cwd: root, env: childEnv, stdio: 'inherit' });
   assert.ok(!scroll.error && scroll.status === 0, 'Actual-source scroll/fallback regressions failed');
-  console.log(`ux: source checks and real-handler scroll tests passed; ${result.findings.length} unresolved review/evidence items; browser/WCAG/lab performance not certified`);
-  // This bounded implementation has no browser or Lighthouse adapter; absent checks cannot be replaced by receipt strings.
-  if (mode === 'release') throw new Error('UX release blocked: actual viewport, keyboard/screen-reader, zoom/reflow, reduced-motion/failure and three-run performance evidence unavailable; see review/ux/README.md');
+  console.log(`ux: source checks and actual-handler VM scroll tests passed; ${result.findings.length} source-review/evidence-boundary items; browser receipts not evaluated by this adapter; WCAG/lab performance not certified`);
+  // This source/VM adapter does not evaluate the separately retained browser receipts or manual/lab results.
+  // Their presence cannot bypass the release boundary; required evidence needs an adapter and accountable review.
+  if (mode === 'release') throw new Error('UX release blocked: source/VM adapter does not evaluate browser viewport, keyboard, reduced-motion/failure or no-JavaScript receipts; manual accessibility and three-run performance evidence still require validation; see review/ux/README.md');
   return result;
 }

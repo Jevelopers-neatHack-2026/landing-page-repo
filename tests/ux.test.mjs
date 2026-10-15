@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { readFile, rm, mkdtemp, mkdir, cp } from 'node:fs/promises';
+import { readFile, writeFile, rm, mkdtemp, mkdir, cp } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { tmpdir } from 'node:os';
 import { test } from 'node:test';
@@ -11,7 +11,7 @@ test('actual MVP source has valid static anchors, named controls and a coherent 
   const result = inspectUX(html);
   assert.equal(result.status, 'PASS_DRAFT'); assert.ok(result.anchors >= 10); assert.ok(result.headings >= 6);
   assert.ok(result.inputs >= 1); assert.ok(result.buttons >= 4);
-  assert.ok(result.findings.includes('browser-screenreader-reflow-performance-not-measured'));
+  assert.ok(result.findings.includes('browser-manual-accessibility-performance-evidence-not-evaluated-by-source-vm-adapter'));
   assert.ok(result.findings.includes('document-heading-before-h1'));
 });
 test('missing anchor targets reject the actual source fixture', () => assert.throws(() => inspectUX(html.replace('href="#scenes"', 'href="#not-a-real-section"')), /Missing anchor/));
@@ -53,7 +53,37 @@ test('real built artifact cannot claim UX release from local source checks alone
     await cp(resolve(root, 'site'), resolve(repository, 'site'), { recursive: true });
     await mkdir(resolve(repository, 'tests'));
     await cp(resolve(root, 'tests/scroll.test.mjs'), resolve(repository, 'tests/scroll.test.mjs'));
+    await cp(resolve(root, 'tests/maker-focus.test.mjs'), resolve(repository, 'tests/maker-focus.test.mjs'));
     const { output } = await buildSite({ repository });
-    await assert.rejects(run({ root: repository, artifactDir: output, mode: 'release' }), /actual viewport.*performance evidence unavailable/);
+    await assert.rejects(run({ root: repository, artifactDir: output, mode: 'release' }), /source\/VM adapter does not evaluate browser.*three-run performance evidence still require validation/);
   } finally { await rm(repository, { recursive: true, force: true }); }
 });
+
+for (const [override, listener] of [
+  ['MAKER_FOCUS_TEST_HTML', "addEventListener('scroll', syncBoardState, { passive: true });"],
+  ['SCROLL_TEST_HTML', "addEventListener('scroll', updateRail, { passive: true });"],
+]) {
+  test(`UX rejects a broken built candidate despite the ${override} historical source override`, async () => {
+    const repository = await mkdtemp(resolve(tmpdir(), 'lp-ux-source-binding-'));
+    const keys = ['MAKER_FOCUS_TEST_HTML', 'SCROLL_TEST_HTML'];
+    const originalEnv = new Map(keys.map(key => [key, process.env[key]]));
+    try {
+      await cp(resolve(root, 'site'), resolve(repository, 'site'), { recursive: true });
+      await mkdir(resolve(repository, 'tests'));
+      for (const file of ['scroll.test.mjs', 'maker-focus.test.mjs']) await cp(resolve(root, 'tests', file), resolve(repository, 'tests', file));
+      assert.equal(html.split(listener).length, 2, 'Exactly one actual native listener is selected');
+      // The candidate is a real built copy with one required native listener
+      // removed. The historical override points to the unchanged, passing page.
+      await writeFile(resolve(repository, 'site/index.html'), html.replace(listener, '// Synthetic regression: native scroll listener removed.'));
+      const { output } = await buildSite({ repository });
+      for (const key of keys) delete process.env[key];
+      process.env[override] = resolve(root, 'site/index.html');
+      await assert.rejects(run({ root: repository, artifactDir: output, mode: 'draft' }), /Actual-source scroll\/fallback regressions failed/);
+    } finally {
+      for (const [key, value] of originalEnv) {
+        if (value === undefined) delete process.env[key]; else process.env[key] = value;
+      }
+      await rm(repository, { recursive: true, force: true });
+    }
+  });
+}

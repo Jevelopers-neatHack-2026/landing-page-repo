@@ -1,0 +1,25 @@
+✔ included page sections have unique anchors on the documented existing surfaces (7.33323ms)
+✔ missing included #problem target fails even when no current navigation link refers to it (4.180313ms)
+✔ missing included #benefits target fails even when no current navigation link refers to it (2.766939ms)
+✔ missing included #gallery target fails even when no current navigation link refers to it (1.148266ms)
+✔ missing included #about target fails even when no current navigation link refers to it (0.957128ms)
+✔ comments, scripts and templates cannot replace a missing section anchor (3.567502ms)
+✔ misplaced, duplicate and hidden anchors fail instead of satisfying the page map (14.810178ms)
+✔ page-map validation rejects a dangling public fragment without inventing navigation (2.107307ms)
+✔ built artifact rejects nested template contents from independent FND review (105.414578ms)
+✔ built artifact rejects textarea literal text from independent FND review (51.716124ms)
+✔ built artifact rejects encoded duplicate ID from independent FND review (50.57499ms)
+✔ ambiguous encoded or whitespace-prefixed public fragments fail closed (8.299412ms)
+✔ actual illustrated source builds reproducibly with every asset and no repository documents (107.514794ms)
+✔ validator detects missing referenced assets, tampering, stale manifests and unexpected files (44.77966ms)
+✔ build refuses symlinks, unreviewed asset types and unsafe output destinations (7.137697ms)
+✔ preview serves homepage and every actual asset; unknown and app routes cannot fall back to landing (120.246143ms)
+✔ dispatcher rejects invalid arguments and no-argument validation fails for unavailable required suites (814.747759ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1456.33182

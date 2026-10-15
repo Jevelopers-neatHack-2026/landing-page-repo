@@ -7,6 +7,65 @@ import { spawn, spawnSync } from 'node:child_process';
 import { buildSite, root, withBuildLock } from '../scripts/build.mjs';
 import { validateArtifact } from '../scripts/artifact.mjs';
 import { createPreview } from '../scripts/preview.mjs';
+import { inspectSectionAnchors } from '../scripts/suites/foundation.mjs';
+
+const page = await readFile(resolve(root, 'site/index.html'), 'utf8');
+test('included page sections have unique anchors on the documented existing surfaces', () => {
+  assert.deepEqual(inspectSectionAnchors(page), {
+    anchors: ['top', 'hero', 'problem', 'benefits', 'scenes', 'how', 'studio', 'gallery', 'wall', 'make', 'about'],
+    coverage: 'static-section-targets',
+  });
+});
+
+for (const id of ['problem', 'benefits', 'gallery', 'about']) {
+  test(`missing included #${id} target fails even when no current navigation link refers to it`, () => {
+    assert.throws(() => inspectSectionAnchors(page.replace(` id="${id}"`, '')), new RegExp(`Included section anchor missing: #${id}`));
+  });
+}
+
+test('comments, scripts and templates cannot replace a missing section anchor', () => {
+  const missing = page.replace(' id="problem"', '');
+  const fake = '<section class="statement" id="problem"></section>';
+  for (const inert of [`<!-- ${fake} -->`, `<script>const fixture = '${fake}';</script>`, `<template>${fake}</template>`]) {
+    assert.throws(() => inspectSectionAnchors(missing + inert), /Included section anchor missing: #problem/);
+  }
+});
+
+test('misplaced, duplicate and hidden anchors fail instead of satisfying the page map', () => {
+  assert.throws(() => inspectSectionAnchors(page.replace(' id="problem"', '') + '<span id="problem"></span>'), /wrong element/);
+  assert.throws(() => inspectSectionAnchors(page.replace('class="statement grain"', 'class="unrelated"')), /wrong surface/);
+  assert.throws(() => inspectSectionAnchors(page + '<span id="problem"></span>'), /Duplicate static element IDs/);
+  assert.throws(() => inspectSectionAnchors(page.replace('id="problem"', 'id="problem" id="different"')), /Repeated id attribute/);
+  for (const hidden of ['hidden', 'inert', 'aria-hidden="true"']) {
+    assert.throws(() => inspectSectionAnchors(page.replace('id="problem"', `id="problem" ${hidden}`)), /#problem is hidden/);
+  }
+});
+
+test('page-map validation rejects a dangling public fragment without inventing navigation', () => {
+  assert.throws(() => inspectSectionAnchors(page + '<a href="#absent-surface">Fixture</a>'), /Missing public fragment target/);
+});
+
+for (const [name, insertion, removeProblem, expected] of [
+  ['nested template contents', '<template><template></template><section class="statement" id="problem"></section></template>', true, /Included section anchor missing: #problem/],
+  ['textarea literal text', '<textarea><section class="statement" id="problem"></section></textarea>', true, /Included section anchor missing: #problem/],
+  ['encoded duplicate ID', '<span id="pro&#98;lem"></span>', false, /literal ASCII/],
+  ['slash in an unquoted ID', '<section class="statement" id=problem/></section>', true, /literal ASCII/],
+]) {
+  test(`built artifact rejects ${name} from independent FND review`, async t => {
+    const repository = await sandbox(t, true);
+    const source = (removeProblem ? page.replace(' id="problem"', '') : page).replace('</body>', insertion + '</body>');
+    await writeFile(resolve(repository, 'site/index.html'), source);
+    const { output } = await buildSite({ repository });
+    await validateArtifact(repository, output);
+    assert.throws(() => inspectSectionAnchors(source), expected);
+  });
+}
+
+test('ambiguous encoded or whitespace-prefixed public fragments fail closed', () => {
+  for (const href of ['#pro&#98;lem', '#pro%62lem', '&#35;problem', '&num;problem', ' #problem']) {
+    assert.throws(() => inspectSectionAnchors(page + `<a href="${href}">Fixture</a>`), /literal ASCII fragment/);
+  }
+});
 
 async function sandbox(t, actual = false) {
   const repository = await mkdtemp(resolve(tmpdir(), 'lp-foundation-test-'));

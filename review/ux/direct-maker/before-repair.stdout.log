@@ -1,0 +1,45 @@
+✖ direct maker entry focuses without waiting for delayed smooth-scroll startup (4.457202ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 125.370959
+
+✖ failing tests:
+
+test at tests/maker-focus.test.mjs:131:1
+✖ direct maker entry focuses without waiting for delayed smooth-scroll startup (4.457202ms)
+  AssertionError [ERR_ASSERTION]: The maker action must reach and focus its real geometry immediately
+  + actual - expected
+  
+    {
+  +   addEventListener: [Function: addEventListener],
+  +   getAttribute: [Function: getAttribute],
+  +   tagName: 'A'
+  -   classList: {
+  -     add: [Function: add],
+  -     contains: [Function: contains],
+  -     remove: [Function: remove],
+  -     toggle: [Function: toggle]
+  -   },
+  -   focus: [Function (anonymous)],
+  -   hidden: true,
+  -   inert: false,
+  -   textContent: ''
+    }
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/final-integration/tests/maker-focus.test.mjs:136:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.start (node:internal/test_runner/test:1096:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: [Object],
+    expected: [Object],
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

@@ -1,0 +1,1860 @@
+✔ current source inventory is draft only, with zero imported brand files (196.210821ms)
+✔ release stays blocked by the empty upstream subset and actual missing acceptance (221.875058ms)
+✔ brand audit rejects invented owner approval (2.017468ms)
+✔ brand audit rejects invented distribution (21.178206ms)
+✔ brand audit rejects invented consumer agreement (19.034873ms)
+✔ brand audit rejects unapproved imported file (0.746224ms)
+✔ brand audit rejects moving upstream pin (15.32149ms)
+✔ brand audit rejects wrong upstream URL (16.309884ms)
+✔ brand audit rejects moving landing pin (1.097513ms)
+✔ brand audit rejects stale audit (0.558491ms)
+✔ brand audit rejects future audit (0.293633ms)
+✔ brand audit rejects missing freshness trigger (0.369126ms)
+✔ brand audit rejects missing token mapping (32.640319ms)
+✔ brand audit rejects false matching-token claim (25.851443ms)
+✔ brand audit rejects invented inline logo permission (20.952917ms)
+✔ brand audit rejects invented logo provenance (15.070247ms)
+✔ unreviewed palette override changes source-bound brand inventory (75.995984ms)
+✔ unreviewed removed type fallback changes source-bound brand inventory (75.408415ms)
+✔ unreviewed inline mark replacement changes source-bound brand inventory (53.482724ms)
+✔ unreviewed CDN version change changes source-bound brand inventory (55.228688ms)
+✔ unreviewed new stylesheet changes source-bound brand inventory (51.491339ms)
+✔ duplicate URL attributes and inline font/import loaders require review (2.071941ms)
+✔ unrelated focus code changes do not relabel or invalidate unchanged brand bytes (131.235183ms)
+✔ new files and self-hosted fonts cannot enter the reviewed public subset (38.197678ms)
+✔ a rehashed changed asset must still match immutable source bytes (108.123912ms)
+✔ captured empty policy bytes retain the observed Git blob and SHA-256 (25.823778ms)
+✔ withdrawal requires removal from source, not just a new inventory status (237.885942ms)
+✔ built artifact drift cannot be hidden behind a passing source inventory (374.180524ms)
+✔ synthetic font withdrawal and rollback rebuild exact source-bound artifacts (929.621986ms)
+✖ audited provisional copy passes as draft with approvals pending (2.678905ms)
+✖ copy rejects missing current audit pin (2.001575ms)
+✖ examples reject missing current audit pin (1.67956ms)
+✖ copy rejects moving current audit pin (1.191835ms)
+✖ examples reject moving current audit pin (1.079115ms)
+✖ copy rejects stale historical page current audit pin (1.182501ms)
+✖ examples reject stale historical page current audit pin (1.222972ms)
+✖ copy rejects stale pre-header worker page current audit pin (1.007127ms)
+✖ examples reject stale pre-header worker page current audit pin (1.007357ms)
+✖ copy rejects unavailable commit current audit pin (1.280218ms)
+✖ examples reject unavailable commit current audit pin (1.42764ms)
+✖ copy rejects blob rather than commit current audit pin (1.064513ms)
+✖ examples reject blob rather than commit current audit pin (2.824053ms)
+✖ copy rejects mismatched URL current audit pin (0.993796ms)
+✖ examples reject mismatched URL current audit pin (0.979926ms)
+✖ historical origins remain separate from a correct current immutable audit (1.044513ms)
+✔ unreviewed copy change is rejected, including a new unsupported price (1.092336ms)
+✖ unreviewed claim fixture is rejected (0.693314ms)
+✖ expired claim fixture is rejected (0.711482ms)
+✖ future audit date and moving source references are rejected (0.965475ms)
+✖ draft cannot fabricate owner approval; release correctly remains blocked (0.971573ms)
+✖ all retained assets and illustrative examples are hash-covered (0.886696ms)
+✖ proof release correctly blocks unconfirmed publication permission (0.842078ms)
+✖ missing metadata and forbidden synthetic marker fixtures are rejected (1.013746ms)
+✖ missing media and changed bytes fail without damaging real assets (82.639791ms)
+✖ locally rehashed asset bytes cannot disagree with the immutable current audit (43.01282ms)
+✔ EXIF/XMP chunk scanner identifies embedded metadata (2.064369ms)
+✔ static illustrative description remains independent of images (0.264838ms)
+✔ actual source config, no-JS markup and local editor boundary are explicit (28.634615ms)
+✔ no-JS escape is explicit, query-free and uses the same approved native destination (14.280007ms)
+✔ a mismatched or hidden duplicate static fallback link cannot escape the approved config (42.411724ms)
+✔ duplicate mixed-case href attributes are rejected instead of choosing one (8.925688ms)
+✔ withdrawn config requires static no-JS navigation to be withdrawn too (7.150364ms)
+✔ missing/invalid config cannot expose any external navigation (34.369802ms)
+✔ approved-shaped link fixtures carry only exact owner-allowlisted URL in each environment (30.879336ms)
+✔ unavailable service, pending owner or absent/nonimmutable/mismatched approval receipts disable the link (44.326398ms)
+✔ invalid scheme/origin/path, queries, fragments, credentials and private destinations fail closed (84.42594ms)
+✔ real pointer/Enter/preview/example/navigation handlers keep synthetic input local with reduced motion and blocked surfaces (6.483925ms)
+✔ tampered source config, named input and sending confirmation are rejected (3.440672ms)
+✔ limited thread receipt rejects malformed observation/approval scope and cannot migrate to another environment (28.437659ms)
+✔ actual live navigation target stays byte-identical after editing, chips, button clicks and Enter (1.683726ms)
+✔ invalid config must remove the real pre-existing native href; deletion mutant fails the safety assertion (4.86033ms)
+✔ included page sections have unique anchors on the documented existing surfaces (11.441302ms)
+✔ missing included #problem target fails even when no current navigation link refers to it (4.117121ms)
+✔ missing included #benefits target fails even when no current navigation link refers to it (7.121255ms)
+✔ missing included #gallery target fails even when no current navigation link refers to it (4.745367ms)
+✔ missing included #about target fails even when no current navigation link refers to it (4.323282ms)
+✔ comments, scripts and templates cannot replace a missing section anchor (6.151684ms)
+✔ misplaced, duplicate and hidden anchors fail instead of satisfying the page map (23.92973ms)
+✔ page-map validation rejects a dangling public fragment without inventing navigation (2.431592ms)
+✔ built artifact rejects nested template contents from independent FND review (151.988244ms)
+✔ built artifact rejects textarea literal text from independent FND review (151.281443ms)
+✔ built artifact rejects encoded duplicate ID from independent FND review (134.204175ms)
+✔ built artifact rejects slash in an unquoted ID from independent FND review (114.491862ms)
+✔ ambiguous encoded or whitespace-prefixed public fragments fail closed (6.321731ms)
+✔ actual illustrated source builds reproducibly with every asset and no repository documents (200.935101ms)
+✔ validator detects missing referenced assets, tampering, stale manifests and unexpected files (31.327441ms)
+✔ build refuses symlinks, unreviewed asset types and unsafe output destinations (2.813577ms)
+✔ preview serves homepage and every actual asset; unknown and app routes cannot fall back to landing (156.274855ms)
+✔ dispatcher rejects invalid arguments and no-argument validation fails for unavailable required suites (670.904799ms)
+✖ LP-09 supported update: replay the retained physical-to-illustrative correction as a pending draft (16.054508ms)
+✖ LP-09 unsupported/stale update: rehashing or changing an approval label cannot publish a claim (16.422965ms)
+✔ LP-09 withdrawal: real built claim/asset disappear, a safe local replacement is present, rollback restores exact bytes (530.402605ms)
+✔ withdrawal rejects stale active inventories and hiding content in comments (307.044753ms)
+✔ withdrawal rejects original asset bytes under a renamed file and a stale scene reference (265.282627ms)
+▶ GOV-R1: character references cannot retain withdrawn rendered text or attributes
+  ✔ decimal (131.57131ms)
+  ✔ hexadecimal (96.868135ms)
+  ✔ omitted numeric semicolon (114.721228ms)
+  ✔ encoded whitespace (114.576249ms)
+  ✔ named whitespace (141.092754ms)
+  ✔ legacy whitespace without semicolon (131.220266ms)
+  ✔ unsupported named reference (116.434167ms)
+  ✔ unsupported legacy prefix (147.607726ms)
+  ✔ inline element split (133.657597ms)
+  ✔ accessible attribute (93.350777ms)
+✔ GOV-R1: character references cannot retain withdrawn rendered text or attributes (1223.944021ms)
+✔ a once-escaped character reference remains literal text instead of being recursively decoded (117.583328ms)
+▶ GOV-R2: renamed and padded public payloads cannot retain the complete original asset bytes
+  ✔ original followed by newline (129.502679ms)
+  ✔ original embedded between padding (121.584263ms)
+✔ GOV-R2: renamed and padded public payloads cannot retain the complete original asset bytes (254.489553ms)
+✔ withdrawal requires an immutable known nonempty selection and rejects still-packaged media (296.109472ms)
+✔ changed destination dry run withdraws both native and no-JavaScript links (13.50574ms)
+✔ maker navigation synchronizes an in-range inert board without animation frames (3.769016ms)
+✔ native smooth-scroll arrival activates and focuses the maker while rendering frames are paused (1.369823ms)
+✔ continuing native scroll can reach the maker after the former absolute focus timeout (1.085585ms)
+✔ the idle deadline samples reached geometry before expiring a pending focus request (0.975409ms)
+✔ an off-wall idle request expires without exposing or focusing the maker (1.051434ms)
+✔ wheel cancels pending maker focus without preventing native input (0.961188ms)
+✔ touchstart cancels pending maker focus without preventing native input (0.873305ms)
+✔ pointerdown cancels pending maker focus without preventing native input (0.811982ms)
+✔ keydown cancels pending maker focus without preventing native input (1.051814ms)
+✔ a newer maker activation owns one pending focus and cleans up after success (1.123403ms)
+✔ a different native anchor cancels the old maker focus request (0.962039ms)
+✔ native board synchronization keeps manual scrolling accessible without requesting focus (3.488234ms)
+✔ actual static HTML has one valid head and consistent inventoried preview/social copy (3.24006ms)
+✔ preview, demo and staging never inherit production canonical, indexing or sitemap (0.462306ms)
+✔ synthetic approved production index/noindex fixtures enforce exact origin and real homepage inventory (1.248861ms)
+✔ production rejects missing origin, undecided indexing and every pending/missing owner receipt (3.643056ms)
+✔ production origin rejects preview hosts, private addresses and malformed/credential/query/path URLs (0.579443ms)
+✔ private app routes, aliases and section anchors cannot become indexable pages (2.384742ms)
+✔ head placement, duplicate and missing metadata regression fixtures fail (4.349891ms)
+✔ canonical/image/structured data leakage and missing ledger entries fail (7.128897ms)
+✔ invalid environments and unsupported image/structured decisions fail (0.387304ms)
+✔ loopback served artifact contains static metadata without JS and exposes no sitemap/robots/private route (133.650205ms)
+✔ approval receipts cannot silently authorize a changed origin or indexing decision (0.709179ms)
+fatal: git cat-file: could not get object info
+✖ audited page has deferred analytics and two pinned executable scripts (11.696566ms)
+✖ correct immutable privacy audit resolves actual current source with approvals pending (12.215467ms)
+✖ preserved PR #29 header audit cannot authorize the CSS-edited maker page (12.858946ms)
+✖ privacy rejects missing revision audit pin (3.531859ms)
+✖ privacy rejects moving revision audit pin (3.580703ms)
+✖ privacy rejects stale earlier executable revision audit pin (16.689475ms)
+✖ privacy rejects stale pre-header worker revision audit pin (19.672688ms)
+✖ privacy rejects unavailable revision audit pin (16.079337ms)
+✖ privacy rejects missing page digest audit pin (10.025109ms)
+✖ privacy rejects mismatched page digest audit pin (20.173652ms)
+✖ privacy rejects mismatched executable audit audit pin (13.341893ms)
+✖ metadata-only drift still requires a fresh complete-page audit pin (11.649956ms)
+✔ reject seeded SDK script (2.40353ms)
+✔ reject seeded inline event (1.715634ms)
+✖ reject seeded relative pixel (3.10068ms)
+✖ reject seeded external srcset (3.730018ms)
+✔ reject seeded iframe (7.535769ms)
+✖ reject seeded CSS import (3.176384ms)
+✖ reject seeded CSS pixel (3.4992ms)
+✖ reject seeded same-origin CSS pixel (5.03263ms)
+✔ reject seeded inline CSS pixel (1.537585ms)
+✖ reject seeded SVG image pixel (3.229594ms)
+✔ reject seeded meta refresh (1.771218ms)
+✔ reject seeded form override (5.959175ms)
+✔ reject seeded executable link (1.521562ms)
+✔ reject seeded data HTML (1.577095ms)
+✔ reject seeded link tracking ping (2.448638ms)
+✖ reject seeded named control (3.862207ms)
+✔ reject seeded unquoted pixel (6.086217ms)
+✔ reject seeded unquoted script (1.588262ms)
+✔ reject seeded unquoted href (1.490655ms)
+✖ reject seeded style event (3.252788ms)
+✔ reject forbidden source operation: localStorage.setItem (1.524887ms)
+✔ reject forbidden source operation: navigator.sendBeacon (2.15788ms)
+✔ reject forbidden source operation: console.log (2.699285ms)
+✔ reject forbidden source operation: fetch (3.518639ms)
+✔ computed API addition fails exact executable hash boundary (2.854819ms)
+✔ external script handler cannot bypass pinned executable text (1.650777ms)
+✖ metadata URL declarations do not count as browser requests (9.761091ms)
+✔ real maker/navigation handlers with blocked collection surfaces, reduced motion true (7.115447ms)
+✔ real maker/navigation handlers with failed collection surfaces, reduced motion true (2.25809ms)
+✔ real maker/navigation handlers with blocked collection surfaces, reduced motion false (1.881023ms)
+✔ real maker/navigation handlers with failed collection surfaces, reduced motion false (1.855995ms)
+✔ journey traps a swallowed forbidden attempt: navigator.sendBeacon (3.30069ms)
+✔ journey traps a swallowed forbidden attempt: localStorage.setItem (3.040038ms)
+✔ journey traps a swallowed forbidden attempt: console.log (3.049763ms)
+✔ journey traps a swallowed forbidden attempt: fetch (2.958857ms)
+✖ native external capture or query navigation cannot return (2.207926ms)
+✖ built artifact passes draft and cannot pass release without approval receipt (97.739222ms)
+✔ receipt validator requires exact pins, both roles and browser scenarios (5.872313ms)
+✔ invented source receipt cannot pass real release evidence verification (7.852717ms)
+✔ wheel keeps moving forward/backward after the 3D loop exits on context loss (2.978716ms)
+✔ an animation exception cannot strand wheel input and starts readable static art (0.954367ms)
+✔ display-only rail tracks native scrolling/resizing without rendering frames (0.687435ms)
+✔ rail is decorative and passes pointer input through (0.427294ms)
+✔ switching to static art restores scene copy hidden by an interrupted 3D frame (0.769719ms)
+✔ native navigation reaches scenes and maker, with reduced motion false (1.384485ms)
+✔ native navigation reaches scenes and maker, with reduced motion true (0.847476ms)
+✔ user wheel input cancels pending maker focus (0.913656ms)
+✔ seamless hero wrap uses an immediate native jump (1.052675ms)
+✔ actual MVP source has valid static anchors, named controls and a coherent main heading sequence (5.908789ms)
+✔ missing anchor targets reject the actual source fixture (2.210659ms)
+✔ duplicate static IDs fail, including the CTA target (1.123823ms)
+✔ empty link names fail even when its target exists (0.885123ms)
+✔ a visible link without destination fails (1.033617ms)
+✔ duplicate h1 cannot pass a heading count check (1.199947ms)
+✔ main heading jumps fail while existing whole-document review remains pending (3.026588ms)
+✔ empty heading names fail (1.085955ms)
+✔ missing named navigation or main landmark fails (1.771869ms)
+✔ preview input needs a real label, not only a placeholder (1.206447ms)
+✔ missing description target fails (1.36153ms)
+✔ empty example button name fails (1.144053ms)
+✔ missing focus or reduced-motion source hook fails without asserting browser behavior (3.172097ms)
+✔ static explanation survives removing media and executable code as text evidence only (3.781385ms)
+✔ image alternatives and media-independent explanation cannot be silently removed (2.380045ms)
+✔ local group and non-submitting button remain compatible with a deferred external destination (2.334696ms)
+✔ wheel keeps moving forward/backward after the 3D loop exits on context loss (3.330075ms)
+✔ an animation exception cannot strand wheel input and starts readable static art (1.127568ms)
+✔ display-only rail tracks native scrolling/resizing without rendering frames (1.177172ms)
+✔ rail is decorative and passes pointer input through (0.557019ms)
+✔ switching to static art restores scene copy hidden by an interrupted 3D frame (0.816931ms)
+✔ native navigation reaches scenes and maker, with reduced motion false (2.042586ms)
+✔ native navigation reaches scenes and maker, with reduced motion true (1.021428ms)
+✔ user wheel input cancels pending maker focus (1.11559ms)
+✔ seamless hero wrap uses an immediate native jump (0.995529ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 121.575746
+ux: source checks and actual-handler VM scroll tests passed; 5 source-review/evidence-boundary items; browser receipts not evaluated by this adapter; WCAG/lab performance not certified
+✔ real built artifact cannot claim UX release from local source checks alone (354.95168ms)
+ℹ tests 211
+ℹ suites 0
+ℹ pass 161
+ℹ fail 50
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3192.245669
+
+✖ failing tests:
+
+test at tests/content-proof.test.mjs:16:1
+✖ audited provisional copy passes as draft with approvals pending (2.678905ms)
+  Error: Unreviewed source/copy change: refresh inventory and request review
+      at validateContent (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/content.mjs:37:52)
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:16:89)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.start (node:internal/test_runner/test:1096:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17)
+
+test at tests/content-proof.test.mjs:29:2
+✖ copy rejects missing current audit pin (2.001575ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /immutable audit/. Input:
+  
+  'Error: Unreviewed source/copy change: refresh inventory and request review'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:29:112)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: Unreviewed source/copy change: refresh inventory and request review
+        at validateContent (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/content.mjs:37:52)
+        at file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:29:123
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:29:112)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+        at Test.postRun (node:internal/test_runner/test:1330:19)
+        at Test.run (node:internal/test_runner/test:1258:12),
+    expected: /immutable audit/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/content-proof.test.mjs:30:2
+✖ examples reject missing current audit pin (1.67956ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /immutable audit/. Input:
+  
+  'Error: Example source changed without manifest review'
+  
+      at async TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:30:112)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: Example source changed without manifest review
+        at validateProof (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/proof.mjs:20:51)
+        at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:30:133)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+        at Test.postRun (node:internal/test_runner/test:1330:19)
+        at Test.run (node:internal/test_runner/test:1258:12)
+        at async Test.processPendingSubtests (node:internal/test_runner/test:831:7),
+    expected: /immutable audit/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/content-proof.test.mjs:29:2
+✖ copy rejects moving current audit pin (1.191835ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /immutable audit/. Input:
+  
+  'Error: Unreviewed source/copy change: refresh inventory and request review'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:29:112)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: Unreviewed source/copy change: refresh inventory and request review
+        at validateContent (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/content.mjs:37:52)
+        at file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:29:123
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:29:112)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+        at Test.postRun (node:internal/test_runner/test:1330:19)
+        at Test.run (node:internal/test_runner/test:1258:12),
+    expected: /immutable audit/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/content-proof.test.mjs:30:2
+✖ examples reject moving current audit pin (1.079115ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /immutable audit/. Input:
+  
+  'Error: Example source changed without manifest review'
+  
+      at async TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:30:112)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: Example source changed without manifest review
+        at validateProof (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/proof.mjs:20:51)
+        at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:30:133)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+        at Test.postRun (node:internal/test_runner/test:1330:19)
+        at Test.run (node:internal/test_runner/test:1258:12)
+        at async Test.processPendingSubtests (node:internal/test_runner/test:831:7),
+    expected: /immutable audit/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/content-proof.test.mjs:29:2
+✖ copy rejects stale historical page current audit pin (1.182501ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /Audited source bytes differ/. Input:
+  
+  'Error: Unreviewed source/copy change: refresh inventory and request review'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:29:112)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: Unreviewed source/copy change: refresh inventory and request review
+        at validateContent (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/content.mjs:37:52)
+        at file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:29:123
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:29:112)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+        at Test.postRun (node:internal/test_runner/test:1330:19)
+        at Test.run (node:internal/test_runner/test:1258:12),
+    expected: /Audited source bytes differ/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/content-proof.test.mjs:30:2
+✖ examples reject stale historical page current audit pin (1.222972ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /Audited source bytes differ/. Input:
+  
+  'Error: Example source changed without manifest review'
+  
+      at async TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:30:112)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: Example source changed without manifest review
+        at validateProof (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/proof.mjs:20:51)
+        at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:30:133)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+        at Test.postRun (node:internal/test_runner/test:1330:19)
+        at Test.run (node:internal/test_runner/test:1258:12)
+        at async Test.processPendingSubtests (node:internal/test_runner/test:831:7),
+    expected: /Audited source bytes differ/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/content-proof.test.mjs:29:2
+✖ copy rejects stale pre-header worker page current audit pin (1.007127ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /Audited source bytes differ/. Input:
+  
+  'Error: Unreviewed source/copy change: refresh inventory and request review'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:29:112)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: Unreviewed source/copy change: refresh inventory and request review
+        at validateContent (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/content.mjs:37:52)
+        at file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:29:123
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:29:112)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+        at Test.postRun (node:internal/test_runner/test:1330:19)
+        at Test.run (node:internal/test_runner/test:1258:12),
+    expected: /Audited source bytes differ/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/content-proof.test.mjs:30:2
+✖ examples reject stale pre-header worker page current audit pin (1.007357ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /Audited source bytes differ/. Input:
+  
+  'Error: Example source changed without manifest review'
+  
+      at async TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:30:112)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: Example source changed without manifest review
+        at validateProof (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/proof.mjs:20:51)
+        at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:30:133)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+        at Test.postRun (node:internal/test_runner/test:1330:19)
+        at Test.run (node:internal/test_runner/test:1258:12)
+        at async Test.processPendingSubtests (node:internal/test_runner/test:831:7),
+    expected: /Audited source bytes differ/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/content-proof.test.mjs:29:2
+✖ copy rejects unavailable commit current audit pin (1.280218ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /Immutable audit source unavailable/. Input:
+  
+  'Error: Unreviewed source/copy change: refresh inventory and request review'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:29:112)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: Unreviewed source/copy change: refresh inventory and request review
+        at validateContent (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/content.mjs:37:52)
+        at file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:29:123
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:29:112)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+        at Test.postRun (node:internal/test_runner/test:1330:19)
+        at Test.run (node:internal/test_runner/test:1258:12),
+    expected: /Immutable audit source unavailable/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/content-proof.test.mjs:30:2
+✖ examples reject unavailable commit current audit pin (1.42764ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /Immutable audit source unavailable/. Input:
+  
+  'Error: Example source changed without manifest review'
+  
+      at async TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:30:112)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: Example source changed without manifest review
+        at validateProof (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/proof.mjs:20:51)
+        at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:30:133)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+        at Test.postRun (node:internal/test_runner/test:1330:19)
+        at Test.run (node:internal/test_runner/test:1258:12)
+        at async Test.processPendingSubtests (node:internal/test_runner/test:831:7),
+    expected: /Immutable audit source unavailable/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/content-proof.test.mjs:29:2
+✖ copy rejects blob rather than commit current audit pin (1.064513ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /not a commit/. Input:
+  
+  'Error: Unreviewed source/copy change: refresh inventory and request review'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:29:112)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: Unreviewed source/copy change: refresh inventory and request review
+        at validateContent (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/content.mjs:37:52)
+        at file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:29:123
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:29:112)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+        at Test.postRun (node:internal/test_runner/test:1330:19)
+        at Test.run (node:internal/test_runner/test:1258:12),
+    expected: /not a commit/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/content-proof.test.mjs:30:2
+✖ examples reject blob rather than commit current audit pin (2.824053ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /not a commit/. Input:
+  
+  'Error: Example source changed without manifest review'
+  
+      at async TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:30:112)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: Example source changed without manifest review
+        at validateProof (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/proof.mjs:20:51)
+        at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:30:133)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+        at Test.postRun (node:internal/test_runner/test:1330:19)
+        at Test.run (node:internal/test_runner/test:1258:12)
+        at async Test.processPendingSubtests (node:internal/test_runner/test:831:7),
+    expected: /not a commit/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/content-proof.test.mjs:29:2
+✖ copy rejects mismatched URL current audit pin (0.993796ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /repository\/URL differs/. Input:
+  
+  'Error: Unreviewed source/copy change: refresh inventory and request review'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:29:112)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: Unreviewed source/copy change: refresh inventory and request review
+        at validateContent (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/content.mjs:37:52)
+        at file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:29:123
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:29:112)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+        at Test.postRun (node:internal/test_runner/test:1330:19)
+        at Test.run (node:internal/test_runner/test:1258:12),
+    expected: /repository\/URL differs/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/content-proof.test.mjs:30:2
+✖ examples reject mismatched URL current audit pin (0.979926ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /repository\/URL differs/. Input:
+  
+  'Error: Example source changed without manifest review'
+  
+      at async TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:30:112)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: Example source changed without manifest review
+        at validateProof (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/proof.mjs:20:51)
+        at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:30:133)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+        at Test.postRun (node:internal/test_runner/test:1330:19)
+        at Test.run (node:internal/test_runner/test:1258:12)
+        at async Test.processPendingSubtests (node:internal/test_runner/test:831:7),
+    expected: /repository\/URL differs/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/content-proof.test.mjs:32:1
+✖ historical origins remain separate from a correct current immutable audit (1.044513ms)
+  Error: Unreviewed source/copy change: refresh inventory and request review
+      at validateContent (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/content.mjs:37:52)
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:35:15)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+
+test at tests/content-proof.test.mjs:39:1
+✖ unreviewed claim fixture is rejected (0.693314ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /unreviewed claim/. Input:
+  
+  'Error: Unreviewed source/copy change: refresh inventory and request review'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:39:125)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: Unreviewed source/copy change: refresh inventory and request review
+        at validateContent (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/content.mjs:37:52)
+        at file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:39:136
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:39:125)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+        at Test.postRun (node:internal/test_runner/test:1330:19)
+        at Test.run (node:internal/test_runner/test:1258:12),
+    expected: /unreviewed claim/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/content-proof.test.mjs:40:1
+✖ expired claim fixture is rejected (0.711482ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /stale/. Input:
+  
+  'Error: Unreviewed source/copy change: refresh inventory and request review'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:40:119)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: Unreviewed source/copy change: refresh inventory and request review
+        at validateContent (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/content.mjs:37:52)
+        at file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:40:130
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:40:119)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+        at Test.postRun (node:internal/test_runner/test:1330:19)
+        at Test.run (node:internal/test_runner/test:1258:12),
+    expected: /stale/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/content-proof.test.mjs:41:1
+✖ future audit date and moving source references are rejected (0.965475ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /invalid audit/. Input:
+  
+  'Error: Unreviewed source/copy change: refresh inventory and request review'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:41:146)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: Unreviewed source/copy change: refresh inventory and request review
+        at validateContent (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/content.mjs:37:52)
+        at file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:41:157
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:41:146)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+        at Test.postRun (node:internal/test_runner/test:1330:19)
+        at Test.run (node:internal/test_runner/test:1258:12),
+    expected: /invalid audit/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/content-proof.test.mjs:42:1
+✖ draft cannot fabricate owner approval; release correctly remains blocked (0.971573ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /assert owner approval/. Input:
+  
+  'Error: Unreviewed source/copy change: refresh inventory and request review'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:42:155)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: Unreviewed source/copy change: refresh inventory and request review
+        at validateContent (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/content.mjs:37:52)
+        at file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:42:166
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:42:155)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+        at Test.postRun (node:internal/test_runner/test:1330:19)
+        at Test.run (node:internal/test_runner/test:1258:12),
+    expected: /assert owner approval/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/content-proof.test.mjs:43:1
+✖ all retained assets and illustrative examples are hash-covered (0.886696ms)
+  Error: Example source changed without manifest review
+      at validateProof (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/proof.mjs:20:51)
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:43:100)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+
+test at tests/content-proof.test.mjs:44:1
+✖ proof release correctly blocks unconfirmed publication permission (0.842078ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /release permission/. Input:
+  
+  'Error: Example source changed without manifest review'
+  
+      at async TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:44:83)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: Example source changed without manifest review
+        at validateProof (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/proof.mjs:20:51)
+        at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:44:104)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+        at Test.postRun (node:internal/test_runner/test:1330:19)
+        at Test.run (node:internal/test_runner/test:1258:12)
+        at async Test.processPendingSubtests (node:internal/test_runner/test:831:7),
+    expected: /release permission/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/content-proof.test.mjs:45:1
+✖ missing metadata and forbidden synthetic marker fixtures are rejected (1.013746ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /missing rights/. Input:
+  
+  'Error: Example source changed without manifest review'
+  
+      at async TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:45:142)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: Example source changed without manifest review
+        at validateProof (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/proof.mjs:20:51)
+        at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:45:163)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+        at Test.postRun (node:internal/test_runner/test:1330:19)
+        at Test.run (node:internal/test_runner/test:1258:12)
+        at async Test.processPendingSubtests (node:internal/test_runner/test:831:7),
+    expected: /missing rights/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/content-proof.test.mjs:46:1
+✖ missing media and changed bytes fail without damaging real assets (82.639791ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /ENOENT/. Input:
+  
+  'Error: Example source changed without manifest review'
+  
+      at async TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:51:18)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: Example source changed without manifest review
+        at validateProof (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/proof.mjs:20:51)
+        at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:51:39)
+        at async Test.run (node:internal/test_runner/test:1208:7)
+        at async Test.processPendingSubtests (node:internal/test_runner/test:831:7),
+    expected: /ENOENT/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/content-proof.test.mjs:58:1
+✖ locally rehashed asset bytes cannot disagree with the immutable current audit (43.01282ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /audited source asset digest differs/. Input:
+  
+  'Error: Example source changed without manifest review'
+  
+      at async TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:65:3)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: Example source changed without manifest review
+        at validateProof (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/proof.mjs:20:51)
+        at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/content-proof.test.mjs:65:24)
+        at async Test.run (node:internal/test_runner/test:1208:7)
+        at async Test.processPendingSubtests (node:internal/test_runner/test:831:7),
+    expected: /audited source asset digest differs/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/governance.test.mjs:65:1
+✖ LP-09 supported update: replay the retained physical-to-illustrative correction as a pending draft (16.054508ms)
+  Error: Unreviewed source/copy change: refresh inventory and request review
+      at validateContent (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/content.mjs:37:52)
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/governance.test.mjs:70:16)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.start (node:internal/test_runner/test:1096:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17)
+
+test at tests/governance.test.mjs:75:1
+✖ LP-09 unsupported/stale update: rehashing or changing an approval label cannot publish a claim (16.422965ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /stale/. Input:
+  
+  'Error: Unreviewed source/copy change: refresh inventory and request review'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/governance.test.mjs:82:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: Unreviewed source/copy change: refresh inventory and request review
+        at validateContent (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/content.mjs:37:52)
+        at file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/governance.test.mjs:82:23
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/governance.test.mjs:82:10)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+        at Test.postRun (node:internal/test_runner/test:1330:19)
+        at Test.run (node:internal/test_runner/test:1258:12),
+    expected: /stale/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/privacy.test.mjs:9:1
+✖ audited page has deferred analytics and two pinned executable scripts (11.696566ms)
+  AssertionError [ERR_ASSERTION]: Executable source changed; refresh privacy audit
+  + actual - expected
+  
+    [
+      '2b01e1d0f5ba18ee57a1420149ce8f8b94e776195f29bfc76db93c245ead4320',
+  +   '8678d664d26b49d8ff35310d27e8146e499c21f374ee408fdd9b6c775008cc22'
+  -   'da6be95218d84373bb6e51070a73ec2c5f4b6b26b9a67653b09b89d9f1133e20'
+    ]
+  
+      at same (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:13:52)
+      at inspectPrivacySource (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:78:3)
+      at validatePrivacySource (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:31:18)
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:10:20)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.start (node:internal/test_runner/test:1096:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: [ '2b01e1d0f5ba18ee57a1420149ce8f8b94e776195f29bfc76db93c245ead4320', '8678d664d26b49d8ff35310d27e8146e499c21f374ee408fdd9b6c775008cc22' ],
+    expected: [ '2b01e1d0f5ba18ee57a1420149ce8f8b94e776195f29bfc76db93c245ead4320', 'da6be95218d84373bb6e51070a73ec2c5f4b6b26b9a67653b09b89d9f1133e20' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/privacy.test.mjs:12:1
+✖ correct immutable privacy audit resolves actual current source with approvals pending (12.215467ms)
+  Error: Audited source bytes differ from current page/inventory digest
+      at validateAuditedSource (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/content.mjs:28:75)
+      at validatePrivacyAudit (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:25:18)
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:13:20)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3)
+
+test at tests/privacy.test.mjs:17:1
+✖ preserved PR #29 header audit cannot authorize the CSS-edited maker page (12.858946ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /Audited source bytes differ/. Input:
+  
+  'AssertionError [ERR_ASSERTION]: Executable source changed; refresh privacy audit\n' +
+    '+ actual - expected\n' +
+    '\n' +
+    '  [\n' +
+    "    '2b01e1d0f5ba18ee57a1420149ce8f8b94e776195f29bfc76db93c245ead4320',\n" +
+    "+   '8678d664d26b49d8ff35310d27e8146e499c21f374ee408fdd9b6c775008cc22'\n" +
+    "-   'da6be95218d84373bb6e51070a73ec2c5f4b6b26b9a67653b09b89d9f1133e20'\n" +
+    '  ]\n'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:20:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: AssertionError [ERR_ASSERTION]: Executable source changed; refresh privacy audit
+    + actual - expected
+    
+      [
+        '2b01e1d0f5ba18ee57a1420149ce8f8b94e776195f29bfc76db93c245ead4320',
+    +   '8678d664d26b49d8ff35310d27e8146e499c21f374ee408fdd9b6c775008cc22'
+    -   'da6be95218d84373bb6e51070a73ec2c5f4b6b26b9a67653b09b89d9f1133e20'
+      ]
+    
+        at same (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:13:52)
+        at inspectPrivacySource (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:78:3)
+        at validatePrivacySource (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:31:18)
+        at file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:20:23
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:20:10)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18),
+    expected: /Audited source bytes differ/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/privacy.test.mjs:31:4
+✖ privacy rejects missing revision audit pin (3.531859ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /immutable audit/. Input:
+  
+  'AssertionError [ERR_ASSERTION]: Executable source changed; refresh privacy audit\n' +
+    '+ actual - expected\n' +
+    '\n' +
+    '  [\n' +
+    "    '2b01e1d0f5ba18ee57a1420149ce8f8b94e776195f29bfc76db93c245ead4320',\n" +
+    "+   '8678d664d26b49d8ff35310d27e8146e499c21f374ee408fdd9b6c775008cc22'\n" +
+    "-   'da6be95218d84373bb6e51070a73ec2c5f4b6b26b9a67653b09b89d9f1133e20'\n" +
+    '  ]\n'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:34:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: AssertionError [ERR_ASSERTION]: Executable source changed; refresh privacy audit
+    + actual - expected
+    
+      [
+        '2b01e1d0f5ba18ee57a1420149ce8f8b94e776195f29bfc76db93c245ead4320',
+    +   '8678d664d26b49d8ff35310d27e8146e499c21f374ee408fdd9b6c775008cc22'
+    -   'da6be95218d84373bb6e51070a73ec2c5f4b6b26b9a67653b09b89d9f1133e20'
+      ]
+    
+        at same (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:13:52)
+        at inspectPrivacySource (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:78:3)
+        at validatePrivacySource (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:31:18)
+        at file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:34:23
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:34:10)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18),
+    expected: /immutable audit/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/privacy.test.mjs:31:4
+✖ privacy rejects moving revision audit pin (3.580703ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /immutable audit/. Input:
+  
+  'AssertionError [ERR_ASSERTION]: Executable source changed; refresh privacy audit\n' +
+    '+ actual - expected\n' +
+    '\n' +
+    '  [\n' +
+    "    '2b01e1d0f5ba18ee57a1420149ce8f8b94e776195f29bfc76db93c245ead4320',\n" +
+    "+   '8678d664d26b49d8ff35310d27e8146e499c21f374ee408fdd9b6c775008cc22'\n" +
+    "-   'da6be95218d84373bb6e51070a73ec2c5f4b6b26b9a67653b09b89d9f1133e20'\n" +
+    '  ]\n'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:34:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: AssertionError [ERR_ASSERTION]: Executable source changed; refresh privacy audit
+    + actual - expected
+    
+      [
+        '2b01e1d0f5ba18ee57a1420149ce8f8b94e776195f29bfc76db93c245ead4320',
+    +   '8678d664d26b49d8ff35310d27e8146e499c21f374ee408fdd9b6c775008cc22'
+    -   'da6be95218d84373bb6e51070a73ec2c5f4b6b26b9a67653b09b89d9f1133e20'
+      ]
+    
+        at same (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:13:52)
+        at inspectPrivacySource (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:78:3)
+        at validatePrivacySource (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:31:18)
+        at file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:34:23
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:34:10)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18),
+    expected: /immutable audit/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/privacy.test.mjs:31:4
+✖ privacy rejects stale earlier executable revision audit pin (16.689475ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /Audited source bytes differ/. Input:
+  
+  'AssertionError [ERR_ASSERTION]: Executable source changed; refresh privacy audit\n' +
+    '+ actual - expected\n' +
+    '\n' +
+    '  [\n' +
+    "    '2b01e1d0f5ba18ee57a1420149ce8f8b94e776195f29bfc76db93c245ead4320',\n" +
+    "+   '8678d664d26b49d8ff35310d27e8146e499c21f374ee408fdd9b6c775008cc22'\n" +
+    "-   'da6be95218d84373bb6e51070a73ec2c5f4b6b26b9a67653b09b89d9f1133e20'\n" +
+    '  ]\n'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:34:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: AssertionError [ERR_ASSERTION]: Executable source changed; refresh privacy audit
+    + actual - expected
+    
+      [
+        '2b01e1d0f5ba18ee57a1420149ce8f8b94e776195f29bfc76db93c245ead4320',
+    +   '8678d664d26b49d8ff35310d27e8146e499c21f374ee408fdd9b6c775008cc22'
+    -   'da6be95218d84373bb6e51070a73ec2c5f4b6b26b9a67653b09b89d9f1133e20'
+      ]
+    
+        at same (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:13:52)
+        at inspectPrivacySource (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:78:3)
+        at validatePrivacySource (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:31:18)
+        at file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:34:23
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:34:10)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18),
+    expected: /Audited source bytes differ/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/privacy.test.mjs:31:4
+✖ privacy rejects stale pre-header worker revision audit pin (19.672688ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /Audited source bytes differ/. Input:
+  
+  'AssertionError [ERR_ASSERTION]: Executable source changed; refresh privacy audit\n' +
+    '+ actual - expected\n' +
+    '\n' +
+    '  [\n' +
+    "    '2b01e1d0f5ba18ee57a1420149ce8f8b94e776195f29bfc76db93c245ead4320',\n" +
+    "+   '8678d664d26b49d8ff35310d27e8146e499c21f374ee408fdd9b6c775008cc22'\n" +
+    "-   'da6be95218d84373bb6e51070a73ec2c5f4b6b26b9a67653b09b89d9f1133e20'\n" +
+    '  ]\n'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:34:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: AssertionError [ERR_ASSERTION]: Executable source changed; refresh privacy audit
+    + actual - expected
+    
+      [
+        '2b01e1d0f5ba18ee57a1420149ce8f8b94e776195f29bfc76db93c245ead4320',
+    +   '8678d664d26b49d8ff35310d27e8146e499c21f374ee408fdd9b6c775008cc22'
+    -   'da6be95218d84373bb6e51070a73ec2c5f4b6b26b9a67653b09b89d9f1133e20'
+      ]
+    
+        at same (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:13:52)
+        at inspectPrivacySource (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:78:3)
+        at validatePrivacySource (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:31:18)
+        at file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:34:23
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:34:10)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18),
+    expected: /Audited source bytes differ/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/privacy.test.mjs:31:4
+✖ privacy rejects unavailable revision audit pin (16.079337ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /Immutable audit source unavailable/. Input:
+  
+  'AssertionError [ERR_ASSERTION]: Executable source changed; refresh privacy audit\n' +
+    '+ actual - expected\n' +
+    '\n' +
+    '  [\n' +
+    "    '2b01e1d0f5ba18ee57a1420149ce8f8b94e776195f29bfc76db93c245ead4320',\n" +
+    "+   '8678d664d26b49d8ff35310d27e8146e499c21f374ee408fdd9b6c775008cc22'\n" +
+    "-   'da6be95218d84373bb6e51070a73ec2c5f4b6b26b9a67653b09b89d9f1133e20'\n" +
+    '  ]\n'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:34:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: AssertionError [ERR_ASSERTION]: Executable source changed; refresh privacy audit
+    + actual - expected
+    
+      [
+        '2b01e1d0f5ba18ee57a1420149ce8f8b94e776195f29bfc76db93c245ead4320',
+    +   '8678d664d26b49d8ff35310d27e8146e499c21f374ee408fdd9b6c775008cc22'
+    -   'da6be95218d84373bb6e51070a73ec2c5f4b6b26b9a67653b09b89d9f1133e20'
+      ]
+    
+        at same (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:13:52)
+        at inspectPrivacySource (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:78:3)
+        at validatePrivacySource (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:31:18)
+        at file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:34:23
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:34:10)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18),
+    expected: /Immutable audit source unavailable/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/privacy.test.mjs:31:4
+✖ privacy rejects missing page digest audit pin (10.025109ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /Missing audited page digest/. Input:
+  
+  'AssertionError [ERR_ASSERTION]: Executable source changed; refresh privacy audit\n' +
+    '+ actual - expected\n' +
+    '\n' +
+    '  [\n' +
+    "    '2b01e1d0f5ba18ee57a1420149ce8f8b94e776195f29bfc76db93c245ead4320',\n" +
+    "+   '8678d664d26b49d8ff35310d27e8146e499c21f374ee408fdd9b6c775008cc22'\n" +
+    "-   'da6be95218d84373bb6e51070a73ec2c5f4b6b26b9a67653b09b89d9f1133e20'\n" +
+    '  ]\n'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:34:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: AssertionError [ERR_ASSERTION]: Executable source changed; refresh privacy audit
+    + actual - expected
+    
+      [
+        '2b01e1d0f5ba18ee57a1420149ce8f8b94e776195f29bfc76db93c245ead4320',
+    +   '8678d664d26b49d8ff35310d27e8146e499c21f374ee408fdd9b6c775008cc22'
+    -   'da6be95218d84373bb6e51070a73ec2c5f4b6b26b9a67653b09b89d9f1133e20'
+      ]
+    
+        at same (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:13:52)
+        at inspectPrivacySource (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:78:3)
+        at validatePrivacySource (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:31:18)
+        at file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:34:23
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:34:10)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18),
+    expected: /Missing audited page digest/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/privacy.test.mjs:31:4
+✖ privacy rejects mismatched page digest audit pin (20.173652ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /Audited source bytes differ/. Input:
+  
+  'AssertionError [ERR_ASSERTION]: Executable source changed; refresh privacy audit\n' +
+    '+ actual - expected\n' +
+    '\n' +
+    '  [\n' +
+    "    '2b01e1d0f5ba18ee57a1420149ce8f8b94e776195f29bfc76db93c245ead4320',\n" +
+    "+   '8678d664d26b49d8ff35310d27e8146e499c21f374ee408fdd9b6c775008cc22'\n" +
+    "-   'da6be95218d84373bb6e51070a73ec2c5f4b6b26b9a67653b09b89d9f1133e20'\n" +
+    '  ]\n'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:34:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: AssertionError [ERR_ASSERTION]: Executable source changed; refresh privacy audit
+    + actual - expected
+    
+      [
+        '2b01e1d0f5ba18ee57a1420149ce8f8b94e776195f29bfc76db93c245ead4320',
+    +   '8678d664d26b49d8ff35310d27e8146e499c21f374ee408fdd9b6c775008cc22'
+    -   'da6be95218d84373bb6e51070a73ec2c5f4b6b26b9a67653b09b89d9f1133e20'
+      ]
+    
+        at same (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:13:52)
+        at inspectPrivacySource (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:78:3)
+        at validatePrivacySource (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:31:18)
+        at file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:34:23
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:34:10)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18),
+    expected: /Audited source bytes differ/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/privacy.test.mjs:31:4
+✖ privacy rejects mismatched executable audit audit pin (13.341893ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /Executable source changed/. Input:
+  
+  'Error: Audited source bytes differ from current page/inventory digest'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:33:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: Audited source bytes differ from current page/inventory digest
+        at validateAuditedSource (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/content.mjs:28:75)
+        at validatePrivacyAudit (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:25:18)
+        at file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:33:23
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:33:10)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+        at Test.postRun (node:internal/test_runner/test:1330:19),
+    expected: /Executable source changed/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/privacy.test.mjs:36:1
+✖ metadata-only drift still requires a fresh complete-page audit pin (11.649956ms)
+  AssertionError [ERR_ASSERTION]: Executable source changed; refresh privacy audit
+  + actual - expected
+  
+    [
+      '2b01e1d0f5ba18ee57a1420149ce8f8b94e776195f29bfc76db93c245ead4320',
+  +   '8678d664d26b49d8ff35310d27e8146e499c21f374ee408fdd9b6c775008cc22'
+  -   'da6be95218d84373bb6e51070a73ec2c5f4b6b26b9a67653b09b89d9f1133e20'
+    ]
+  
+      at same (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:13:52)
+      at inspectPrivacySource (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:78:3)
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:38:16)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: [ '2b01e1d0f5ba18ee57a1420149ce8f8b94e776195f29bfc76db93c245ead4320', '8678d664d26b49d8ff35310d27e8146e499c21f374ee408fdd9b6c775008cc22' ],
+    expected: [ '2b01e1d0f5ba18ee57a1420149ce8f8b94e776195f29bfc76db93c245ead4320', 'da6be95218d84373bb6e51070a73ec2c5f4b6b26b9a67653b09b89d9f1133e20' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/privacy.test.mjs:64:49
+✖ reject seeded relative pixel (3.10068ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /asset request/. Input:
+  
+  'AssertionError [ERR_ASSERTION]: Executable source changed; refresh privacy audit\n' +
+    '+ actual - expected\n' +
+    '\n' +
+    '  [\n' +
+    "    '2b01e1d0f5ba18ee57a1420149ce8f8b94e776195f29bfc76db93c245ead4320',\n" +
+    "+   '8678d664d26b49d8ff35310d27e8146e499c21f374ee408fdd9b6c775008cc22'\n" +
+    "-   'da6be95218d84373bb6e51070a73ec2c5f4b6b26b9a67653b09b89d9f1133e20'\n" +
+    '  ]\n'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:64:92)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: AssertionError [ERR_ASSERTION]: Executable source changed; refresh privacy audit
+    + actual - expected
+    
+      [
+        '2b01e1d0f5ba18ee57a1420149ce8f8b94e776195f29bfc76db93c245ead4320',
+    +   '8678d664d26b49d8ff35310d27e8146e499c21f374ee408fdd9b6c775008cc22'
+    -   'da6be95218d84373bb6e51070a73ec2c5f4b6b26b9a67653b09b89d9f1133e20'
+      ]
+    
+        at same (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:13:52)
+        at inspectPrivacySource (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:78:3)
+        at validatePrivacySource (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:31:18)
+        at file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:64:105
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:64:92)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18),
+    expected: /asset request/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/privacy.test.mjs:64:49
+✖ reject seeded external srcset (3.730018ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /asset request/. Input:
+  
+  'AssertionError [ERR_ASSERTION]: Executable source changed; refresh privacy audit\n' +
+    '+ actual - expected\n' +
+    '\n' +
+    '  [\n' +
+    "    '2b01e1d0f5ba18ee57a1420149ce8f8b94e776195f29bfc76db93c245ead4320',\n" +
+    "+   '8678d664d26b49d8ff35310d27e8146e499c21f374ee408fdd9b6c775008cc22'\n" +
+    "-   'da6be95218d84373bb6e51070a73ec2c5f4b6b26b9a67653b09b89d9f1133e20'\n" +
+    '  ]\n'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:64:92)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: AssertionError [ERR_ASSERTION]: Executable source changed; refresh privacy audit
+    + actual - expected
+    
+      [
+        '2b01e1d0f5ba18ee57a1420149ce8f8b94e776195f29bfc76db93c245ead4320',
+    +   '8678d664d26b49d8ff35310d27e8146e499c21f374ee408fdd9b6c775008cc22'
+    -   'da6be95218d84373bb6e51070a73ec2c5f4b6b26b9a67653b09b89d9f1133e20'
+      ]
+    
+        at same (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:13:52)
+        at inspectPrivacySource (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:78:3)
+        at validatePrivacySource (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:31:18)
+        at file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:64:105
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:64:92)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18),
+    expected: /asset request/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/privacy.test.mjs:64:49
+✖ reject seeded CSS import (3.176384ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /CSS import/. Input:
+  
+  'AssertionError [ERR_ASSERTION]: Executable source changed; refresh privacy audit\n' +
+    '+ actual - expected\n' +
+    '\n' +
+    '  [\n' +
+    "    '2b01e1d0f5ba18ee57a1420149ce8f8b94e776195f29bfc76db93c245ead4320',\n" +
+    "+   '8678d664d26b49d8ff35310d27e8146e499c21f374ee408fdd9b6c775008cc22'\n" +
+    "-   'da6be95218d84373bb6e51070a73ec2c5f4b6b26b9a67653b09b89d9f1133e20'\n" +
+    '  ]\n'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:64:92)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: AssertionError [ERR_ASSERTION]: Executable source changed; refresh privacy audit
+    + actual - expected
+    
+      [
+        '2b01e1d0f5ba18ee57a1420149ce8f8b94e776195f29bfc76db93c245ead4320',
+    +   '8678d664d26b49d8ff35310d27e8146e499c21f374ee408fdd9b6c775008cc22'
+    -   'da6be95218d84373bb6e51070a73ec2c5f4b6b26b9a67653b09b89d9f1133e20'
+      ]
+    
+        at same (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:13:52)
+        at inspectPrivacySource (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:78:3)
+        at validatePrivacySource (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:31:18)
+        at file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:64:105
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:64:92)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18),
+    expected: /CSS import/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/privacy.test.mjs:64:49
+✖ reject seeded CSS pixel (3.4992ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /CSS request/. Input:
+  
+  'AssertionError [ERR_ASSERTION]: Executable source changed; refresh privacy audit\n' +
+    '+ actual - expected\n' +
+    '\n' +
+    '  [\n' +
+    "    '2b01e1d0f5ba18ee57a1420149ce8f8b94e776195f29bfc76db93c245ead4320',\n" +
+    "+   '8678d664d26b49d8ff35310d27e8146e499c21f374ee408fdd9b6c775008cc22'\n" +
+    "-   'da6be95218d84373bb6e51070a73ec2c5f4b6b26b9a67653b09b89d9f1133e20'\n" +
+    '  ]\n'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:64:92)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: AssertionError [ERR_ASSERTION]: Executable source changed; refresh privacy audit
+    + actual - expected
+    
+      [
+        '2b01e1d0f5ba18ee57a1420149ce8f8b94e776195f29bfc76db93c245ead4320',
+    +   '8678d664d26b49d8ff35310d27e8146e499c21f374ee408fdd9b6c775008cc22'
+    -   'da6be95218d84373bb6e51070a73ec2c5f4b6b26b9a67653b09b89d9f1133e20'
+      ]
+    
+        at same (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:13:52)
+        at inspectPrivacySource (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:78:3)
+        at validatePrivacySource (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:31:18)
+        at file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:64:105
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:64:92)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18),
+    expected: /CSS request/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/privacy.test.mjs:64:49
+✖ reject seeded same-origin CSS pixel (5.03263ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /Style source changed/. Input:
+  
+  'AssertionError [ERR_ASSERTION]: Executable source changed; refresh privacy audit\n' +
+    '+ actual - expected\n' +
+    '\n' +
+    '  [\n' +
+    "    '2b01e1d0f5ba18ee57a1420149ce8f8b94e776195f29bfc76db93c245ead4320',\n" +
+    "+   '8678d664d26b49d8ff35310d27e8146e499c21f374ee408fdd9b6c775008cc22'\n" +
+    "-   'da6be95218d84373bb6e51070a73ec2c5f4b6b26b9a67653b09b89d9f1133e20'\n" +
+    '  ]\n'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:64:92)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: AssertionError [ERR_ASSERTION]: Executable source changed; refresh privacy audit
+    + actual - expected
+    
+      [
+        '2b01e1d0f5ba18ee57a1420149ce8f8b94e776195f29bfc76db93c245ead4320',
+    +   '8678d664d26b49d8ff35310d27e8146e499c21f374ee408fdd9b6c775008cc22'
+    -   'da6be95218d84373bb6e51070a73ec2c5f4b6b26b9a67653b09b89d9f1133e20'
+      ]
+    
+        at same (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:13:52)
+        at inspectPrivacySource (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:78:3)
+        at validatePrivacySource (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:31:18)
+        at file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:64:105
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:64:92)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18),
+    expected: /Style source changed/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/privacy.test.mjs:64:49
+✖ reject seeded SVG image pixel (3.229594ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /Markup source changed/. Input:
+  
+  'AssertionError [ERR_ASSERTION]: Executable source changed; refresh privacy audit\n' +
+    '+ actual - expected\n' +
+    '\n' +
+    '  [\n' +
+    "    '2b01e1d0f5ba18ee57a1420149ce8f8b94e776195f29bfc76db93c245ead4320',\n" +
+    "+   '8678d664d26b49d8ff35310d27e8146e499c21f374ee408fdd9b6c775008cc22'\n" +
+    "-   'da6be95218d84373bb6e51070a73ec2c5f4b6b26b9a67653b09b89d9f1133e20'\n" +
+    '  ]\n'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:64:92)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: AssertionError [ERR_ASSERTION]: Executable source changed; refresh privacy audit
+    + actual - expected
+    
+      [
+        '2b01e1d0f5ba18ee57a1420149ce8f8b94e776195f29bfc76db93c245ead4320',
+    +   '8678d664d26b49d8ff35310d27e8146e499c21f374ee408fdd9b6c775008cc22'
+    -   'da6be95218d84373bb6e51070a73ec2c5f4b6b26b9a67653b09b89d9f1133e20'
+      ]
+    
+        at same (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:13:52)
+        at inspectPrivacySource (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:78:3)
+        at validatePrivacySource (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:31:18)
+        at file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:64:105
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:64:92)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18),
+    expected: /Markup source changed/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/privacy.test.mjs:64:49
+✖ reject seeded named control (3.862207ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /named form control/. Input:
+  
+  'AssertionError [ERR_ASSERTION]: Executable source changed; refresh privacy audit\n' +
+    '+ actual - expected\n' +
+    '\n' +
+    '  [\n' +
+    "    '2b01e1d0f5ba18ee57a1420149ce8f8b94e776195f29bfc76db93c245ead4320',\n" +
+    "+   '8678d664d26b49d8ff35310d27e8146e499c21f374ee408fdd9b6c775008cc22'\n" +
+    "-   'da6be95218d84373bb6e51070a73ec2c5f4b6b26b9a67653b09b89d9f1133e20'\n" +
+    '  ]\n'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:64:92)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: AssertionError [ERR_ASSERTION]: Executable source changed; refresh privacy audit
+    + actual - expected
+    
+      [
+        '2b01e1d0f5ba18ee57a1420149ce8f8b94e776195f29bfc76db93c245ead4320',
+    +   '8678d664d26b49d8ff35310d27e8146e499c21f374ee408fdd9b6c775008cc22'
+    -   'da6be95218d84373bb6e51070a73ec2c5f4b6b26b9a67653b09b89d9f1133e20'
+      ]
+    
+        at same (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:13:52)
+        at inspectPrivacySource (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:78:3)
+        at validatePrivacySource (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:31:18)
+        at file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:64:105
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:64:92)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18),
+    expected: /named form control/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/privacy.test.mjs:64:49
+✖ reject seeded style event (3.252788ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /Style source changed|Style attributes changed/. Input:
+  
+  'AssertionError [ERR_ASSERTION]: Executable source changed; refresh privacy audit\n' +
+    '+ actual - expected\n' +
+    '\n' +
+    '  [\n' +
+    "    '2b01e1d0f5ba18ee57a1420149ce8f8b94e776195f29bfc76db93c245ead4320',\n" +
+    "+   '8678d664d26b49d8ff35310d27e8146e499c21f374ee408fdd9b6c775008cc22'\n" +
+    "-   'da6be95218d84373bb6e51070a73ec2c5f4b6b26b9a67653b09b89d9f1133e20'\n" +
+    '  ]\n'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:64:92)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: AssertionError [ERR_ASSERTION]: Executable source changed; refresh privacy audit
+    + actual - expected
+    
+      [
+        '2b01e1d0f5ba18ee57a1420149ce8f8b94e776195f29bfc76db93c245ead4320',
+    +   '8678d664d26b49d8ff35310d27e8146e499c21f374ee408fdd9b6c775008cc22'
+    -   'da6be95218d84373bb6e51070a73ec2c5f4b6b26b9a67653b09b89d9f1133e20'
+      ]
+    
+        at same (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:13:52)
+        at inspectPrivacySource (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:78:3)
+        at validatePrivacySource (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:31:18)
+        at file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:64:105
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:64:92)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18),
+    expected: /Style source changed|Style attributes changed/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/privacy.test.mjs:79:1
+✖ metadata URL declarations do not count as browser requests (9.761091ms)
+  AssertionError [ERR_ASSERTION]: Executable source changed; refresh privacy audit
+  + actual - expected
+  
+    [
+      '2b01e1d0f5ba18ee57a1420149ce8f8b94e776195f29bfc76db93c245ead4320',
+  +   '8678d664d26b49d8ff35310d27e8146e499c21f374ee408fdd9b6c775008cc22'
+  -   'da6be95218d84373bb6e51070a73ec2c5f4b6b26b9a67653b09b89d9f1133e20'
+    ]
+  
+      at same (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:13:52)
+      at inspectPrivacySource (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:78:3)
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:81:16)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: [ '2b01e1d0f5ba18ee57a1420149ce8f8b94e776195f29bfc76db93c245ead4320', '8678d664d26b49d8ff35310d27e8146e499c21f374ee408fdd9b6c775008cc22' ],
+    expected: [ '2b01e1d0f5ba18ee57a1420149ce8f8b94e776195f29bfc76db93c245ead4320', 'da6be95218d84373bb6e51070a73ec2c5f4b6b26b9a67653b09b89d9f1133e20' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/privacy.test.mjs:96:1
+✖ native external capture or query navigation cannot return (2.207926ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /No capture form/. Input:
+  
+  'AssertionError [ERR_ASSERTION]: Executable source changed; refresh privacy audit\n' +
+    '+ actual - expected\n' +
+    '\n' +
+    '  [\n' +
+    "    '2b01e1d0f5ba18ee57a1420149ce8f8b94e776195f29bfc76db93c245ead4320',\n" +
+    "+   '8678d664d26b49d8ff35310d27e8146e499c21f374ee408fdd9b6c775008cc22'\n" +
+    "-   'da6be95218d84373bb6e51070a73ec2c5f4b6b26b9a67653b09b89d9f1133e20'\n" +
+    '  ]\n'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:97:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: AssertionError [ERR_ASSERTION]: Executable source changed; refresh privacy audit
+    + actual - expected
+    
+      [
+        '2b01e1d0f5ba18ee57a1420149ce8f8b94e776195f29bfc76db93c245ead4320',
+    +   '8678d664d26b49d8ff35310d27e8146e499c21f374ee408fdd9b6c775008cc22'
+    -   'da6be95218d84373bb6e51070a73ec2c5f4b6b26b9a67653b09b89d9f1133e20'
+      ]
+    
+        at same (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:13:52)
+        at inspectPrivacySource (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:78:3)
+        at validatePrivacySource (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:31:18)
+        at file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:97:23
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:97:10)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18),
+    expected: /No capture form/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/privacy.test.mjs:100:1
+✖ built artifact passes draft and cannot pass release without approval receipt (97.739222ms)
+  AssertionError [ERR_ASSERTION]: Executable source changed; refresh privacy audit
+  + actual - expected
+  
+    [
+      '2b01e1d0f5ba18ee57a1420149ce8f8b94e776195f29bfc76db93c245ead4320',
+  +   '8678d664d26b49d8ff35310d27e8146e499c21f374ee408fdd9b6c775008cc22'
+  -   'da6be95218d84373bb6e51070a73ec2c5f4b6b26b9a67653b09b89d9f1133e20'
+    ]
+  
+      at same (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:13:52)
+      at inspectPrivacySource (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:78:3)
+      at validatePrivacySource (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:31:18)
+      at run (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/scripts/suites/privacy.mjs:243:18)
+      at async TestContext.<anonymous> (file:///workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a/tests/privacy.test.mjs:102:17)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: [ '2b01e1d0f5ba18ee57a1420149ce8f8b94e776195f29bfc76db93c245ead4320', '8678d664d26b49d8ff35310d27e8146e499c21f374ee408fdd9b6c775008cc22' ],
+    expected: [ '2b01e1d0f5ba18ee57a1420149ce8f8b94e776195f29bfc76db93c245ead4320', 'da6be95218d84373bb6e51070a73ec2c5f4b6b26b9a67653b09b89d9f1133e20' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

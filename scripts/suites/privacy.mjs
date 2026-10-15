@@ -120,7 +120,7 @@ function section(html, from, to) {
 // Execute the real maker and in-page CTA handlers without CDN code or external requests.
 // This is a limited VM journey harness, not a browser/network/storage certification.
 export function exerciseJourney(html, { failure = 'blocked', reduced = true } = {}) {
-  const elements = Object.fromEntries(['maker', 'ev', 'finCard', 'finNote', 'finale', 'demoLink', 'demoUnavailable', 'finStatus', 'previewButton'].map(id => [id, node()]));
+  const elements = Object.fromEntries(['maker', 'ev', 'finCard', 'finNote', 'finale', 'demoLink', 'demoUnavailable', 'finStatus', 'previewButton', 'wall', 'boardUI', 'bh1'].map(id => [id, node()]));
   elements.maker.querySelector = () => elements.previewButton;
   // Match the native source anchor so invalid config must withdraw an already-active href.
   const studioMarkup = html.match(/<a\b[^>]*id="demoLink"[^>]*>/)?.[0];
@@ -137,6 +137,7 @@ export function exerciseJourney(html, { failure = 'blocked', reduced = true } = 
   const anchors = [...html.matchAll(/<a\b[^>]*href=["'](#[^"']+)["'][^>]*>/gi)].map(match => { const a = node(); a.getAttribute = () => match[1]; return a; });
   const chips = ['gulls', 'nova', 'wolves'].map(demo => Object.assign(node(), { dataset: { demo } }));
   const document = {
+    documentElement: node(),
     getElementById: id => elements[id],
     querySelectorAll: selector => selector === '.fin-try button' ? chips : anchors,
     querySelector: id => id.startsWith('#') ? { getBoundingClientRect: () => ({ top: 500 }) } : null,
@@ -145,21 +146,23 @@ export function exerciseJourney(html, { failure = 'blocked', reduced = true } = 
   Object.defineProperty(document, 'cookie', { get: () => fail('cookie'), set: () => fail('cookie') });
   const context = vm.createContext({
     document, URL, URLSearchParams, reduced, scrollY: 0, innerHeight: 600,
-    finale: { inert: false }, boardEl: { offsetTop: 10000, offsetHeight: 3000 },
     performance: { now: () => 0 }, matchMedia: () => ({ matches: reduced }),
     TS: { still: reduced, fine: false, NIGHTS: Object.fromEntries(chips.map(c => [c.dataset.demo, {}])), card: node, paint: (_, d) => previews.push(d), buzz() {} },
     setTimeout: callback => { timers.push(callback); return timers.length; }, clearTimeout() {},
-    requestAnimationFrame: callback => frames.push(callback), addEventListener() {},
-    scrollTo: value => moves.push(value), history: { pushState() {} },
+    requestAnimationFrame: callback => frames.push(callback), addEventListener() {}, removeEventListener() {},
+    scrollTo: value => { moves.push(value); context.scrollY = value.top; }, history: { pushState() {} },
     fetch: () => fail('fetch'), XMLHttpRequest: function() { fail('XHR'); },
     navigator: { sendBeacon: () => fail('beacon') },
     console: new Proxy({}, { get: () => () => fail('logging') }),
   });
+  Object.assign(elements.wall, { offsetTop: 10000, offsetHeight: 3000,
+    getBoundingClientRect() { const top = this.offsetTop - context.scrollY; return { top, bottom: top + this.offsetHeight, height: this.offsetHeight }; } });
   context.window = context;
   context.open = () => fail('navigation');
   Object.defineProperty(context, 'location', { get: () => fail('navigation'), set: () => fail('navigation') });
   for (const name of ['localStorage', 'sessionStorage', 'indexedDB', 'cookieStore']) Object.defineProperty(context, name, { get: () => fail(name) });
   vm.runInContext(section(html, '/* ---------- the one checkout:', '/* ---------- brand motion,'), context, { timeout: 1000 });
+  vm.runInContext(section(html, '/* =============================== board state (shared', '// nav colour follows'), context, { timeout: 1000 });
   vm.runInContext(section(html, '/* ---------- in-page links:', '// Progress follows native'), context, { timeout: 1000 });
   for (const anchor of anchors) { assert.equal(anchor.dispatch('click'), true); }
   while (frames.length) frames.shift()();

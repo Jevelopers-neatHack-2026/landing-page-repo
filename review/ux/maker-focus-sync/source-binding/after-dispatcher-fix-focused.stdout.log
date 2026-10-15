@@ -1,0 +1,182 @@
+✔ maker navigation synchronizes an in-range inert board without animation frames (3.775164ms)
+✔ native smooth-scroll arrival activates and focuses the maker while rendering frames are paused (1.356399ms)
+✔ continuing native scroll can reach the maker after the former absolute focus timeout (1.155276ms)
+✔ the idle deadline samples reached geometry before expiring a pending focus request (1.176568ms)
+✔ an off-wall idle request expires without exposing or focusing the maker (1.061946ms)
+✔ wheel cancels pending maker focus without preventing native input (1.021506ms)
+✔ touchstart cancels pending maker focus without preventing native input (0.882767ms)
+✔ pointerdown cancels pending maker focus without preventing native input (0.997939ms)
+✔ keydown cancels pending maker focus without preventing native input (1.034695ms)
+✔ a newer maker activation owns one pending focus and cleans up after success (1.182888ms)
+✔ a different native anchor cancels the old maker focus request (1.363589ms)
+✔ native board synchronization keeps manual scrolling accessible without requesting focus (2.329241ms)
+✔ wheel keeps moving forward/backward after the 3D loop exits on context loss (3.625038ms)
+✔ an animation exception cannot strand wheel input and starts readable static art (1.102377ms)
+✔ display-only rail tracks native scrolling/resizing without rendering frames (1.021855ms)
+✔ rail is decorative and passes pointer input through (0.524057ms)
+✔ switching to static art restores scene copy hidden by an interrupted 3D frame (1.297369ms)
+✔ native navigation reaches scenes and maker, with reduced motion false (1.98974ms)
+✔ native navigation reaches scenes and maker, with reduced motion true (1.062847ms)
+✔ user wheel input cancels pending maker focus (1.467795ms)
+✔ seamless hero wrap uses an immediate native jump (1.353835ms)
+✔ actual MVP source has valid static anchors, named controls and a coherent main heading sequence (8.751812ms)
+✔ missing anchor targets reject the actual source fixture (6.297233ms)
+✔ duplicate static IDs fail, including the CTA target (0.900703ms)
+✔ empty link names fail even when its target exists (0.838751ms)
+✔ a visible link without destination fails (0.857999ms)
+✔ duplicate h1 cannot pass a heading count check (0.950358ms)
+✔ main heading jumps fail while existing whole-document review remains pending (5.602209ms)
+✔ empty heading names fail (0.833403ms)
+✔ missing named navigation or main landmark fails (1.540215ms)
+✔ preview input needs a real label, not only a placeholder (0.980213ms)
+✔ missing description target fails (0.93158ms)
+✔ empty example button name fails (0.827233ms)
+✔ missing focus or reduced-motion source hook fails without asserting browser behavior (1.788678ms)
+✔ static explanation survives removing media and executable code as text evidence only (6.104053ms)
+✔ image alternatives and media-independent explanation cannot be silently removed (1.925063ms)
+✔ local group and non-submitting button remain compatible with a deferred external destination (1.801547ms)
+✔ maker navigation synchronizes an in-range inert board without animation frames (3.942174ms)
+✔ native smooth-scroll arrival activates and focuses the maker while rendering frames are paused (1.400455ms)
+✔ continuing native scroll can reach the maker after the former absolute focus timeout (1.200183ms)
+✔ the idle deadline samples reached geometry before expiring a pending focus request (0.966433ms)
+✔ an off-wall idle request expires without exposing or focusing the maker (1.093242ms)
+✔ wheel cancels pending maker focus without preventing native input (1.072952ms)
+✔ touchstart cancels pending maker focus without preventing native input (0.910158ms)
+✔ pointerdown cancels pending maker focus without preventing native input (0.805681ms)
+✔ keydown cancels pending maker focus without preventing native input (0.736106ms)
+✔ a newer maker activation owns one pending focus and cleans up after success (0.96486ms)
+✔ a different native anchor cancels the old maker focus request (0.934475ms)
+✔ native board synchronization keeps manual scrolling accessible without requesting focus (1.712974ms)
+✔ wheel keeps moving forward/backward after the 3D loop exits on context loss (2.541138ms)
+✔ an animation exception cannot strand wheel input and starts readable static art (0.875015ms)
+✔ display-only rail tracks native scrolling/resizing without rendering frames (0.724308ms)
+✔ rail is decorative and passes pointer input through (0.420252ms)
+✔ switching to static art restores scene copy hidden by an interrupted 3D frame (1.300715ms)
+✔ native navigation reaches scenes and maker, with reduced motion false (1.740926ms)
+✔ native navigation reaches scenes and maker, with reduced motion true (0.833412ms)
+✔ user wheel input cancels pending maker focus (1.703159ms)
+✔ seamless hero wrap uses an immediate native jump (1.022516ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 21
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 131.345741
+ux: source checks and actual-handler VM scroll tests passed; 5 source-review/evidence-boundary items; browser receipts not evaluated by this adapter; WCAG/lab performance not certified
+✔ real built artifact cannot claim UX release from local source checks alone (319.559052ms)
+✔ maker navigation synchronizes an in-range inert board without animation frames (3.528884ms)
+✔ native smooth-scroll arrival activates and focuses the maker while rendering frames are paused (1.359784ms)
+✔ continuing native scroll can reach the maker after the former absolute focus timeout (0.849005ms)
+✔ the idle deadline samples reached geometry before expiring a pending focus request (0.763708ms)
+✔ an off-wall idle request expires without exposing or focusing the maker (0.881104ms)
+✔ wheel cancels pending maker focus without preventing native input (0.764179ms)
+✔ touchstart cancels pending maker focus without preventing native input (0.670287ms)
+✔ pointerdown cancels pending maker focus without preventing native input (0.843608ms)
+✔ keydown cancels pending maker focus without preventing native input (1.102958ms)
+✔ a newer maker activation owns one pending focus and cleans up after success (1.245222ms)
+✔ a different native anchor cancels the old maker focus request (0.981745ms)
+✖ native board synchronization keeps manual scrolling accessible without requesting focus (2.533628ms)
+✔ wheel keeps moving forward/backward after the 3D loop exits on context loss (3.218056ms)
+✔ an animation exception cannot strand wheel input and starts readable static art (0.869597ms)
+✔ display-only rail tracks native scrolling/resizing without rendering frames (0.697027ms)
+✔ rail is decorative and passes pointer input through (0.338759ms)
+✔ switching to static art restores scene copy hidden by an interrupted 3D frame (0.766221ms)
+✔ native navigation reaches scenes and maker, with reduced motion false (1.826515ms)
+✔ native navigation reaches scenes and maker, with reduced motion true (0.967745ms)
+✔ user wheel input cancels pending maker focus (1.076557ms)
+✔ seamless hero wrap uses an immediate native jump (1.180744ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 20
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 138.126691
+
+✖ failing tests:
+
+test at tests/maker-focus.test.mjs:179:1
+✖ native board synchronization keeps manual scrolling accessible without requesting focus (2.533628ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  true !== false
+  
+      at TestContext.<anonymous> (file:///tmp/lp-ux-source-binding-PIEsgn/tests/maker-focus.test.mjs:182:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+✔ UX rejects a broken built candidate despite the MAKER_FOCUS_TEST_HTML historical source override (316.605793ms)
+✔ maker navigation synchronizes an in-range inert board without animation frames (3.271687ms)
+✔ native smooth-scroll arrival activates and focuses the maker while rendering frames are paused (1.356018ms)
+✔ continuing native scroll can reach the maker after the former absolute focus timeout (1.161857ms)
+✔ the idle deadline samples reached geometry before expiring a pending focus request (1.221185ms)
+✔ an off-wall idle request expires without exposing or focusing the maker (1.143489ms)
+✔ wheel cancels pending maker focus without preventing native input (1.129638ms)
+✔ touchstart cancels pending maker focus without preventing native input (0.882366ms)
+✔ pointerdown cancels pending maker focus without preventing native input (0.852331ms)
+✔ keydown cancels pending maker focus without preventing native input (1.290429ms)
+✔ a newer maker activation owns one pending focus and cleans up after success (1.445032ms)
+✔ a different native anchor cancels the old maker focus request (0.972311ms)
+✔ native board synchronization keeps manual scrolling accessible without requesting focus (1.829971ms)
+✔ wheel keeps moving forward/backward after the 3D loop exits on context loss (2.770663ms)
+✔ an animation exception cannot strand wheel input and starts readable static art (1.127996ms)
+✖ display-only rail tracks native scrolling/resizing without rendering frames (2.176872ms)
+✔ rail is decorative and passes pointer input through (0.538709ms)
+✔ switching to static art restores scene copy hidden by an interrupted 3D frame (1.041155ms)
+✔ native navigation reaches scenes and maker, with reduced motion false (3.171796ms)
+✔ native navigation reaches scenes and maker, with reduced motion true (1.275136ms)
+✔ user wheel input cancels pending maker focus (1.739574ms)
+✔ seamless hero wrap uses an immediate native jump (0.963238ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 20
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 148.416199
+
+✖ failing tests:
+
+test at tests/scroll.test.mjs:120:1
+✖ display-only rail tracks native scrolling/resizing without rendering frames (2.176872ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  '0.2000' !== '0.5000'
+  
+      at TestContext.<anonymous> (file:///tmp/lp-ux-source-binding-yBFa1a/tests/scroll.test.mjs:123:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '0.2000',
+    expected: '0.5000',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+✔ UX rejects a broken built candidate despite the SCROLL_TEST_HTML historical source override (298.714626ms)
+ℹ tests 40
+ℹ suites 0
+ℹ pass 40
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1113.130917

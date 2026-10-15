@@ -1,0 +1,239 @@
+{
+  "schema": "ticketstub.local-validation-record/1",
+  "sourceRevision": "db2e7c4bf8920f17b0ab132719edf910a284b5e6",
+  "sourcePublication": "GitHub commit fetched and verified before execution",
+  "sourceUrl": "https://github.com/Jevelopers-neatHack-2026/landing-page-repo/commit/db2e7c4bf8920f17b0ab132719edf910a284b5e6",
+  "testCodeRevision": "db2e7c4bf8920f17b0ab132719edf910a284b5e6",
+  "auditState": "Local uncommitted audit-pin and claims refresh atop the published source; this is not an exact final PR-head run",
+  "pageSha256": "91e9a369378376a45fe3a6a725a655229040ba4f3afb69d1d031116d97c33969",
+  "mode": "local/offline tests; local HTTP preview; negative source fixtures and route sentinels are synthetic; no provider or public deployment execution",
+  "node": "v24.15.0",
+  "platform": {
+    "system": "Linux",
+    "machine": "x86_64",
+    "release": "6.18.44"
+  },
+  "approvalState": "PENDING",
+  "changedInputs": {
+    "src/content/copy.json": {
+      "sha256": "b77b805a569c78f8a8701e1b04e3e0addc79d2a3532b77a6a9221cbd6b13fe20",
+      "bytes": 72590,
+      "publication": "local-uncommitted-at-execution"
+    },
+    "review/examples.json": {
+      "sha256": "960984b3b055676501d4a43d3412dd5f7c92e01c8800f961acf902f428d88448",
+      "bytes": 32566,
+      "publication": "local-uncommitted-at-execution"
+    },
+    "review/privacy-inventory.json": {
+      "sha256": "89d95451b0f918dd76e509ef3cfecad2c4076371d371bc0905731545ceacfef7",
+      "bytes": 5900,
+      "publication": "local-uncommitted-at-execution"
+    },
+    "review/claims.md": {
+      "sha256": "24758e799692b8397ce1e5f6512e1b1730ee9ad69e8c12f5caf8444468244807",
+      "bytes": 16954,
+      "publication": "local-uncommitted-at-execution"
+    }
+  },
+  "commands": [
+    {
+      "name": "full-tests",
+      "command": [
+        "/workspace/scratch/41d02a12a55b/task-state/toolchains/node24/node_modules/node/bin/node",
+        "--test",
+        "tests/content-proof.test.mjs",
+        "tests/cta.test.mjs",
+        "tests/foundation.test.mjs",
+        "tests/metadata.test.mjs",
+        "tests/privacy.test.mjs",
+        "tests/scroll.test.mjs",
+        "tests/ux.test.mjs"
+      ],
+      "workingDirectory": "/workspace/scratch/f79c57b98c5b/pins-published",
+      "startedAt": "2026-10-12T16:45:55.468147+00:00",
+      "completedAt": "2026-10-12T16:45:56.962344+00:00",
+      "expectedExitCode": 0,
+      "exitCode": 0,
+      "outcome": "pass",
+      "matchesExpectation": true,
+      "logs": {
+        "full-tests.stdout.log": {
+          "sha256": "f774dc2b830f97b5f2ac5dad695bd560d09c1e66d3295e5acdc5daebb79344c5",
+          "bytes": 12911
+        },
+        "full-tests.stderr.log": {
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        }
+      }
+    },
+    {
+      "name": "foundation-draft",
+      "command": [
+        "./scripts/validate-landing",
+        "--suite",
+        "foundation",
+        "--mode",
+        "draft"
+      ],
+      "workingDirectory": "/workspace/scratch/f79c57b98c5b/pins-published",
+      "startedAt": "2026-10-12T16:45:56.963364+00:00",
+      "completedAt": "2026-10-12T16:45:58.726885+00:00",
+      "expectedExitCode": 0,
+      "exitCode": 0,
+      "outcome": "pass",
+      "matchesExpectation": true,
+      "logs": {
+        "foundation-draft.stdout.log": {
+          "sha256": "2500e45782d0581ed6709eac74d0dd2d115eb10efd154fb16a5ff0f16144307e",
+          "bytes": 1500
+        },
+        "foundation-draft.stderr.log": {
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        }
+      }
+    },
+    {
+      "name": "content-draft",
+      "command": [
+        "./scripts/validate-landing",
+        "--suite",
+        "content",
+        "--mode",
+        "draft"
+      ],
+      "workingDirectory": "/workspace/scratch/f79c57b98c5b/pins-published",
+      "startedAt": "2026-10-12T16:45:58.727881+00:00",
+      "completedAt": "2026-10-12T16:45:58.963570+00:00",
+      "expectedExitCode": 0,
+      "exitCode": 0,
+      "outcome": "pass",
+      "matchesExpectation": true,
+      "logs": {
+        "content-draft.stdout.log": {
+          "sha256": "3ad26e7f7ecc21066f225dad9c51261b180a83bd9364bf6d5688e95c4566d840",
+          "bytes": 149
+        },
+        "content-draft.stderr.log": {
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        }
+      }
+    },
+    {
+      "name": "proof-draft",
+      "command": [
+        "./scripts/validate-landing",
+        "--suite",
+        "proof",
+        "--mode",
+        "draft"
+      ],
+      "workingDirectory": "/workspace/scratch/f79c57b98c5b/pins-published",
+      "startedAt": "2026-10-12T16:45:58.964551+00:00",
+      "completedAt": "2026-10-12T16:45:59.387309+00:00",
+      "expectedExitCode": 0,
+      "exitCode": 0,
+      "outcome": "pass",
+      "matchesExpectation": true,
+      "logs": {
+        "proof-draft.stdout.log": {
+          "sha256": "606586428597d69c6f94d810606a3f67d2a12e1ea931ae52cf1e4f594b752eb3",
+          "bytes": 142
+        },
+        "proof-draft.stderr.log": {
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        }
+      }
+    },
+    {
+      "name": "privacy-draft",
+      "command": [
+        "./scripts/validate-landing",
+        "--suite",
+        "privacy",
+        "--mode",
+        "draft"
+      ],
+      "workingDirectory": "/workspace/scratch/f79c57b98c5b/pins-published",
+      "startedAt": "2026-10-12T16:45:59.389095+00:00",
+      "completedAt": "2026-10-12T16:45:59.621580+00:00",
+      "expectedExitCode": 0,
+      "exitCode": 0,
+      "outcome": "pass",
+      "matchesExpectation": true,
+      "logs": {
+        "privacy-draft.stdout.log": {
+          "sha256": "11fc906cb06dddd9ac9fc6cef2e8614e1be3dd34daa983bf061cb891e3283883",
+          "bytes": 205
+        },
+        "privacy-draft.stderr.log": {
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        }
+      }
+    },
+    {
+      "name": "required-release",
+      "command": [
+        "./scripts/validate-landing"
+      ],
+      "workingDirectory": "/workspace/scratch/f79c57b98c5b/pins-published",
+      "startedAt": "2026-10-12T16:45:59.622518+00:00",
+      "completedAt": "2026-10-12T16:46:02.972052+00:00",
+      "expectedExitCode": 1,
+      "exitCode": 1,
+      "outcome": "fail",
+      "matchesExpectation": true,
+      "logs": {
+        "required-release.stdout.log": {
+          "sha256": "e0b12ecbf4794b5603811e3e99f1e616903204507f5c0f6b6907bbd1a47792c9",
+          "bytes": 5354
+        },
+        "required-release.stderr.log": {
+          "sha256": "39ed129966e99b70c807ef95cd5450081fae4f0ec152a067c2d268edb227f2a2",
+          "bytes": 935
+        }
+      }
+    },
+    {
+      "name": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "workingDirectory": "/workspace/scratch/f79c57b98c5b/pins-published",
+      "startedAt": "2026-10-12T16:46:02.973045+00:00",
+      "completedAt": "2026-10-12T16:46:02.981967+00:00",
+      "expectedExitCode": 0,
+      "exitCode": 0,
+      "outcome": "pass",
+      "matchesExpectation": true,
+      "logs": {
+        "diff-check.stdout.log": {
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        "diff-check.stderr.log": {
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        }
+      }
+    }
+  ],
+  "artifactManifest": {
+    "file": "artifact-manifest.json",
+    "sha256": "496c31d265f54fbac0b936a912b20194427de1450aefe4c691d4a3ec29300bac",
+    "bytes": 1652
+  },
+  "completedAt": "2026-10-12T16:46:02.983280+00:00",
+  "limitations": [
+    "This record binds published runtime/test code and explicitly local audit inputs. Root must rerun affected checks after publishing the audit changes.",
+    "The required release command is expected to fail: owner approvals/evidence and brand/governance suites are absent from this isolated source branch. It is not a release pass.",
+    "No browser, physical-device, host-consumer, accessibility, performance or publication acceptance is supplied by these commands."
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "sourceRevision": "db2e7c4bf8920f17b0ab132719edf910a284b5e6",
+  "checkerRevision": "db2e7c4bf8920f17b0ab132719edf910a284b5e6",
+  "regressionTests": "local uncommitted reproductions of independent FND-R1/R2 plus reference spellings",
+  "mode": "local/offline synthetic source mutations through real build/artifact validator",
+  "command": [
+    "/workspace/scratch/41d02a12a55b/task-state/toolchains/node24/node_modules/node/bin/node",
+    "--test",
+    "tests/foundation.test.mjs"
+  ],
+  "startedAt": "2026-10-12T16:50:11.229039+00:00",
+  "completedAt": "2026-10-12T16:50:12.719609+00:00",
+  "exitCode": 1,
+  "expected": "failure before checker repair",
+  "checkerSha256": "8f7d82ded63835755153e2008972899302f618d3ffada33ab1cd986e99a106b1",
+  "testSha256": "bc2c2fbf987d853c9369e0e0efd896696b0096e2f44dad38f80c50aa161c09e5",
+  "files": {
+    "foundation-review-db2e7c4.json": {
+      "sha256": "a3abd4848d169b1ca400ab6fbb6f0ac4af2af35228117dde2eea13ae0ece7241",
+      "bytes": 6520
+    },
+    "regressions-before-repair.stderr.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "foundation-negative-probes-db2e7c4.json": {
+      "sha256": "b6f13cf7600c7795e11dd3866e6312d5f61645d7cc612c7b5958853778ec9b81",
+      "bytes": 2250
+    },
+    "regressions-before-repair.stdout.log": {
+      "sha256": "86da014db785bb41eaa61daddd9927f4878d0efdd5851ff3656f0ce41d920c42",
+      "bytes": 5604
+    }
+  }
+}

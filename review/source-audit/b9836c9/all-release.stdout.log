@@ -1,0 +1,130 @@
+✔ included page sections have unique anchors on the documented existing surfaces (5.140068ms)
+✔ missing included #problem target fails even when no current navigation link refers to it (3.081823ms)
+✔ missing included #benefits target fails even when no current navigation link refers to it (7.314777ms)
+✔ missing included #gallery target fails even when no current navigation link refers to it (1.01093ms)
+✔ missing included #about target fails even when no current navigation link refers to it (0.945121ms)
+✔ comments, scripts and templates cannot replace a missing section anchor (3.584329ms)
+✔ misplaced, duplicate and hidden anchors fail instead of satisfying the page map (16.719076ms)
+✔ page-map validation rejects a dangling public fragment without inventing navigation (1.684042ms)
+✔ built artifact rejects nested template contents from independent FND review (90.770778ms)
+✔ built artifact rejects textarea literal text from independent FND review (45.100886ms)
+✔ built artifact rejects encoded duplicate ID from independent FND review (50.278546ms)
+✔ built artifact rejects slash in an unquoted ID from independent FND review (57.306636ms)
+✔ ambiguous encoded or whitespace-prefixed public fragments fail closed (6.472271ms)
+✔ actual illustrated source builds reproducibly with every asset and no repository documents (88.392052ms)
+✔ validator detects missing referenced assets, tampering, stale manifests and unexpected files (14.671929ms)
+✔ build refuses symlinks, unreviewed asset types and unsafe output destinations (5.565197ms)
+✔ preview serves homepage and every actual asset; unknown and app routes cannot fall back to landing (135.643897ms)
+✔ dispatcher rejects invalid arguments and no-argument validation fails for unavailable required suites (634.362869ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 18
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1257.301293
+PASS_LOCAL foundation
+✔ actual source config, no-JS markup and local editor boundary are explicit (12.103567ms)
+✔ no-JS escape is explicit, query-free and uses the same approved native destination (4.69591ms)
+✔ a mismatched or hidden duplicate static fallback link cannot escape the approved config (26.906973ms)
+✔ duplicate mixed-case href attributes are rejected instead of choosing one (6.337039ms)
+✔ withdrawn config requires static no-JS navigation to be withdrawn too (5.705509ms)
+✔ missing/invalid config cannot expose any external navigation (21.272436ms)
+✔ approved-shaped link fixtures carry only exact owner-allowlisted URL in each environment (17.838322ms)
+✔ unavailable service, pending owner or absent/nonimmutable/mismatched approval receipts disable the link (43.188275ms)
+✔ invalid scheme/origin/path, queries, fragments, credentials and private destinations fail closed (68.458923ms)
+✔ real pointer/Enter/preview/example/navigation handlers keep synthetic input local with reduced motion and blocked surfaces (10.820886ms)
+✔ tampered source config, named input and sending confirmation are rejected (5.069582ms)
+✔ limited thread receipt rejects malformed observation/approval scope and cannot migrate to another environment (35.50356ms)
+✔ actual live navigation target stays byte-identical after editing, chips, button clicks and Enter (2.14141ms)
+✔ invalid config must remove the real pre-existing native href; deletion mutant fails the safety assertion (6.808538ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 436.769608
+✔ maker navigation synchronizes an in-range inert board without animation frames (3.466122ms)
+✔ native smooth-scroll arrival activates and focuses the maker while rendering frames are paused (1.347717ms)
+✔ continuing native scroll can reach the maker after the former absolute focus timeout (0.8449ms)
+✔ the idle deadline samples reached geometry before expiring a pending focus request (0.866122ms)
+✔ an off-wall idle request expires without exposing or focusing the maker (1.114476ms)
+✔ wheel cancels pending maker focus without preventing native input (1.255202ms)
+✔ touchstart cancels pending maker focus without preventing native input (0.718961ms)
+✔ pointerdown cancels pending maker focus without preventing native input (0.876919ms)
+✔ keydown cancels pending maker focus without preventing native input (0.883559ms)
+✔ a newer maker activation owns one pending focus and cleans up after success (1.14397ms)
+✔ a different native anchor cancels the old maker focus request (1.061917ms)
+✔ native board synchronization keeps manual scrolling accessible without requesting focus (0.972262ms)
+✔ wheel keeps moving forward/backward after the 3D loop exits on context loss (3.312401ms)
+✔ an animation exception cannot strand wheel input and starts readable static art (1.01685ms)
+✔ display-only rail tracks native scrolling/resizing without rendering frames (0.992802ms)
+✔ rail is decorative and passes pointer input through (0.467593ms)
+✔ switching to static art restores scene copy hidden by an interrupted 3D frame (0.998191ms)
+✔ native navigation reaches scenes and maker, with reduced motion false (1.861619ms)
+✔ native navigation reaches scenes and maker, with reduced motion true (1.603101ms)
+✔ user wheel input cancels pending maker focus (1.041716ms)
+✔ seamless hero wrap uses an immediate native jump (3.472962ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 21
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 126.895973
+ux: source checks and actual-handler VM scroll tests passed; 5 source-review/evidence-boundary items; browser receipts not evaluated by this adapter; WCAG/lab performance not certified
+✔ actual static HTML has one valid head and consistent inventoried preview/social copy (3.064618ms)
+✔ preview, demo and staging never inherit production canonical, indexing or sitemap (1.095722ms)
+✔ synthetic approved production index/noindex fixtures enforce exact origin and real homepage inventory (1.441587ms)
+✔ production rejects missing origin, undecided indexing and every pending/missing owner receipt (2.085086ms)
+✔ production origin rejects preview hosts, private addresses and malformed/credential/query/path URLs (1.665334ms)
+✔ private app routes, aliases and section anchors cannot become indexable pages (2.867322ms)
+✔ head placement, duplicate and missing metadata regression fixtures fail (4.000655ms)
+✔ canonical/image/structured data leakage and missing ledger entries fail (6.773145ms)
+✔ invalid environments and unsupported image/structured decisions fail (0.461473ms)
+✔ loopback served artifact contains static metadata without JS and exposes no sitemap/robots/private route (81.546513ms)
+✔ approval receipts cannot silently authorize a changed origin or indexing decision (0.446691ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 235.769486
+✔ LP-09 supported update: replay the retained physical-to-illustrative correction as a pending draft (151.730906ms)
+✔ LP-09 unsupported/stale update: rehashing or changing an approval label cannot publish a claim (21.985969ms)
+✔ LP-09 withdrawal: real built claim/asset disappear, a safe local replacement is present, rollback restores exact bytes (312.158259ms)
+✔ withdrawal rejects stale active inventories and hiding content in comments (194.895451ms)
+✔ withdrawal rejects original asset bytes under a renamed file and a stale scene reference (226.777311ms)
+▶ GOV-R1: character references cannot retain withdrawn rendered text or attributes
+  ✔ decimal (97.868781ms)
+  ✔ hexadecimal (108.610663ms)
+  ✔ omitted numeric semicolon (117.312177ms)
+  ✔ encoded whitespace (102.800211ms)
+  ✔ named whitespace (116.129624ms)
+  ✔ legacy whitespace without semicolon (109.192925ms)
+  ✔ unsupported named reference (104.508837ms)
+  ✔ unsupported legacy prefix (163.241791ms)
+  ✔ inline element split (164.412711ms)
+  ✔ accessible attribute (150.581116ms)
+✔ GOV-R1: character references cannot retain withdrawn rendered text or attributes (1237.430293ms)
+✔ a once-escaped character reference remains literal text instead of being recursively decoded (192.171721ms)
+▶ GOV-R2: renamed and padded public payloads cannot retain the complete original asset bytes
+  ✔ original followed by newline (208.938326ms)
+  ✔ original embedded between padding (161.269015ms)
+✔ GOV-R2: renamed and padded public payloads cannot retain the complete original asset bytes (372.022559ms)
+✔ withdrawal requires an immutable known nonempty selection and rejects still-packaged media (380.877431ms)
+✔ changed destination dry run withdraws both native and no-JavaScript links (16.435991ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 22
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3215.811404

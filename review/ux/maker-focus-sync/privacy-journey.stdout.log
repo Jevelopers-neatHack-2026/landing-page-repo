@@ -1,0 +1,4 @@
+{"mode":"VM-real-maker-and-board-handlers-with-forbidden-collection-surfaces","failure":"blocked","reduced":false,"anchors":16,"previews":7,"externalHandoff":"link-only-local-check","forbiddenAttempts":0}
+{"mode":"VM-real-maker-and-board-handlers-with-forbidden-collection-surfaces","failure":"blocked","reduced":true,"anchors":16,"previews":7,"externalHandoff":"link-only-local-check","forbiddenAttempts":0}
+{"mode":"VM-real-maker-and-board-handlers-with-forbidden-collection-surfaces","failure":"failed","reduced":false,"anchors":16,"previews":7,"externalHandoff":"link-only-local-check","forbiddenAttempts":0}
+{"mode":"VM-real-maker-and-board-handlers-with-forbidden-collection-surfaces","failure":"failed","reduced":true,"anchors":16,"previews":7,"externalHandoff":"link-only-local-check","forbiddenAttempts":0}

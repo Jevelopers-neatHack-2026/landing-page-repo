@@ -1,0 +1,26 @@
+{
+  "mode": "deterministic-real-source-handlers-with-browser-geometry-event-timer-doubles-no-browser",
+  "startedAt": "2026-10-12T17:24:50.794891+00:00",
+  "completedAt": "2026-10-12T17:24:50.997795+00:00",
+  "command": [
+    "/workspace/scratch/41d02a12a55b/task-state/toolchains/node24/node_modules/node/bin/node",
+    "--test",
+    "tests/maker-focus.test.mjs",
+    "tests/scroll.test.mjs"
+  ],
+  "cwd": "/workspace/scratch/f79c57b98c5b/maker-focus-ee16f8a",
+  "baseRevision": "ee16f8a49e5039ee8d41d3fb0a0be9aeb4b98ec5",
+  "pageSha256": "c92ab9f83dff2b15457617797147e7b7e2063cd1a7395a12bbab357d215df01a",
+  "workingTree": "uncommitted scoped repair",
+  "files": {
+    "site/index.html": "c92ab9f83dff2b15457617797147e7b7e2063cd1a7395a12bbab357d215df01a",
+    "tests/maker-focus.test.mjs": "71ada0dd9b0023da825cbb080fcbbf9ef770690f9882dded0dc96c0486402906",
+    "tests/scroll.test.mjs": "792605221bd469811899d4bb81ba3cb3019b68364b2e96c9b822b4c9cb437548",
+    "scripts/suites/privacy.mjs": "9020b8003cd9260a74f72a2005f8a414adfda378c1bfd091397bd0da187654a5"
+  },
+  "exitCode": 0,
+  "logs": {
+    "after-repair-focused.stdout.log": "675f1b0b2c56f593f7e9407ec8612992e91324b54683682b35d2ccc99454394d",
+    "after-repair-focused.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}
