@@ -128,3 +128,42 @@ test('dispatcher rejects invalid arguments and no-argument validation fails for 
   assert.match(draft.stdout,/PASS_DRAFT content/);
   assert.doesNotMatch(draft.stdout,/^PASS content/m);
 });
+
+
+test('nested output symlink cannot redirect cleanup into unrelated files', async t => {
+  const repository = await sandbox(t);
+  const unrelated = await mkdtemp(resolve(tmpdir(), 'lp-unrelated-output-'));
+  t.after(() => rm(unrelated, { recursive: true, force: true }));
+  await mkdir(resolve(unrelated, 'release'), { recursive: true });
+  const sentinel = resolve(unrelated, 'release/keep.txt');
+  await writeFile(sentinel, 'unrelated work');
+  await mkdir(resolve(repository, 'dist'));
+  await symlink(unrelated, resolve(repository, 'dist/linked'));
+  await assert.rejects(buildSite({ repository, output: resolve(repository, 'dist/linked/release') }), /regular directory/);
+  assert.equal(await readFile(sentinel, 'utf8'), 'unrelated work');
+});
+
+test('build rejects source-containing output before removing any existing bytes', async t => {
+  const repository = await sandbox(t);
+  await mkdir(resolve(repository, 'dist'));
+  await cp(resolve(repository, 'site'), resolve(repository, 'dist/source/site'), { recursive: true });
+  await rm(resolve(repository, 'site'), { recursive: true });
+  await symlink(resolve(repository, 'dist/source/site'), resolve(repository, 'site'));
+  const page = await readFile(resolve(repository, 'site/index.html'));
+  await assert.rejects(buildSite({ repository, output: resolve(repository, 'dist/source') }), /site must be a regular directory/);
+  assert.deepEqual(await readFile(resolve(repository, 'site/index.html')), page);
+});
+
+test('build permits a new nested artifact but refuses file and symlink output components', async t => {
+  const repository = await sandbox(t);
+  const output = resolve(repository, 'dist/reviews/candidate/site');
+  await buildSite({ repository, output });
+  await validateArtifact(repository, output);
+  await writeFile(resolve(repository, 'dist/file'), 'unrelated');
+  await assert.rejects(buildSite({ repository, output: resolve(repository, 'dist/file/site') }), /regular directory/);
+  await assert.rejects(buildSite({ repository, output: resolve(repository, 'dist/file') }), /regular directory/);
+  assert.equal(await readFile(resolve(repository, 'dist/file'), 'utf8'), 'unrelated');
+  await symlink(output, resolve(repository, 'dist/alias'));
+  await assert.rejects(buildSite({ repository, output: resolve(repository, 'dist/alias') }), /regular directory/);
+  await validateArtifact(repository, output);
+});

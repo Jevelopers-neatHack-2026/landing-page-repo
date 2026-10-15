@@ -1,0 +1,187 @@
+{
+  "repository": "Jevelopers-neatHack-2026/landing-page-repo",
+  "recordedAt": "2026-10-15T05:47:50.869880+00:00",
+  "base": "dda1b5d48e71ed9c111b82111676b7ef033fe5ef",
+  "branch": "fix/lp-01-contained-build-20261015",
+  "cutoffInclusive": "2026-10-13T05:38:56Z",
+  "archive": {
+    "isArchived": true,
+    "archivedAt": "2026-10-12T18:57:26Z",
+    "evidenceCommand": "gh repo view --json isArchived,archivedAt,viewerPermission,url",
+    "disposition": "local commit only per user; no push attempted, settings unchanged; orchestrator coordinates maintainer authorization"
+  },
+  "change": "Reject pre-existing non-directory components throughout the artifact output path before recursive cleanup or writes; retain normal nested builds and byte-identical artifact.",
+  "limits": [
+    "Single-writer local build, not an OS-level defense against a concurrent hostile filesystem swap.",
+    "No site bytes, brand assets, public copy, canonical shared schemas or sibling repository files changed.",
+    "No product provider call, deployment, issue closure, master acceptance or owner approval."
+  ],
+  "runtime": {
+    "agent": "Codex, system-described GPT-6",
+    "exactProviderModelId": "not exposed",
+    "effortProfileSpeed": "not exposed",
+    "node": "v24.15.0",
+    "usageAndBillableAttempts": "not exposed; no product provider calls made",
+    "independentReview": "pending orchestrator exact base/head review; no local AGENTS.md or locally adopted model-switch requirement found"
+  },
+  "commands": [
+    {
+      "command": "node --test tests/foundation.test.mjs",
+      "phase": "before implementation, new regressions present",
+      "exit": 1,
+      "result": "6 pass / 2 fail; nested symlink build unexpectedly succeeds; file-component assertion also exposes unhelpful ENOTDIR",
+      "log": "foundation-before.log"
+    },
+    {
+      "command": "node --test tests/foundation.test.mjs",
+      "phase": "after fix",
+      "exit": 0,
+      "result": "8 pass / 0 fail",
+      "log": "foundation-after.log"
+    },
+    {
+      "command": "node --test tests/*.test.mjs",
+      "exit": 1,
+      "result": "Initial run overlapped draft build; shared dist/site rebuild caused ENOENT in privacy test. Preserved; rerun serially after other builders stopped.",
+      "log": "all-tests-overlapping.log"
+    },
+    {
+      "command": "node --test --test-concurrency=1 tests/*.test.mjs",
+      "exit": 0,
+      "result": "189 pass / 0 fail / 0 skip",
+      "log": "all-tests-serial.log"
+    },
+    {
+      "command": "./scripts/validate-landing --mode draft",
+      "exit": 0,
+      "result": "all nine local suites pass; PASS_DRAFT is not acceptance",
+      "log": "draft.log"
+    },
+    {
+      "command": "./scripts/validate-landing",
+      "exit": 1,
+      "result": "foundation PASS_LOCAL; content, cta, proof, ux, brand, privacy, metadata, governance fail for missing actual release prerequisites",
+      "log": "release.log"
+    },
+    {
+      "command": "gitleaks git --redact --no-banner --report-format json --report-path /tmp/lp-gitleaks-history.json",
+      "exit": 0,
+      "result": "Gitleaks 8.30.1: 62 commits, 11897696 bytes, no findings; existing local history only, not binary rights/visual sanitization approval",
+      "log": "gitleaks-history.log"
+    },
+    {
+      "command": "git diff --check",
+      "exit": 0,
+      "result": "pass"
+    }
+  ],
+  "queueDispositions": [
+    {
+      "issue": 2,
+      "status": "dependent",
+      "acceptance": "LP-EPIC.A-D",
+      "remaining": "#12 must receive accepted integrated release evidence after child requirements; no epic completion."
+    },
+    {
+      "issue": 3,
+      "status": "partial-local-fix",
+      "acceptance": "LP-01.B",
+      "remaining": "This branch repairs nested output containment. LP-01.A still needs Product page-map approval; LP-01.C needs getticketstub.com#7 owner acceptance of artifact/adapter, asset paths, intake/isolation, rebuild/rollback and actual host/app/auth/API evidence. PR36 holds additional anchor work; not duplicated."
+    },
+    {
+      "issue": 4,
+      "status": "awaiting-owner-input",
+      "acceptance": "LP-02.A-D",
+      "remaining": "Merged PR20 provides safe illustrative copy and ledger; marketing-material#5 must supply exact approved claim/narrative/CTA wording and Product must approve demonstrated behavior tied to getticketstub.com#19. Existing draft labels do not grant approval."
+    },
+    {
+      "issue": 5,
+      "status": "awaiting-host-acceptance",
+      "acceptance": "LP-03.A-D",
+      "remaining": "Merged PR25/26 implement local-only input and the separate approved query-free Open studio navigation. getticketstub.com#19 must return exact assembled-host/destination/artifact identity and broader acceptance; marketing-material#5 supplies final wording. Navigation-only approval is preserved."
+    },
+    {
+      "issue": 6,
+      "status": "awaiting-rights-review",
+      "acceptance": "LP-04.A-D",
+      "remaining": "Merged PR20 adds labeled fictional examples and a checked manifest. Product/rights/Finance reviewers must approve exact assets, permission and sanitization plus rendered missing-media evidence. marketing-material#6 is CLOSED for provenance tooling only and explicitly supplies no landing derivative publication rights; any MM-origin captions/assets still need #5 and exact rights/destination records."
+    },
+    {
+      "issue": 7,
+      "status": "existing-open-pr-and-manual-review",
+      "acceptance": "LP-05.A-D",
+      "remaining": "PR36 head 1e98ec30de3d87362b4b1a67943f0eb20916e015 already contains anchors, maker recovery, input matrix and lab collectors. Supervisor must review/reconcile that candidate and audit pins rather than duplicate it. Actual current three-run mobile budgets, manual screen-reader/native 200% text zoom/contrast, physical input and full rendered/failure evidence remain required."
+    },
+    {
+      "issue": 8,
+      "status": "awaiting-approved-producer-contract",
+      "acceptance": "LP-06.A-D",
+      "remaining": "Merged PR33 supplies draft inventory/validator, not imported brand files. brand-kit#14 must supply approved immutable subset/version/locator, file allowlist, rights/font delivery restrictions and upgrade/rollback; brand-kit#15 needs exact Landing consumer ACK/rejection and visual acceptance. Latest f34c71a0961dc0c67f1ecb293a5bbb633addb663 is an unapproved review candidate only. No import grant; do not substitute contracts."
+    },
+    {
+      "issue": 9,
+      "status": "awaiting-privacy-review",
+      "acceptance": "LP-07.A/C/D",
+      "remaining": "Merged PR23/27 implements deferred analytics, no collection and VM source fixtures. Named Product/Finance approval and clean-browser requests/storage/CDN plus link-only host handoff evidence still required. PR36 contains bounded browser probes; not full acceptance. LP-07.B enabled analytics remains conditional/deferred."
+    },
+    {
+      "issue": 10,
+      "status": "awaiting-origin-and-social-decisions",
+      "acceptance": "LP-08.A-D",
+      "remaining": "Merged PR22/27 provides static preview noindex metadata and offline environment fixtures. getticketstub.com#7 must approve exact origin/route/indexing; Product/Marketing must approve metadata and Brand/rights must approve social image or fallback. Actual generation/host adapter and social rendering follow those decisions; no guessed origin or image."
+    },
+    {
+      "issue": 11,
+      "status": "awaiting-accountable-assignments",
+      "acceptance": "LP-09.A",
+      "remaining": "Merged PR34 implements freshness, unsupported-claim rejection, withdrawal and rollback dry runs. Named maintainer/backup, Product, brand/rights and Finance assignments and exact editorial approval remain required. Marketing upstream already names Root as its accountable reviewer; do not invent an additional upstream marketing nomination blocker. Local exact-candidate review receipt is still absent."
+    },
+    {
+      "issue": 12,
+      "status": "release-no-go",
+      "acceptance": "LP-10.A-H",
+      "remaining": "Current release command exits 1 with eight failed suites. Needs accepted children, actual app adapter/route/CTA evidence, all required manual/lab results, exact publication/rights/privacy/indexing decisions and named go/no-go/sanitization review. integration-evals#22 exclusively owns master EVAL-03/04 acceptance."
+    },
+    {
+      "issue": 17,
+      "status": "existing-open-pr-and-physical-input-evidence",
+      "acceptance": "LP-05-B01.A-D",
+      "remaining": "Merged PR18/32 contain earlier fixes. PR36 holds additional recovery and an actual 11-scenario emulated-input/negative-control pack; independent exact-candidate review, final pin reconciliation and postmerge evidence remain pending. Physical touch/scrollbar and required manual review cannot be certified from source/VM tests."
+    }
+  ],
+  "completedIssues": [],
+  "closureCandidates": [],
+  "existingPRs": [
+    {
+      "number": 36,
+      "head": "1e98ec30de3d87362b4b1a67943f0eb20916e015",
+      "status": "OPEN; existing work preserved"
+    },
+    {
+      "number": 37,
+      "head": "60fe7897d04b04bbe87f9f34a62754f0210f37b7",
+      "status": "OPEN; documentation work preserved"
+    }
+  ],
+  "changedImplementationDigests": {
+    "scripts/build.mjs": "dbf2f995cd8c789b6d800e7992455ee32cadca82688b191c30201e2cf6b4d031",
+    "tests/foundation.test.mjs": "f86c2c1c518996d6066b9a71582d6697c3b335b5b1c25acd2555304877943840"
+  },
+  "logDigests": {
+    "foundation-before.log": "0495234c091dc69e98fc5aa60077e32d6b3724fcd72e693fc8a29b05f95db78b",
+    "foundation-after.log": "e721bde61d1a9d121431a7c7d7fd41b95d83717d2fc0395c82db9d6572e1433e",
+    "all-tests-overlapping.log": "3fd7d3363442c64c7f5526f44ce3c2ef134fd22756cc92baf4938cdfb3ff3cb2",
+    "all-tests-serial.log": "159246857ce18b3c6db8608c3e6e736046ef6bf4421f65ddd347b25be6c9abc0",
+    "draft.log": "b3c13c4e4f13dae4ff8609bb3d7f9236befd479a108da277c526f405e9cda327",
+    "release.log": "27df7d05df3960dddb350dd6ba26c28150706be5cf51a3d86ebf12740a17cdae",
+    "gitleaks-history.log": "022e0e41ad9798db78b2bd4d8ba4c6fded2f57be27ce564dd60f8655e05ee129",
+    "gitleaks-history.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+  },
+  "logNormalization": {
+    "operation": "Remove trailing whitespace from recorded text logs; test output content otherwise preserved.",
+    "originalSha256": {
+      "foundation-before.log": "d77e0b8093994d7f789350c7571fe96f437103a47adc91496f062ada7a6261be",
+      "all-tests-overlapping.log": "4e01af43f678bc6c2a27863e589ce23517f559bdf26cc0d6289d7e23ea14e1d3"
+    }
+  }
+}
