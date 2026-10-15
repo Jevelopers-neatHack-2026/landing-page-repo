@@ -3,8 +3,8 @@ import assert from 'node:assert/strict';
 import { mkdtemp, mkdir, readFile, writeFile, rm, cp, symlink } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { resolve } from 'node:path';
-import { spawnSync } from 'node:child_process';
-import { buildSite, root } from '../scripts/build.mjs';
+import { spawn, spawnSync } from 'node:child_process';
+import { buildSite, root, withBuildLock } from '../scripts/build.mjs';
 import { validateArtifact } from '../scripts/artifact.mjs';
 import { createPreview } from '../scripts/preview.mjs';
 
@@ -130,7 +130,7 @@ test('dispatcher rejects invalid arguments and no-argument validation fails for 
 });
 
 
-test('nested output symlink cannot redirect cleanup into unrelated files', async t => {
+test('pre-existing nested output symlink is rejected under exclusive ownership', async t => {
   const repository = await sandbox(t);
   const unrelated = await mkdtemp(resolve(tmpdir(), 'lp-unrelated-output-'));
   t.after(() => rm(unrelated, { recursive: true, force: true }));
@@ -166,4 +166,58 @@ test('build permits a new nested artifact but refuses file and symlink output co
   await symlink(output, resolve(repository, 'dist/alias'));
   await assert.rejects(buildSite({ repository, output: resolve(repository, 'dist/alias') }), /regular directory/);
   await validateArtifact(repository, output);
+});
+
+
+test('cooperative writer lock excludes overlapping builds and releases after failure', async t => {
+  const repository = await sandbox(t);
+  await withBuildLock(repository, async () => {
+    await assert.rejects(buildSite({ repository }), /writer busy/);
+    await assert.rejects(buildSite({ repository, output: resolve(repository, 'dist/other') }), /writer busy/);
+  });
+  await assert.rejects(withBuildLock(repository, async () => { throw new Error('fixture failure'); }), /fixture failure/);
+  const { output } = await buildSite({ repository });
+  await validateArtifact(repository, output);
+  await assert.rejects(buildSite({ repository, output: repository }), /below repository/);
+  await buildSite({ repository }); // Rejected preflight must release its lock too.
+});
+
+test('cross-process cooperative ancestor replacement excludes builds until it finishes', { timeout: 10000 }, async t => {
+  const repository = await sandbox(t);
+  const unrelated = await mkdtemp(resolve(tmpdir(), 'lp-cooperative-writer-'));
+  t.after(() => rm(unrelated, { recursive: true, force: true }));
+  const output = resolve(repository, 'dist/slot/release');
+  await mkdir(output, { recursive: true });
+  await mkdir(resolve(unrelated, 'release'));
+  const sentinel = resolve(unrelated, 'release/keep.txt');
+  await writeFile(sentinel, 'unrelated work');
+  const script = `
+    import { withBuildLock } from ${JSON.stringify(new URL('../scripts/build.mjs', import.meta.url).href)};
+    import { rm, symlink } from 'node:fs/promises';
+    await withBuildLock(process.argv[1], async () => {
+      process.stdin.resume();
+      const released = new Promise(resolve => process.stdin.once('data', resolve));
+      process.stdout.write('locked\\n');
+      await released;
+      await rm(process.argv[1] + '/dist/slot', { recursive: true });
+      await symlink(process.argv[2], process.argv[1] + '/dist/slot');
+    });
+  `;
+  const child = spawn(process.execPath, ['--input-type=module', '-e', script, repository, unrelated], { stdio: ['pipe', 'pipe', 'pipe'] });
+  let errors = ''; child.stderr.on('data', data => { errors += data; });
+  const exited = new Promise((resolve, reject) => { child.once('error', reject); child.once('exit', code => resolve(code)); });
+  t.after(() => { if (child.exitCode === null) child.kill(); });
+  await new Promise((resolve, reject) => {
+    child.stdout.once('data', resolve);
+    child.once('error', reject);
+    child.once('exit', code => reject(new Error(`Writer exited before lock: ${code} ${errors}`)));
+  });
+  await assert.rejects(buildSite({ repository, output }), /writer busy/);
+  assert.equal(await readFile(sentinel, 'utf8'), 'unrelated work');
+  child.stdin.end('finish');
+  assert.equal(await exited, 0, errors);
+  // Once the writer completes, static preflight rejects its now-visible symlink.
+  await assert.rejects(buildSite({ repository, output }), /regular directory/);
+  assert.equal(await readFile(sentinel, 'utf8'), 'unrelated work');
+  await assert.rejects(readFile(resolve(unrelated, 'release/index.html')), { code: 'ENOENT' });
 });
