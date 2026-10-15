@@ -1,45 +1,39 @@
-# `landing-page-repo`
+# landing-page-repo responsibility and handoff
 
-**Historical repository status:** Verified existing on GitHub, private, October 10, 2026.
-**Proposed owner:** Product and frontend.
-**Historical delivery state (October 10, 2026):** Architecture plan; implementation criteria remain planned until evidence is recorded.
-
-**October 12, 2026 disposition:** Authenticated GitHub metadata now reports this repository public. Static page, build and local validators have since been implemented; current source and evidence are described in the [README](../../README.md). This dated correction preserves the original architecture snapshot and changes no repository visibility, permissions or license. Owner review, public-content acceptance and the release gate remain pending. The proposed [content review and withdrawal policy](../../review/content-policy.md) records the current role/assignment gaps and the local update procedure.
+**Repository role:** Source and offline tooling for a standalone static product-introduction page. **Accountable role:** Product and frontend. **Observed source:** main at `dda1b5d48e71ed9c111b82111676b7ef033fe5ef`, audited 2026-10-12.
 
 ## Responsibility
 
-Own the public introduction: product purpose, audience, representative output, and the route into the customer application. Keep marketing content distinct from authenticated design and ordering workflows.
+Maintain the single-page experience that introduces the product through illustrative copy, locally editable examples, static artwork and a navigation path into the application. Keep this page's public content separate from the authenticated ticket design, account, approval and ordering flows. Every product claim and asset remains subject to its own evidence and publication review.
 
-For the initial deployment, provide a static build that the main web application can serve at `/`. A separate source repository does not require an additional running web service. Coordinate route ownership with `getticketstub.com` before integration.
+The current page source is site/index.html, with local media and model data under site/assets/. Copy, calls to action and metadata have machine-readable source files under src/content/, while the page itself remains a standalone HTML document. Build, preview and validation commands are under scripts/; integration decisions and handoff requirements are under integration/; review records and claim evidence are under review/. The artifact builder copies a static output to dist/site/. This repository has no application framework or package install step.
 
-## Planned internal modules
+## Current boundary
 
-- `src/sections/`: Product explanation, examples, process, and calls to action.
-- `src/content/`: Approved copy and content metadata.
-- `src/components/`: Presentation components consuming shared brand tokens.
-- `public/`: Reviewed images and static assets.
-- `integration/`: Build-output contract and route expectations.
-- `review/`: Link, accessibility, and content verification notes.
+Host documentation PR #117 merged at `aec83af65ee75be80246d88782c8f8ce00a10c31`; the linked `CURRENT-STATE.md` is available on the host main branch.
 
-## Dependencies and handoff
+The built artifact is a local handoff product and preview target; it is not currently mounted into getticketstub.com. The host now serves an app-owned landing experience at `/` and its source comment identifies the landing repository's `site/index.html` as the porting source. The host keeps its own component, script, markup and media; the comment does not establish byte identity, package use, artifact serving or owner acceptance. The separately built artifact still uses root-relative `/assets/...` references and its own local intake, so it cannot be copied under `/landing/` without an agreed URL and isolation adapter. See the current application [architecture companion](https://github.com/Jevelopers-neatHack-2026/getticketstub.com/blob/main/docs/architecture/CURRENT-STATE.md), and the maintained static-output proposal and runtime decision for the distinct artifact handoff.
 
-Consume identity guidance from `brand-kit` and approved messages from `marketing-material`. Receive application entry URLs and supported product behavior from `getticketstub.com`. Marketing claims should reference the demonstrated release, with future features clearly identified.
+The page's current local interactions do not make a real order, verify event facts, submit typed text to the studio, or demonstrate physical printing or shipping. The studio link is navigation only. Claim, image-rights, privacy, destination and full release checks remain separate gates; successful local artifact validation does not satisfy them.
 
-## P0 demo slice
+## Owned source and supporting records
 
-Create one responsive landing page with an understandable product description, an approved example, and a working path into the demonstration. Add a waitlist only if its data collection and receiving endpoint are deliberately included in scope.
+- site/index.html and site/assets/: page and its local static resources.
+- src/content/: structured copy, CTA and metadata inputs consumed by local validators.
+- scripts/build.mjs, scripts/preview.mjs, scripts/validate-landing and scripts/suites/: artifact build, local HTTP preview and validation dispatcher.
+- integration/: proposed host interface, route inventory, asset/mount constraints and policy decisions.
+- review/: claim inventory, example mapping, privacy inventory and dated source/deployment observations.
+- archive/, markdowns/, and the retained ZIP: historical or source-review material; not copied into the current static artifact.
 
-## Acceptance boundary
+## Validation and contributors
 
-- [ ] Static output integrates with the primary application without route conflicts.
-- [ ] Primary calls to action reach the intended customer experience.
-- [ ] Example images and product claims match approved materials.
-- [ ] The page works at the agreed mobile and desktop widths.
-- [ ] Any collection form has a defined owner and clear handling behavior.
-- [ ] No secrets or private team content enter public assets.
+Use the exact Node version recorded in .nvmrc when reproducing the documented local checks. The foundation suite and scroll test run locally without provider calls. The full validator's default release mode requires all issue-defined content, CTA, proof, UX, brand, privacy, metadata and governance suites; draft passes and foundation checks must retain their narrower meaning. A recorded deployment inspection is a dated receipt, not a fresh deployment identity check.
 
-[Architecture](https://github.com/Jevelopers-neatHack-2026/getticketstub.com/blob/main/docs/architecture-kit/v1.0/docs/architecture.md) · [Acceptance checklist](https://github.com/Jevelopers-neatHack-2026/integration-evals/blob/main/planning/acceptance-checklist.md).
+Before changing public copy, links, assets, analytics, form behavior, or artifact paths, check the local privacy and content evidence and obtain the approvals required by the live issue and master acceptance checklist. Do not place credentials, customer information, unreviewed private material, or provider payloads in public output.
 
-## Acceptance and contributor handoff
+## Architecture and acceptance sources
 
-Use the [repository acceptance view](ACCEPTANCE.md) and [central implementation plan](https://github.com/Jevelopers-neatHack-2026/getticketstub.com/blob/main/docs/planning/implementation-plan.md). Interfaces are specified in the [maintained contract catalog](https://github.com/Jevelopers-neatHack-2026/shared-contracts/blob/main/docs/contract-catalog.md). Preserve local contributor and agent instructions; follow the [organization contribution guidance](https://github.com/Jevelopers-neatHack-2026/.github/blob/main/CONTRIBUTING.md). Named owner and reviewer assignments remain kickoff decisions.
+- [Current application architecture and integration state](https://github.com/Jevelopers-neatHack-2026/getticketstub.com/blob/main/docs/architecture/CURRENT-STATE.md): current source-backed host behavior and cross-repository integration modes.
+- [Architecture kit v1.0](https://github.com/Jevelopers-neatHack-2026/getticketstub.com/blob/main/docs/architecture-kit/v1.0/docs/architecture.md): immutable dated design intent, not the current implementation.
+- [Local acceptance view](ACCEPTANCE.md) and the [master integration-evals checklist](https://github.com/Jevelopers-neatHack-2026/integration-evals/blob/56018576a9450a2bb46aa55ed3b2f9d9ae97e50d/planning/acceptance-checklist.md): the latter owns acceptance state and evidence.
+- [Organization contributor guidance](https://github.com/Jevelopers-neatHack-2026/.github/blob/main/CONTRIBUTING.md): read with local agent and security instructions.

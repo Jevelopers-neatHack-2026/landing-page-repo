@@ -4,7 +4,7 @@ Recorded 2026-10-12; LP-03 safety update against landing base `b6ae55c` withdraw
 
 Public analytics and telemetry are **deferred**. There is no provider, event collector, event schema, cookie, consent toggle, tracking dashboard or paid integration in this implementation. The measurement questions, if collection is later deliberately approved, are whether visitors reach an appropriate demo entry and whether the downstream application reports a confirmed outcome. A landing CTA expresses interest only. A click, preview update, external handoff, fallback link or tab losing focus proves no signup, purchase, printed object or delivery.
 
-The current page has no landing-authored input collection or submitting form. It is **not a no-network baseline**: host/CDN requests below remain. Local preview editing and any future approved link are distinct from third-party execution, which still needs browser evidence.
+The page has a local text-entry and preview interaction: typed details and words from a public link are parsed in the browser and held in memory to render an illustrative card. This page has no endpoint submission or application-side receiver/persistence for those values, and no analytics collection is implemented. It is **not a no-network baseline**: host/CDN requests below remain. Local preview editing and any future approved link are distinct from third-party execution, which still needs browser evidence.
 
 | Flow | Current behavior and recipient | Boundary / unresolved review |
 |---|---|---|
