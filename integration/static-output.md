@@ -8,6 +8,12 @@ Contract identifier: `ticketstub.landing-artifact/1`. This is a local proposal, 
 
 The local artifact mounts at `/`, and existing relative `assets/...` references resolve to `/assets/...`. It is not a subpath export: nested base paths would change URL resolution. There is no HTML rewrite or source replacement in this build. `manifest.json` is handoff metadata and is not served by the preview.
 
+Artifact validation requires a regular artifact root and `assets/` directory,
+regular `index.html` and `manifest.json` files, and regular nested assets. A
+symlink to matching bytes is rejected: the handed-off directory must carry its
+own payload and manifest. These are static tree checks under the exclusive
+writer contract below, not protection against concurrent path replacement.
+
 **Current host distinction:** at host main `138e4b9019c0f5a55ad5e3f586d129216b680e4d`, `/` renders a host-owned React/component and script port of the page source, with the app's `StudioStart` section inserted after the hero. The host already serves app-owned assets beneath `/landing/`, including `/landing/ticketstub.gltf.json`, `/landing/flight.json`, and font files under `/landing/fonts/` referenced by its [landing script](https://github.com/Jevelopers-neatHack-2026/getticketstub.com/blob/138e4b9019c0f5a55ad5e3f586d129216b680e4d/src/customer/landing/landing.script.ts) and [landing stylesheet](https://github.com/Jevelopers-neatHack-2026/getticketstub.com/blob/138e4b9019c0f5a55ad5e3f586d129216b680e4d/src/customer/landing/landing.css). The host does not import this repository as a package or serve this repository's `dist/site/` artifact; the porting comment and shared `/landing/` URL prefix do not prove byte identity, standalone-artifact adoption, or owner acceptance. The earlier proposal to mount this standalone artifact at the host root is historical; the host root remains app-owned. This proposal describes only the separately built standalone artifact.
 
 **Unresolved artifact handoff:** this artifact uses `/assets/...` URLs and includes its own local intake. Do not copy it over the host root or public directory as-is. If the standalone artifact itself is to be integrated, the owners must choose a compatible route and artifact adapter; agree asset URL rewrite/mount, intake ownership, script/style isolation, CSP/CDN allowances and rebuild/rollback; then pin both revisions and perform real host tests. No app files are changed here.
