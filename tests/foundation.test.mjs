@@ -109,6 +109,37 @@ test('validator detects missing referenced assets, tampering, stale manifests an
   await assert.rejects(validateArtifact(repository, output), /Unexpected/);
 });
 
+for (const name of ['', 'assets', 'index.html', 'manifest.json']) {
+  test(`artifact validation rejects a symlinked ${name || 'artifact root'} without changing its external target`, async t => {
+    const repository = await sandbox(t);
+    const { output } = await buildSite({ repository });
+    await validateArtifact(repository, output);
+    const external = await mkdtemp(resolve(tmpdir(), 'lp-external-artifact-'));
+    t.after(() => rm(external, { recursive: true, force: true }));
+    const target = resolve(external, 'retained');
+    const original = name ? resolve(output, name) : output;
+    const expectedPage = await readFile(resolve(repository, 'site/index.html'));
+    const expectedAsset = await readFile(resolve(repository, 'site/assets/sample.svg'));
+    const expectedManifest = await readFile(resolve(output, 'manifest.json'));
+    await cp(original, target, { recursive: true });
+    await rm(original, { recursive: true });
+    await symlink(target, original);
+
+    // Matching bytes cannot make an external dependency a self-contained artifact.
+    await assert.rejects(validateArtifact(repository, output));
+    assert.deepEqual(await readFile(resolve(output, 'index.html')), expectedPage);
+    assert.deepEqual(await readFile(resolve(output, 'assets/sample.svg')), expectedAsset);
+    assert.deepEqual(await readFile(resolve(output, 'manifest.json')), expectedManifest);
+
+    // Rejecting validation must neither rewrite nor remove the external target.
+    await rm(original);
+    await cp(target, original, { recursive: true });
+    await validateArtifact(repository, output);
+    assert.deepEqual(await readFile(resolve(repository, 'site/index.html')), expectedPage);
+    assert.deepEqual(await readFile(resolve(repository, 'site/assets/sample.svg')), expectedAsset);
+  });
+}
+
 test('build refuses symlinks, unreviewed asset types and unsafe output destinations', async t => {
   const repository = await sandbox(t);
   await assert.rejects(buildSite({repository, output: repository}), /below repository\/dist/);
