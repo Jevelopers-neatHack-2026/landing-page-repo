@@ -1,9 +1,17 @@
-import { readFile, readdir } from 'node:fs/promises';
+import { readFile, readdir, lstat } from 'node:fs/promises';
 import { resolve, posix } from 'node:path';
 import { assetFiles, sourceFiles, sha256 } from './build.mjs';
 export async function validateArtifact(repository, artifactDir) {
   const source = resolve(repository, 'site');
   const expected = await sourceFiles(source);
+  // Validate the artifact itself, not just the bytes reached through its paths.
+  // A linked root, payload or manifest can pass hashes while depending on files
+  // outside the handed-off directory. Nested assets are checked by assetFiles.
+  for (const name of ['', 'assets', 'index.html', 'manifest.json']) {
+    const entry = await lstat(resolve(artifactDir, name));
+    const regular = name === '' || name === 'assets' ? entry.isDirectory() : entry.isFile();
+    if (!regular) throw new Error(`Artifact ${name || 'root'} must be a regular ${name === '' || name === 'assets' ? 'directory' : 'file'}, not a symlink or special entry`);
+  }
   const actual = ['index.html', ...await assetFiles(resolve(artifactDir, 'assets'))].sort();
   const top = (await readdir(artifactDir)).sort();
   if (JSON.stringify(top) !== JSON.stringify(['assets', 'index.html', 'manifest.json'])) throw new Error('Unexpected or missing artifact root file');
